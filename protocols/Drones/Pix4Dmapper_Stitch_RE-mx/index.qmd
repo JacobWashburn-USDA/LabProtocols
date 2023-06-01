@@ -1,0 +1,98 @@
+---
+title: "Stitching with Pix4Dmapper"
+author: "Harper LaFond"
+date: "5/31/2023"
+description: How to Use Pix4Dmapper to Stitch Drone Images (RE-mx drones only)
+execute:
+  freeze: true
+date-modified: 06/01/2023
+---
+
+## Instructions:
+
+How to Use Pix4Dmapper to Stitch Drone Images (Micasense Camera -- 10 Band (RE-mx))
+
+1.  Pix4Dmapper is installed on the lambda2 in the dry lab (NOT the Linux lambda)
+
+2.  Check what flights need to be stitched on the To Be Stitched List_2022: Teams \> UAV Missions \> Files
+
+3.  Launch Pix4Dmapper on desktop
+
+4.  Select New Project with Camera Rigs
+
+    a.  Name file FlightDate(YYMMDD)\_camera(RE-mx)\_FieldName_Pix4D
+    b.  Create In: This PC \> Desktop \> Pix4D \> 2022 Fields \> "Your Field Name" \> 1 Folder called FlightDate(YYMMDD)\_drone(RE-mx)\_FieldName_Pix4D
+
+5.  Select Images, Click the Add Images... button, file explorer will open.
+
+    a.  Navigate to This PC \> wldata (Under Network locations) \> Field_Data_2022 \> UAV_images_by_field_2022 \> Select a Field \> Select a folder by Date (YYMMDD) and drone type (RE-mx only)
+    b.  You'll see 10 folders, you will add all the images from all the folders
+    c.  Ctrl + A to select all of the JPGs in the folder, Click Open (images will be selected, green check will appear) then Click Next \>
+
+6.  Define the Camera Rig
+
+    a.  Ensure the Rig Model selected is RedEdge-M, parameters are saved, Click Next \>
+
+7.  Keep default Image Properties, Click Next \>
+
+8.  Keep default settings of Select Output Coordinate System, Click Next \>
+
+9.  Processing Options Template will open, under Standard select Ag Multispectral (Do not check the box next to Start Processing), Click Finish
+
+10. After the map loads, Import the GCPs
+
+    a.  Select the Project tab
+    b.  Select GCP/MTP Manager..., the GCP Manager Window will open
+    c.  In the GCP Coordinate System click the Edit... button, the Select GCP Coordinate System window will open
+    d.  Check the Advanced Coordinate Options box
+
+    <!-- -->
+
+    ii. Click the From List... button under the Known Coordinate System \[m\] search bar, Coordinate System window will open
+    iii. Select the following from the dropdown lists 1. Datum: WGS 1984 ![](Picture1.png) 2. Coordinate System: WGS 84 (Top of list, look for the globe\
+    iv. In the GCP/MTP Table click the Import GCPs... button, the Import Ground Control Points window will open
+    v.  Coordinates order: Longitude, Latitude, Altitude
+    vi. Click Browse..., navigate to This PC \> Desktop \> Pix4D \> 2022 Fields \> GCPs \> Select your field's .txt file, Click Open, Click OK, Click OK. The GCPs will appear as blue crosses on the map
+
+    <!-- -->
+
+    e.  Save Project!
+
+11. Initial Processing
+
+    a.  Click the Processing tab on the bottom left side of the window, check the box next to 1. Initial Processing (ensure other boxes are unchecked)
+    b.  Accept Default options, Start Processing (\~30 min)
+
+12. Marking GCPs
+
+    a.  After initial processing switch to rayCloud view on the left side of the Pix4D Window, Click on the blue GCP marker and Images will open up on the right (I like to uncheck Cameras and Rays for a cleaner map)
+    b.  You can press hold down to move around the images and zoom in and out to find the GCP (they may not be in every image, that's ok)
+    c.  Click on the center of the GCP to mark it, repeat on 8-15 images. Do this for each GCP.
+    d.  In the Selection panel above the Image panel, Click the Apply button occasionally to update and mark the GCPs
+    e.  Select the Process tab at the top of the window
+    f.  Select Reoptimize (this will take about 10 minutes), a Warning will come up, Click OK
+
+    <!-- -->
+
+    ii. Generate a new Quality Report by Clicking the Process tab and Selecting Generate Quality Report (this will take about 15 minutes). Ensure there are green checks next to the 5 parameters in the Quality Check (if not, troubleshoot w/ help from the Pix4D website)
+
+    <!-- -->
+
+    f.  Save Project!
+
+13. Point Cloud and Mesh and DSM, Orthomosaic and Index
+
+    a.  Check the box next to 2. Point Cloud and Mesh and 3. DSM, Orthomsaic and Index in the processing window (be sure to uncheck the previous step so Pix4D doesn't rerun and take even longer),
+    b.  Click Processing Options for step 3. DSM, Orthomosaic and Index
+    c.  Go to the Index Calculator tab to calibrate the 10 bands
+
+    <!-- -->
+
+    ii. Select the drop down box next to the Correction Type: and select Camera and Sun Irradiance
+    iii. Click Calibrate, the calibration image will open a blue box will appear on. Move the box corners to each corner of the square on the calibration panel (if the auto selected image isn't good quality/shadows/etc. you can Browse at the top of the window and select a better image)
+    iv. Enter these reflectance factors into each camera 1. Blue -- 0.54011 2. Green -- 0.54109 3. Red -- 0.53888 4. NIR -- 0.53488 5. RedEdge -- 0.53795 6. Blue 444 -- 0.53983 7. Green 531 -- 0.54076 8. Red 650 -- 0.53960 9. RedEdge 705 -- 0.53825 10. RedEdge 740 -- 0.53700
+
+<!-- -->
+
+c.  Accept all other default settings and Start processing steps 2. and 3. (\~1.5 hrs)
+d.  Save Project, update To Be Stitched List! 😊

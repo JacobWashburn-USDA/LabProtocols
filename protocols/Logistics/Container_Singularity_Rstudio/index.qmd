@@ -1,0 +1,150 @@
+---
+title: "Building an RStudio Singularity Container"
+author: "Daniel Kick"
+date: "5/31/2023"
+date-modified: "5/31/2023"
+execute:
+  freeze: true
+---
+
+## RStudio Recommended Example
+
+### Initial Setup
+
+``` bash
+mkdir rstudio_container
+cd rstudio_container
+# 
+mkdir -p run var-lib-rstudio-server
+printf 'provider=sqlite\ndirectory=/var/lib/rstudio-server\n' > database.conf
+mkdir home
+```
+
+### Add in your preferences:
+
+RStudio stores your user preferences in `rstudio-prefs.json`. This file is in `AppData/Roaming/RStudio` on windows and `~/.config/rstudio` on OSX/Linux.
+
+``` bash
+mkdir ide_settings
+```
+
+Copy this file to `ide_settings`. It should look similar to this:
+
+``` json
+{
+    "save_workspace": "never",
+    "always_save_history": false,
+    "reuse_sessions_for_project_links": true,
+    "posix_terminal_shell": "bash",
+    "initial_working_directory": "~",
+    "panes": {
+        "quadrants": [
+            "Source",
+            "TabSet1",
+            "Console",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "Environment",
+            "History",
+            "Connections",
+            "Build",
+            "VCS",
+            "Tutorial",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Files",
+            "Plots",
+            "Packages",
+            "Help",
+            "Viewer",
+            "Presentations"
+        ],
+        "hiddenTabSet": [],
+        "console_left_on_top": false,
+        "console_right_on_top": true,
+        "additional_source_columns": 0
+    },
+    "editor_theme": "Clouds Midnight"
+}
+```
+
+### Link to data you want to use:
+
+`ln -s /mnt/c/Users/drk8b9/Documents/LabProtocols/`
+
+(links can be removed with `unlink [link name]`)
+
+### Build the singularity container
+
+`sudo singularity pull docker://rocker/rstudio:4.2` Once this is complete there should be a container file present: `rstudio_4.2.sif`.
+
+(for customization construct a .def flie)
+
+refer to the [Rocker Project](https://rocker-project.org/images/) for more details on the available containers.
+
+### Running the container
+
+To make use of the we need to run the container which will setup the path we need to bind our preferences to.
+
+``` bash
+singularity exec \
+  --bind run:/run \
+  --bind var-lib-rstudio-server:/var/lib/rstudio-server \
+  --bind database.conf:/etc/rstudio/database.conf \
+  --bind home:/home \
+  rstudio_4.2.sif \
+  /usr/lib/rstudio-server/bin/rserver \
+  --www-address=127.0.0.1 \
+  --www-port=8700 \
+  --server-user=rstudio
+  
+# note the arguments under --bind can be passed in on one line with ',' separating them. They are included separately to increase readability.
+```
+
+Press `ctrl+c` to exit the container. *Now* this container can be run with `--bind ide_settings:/home/rstudio/.config/rstudio/ \` to use preferred settings.
+
+## Using the container
+
+``` bash
+singularity exec \
+  --bind run:/run \
+  --bind var-lib-rstudio-server:/var/lib/rstudio-server \
+  --bind database.conf:/etc/rstudio/database.conf \
+  --bind home:/home \
+  --bind LabProtocols:/home/rstudio/LabProtocols \
+  --bind ide_settings:/home/rstudio/.config/rstudio/ \
+  rstudio_4.2.sif \
+  /usr/lib/rstudio-server/bin/rserver \
+  --www-address=127.0.0.1 \
+  --www-port=8700 \
+  --server-user=rstudio
+  
+# note, you can also bind a folder or file by it's full path. For me on WSL this would be
+# --bind /mnt/c/Users/drk8b9/Documents/LabProtocols:/home/rstudio/LabProtocols \
+```
+
+Login with defaults: "rstudio" and "rstudio".
+
+
+
+<!-- Links to consider -->
+
+<!-- https://gitlab.oit.duke.edu/hiv_r25/rstudio-singularity-2021-2022-hiv/-/blob/main/Singularity.def -->
+
+<!-- https://rviews.rstudio.com/2017/03/29/r-and-singularity/ -->
+
+<!-- https://www.c4.ucsf.edu/howto/rstudio-server.html -->
+<!-- https://pawseysc.github.io/singularity-containers/41-workflow-engines/index.html -->
+
+<!-- https://divingintogeneticsandgenomics.rbind.io/post/run-rstudio-server-with-singularity-on-hpc/ -->
+
+<!-- https://davetang.org/muse/2021/04/24/running-rstudio-server-with-docker/ -->
+<!-- https://www.andrewheiss.com/blog/2017/04/27/super-basic-practical-guide-to-docker-and-rstudio/ -->
+
+<!-- https://github.com/nickjer/singularity-rstudio/tree/master -->
+<!-- https://github.com/j-andrews7/singularity-rstudio/tree/main -->
+
+
+

@@ -1,0 +1,110 @@
+---
+title: "Generic HPC Workflow"
+---
+
+
+```{mermaid}
+flowchart LR
+
+%% Parts
+subgraph PC
+	subgraph PC_Containers
+		def --> sif
+		kern[kernel.json]
+	end
+	subgraph PC_Proj
+		PC_data[/Data/]
+		PC_code[Code]
+	end
+	subgraph PC_Sess
+		PC_shell[Bash session]
+		PC_web[Web browser]
+	end
+end
+
+
+subgraph HPC
+	HPC_shell[Bash over SSH]
+	ood[Open \nOnDemand]
+	subgraph HPC_User["`home/first.last`"]
+		HPC_sif
+		HPC_kern[kernel.json]
+	end
+	subgraph HPC_Proj["`/project/project_name`"]
+		HPC_data[/Data/]
+		HPC_code[Code]		
+	end
+end
+
+%% Connections
+PC_data -- dtn --> HPC_data
+PC_code -- dtn --> HPC_code
+
+sif -- dtn --> HPC_sif
+kern -- dtn --> HPC_kern
+
+PC_shell -- login --> HPC_shell
+
+HPC_kern --> ood
+HPC_code --> ood
+HPC_data --> ood 
+PC_web --> ood
+```
+
+## TLDR;
+
+1.  <https://atlas-ood.hpc.msstate.edu/>
+
+## Ceres vs Atlas
+
+Most of our work is done on Atlas so you'll need to use this url <https://atlas-ood.hpc.msstate.edu/>. SciNet may direct you to Ceres instead <https://ceres-ood.scinet.usda.gov/>. If you login to Ceres, you'll see the same project directories but any data will be missing.
+
+To login you'll need an authenticator code in addition to your login info. Your user name will be the same for both HPCs but the password should differ.
+
+
+In this example I want a gpu compitable container with jupyter allowing deep neural network development on Atlas.
+
+Bare bones .def file
+
+```         
+Bootstrap: docker
+From: nvcr.io/nvidia/pytorch:23.04-py3
+
+
+```
+
+## Testing container:
+
+1.  Build sandbox container: `singularity build --sandbox jnb jupyter.def`
+
+2.  Test for pytorch & jupyter locally:
+singularity shell jnb
+python -c "import torch; print( torch.cuda.is_available() )"
+jupyter-notebook # then check on browser
+exit
+
+3.  Test for pytorch on lambda:
+
+4.  Add in jupyter:
+
+
+
+
+
+
+## Finalizing container
+1. Finalize
+
+
+1. Add 
+
+
+
+
+## "The cycle"
+1. Identify new needs (libraries, tools)
+1. Edit .def 
+1. Version control 
+1. build container
+1. Send to HPC
+

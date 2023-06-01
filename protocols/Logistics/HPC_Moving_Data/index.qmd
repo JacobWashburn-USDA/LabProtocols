@@ -1,0 +1,31 @@
+---
+title: "Moving Data from Computer to Computer"
+description: "Using Globus, `Rsync`, `scp`"
+author: "Daniel Kick"
+---
+
+## Globus
+
+[Globus](https://www.globus.org/) is the recommended way to move data from your local computer to the cluster. It is a service run from uchicago and allows you to move data using a web browser. Refer to SciNet's [install instructions](https://scinet.usda.gov/guides/data/datatransfer).
+
+Once installed you'll need to link any remote storage. Atlas' collection name is `msuhpc2#Atlas-dtn`. Linking it will require logging in with <font color="red"> *with your `Ceres` password.* </font>
+
+![](AtlasConnect1.png)
+
+Once linked, you'll be able to move data between linked drives.
+
+![](Globus1.png)
+
+## Rsync and scp
+
+Command line tools like `rsync` and `scp` can be used to move files between workstations in the lab or to a cluster. To move data to or from Atlas one would use the following and then provide your password and authentication code.
+
+`scp ./file <SCINet UserID>@Atlas-dtn.hpc.msstate.edu:/path/to/destination`
+
+Note that the computer you're connecting to is `Atlas-dtn.hpc.msstate.edu` instead of `Atlas-Login.hpc.msstate.edu`. This will access a *data transfer node* leaving the login nodes free for others to use.
+
+If you need to move a directory, use the recursive flag `-r` or use `rsync`. With the latter this might look like:
+
+`rsync -azv --progress ./file <SCINet UserID>@Atlas-dtn.hpc.msstate.edu:/path/to/destination`
+
+The options here ensure the file permissions are maintained (`-a` archive), files are zipped before transfer (`-z` zip), information is written to standard output (`-v` verbose), and transfer progress is provided (`--progress`).

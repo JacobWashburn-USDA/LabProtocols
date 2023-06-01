@@ -1,0 +1,55 @@
+---
+title: "Washburn Lab Resources"
+---
+
+# Getting up to speed:
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+-   Lorem ipsum dolor sit amet,
+
+-   consectetur adipiscing elit,
+
+-   sed do eiusmod
+
+## Lab Papers:
+
+### Published:
+[Kick et al 2023 (G3)](/papers/Kick_et_al_G3_2023.pdf)
+
+### Preprints:
+
+[Kick and Washburn 2023 ($bioR\chi iv$)](/papers/Kick_and_Washburn_BioRxiv_2023.pdf)
+
+# Lab Protocols
+
+```{r, eval=FALSE, echo=FALSE}
+# for finding names of posts
+list.dirs(path = './protocols/')
+```
+
+## Drones
+
+[Stitching Images with Pix4Dmapper](/protocols/Drones/Pix4Dmapper_Stitch/index.html)
+
+[Stitching Images with Pix4Dmapper: RE-mx Drone](/protocols/Drones/Pix4Dmapper_Stitch_RE-mx/index.html)
+
+## General Logistics
+
+[Transferring Data Between Computers](/protocols/Logistics/HPC_Moving_Data/index.html)
+
+[Singularity: RStudio in a box](/protocols/Logistics/Container_Singularity_Rstudio/index.html)
+
+<font color=blue> *In progress:* </font>
+
+[Overview: Suggested HPC Workflow](/protocols/Logistics/HPC_Generic_Workflow/index.html)
+
+[Using Open OnDemand](/protocols/Logistics/HPC_Open_OnDemand/index.html)
+
+<!-- ## Rootbot -->
+
+## Website Operations and Maintenance
+
+[Adding Protocols](/protocols/Operations/Authoring_Protocols/index.html)
+
+[Website Overview](/protocols/Operations/Website_Overview/index.html)

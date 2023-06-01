@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Harper LaFond">
+<meta name="dcterms.date" content="2023-05-31">
+<meta name="description" content="How to Use Pix4Dmapper to Stitch Drone Images (m2pro/ANAFI drones only)">
+
+<title>Stitching with Pix4Dmapper</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html">
+ <span class="menu-text">About the Washburn Lab</span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions:</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Stitching with Pix4Dmapper</h1>
+</div>
+
+<div>
+  <div class="description">
+    How to Use Pix4Dmapper to Stitch Drone Images (m2pro/ANAFI drones only)
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harper LaFond </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 31, 2023</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">May 31, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions:</h2>
+<ol type="1">
+<li>Pix4Dmapper is installed on the lambda2 in the dry lab (NOT the Linux lambda)
+<ol type="1">
+<li>Password: █████████-███-███████-██████ (You put it in your password wallet right?😉)</li>
+</ol></li>
+<li>Check what flights need to be stitched on the To Be Stitched List_2022: Teams &gt; UAV Missions &gt; Files</li>
+<li>Launch Pix4Dmapper on desktop</li>
+<li>Select <strong>New Project</strong>
+<ol type="1">
+<li>Name file FlightDate(YYMMDD)_camera(m2pro/ANAFI)_FieldName_Pix4D</li>
+<li>Create In: This PC &gt; Desktop &gt; Pix4D &gt; 202X Fields &gt; “Your Field Name” &gt; 1 Folder called FlightDate(YYMMDD)_drone(m2pro/RE-mx/ANAFI)_FieldName_Pix4D</li>
+</ol></li>
+<li>Select Images, Click the <strong>Add Images</strong>… button, file explorer will open.
+<ol type="1">
+<li>Navigate to This PC &gt; wldata (Under Network locations) &gt; Field_Data_202X &gt; UAV_images_by_field_202X &gt; Select a Field &gt; Select a folder by Date (YYMMDD) and drone type (m2pro/ANAFI only)</li>
+<li><strong>Ctrl + A</strong> to select all of the JPGs in the folder, Click <strong>Open</strong> (images will be selected, green check will appear) then Click <strong>Next &gt;</strong></li>
+</ol></li>
+<li>Keep default Image Properties (Pix4D uses the GPS info in drone images), Click <strong>Next &gt;</strong></li>
+<li>Keep default settings of Select Output Coordinate System, Click <strong>Next &gt;</strong></li>
+<li>Processing Options Template will open, under Standard select 3D Maps, (<font color="red">Do not check the box next to Start Processing</font>), Click <strong>Finish</strong></li>
+<li>After the map loads, Import the GCPs
+<ol type="1">
+<li>Select the <strong>Project</strong> tab</li>
+<li>Select <strong>GCP/MTP Manager…</strong>, the GCP Manager Window will open</li>
+<li>In the <u>GCP Coordinate System</u> click the Edit… button, the Select GCP Coordinate System window will open
+<ol type="1">
+<li>Check the <strong>Advanced Coordinate Options</strong> box</li>
+<li>Click the <strong>From List…</strong> button under the Known Coordinate System [m] search bar, Coordinate System window will open</li>
+<li>Select the following from the dropdown lists
+<ol type="1">
+<li><p>Datum: WGS 1984</p></li>
+<li><p>Coordinate System: WGS 84 (Top of list, look for the globe <img src="Picture1.png" class="img-fluid">)</p>
+<p><img src="Picture2.png" class="img-fluid"></p></li>
+</ol></li>
+</ol></li>
+<li>In the <u>GCP/MTP Table</u> click the <strong>Import GCPs…</strong> button, the Import Ground Control Points window will open
+<ol type="1">
+<li>Coordinates order: Longitude, Latitude, Altitude</li>
+<li>Click <strong>Browse…</strong>, navigate to This PC &gt; Desktop &gt; Pix4D &gt; 2022 Fields &gt; GCPs &gt; Select your field’s .txt file, Click <strong>Open,</strong> Click <strong>OK,</strong> Click <strong>OK.</strong> The GCPs will appear as blue crosses on the map</li>
+<li>Save Project!</li>
+</ol></li>
+</ol></li>
+<li>Initial Processing
+<ol type="1">
+<li>Click the <strong>Processing</strong> tab on the bottom left side of the window, check the box next to <strong>1. Initial</strong> Processing (ensure other boxes are unchecked) <img src="Picture3.png" class="img-fluid">)</li>
+<li>Click the <strong>Processing Options</strong> tab on the bottom left side of the window (gear shape icon), the Processing Options window will open, ensure Initial Processing step is clicked on
+<ol type="1">
+<li>Click the <strong>Matching</strong> tab, in the <strong>Matching Strategy</strong> header check the <strong>Use Geometrically Verified</strong> Matching box <img src="Picture3.png" class="img-fluid">)</li>
+<li>Click the <strong>Calibration</strong> tab, under the <strong>Camera Optimization</strong> header use the <strong>Internal Parameters Optimization</strong> dropdown box and select <strong>All Prior</strong>, Click <strong>OK</strong>, window will close <img src="Picture5.png" class="img-fluid">)</li>
+<li>At the bottom of the screen Click the <strong>Start</strong> bottom to begin Initial Processing (This will take hours, just leave Pix4D running 😊) <img src="Picture6.png" class="img-fluid">)</li>
+</ol></li>
+</ol></li>
+<li>Marking GCPs
+<ol type="1">
+<li><p>After initial processing switch to <strong>rayCloud</strong> view on the left side of the Pix4D Window, Click on the blue GCP marker and Images will open up on the right (I like to uncheck <strong>Cameras</strong> and <strong>Rays</strong> for a cleaner map) <img src="Picture7.png" class="img-fluid" width="500">)</p></li>
+<li><p>You can press hold down to move around the images and zoom in and out to find the GCP (they may not be in every image, that’s ok)</p></li>
+<li><p>Click on the center of the GCP to mark it, repeat on 8-15 images. Do this for each GCP.</p>
+<p><img src="Picture8.png" class="img-fluid" width="220"></p></li>
+<li><p>In the Selection panel above the Image panel, Click the <strong>Apply</strong> button occasionally to update and mark the GCPs</p></li>
+<li><p>Select the <strong>Process</strong> tab at the top of the window</p>
+<ol type="1">
+<li>Select <strong>Reoptimize</strong> (this will take about 10 minutes), a Warning will come up, Click <strong>OK</strong></li>
+<li>Generate a newQuality Report by Clicking the Process tab and Selecting Generate Quality Report (this will take about 15 minutes). Ensure there are green checks next to the 5 parameters in the Quality Check (if not, troubleshoot w/ help from the Pix4D website)</li>
+</ol></li>
+<li><p>Save Project!</p></li>
+</ol></li>
+<li>Point Cloud and Mesh and DSM, Orthomosaic and Index
+<ol type="1">
+<li>Check the box next to <strong>2. Point Cloud and Mesh</strong> and <strong>3. DSM, Orthomosaic and Index</strong>, in the processing window (be sure to uncheck the previous step so Pix4D doesn’t rerun and take even longer), Click <strong>Start</strong> and accept default Processing Options (this will take hours, leave Pix4D running 😊)</li>
+<li>Save Project!</li>
+<li>To see your 3D map, in the <strong>Ray Cloud</strong> viewer check the box next to <strong>Point Graphs</strong> (let it load) and then check the box next to <strong>Triangle Meshes</strong>. Enjoy!</li>
+<li>Update the To Be Stitched List_202X on Teams &gt; UAV Missions &gt; Files</li>
+</ol></li>
+<li>Open orthomosaic in QGIS.
+<ol type="1">
+<li>Create a directory within the flight directory with the name of the flight directory plus “_QGIS.”<br>
+</li>
+<li>Open QGIS</li>
+<li>Save project in newly created QGIS directory with flight name plus “_QGIS”.</li>
+<li>Go to Layer -&gt; Add Layer -&gt; Add Raster Layer.</li>
+<li>Find the orthomosaic “.tif” file just created by Metashape. And add it.</li>
+<li>Go to Project -&gt; Properties. Select CRS from the side tab. Change the Coordinate Reference System to “WGS 84 / UTM zone 15N” Authority ID: “EPSG:32615” if needed.</li>
+<li>Rotate the image using the controls on the bottom taskbar if needed. Rows should be vertical and ranges horizontal.<br>
+</li>
+</ol></li>
+<li>Import reference grid.
+<ol type="1">
+<li>Copy the Reference_grid file from the main field directory to the QGIS directory.</li>
+<li>Rename the copied file replacing the field name and year with the flight name. (e.g.&nbsp;“Reference_grid_210717_m2pro_Gen7.gpkg”</li>
+<li>Go to Layer -&gt; Add Layer -&gt; Add Vector Layer.</li>
+<li>Select the new Reference_Grid file you just renamed and click Open. Then click Add. Then Close.</li>
+<li>Right Click on the newly added layer and go to Properties. Select Symbology in the left hand pane. Select Simple Fill. Change the Fill Color to Transparent Fill. Click ok.</li>
+<li>Check that the grid lines up properly with the field data. Make any minor adjustments that may be needed.</li>
+</ol></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
