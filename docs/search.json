@@ -1,0 +1,233 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the Washburn Lab",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "objectID": "about.html#staff",
+    "href": "about.html#staff",
+    "title": "About the Washburn Lab",
+    "section": "Staff",
+    "text": "Staff\n\nJacob Washburn (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nHarper LaFond \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nRaymond Wright \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "objectID": "about.html#post-docs",
+    "href": "about.html#post-docs",
+    "title": "About the Washburn Lab",
+    "section": "Post Docs",
+    "text": "Post Docs\n\nDaniel Kick (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nPiyush Pandey (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "objectID": "about.html#graduate-students",
+    "href": "about.html#graduate-students",
+    "title": "About the Washburn Lab",
+    "section": "Graduate Students",
+    "text": "Graduate Students\n\nShawn Thomas \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "objectID": "about.html#undergraduate-researchers",
+    "href": "about.html#undergraduate-researchers",
+    "title": "About the Washburn Lab",
+    "section": "Undergraduate Researchers",
+    "text": "Undergraduate Researchers\n\nGrace Sidberry \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nMadi Mitchell \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nMorgan Mathison \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nEmma Leary \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "objectID": "about.html#staff-1",
+    "href": "about.html#staff-1",
+    "title": "About the Washburn Lab",
+    "section": "Staff",
+    "text": "Staff\n\nKate Guill"
+  },
+  {
+    "objectID": "about.html#undergraduate-researchers-1",
+    "href": "about.html#undergraduate-researchers-1",
+    "title": "About the Washburn Lab",
+    "section": "Undergraduate Researchers",
+    "text": "Undergraduate Researchers\n\nMia Ruppel\n\n\nBrady Blanton"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Washburn Lab Resources",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod\n\n\n\n\n\nKick et al 2023 (G3)\n\n\n\nKick and Washburn 2023 (\\(bioR\\chi iv\\))"
+  },
+  {
+    "objectID": "index.html#drones",
+    "href": "index.html#drones",
+    "title": "Washburn Lab Resources",
+    "section": "Drones",
+    "text": "Drones\nStitching Images with Pix4Dmapper\nStitching Images with Pix4Dmapper: RE-mx Drone"
+  },
+  {
+    "objectID": "index.html#general-logistics",
+    "href": "index.html#general-logistics",
+    "title": "Washburn Lab Resources",
+    "section": "General Logistics",
+    "text": "General Logistics\nTransferring Data Between Computers\nSingularity: RStudio in a box\n In progress: \nOverview: Suggested HPC Workflow\nUsing Open OnDemand"
+  },
+  {
+    "objectID": "index.html#website-operations-and-maintenance",
+    "href": "index.html#website-operations-and-maintenance",
+    "title": "Washburn Lab Resources",
+    "section": "Website Operations and Maintenance",
+    "text": "Website Operations and Maintenance\nAdding Protocols\nWebsite Overview"
+  },
+  {
+    "objectID": "protocols/Drones/Pix4Dmapper_Stitch/index.html",
+    "href": "protocols/Drones/Pix4Dmapper_Stitch/index.html",
+    "title": "Stitching with Pix4Dmapper",
+    "section": "",
+    "text": "Pix4Dmapper is installed on the lambda2 in the dry lab (NOT the Linux lambda)\n\nPassword: █████████-███-███████-██████ (You put it in your password wallet right?😉)\n\nCheck what flights need to be stitched on the To Be Stitched List_2022: Teams > UAV Missions > Files\nLaunch Pix4Dmapper on desktop\nSelect New Project\n\nName file FlightDate(YYMMDD)_camera(m2pro/ANAFI)_FieldName_Pix4D\nCreate In: This PC > Desktop > Pix4D > 202X Fields > “Your Field Name” > 1 Folder called FlightDate(YYMMDD)_drone(m2pro/RE-mx/ANAFI)_FieldName_Pix4D\n\nSelect Images, Click the Add Images… button, file explorer will open.\n\nNavigate to This PC > wldata (Under Network locations) > Field_Data_202X > UAV_images_by_field_202X > Select a Field > Select a folder by Date (YYMMDD) and drone type (m2pro/ANAFI only)\nCtrl + A to select all of the JPGs in the folder, Click Open (images will be selected, green check will appear) then Click Next >\n\nKeep default Image Properties (Pix4D uses the GPS info in drone images), Click Next >\nKeep default settings of Select Output Coordinate System, Click Next >\nProcessing Options Template will open, under Standard select 3D Maps, (Do not check the box next to Start Processing), Click Finish\nAfter the map loads, Import the GCPs\n\nSelect the Project tab\nSelect GCP/MTP Manager…, the GCP Manager Window will open\nIn the GCP Coordinate System click the Edit… button, the Select GCP Coordinate System window will open\n\nCheck the Advanced Coordinate Options box\nClick the From List… button under the Known Coordinate System [m] search bar, Coordinate System window will open\nSelect the following from the dropdown lists\n\nDatum: WGS 1984\nCoordinate System: WGS 84 (Top of list, look for the globe )\n\n\n\nIn the GCP/MTP Table click the Import GCPs… button, the Import Ground Control Points window will open\n\nCoordinates order: Longitude, Latitude, Altitude\nClick Browse…, navigate to This PC > Desktop > Pix4D > 2022 Fields > GCPs > Select your field’s .txt file, Click Open, Click OK, Click OK. The GCPs will appear as blue crosses on the map\nSave Project!\n\n\nInitial Processing\n\nClick the Processing tab on the bottom left side of the window, check the box next to 1. Initial Processing (ensure other boxes are unchecked) )\nClick the Processing Options tab on the bottom left side of the window (gear shape icon), the Processing Options window will open, ensure Initial Processing step is clicked on\n\nClick the Matching tab, in the Matching Strategy header check the Use Geometrically Verified Matching box )\nClick the Calibration tab, under the Camera Optimization header use the Internal Parameters Optimization dropdown box and select All Prior, Click OK, window will close )\nAt the bottom of the screen Click the Start bottom to begin Initial Processing (This will take hours, just leave Pix4D running 😊) )\n\n\nMarking GCPs\n\nAfter initial processing switch to rayCloud view on the left side of the Pix4D Window, Click on the blue GCP marker and Images will open up on the right (I like to uncheck Cameras and Rays for a cleaner map) )\nYou can press hold down to move around the images and zoom in and out to find the GCP (they may not be in every image, that’s ok)\nClick on the center of the GCP to mark it, repeat on 8-15 images. Do this for each GCP.\n\nIn the Selection panel above the Image panel, Click the Apply button occasionally to update and mark the GCPs\nSelect the Process tab at the top of the window\n\nSelect Reoptimize (this will take about 10 minutes), a Warning will come up, Click OK\nGenerate a newQuality Report by Clicking the Process tab and Selecting Generate Quality Report (this will take about 15 minutes). Ensure there are green checks next to the 5 parameters in the Quality Check (if not, troubleshoot w/ help from the Pix4D website)\n\nSave Project!\n\nPoint Cloud and Mesh and DSM, Orthomosaic and Index\n\nCheck the box next to 2. Point Cloud and Mesh and 3. DSM, Orthomosaic and Index, in the processing window (be sure to uncheck the previous step so Pix4D doesn’t rerun and take even longer), Click Start and accept default Processing Options (this will take hours, leave Pix4D running 😊)\nSave Project!\nTo see your 3D map, in the Ray Cloud viewer check the box next to Point Graphs (let it load) and then check the box next to Triangle Meshes. Enjoy!\nUpdate the To Be Stitched List_202X on Teams > UAV Missions > Files\n\nOpen orthomosaic in QGIS.\n\nCreate a directory within the flight directory with the name of the flight directory plus “_QGIS.”\n\nOpen QGIS\nSave project in newly created QGIS directory with flight name plus “_QGIS”.\nGo to Layer -> Add Layer -> Add Raster Layer.\nFind the orthomosaic “.tif” file just created by Metashape. And add it.\nGo to Project -> Properties. Select CRS from the side tab. Change the Coordinate Reference System to “WGS 84 / UTM zone 15N” Authority ID: “EPSG:32615” if needed.\nRotate the image using the controls on the bottom taskbar if needed. Rows should be vertical and ranges horizontal.\n\n\nImport reference grid.\n\nCopy the Reference_grid file from the main field directory to the QGIS directory.\nRename the copied file replacing the field name and year with the flight name. (e.g. “Reference_grid_210717_m2pro_Gen7.gpkg”\nGo to Layer -> Add Layer -> Add Vector Layer.\nSelect the new Reference_Grid file you just renamed and click Open. Then click Add. Then Close.\nRight Click on the newly added layer and go to Properties. Select Symbology in the left hand pane. Select Simple Fill. Change the Fill Color to Transparent Fill. Click ok.\nCheck that the grid lines up properly with the field data. Make any minor adjustments that may be needed."
+  },
+  {
+    "objectID": "protocols/Drones/Pix4Dmapper_Stitch_RE-mx/index.html",
+    "href": "protocols/Drones/Pix4Dmapper_Stitch_RE-mx/index.html",
+    "title": "Stitching with Pix4Dmapper",
+    "section": "",
+    "text": "How to Use Pix4Dmapper to Stitch Drone Images (Micasense Camera – 10 Band (RE-mx))\n\nPix4Dmapper is installed on the lambda2 in the dry lab (NOT the Linux lambda)\nCheck what flights need to be stitched on the To Be Stitched List_2022: Teams > UAV Missions > Files\nLaunch Pix4Dmapper on desktop\nSelect New Project with Camera Rigs\n\nName file FlightDate(YYMMDD)_camera(RE-mx)_FieldName_Pix4D\nCreate In: This PC > Desktop > Pix4D > 2022 Fields > “Your Field Name” > 1 Folder called FlightDate(YYMMDD)_drone(RE-mx)_FieldName_Pix4D\n\nSelect Images, Click the Add Images… button, file explorer will open.\n\nNavigate to This PC > wldata (Under Network locations) > Field_Data_2022 > UAV_images_by_field_2022 > Select a Field > Select a folder by Date (YYMMDD) and drone type (RE-mx only)\nYou’ll see 10 folders, you will add all the images from all the folders\nCtrl + A to select all of the JPGs in the folder, Click Open (images will be selected, green check will appear) then Click Next >\n\nDefine the Camera Rig\n\nEnsure the Rig Model selected is RedEdge-M, parameters are saved, Click Next >\n\nKeep default Image Properties, Click Next >\nKeep default settings of Select Output Coordinate System, Click Next >\nProcessing Options Template will open, under Standard select Ag Multispectral (Do not check the box next to Start Processing), Click Finish\nAfter the map loads, Import the GCPs\n\nSelect the Project tab\nSelect GCP/MTP Manager…, the GCP Manager Window will open\nIn the GCP Coordinate System click the Edit… button, the Select GCP Coordinate System window will open\nCheck the Advanced Coordinate Options box\n\n\n\nClick the From List… button under the Known Coordinate System [m] search bar, Coordinate System window will open\nSelect the following from the dropdown lists 1. Datum: WGS 1984  2. Coordinate System: WGS 84 (Top of list, look for the globe\n\nIn the GCP/MTP Table click the Import GCPs… button, the Import Ground Control Points window will open\nCoordinates order: Longitude, Latitude, Altitude\nClick Browse…, navigate to This PC > Desktop > Pix4D > 2022 Fields > GCPs > Select your field’s .txt file, Click Open, Click OK, Click OK. The GCPs will appear as blue crosses on the map\n\n\n\nSave Project!\n\nInitial Processing\n\nClick the Processing tab on the bottom left side of the window, check the box next to 1. Initial Processing (ensure other boxes are unchecked)\nAccept Default options, Start Processing (~30 min)\n\nMarking GCPs\n\nAfter initial processing switch to rayCloud view on the left side of the Pix4D Window, Click on the blue GCP marker and Images will open up on the right (I like to uncheck Cameras and Rays for a cleaner map)\nYou can press hold down to move around the images and zoom in and out to find the GCP (they may not be in every image, that’s ok)\nClick on the center of the GCP to mark it, repeat on 8-15 images. Do this for each GCP.\nIn the Selection panel above the Image panel, Click the Apply button occasionally to update and mark the GCPs\nSelect the Process tab at the top of the window\nSelect Reoptimize (this will take about 10 minutes), a Warning will come up, Click OK\n\n\n\nGenerate a new Quality Report by Clicking the Process tab and Selecting Generate Quality Report (this will take about 15 minutes). Ensure there are green checks next to the 5 parameters in the Quality Check (if not, troubleshoot w/ help from the Pix4D website)\n\n\n\nSave Project!\n\nPoint Cloud and Mesh and DSM, Orthomosaic and Index\n\nCheck the box next to 2. Point Cloud and Mesh and 3. DSM, Orthomsaic and Index in the processing window (be sure to uncheck the previous step so Pix4D doesn’t rerun and take even longer),\nClick Processing Options for step 3. DSM, Orthomosaic and Index\nGo to the Index Calculator tab to calibrate the 10 bands\n\n\n\nSelect the drop down box next to the Correction Type: and select Camera and Sun Irradiance\nClick Calibrate, the calibration image will open a blue box will appear on. Move the box corners to each corner of the square on the calibration panel (if the auto selected image isn’t good quality/shadows/etc. you can Browse at the top of the window and select a better image)\nEnter these reflectance factors into each camera 1. Blue – 0.54011 2. Green – 0.54109 3. Red – 0.53888 4. NIR – 0.53488 5. RedEdge – 0.53795 6. Blue 444 – 0.53983 7. Green 531 – 0.54076 8. Red 650 – 0.53960 9. RedEdge 705 – 0.53825 10. RedEdge 740 – 0.53700\n\n\n\n\nAccept all other default settings and Start processing steps 2. and 3. (~1.5 hrs)\nSave Project, update To Be Stitched List! 😊"
+  },
+  {
+    "objectID": "protocols/Logistics/Container_Singularity_Rstudio/index.html",
+    "href": "protocols/Logistics/Container_Singularity_Rstudio/index.html",
+    "title": "Building an RStudio Singularity Container",
+    "section": "",
+    "text": "mkdir rstudio_container\ncd rstudio_container\n# \nmkdir -p run var-lib-rstudio-server\nprintf 'provider=sqlite\\ndirectory=/var/lib/rstudio-server\\n' > database.conf\nmkdir home\n\n\n\nRStudio stores your user preferences in rstudio-prefs.json. This file is in AppData/Roaming/RStudio on windows and ~/.config/rstudio on OSX/Linux.\nmkdir ide_settings\nCopy this file to ide_settings. It should look similar to this:\n{\n    \"save_workspace\": \"never\",\n    \"always_save_history\": false,\n    \"reuse_sessions_for_project_links\": true,\n    \"posix_terminal_shell\": \"bash\",\n    \"initial_working_directory\": \"~\",\n    \"panes\": {\n        \"quadrants\": [\n            \"Source\",\n            \"TabSet1\",\n            \"Console\",\n            \"TabSet2\"\n        ],\n        \"tabSet1\": [\n            \"Environment\",\n            \"History\",\n            \"Connections\",\n            \"Build\",\n            \"VCS\",\n            \"Tutorial\",\n            \"Presentation\"\n        ],\n        \"tabSet2\": [\n            \"Files\",\n            \"Plots\",\n            \"Packages\",\n            \"Help\",\n            \"Viewer\",\n            \"Presentations\"\n        ],\n        \"hiddenTabSet\": [],\n        \"console_left_on_top\": false,\n        \"console_right_on_top\": true,\n        \"additional_source_columns\": 0\n    },\n    \"editor_theme\": \"Clouds Midnight\"\n}\n\n\n\nln -s /mnt/c/Users/drk8b9/Documents/LabProtocols/\n(links can be removed with unlink [link name])\n\n\n\nsudo singularity pull docker://rocker/rstudio:4.2 Once this is complete there should be a container file present: rstudio_4.2.sif.\n(for customization construct a .def flie)\nrefer to the Rocker Project for more details on the available containers.\n\n\n\nTo make use of the we need to run the container which will setup the path we need to bind our preferences to.\nsingularity exec \\\n  --bind run:/run \\\n  --bind var-lib-rstudio-server:/var/lib/rstudio-server \\\n  --bind database.conf:/etc/rstudio/database.conf \\\n  --bind home:/home \\\n  rstudio_4.2.sif \\\n  /usr/lib/rstudio-server/bin/rserver \\\n  --www-address=127.0.0.1 \\\n  --www-port=8700 \\\n  --server-user=rstudio\n  \n# note the arguments under --bind can be passed in on one line with ',' separating them. They are included separately to increase readability.\nPress ctrl+c to exit the container. Now this container can be run with --bind ide_settings:/home/rstudio/.config/rstudio/ \\ to use preferred settings."
+  },
+  {
+    "objectID": "protocols/Logistics/Container_Singularity_Rstudio/index.html#using-the-container",
+    "href": "protocols/Logistics/Container_Singularity_Rstudio/index.html#using-the-container",
+    "title": "Building an RStudio Singularity Container",
+    "section": "Using the container",
+    "text": "Using the container\nsingularity exec \\\n  --bind run:/run \\\n  --bind var-lib-rstudio-server:/var/lib/rstudio-server \\\n  --bind database.conf:/etc/rstudio/database.conf \\\n  --bind home:/home \\\n  --bind LabProtocols:/home/rstudio/LabProtocols \\\n  --bind ide_settings:/home/rstudio/.config/rstudio/ \\\n  rstudio_4.2.sif \\\n  /usr/lib/rstudio-server/bin/rserver \\\n  --www-address=127.0.0.1 \\\n  --www-port=8700 \\\n  --server-user=rstudio\n  \n# note, you can also bind a folder or file by it's full path. For me on WSL this would be\n# --bind /mnt/c/Users/drk8b9/Documents/LabProtocols:/home/rstudio/LabProtocols \\\nLogin with defaults: “rstudio” and “rstudio”."
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Generic_Workflow/index.html",
+    "href": "protocols/Logistics/HPC_Generic_Workflow/index.html",
+    "title": "Generic HPC Workflow",
+    "section": "",
+    "text": "flowchart LR\n\n%% Parts\nsubgraph PC\n    subgraph PC_Containers\n        def --> sif\n        kern[kernel.json]\n    end\n    subgraph PC_Proj\n        PC_data[/Data/]\n        PC_code[Code]\n    end\n    subgraph PC_Sess\n        PC_shell[Bash session]\n        PC_web[Web browser]\n    end\nend\n\n\nsubgraph HPC\n    HPC_shell[Bash over SSH]\n    ood[Open \\nOnDemand]\n    subgraph HPC_User[\"`home/first.last`\"]\n        HPC_sif\n        HPC_kern[kernel.json]\n    end\n    subgraph HPC_Proj[\"`/project/project_name`\"]\n        HPC_data[/Data/]\n        HPC_code[Code]      \n    end\nend\n\n%% Connections\nPC_data -- dtn --> HPC_data\nPC_code -- dtn --> HPC_code\n\nsif -- dtn --> HPC_sif\nkern -- dtn --> HPC_kern\n\nPC_shell -- login --> HPC_shell\n\nHPC_kern --> ood\nHPC_code --> ood\nHPC_data --> ood \nPC_web --> ood"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Generic_Workflow/index.html#tldr",
+    "href": "protocols/Logistics/HPC_Generic_Workflow/index.html#tldr",
+    "title": "Generic HPC Workflow",
+    "section": "TLDR;",
+    "text": "TLDR;\n\nhttps://atlas-ood.hpc.msstate.edu/"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Generic_Workflow/index.html#ceres-vs-atlas",
+    "href": "protocols/Logistics/HPC_Generic_Workflow/index.html#ceres-vs-atlas",
+    "title": "Generic HPC Workflow",
+    "section": "Ceres vs Atlas",
+    "text": "Ceres vs Atlas\nMost of our work is done on Atlas so you’ll need to use this url https://atlas-ood.hpc.msstate.edu/. SciNet may direct you to Ceres instead https://ceres-ood.scinet.usda.gov/. If you login to Ceres, you’ll see the same project directories but any data will be missing.\nTo login you’ll need an authenticator code in addition to your login info. Your user name will be the same for both HPCs but the password should differ.\nIn this example I want a gpu compitable container with jupyter allowing deep neural network development on Atlas.\nBare bones .def file\nBootstrap: docker\nFrom: nvcr.io/nvidia/pytorch:23.04-py3"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Generic_Workflow/index.html#testing-container",
+    "href": "protocols/Logistics/HPC_Generic_Workflow/index.html#testing-container",
+    "title": "Generic HPC Workflow",
+    "section": "Testing container:",
+    "text": "Testing container:\n\nBuild sandbox container: singularity build --sandbox jnb jupyter.def\nTest for pytorch & jupyter locally: singularity shell jnb python -c “import torch; print( torch.cuda.is_available() )” jupyter-notebook # then check on browser exit\nTest for pytorch on lambda:\nAdd in jupyter:"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Generic_Workflow/index.html#finalizing-container",
+    "href": "protocols/Logistics/HPC_Generic_Workflow/index.html#finalizing-container",
+    "title": "Generic HPC Workflow",
+    "section": "Finalizing container",
+    "text": "Finalizing container\n\nFinalize\nAdd"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Generic_Workflow/index.html#the-cycle",
+    "href": "protocols/Logistics/HPC_Generic_Workflow/index.html#the-cycle",
+    "title": "Generic HPC Workflow",
+    "section": "“The cycle”",
+    "text": "“The cycle”\n\nIdentify new needs (libraries, tools)\nEdit .def\nVersion control\nbuild container\nSend to HPC"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Moving_Data/index.html",
+    "href": "protocols/Logistics/HPC_Moving_Data/index.html",
+    "title": "Moving Data from Computer to Computer",
+    "section": "",
+    "text": "Globus is the recommended way to move data from your local computer to the cluster. It is a service run from uchicago and allows you to move data using a web browser. Refer to SciNet’s install instructions.\nOnce installed you’ll need to link any remote storage. Atlas’ collection name is msuhpc2#Atlas-dtn. Linking it will require logging in with  with your Ceres password. \n\nOnce linked, you’ll be able to move data between linked drives."
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Moving_Data/index.html#rsync-and-scp",
+    "href": "protocols/Logistics/HPC_Moving_Data/index.html#rsync-and-scp",
+    "title": "Moving Data from Computer to Computer",
+    "section": "Rsync and scp",
+    "text": "Rsync and scp\nCommand line tools like rsync and scp can be used to move files between workstations in the lab or to a cluster. To move data to or from Atlas one would use the following and then provide your password and authentication code.\nscp ./file <SCINet UserID>@Atlas-dtn.hpc.msstate.edu:/path/to/destination\nNote that the computer you’re connecting to is Atlas-dtn.hpc.msstate.edu instead of Atlas-Login.hpc.msstate.edu. This will access a data transfer node leaving the login nodes free for others to use.\nIf you need to move a directory, use the recursive flag -r or use rsync. With the latter this might look like:\nrsync -azv --progress ./file <SCINet UserID>@Atlas-dtn.hpc.msstate.edu:/path/to/destination\nThe options here ensure the file permissions are maintained (-a archive), files are zipped before transfer (-z zip), information is written to standard output (-v verbose), and transfer progress is provided (--progress)."
+  },
+  {
+    "objectID": "protocols/Operations/Authoring_Protocols/index.html",
+    "href": "protocols/Operations/Authoring_Protocols/index.html",
+    "title": "Authoring Protocols",
+    "section": "",
+    "text": "Authoring and editing protocols is meant to be easy an accessible. There’s no wrong way to do it so long as you send documentation of the what you want added to a lab member with access to the website. That being said, the form of this documentation falls in different “levels” and the higher the level the faster you’re work will be accessible to everyone 😃. If you send a document it will go through each of these levels before being posted."
+  },
+  {
+    "objectID": "protocols/Operations/Authoring_Protocols/index.html#level-1-word-document",
+    "href": "protocols/Operations/Authoring_Protocols/index.html#level-1-word-document",
+    "title": "Authoring Protocols",
+    "section": "Level 1: Word Document",
+    "text": "Level 1: Word Document\n\nHere’s an example protocol. It has clearly written steps, useful images, and an informative title. This is a great start!"
+  },
+  {
+    "objectID": "protocols/Operations/Authoring_Protocols/index.html#level-2-word-document-images-on-the-side",
+    "href": "protocols/Operations/Authoring_Protocols/index.html#level-2-word-document-images-on-the-side",
+    "title": "Authoring Protocols",
+    "section": "Level 2: Word Document, Images on the side",
+    "text": "Level 2: Word Document, Images on the side\nBefore a protocol can become a webpage the pictures need to be removed. Unlike a word document which contains the pictures within it, the Quarto documents for this site contain links to the images. For instance, the picture above is ![](Picture1.png) under the hood.\nThe steps to go from Level 1 to Level 2 are:\n\nSave each of the images that were in the document\n\nA handy trick for this is to copy the picture you want from word to powerpoint. Then you can right click and select “Save as Picture” to get the file.\nIf you want annotations (like the red boxes above) you can also do that in powerpoint. Select the image and annotations, right click and select “Group”. Then you can save the whole group as a picture.\n\nIn the place of a picture type ![](PictureName.png) so it’s clear where each picture belongs.\n\nPicture names can be descriptive (“StitchProtocolPage1.png”) or numbered (“Picture1.png”)."
+  },
+  {
+    "objectID": "protocols/Operations/Authoring_Protocols/index.html#level-3-quarto-document-images-on-the-side-in-a-zipped-folder",
+    "href": "protocols/Operations/Authoring_Protocols/index.html#level-3-quarto-document-images-on-the-side-in-a-zipped-folder",
+    "title": "Authoring Protocols",
+    "section": "Level 3: Quarto Document, Images on the side, in a Zipped Folder",
+    "text": "Level 3: Quarto Document, Images on the side, in a Zipped Folder\nWhen your protocol is at this level, it’s basically ready for the the website. The big change here is that the protocol is stored in as a “Quarto Markdown File”. Once you’ve completed these steps submit a request to get your 💻🧙 badge.\nBy the end you’ll have a folder with a Quarto file (index.qmd) and several images. The protocol shown above (Stitching Images with Pix4Dmapper), started as a folder called “Pix4Dmapper_Stitch” that looks like this:\n\n\nOpen RStudio and create a new Quarto Document. \nYou’ll see a pop up like this. You can title it now or handle that later.\n\n\n\nRStudio has two visualizing options. Visual and Source. Both are useful but I’d recommend using Visual most of the time.\nVisual:\n\n\nSource:\n\n\nThe ![](Picture1.png) won’t be treated properly if it’s pasted in while RStudio is in “Visual” mode. You can switch into “Source” to correct this or click on the small image icon by “Format” to insert an image.\nThere’s the stitching protocol after I converted it to a Quarto document. One thing to notice is that font color takes some effort. The text that was red in the word document is surrounded by <font color=\"red\"> and </font>. When this page is converted into html this will be processed and show up nicely (but not until then).\nVisual:\n\n\nSource:\n\n\nSave your file as index.qmd in the same folder as the images for the file.\nFinally, zip this folder and send it to be added to the site!"
+  },
+  {
+    "objectID": "protocols/Operations/Website_Overview/index.html",
+    "href": "protocols/Operations/Website_Overview/index.html",
+    "title": "Website Overview",
+    "section": "",
+    "text": "The easiest way to get the desktop version working is to create a new website or blog and render it. Any missing packages will cause an error. After it builds successfully, you can discard the newly made project directory and switch to this one.\n\nIn RStudio, select File > New Project > New Directory and select either Quarto Website or Quarto Blog.\n\nFollow the remaining prompts placing the project directory in a location where it will be easy to remove.\nThe template site will look like this. Since the focus here is checking dependencies we won’t go into what each of these documents are but Quarto’s documentation is quite good if you would like to learn more.\n\nNote that there are two render buttons. The one on the top pane renders a single document. This is useful to check how a document looks without rebuilding the entire website or for updating a document that is “frozen” and will not be re-rendered when the website is built. The second one under the build tab and will setup the website when run. Render index.qmd now and address any errors (missing libraries) that come up.\nNow render the website. Your default web browser should open to localhost:#### . The page will look like this: \nNow you are ready to build the documentation site! You can close the RStudio project, delete it, and switch to the website repository.\n\n\n\n\nThis is a terse variant of these instructions.\nmkdir rstudio_container && cd rstudio_container\n\n# Add necessary subfolders -----------------------------------------------------\nmkdir -p run var-lib-rstudio-server\nprintf 'provider=sqlite\\ndirectory=/var/lib/rstudio-server\\n' > database.conf\nmkdir home\n\n# Add in preferences -----------------------------------------------------------\nmkdir ide_settings\n# if you're running from within the WSL\n# cp /mnt/c/Users/<USER NAME>/AppData/Roaming/RStudio/rstudio-prefs.json ./ide_settings/\n# if you're running from OSX/Linux\n# cp ~/.config/rstudio/rstudio-prefs.json ./ide_settings/\n\n# Create container with publishing capabilities --------------------------------\necho \"Bootstrap: docker\\nFrom: rocker/verse:4.2\" > RStudio.def\nsudo singularity build RStudio.sif RStudio.def \n\n# Initial run without preferences ----------------------------------------------\nsingularity exec \\\n  --bind run:/run \\\n  --bind var-lib-rstudio-server:/var/lib/rstudio-server \\\n  --bind database.conf:/etc/rstudio/database.conf \\\n  --bind home:/home \\\n  --bind /mnt/c/Users/drk8b9/Documents/LabProtocols:/home/rstudio/LabProtocols \\\n  --bind ide_settings:/home/rstudio/.config/rstudio/ \\\n  RStudio.sif \\\n  rserver \\\n  --www-address=127.0.0.1 \\\n  --www-port=8700 \\\n  --server-user=rstudio\n  \n# Then shutdown server."
+  },
+  {
+    "objectID": "protocols/Operations/Website_Overview/index.html#project-root",
+    "href": "protocols/Operations/Website_Overview/index.html#project-root",
+    "title": "Website Overview",
+    "section": "Project Root",
+    "text": "Project Root\nLet’s look at this project from a high level. In this directory there’s an Rproj (that you’ve opened), documents for the landing page (index.qmd) and about (about.qmd) pages, directories for protocols and info on people, documents that control the website style and layour (_quarto.yml, styles.css), and a folder that contains the generated html pages (_site).\nLabProtocols\n├── LabProtocols.Rproj\n├── _quarto.yml\n├── _site\n├── about.qmd\n├── index.qmd\n├── people\n├── protocols\n└── styles.css\nThe index.qmd file contains links to protocols. Whenever new pages are added they should be linked here to be visible. The about.qmd file has information on the lab and it’s members. Lab member pictures are pulled from /people/ so any new pictures should be added there along with any personal pages (e.g. if we want to link student resumes). Additional folders could be added to hold assests that may be useful. For instance, we could add a /papers/ folder and link from index.qmd to the lab’s papers. This would be helpful for on boarding."
+  },
+  {
+    "objectID": "protocols/Operations/Website_Overview/index.html#protocols",
+    "href": "protocols/Operations/Website_Overview/index.html#protocols",
+    "title": "Website Overview",
+    "section": "Protocols",
+    "text": "Protocols\nThe protocols folder is where most of the work happens. Inside it there are subfolders to roughly group protocols. Right now it contains Drones, Logistics, and Operations. Other useful groups might include Rootbot, Wet Lab, and Field Work. Each protocol page is a folder within one of these groups. For consistency it should be named in Capitalized_Snakecase and contain a Quarto document called index.qmd. There may be images in this folder as well. See the documentation on preparing protocols.\nprotocols\n├── Drones\n│   └── Pix4Dmapper_Stitch\n│       ├── Picture1.png\n│       ├── ...\n│       ├── Picture8.png\n│       └── index.qmd\n├── Logistics\n└── Operations"
+  },
+  {
+    "objectID": "protocols/Operations/Website_Overview/index.html#making-new-protocols",
+    "href": "protocols/Operations/Website_Overview/index.html#making-new-protocols",
+    "title": "Website Overview",
+    "section": "Making new protocols",
+    "text": "Making new protocols\nThe easiest way to make a new protocol is to copy the folder for an existing protocol and modify that. Give the folder an informative, Capitalized_Snakecase name and delete any photos or other artifacts that you don’t need. Then open up the index.qmd file and begin editing it.\nAt the top of the file you’ll see some YAML which provides metadata for the page.\n---\ntitle: \"Building an RStudio Singularity Containers\"\nauthor: \"Daniel Kick\"\ndate: \"5/31/2023\"\ndate-modified: \"5/31/2023\"\nexecute:\n  freeze: true\n---\nNote the last two lines here. At present this document is frozen so it will not be re-rendered when the website is built. This means that to update this page you’ll need to click the “Render” button on it before rendering the website. Any pages with code that rely on non-standard libraries should be frozen (so that other people don’t need those installed to rebuild the site) but it is okay to remove these lines while working on a protocol."
+  },
+  {
+    "objectID": "protocols/Operations/Website_Overview/index.html#making-protocols-visible",
+    "href": "protocols/Operations/Website_Overview/index.html#making-protocols-visible",
+    "title": "Website Overview",
+    "section": "Making protocols visible",
+    "text": "Making protocols visible\nOnce a protocol is added it needs to be linked on the index.qmd in the project root so it is accessible. Open that document and add a link to the html version of the file. For example, this page is linked on that page as [Website Overview](/protocols/Operations/Website_Overview/index.html). Once this is done, rebuild the website by clicking ther “Render Website” button under the “Build” tab."
+  },
+  {
+    "objectID": "protocols/Operations/Website_Overview/index.html#deploying-updates",
+    "href": "protocols/Operations/Website_Overview/index.html#deploying-updates",
+    "title": "Website Overview",
+    "section": "Deploying updates",
+    "text": "Deploying updates\n<font color =“red”> *This section is intentionally left blank. Likely we will deploy through GitHub pages* </font>"
+  }
+]
