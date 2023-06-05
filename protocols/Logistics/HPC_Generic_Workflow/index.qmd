@@ -2,7 +2,6 @@
 title: "Generic HPC Workflow"
 ---
 
-
 ```{mermaid}
 flowchart LR
 
@@ -61,7 +60,6 @@ Most of our work is done on Atlas so you'll need to use this url <https://atlas-
 
 To login you'll need an authenticator code in addition to your login info. Your user name will be the same for both HPCs but the password should differ.
 
-
 In this example I want a gpu compitable container with jupyter allowing deep neural network development on Atlas.
 
 Bare bones .def file
@@ -70,41 +68,33 @@ Bare bones .def file
 Bootstrap: docker
 From: nvcr.io/nvidia/pytorch:23.04-py3
 
-
 ```
 
 ## Testing container:
 
 1.  Build sandbox container: `singularity build --sandbox jnb jupyter.def`
 
-2.  Test for pytorch & jupyter locally:
-singularity shell jnb
-python -c "import torch; print( torch.cuda.is_available() )"
-jupyter-notebook # then check on browser
-exit
+2.  Test for pytorch & jupyter locally: singularity shell jnb python -c "import torch; print( torch.cuda.is_available() )" jupyter-notebook \# then check on browser exit
 
 3.  Test for pytorch on lambda:
 
 4.  Add in jupyter:
 
-
-
-
-
-
 ## Finalizing container
-1. Finalize
 
+1.  Finalize
 
-1. Add 
-
-
-
+2.  Add
 
 ## "The cycle"
-1. Identify new needs (libraries, tools)
-1. Edit .def 
-1. Version control 
-1. build container
-1. Send to HPC
 
+1.  Identify new needs (libraries, tools)
+2.  Edit .def
+3.  Version control
+4.  build container
+5.  Send to HPC
+6.  Development
+    1.  Local or on Open OnDemand
+7.  Run GPU code
+    1.  Local
+    2.  Export notebook to txt and run as script.

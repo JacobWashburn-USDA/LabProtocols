@@ -1,0 +1,87 @@
+---
+title: "Using your Singularity Container with Open OnDemand"
+author: "Daniel Kick"
+date: "6/5/2023"
+date-modified: "6/5/2023"
+execute:
+  freeze: true
+---
+
+In this how-to we'll make a singularity container accessible through Open OnDemand on Atlas. This allows for code on the HPC to be run in the *same* environment used for development locally. To do this, we'll specify a new jupyter kernel that Open OnDemand will connect to.
+
+## Setup
+
+This document assumes you have a pre-built Singularity container (`.sif`) on Atlas. Using a custom container is recommended, but there is at least one container on Atlas that could be used (e.g. `/reference/containers/jupyter-tensorflow/jupyter-tensorflow-2.2.0.sif`). Note that your container should include Jupyter.
+
+1.  Create a symbolic link between your home directory and the project data directory.
+
+``` bash
+cd ~ 
+ln -s /projects/the_labs_project/your_directory
+```
+
+2.  Create a directory to hold your container(s)
+
+``` bash
+mkdir ipython_containers
+```
+
+3.  Use Globus to transfer your container to this folder. In this example, my container is called `tensorflow-21.07-tf2-py3.sif`.
+
+4.  Setup a kernel for your container. This will create configuration files that we will customize. They will be in a folder in `.local/share/jupyter/kernels/`.
+
+``` bash
+module load python
+python3 -m ipykernel install --user --name singularity-tf2py3 --display-name "Python 3 Tensorflow 2"
+```
+
+5.  Customize kernel configuration. Open the new kernel configuration json in in your preferred text editor.
+
+``` bash
+vim .local/share/jupyter/kernels/singularity-tf2py3/kernel.json
+```
+
+6.  Edit the existing file so that it looks like the below. Be sure to edit the container path so that it has your container and username and the `display_name` so that your container is recognizable.\
+
+``` json
+{
+ "argv": [
+  "/apps/singularity-3/singularity-ce-3.11.0/bin/singularity",
+  "exec",
+  "--nv",
+  "-B",
+  "/project",
+  "-B",
+  "/90daydata",
+  "-B",
+  "/reference",
+  "-B",
+  "/local/scratch",
+  "/home/user.name/ipykernel_containers/tensorflow-21.07-tf2-py3.sif",
+  "/usr/bin/python3",
+  "-m",
+  "ipykernel",
+  "-f",
+  "{connection_file}"
+ ],
+ "interrupt_mode": "message",
+ "display_name": "Python 3 Tensorflow 2 Singularity",
+ "language": "python"
+}
+```
+
+## Usage
+
+1.  Log into Open OnDemand and begin a Jupyter session.
+
+2.  Select "Kernel" and "Change kernel". Select your newly defined kernel.
+
+    ![](OOD-Jupyter1.PNG)
+
+3.  Once the kernel starts all your code will be executed in the container!
+
+    ![](OOD-Jupyter2.PNG)
+
+## References
+
+This was inspired by [this MSI article](https://www.msi.umn.edu/content/custom-jupyter-notebooks-using-singularity) and done with the help of James Huston Rogers at MSU. For cases where port forwarding is allowed (remote machines and [some HPCs](https://hackmd.io/@3B-tPhedTxynbhOI9PJ0Jg/ryM16ZSxi) ) that will easier.

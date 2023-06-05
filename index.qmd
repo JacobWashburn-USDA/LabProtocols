@@ -15,6 +15,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ## Lab Papers:
 
 ### Published:
+
 [Kick et al 2023 (G3)](/papers/Kick_et_al_G3_2023.pdf)
 
 ### Preprints:
@@ -39,6 +40,8 @@ list.dirs(path = './protocols/')
 [Transferring Data Between Computers](/protocols/Logistics/HPC_Moving_Data/index.html)
 
 [Singularity: RStudio in a box](/protocols/Logistics/Container_Singularity_Rstudio/index.html)
+
+[Using your Singularity container with Open OnDemand](/protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html)
 
 <font color=blue> *In progress:* </font>
 

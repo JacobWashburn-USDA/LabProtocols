@@ -11,7 +11,7 @@
     "href": "about.html#staff",
     "title": "About the Washburn Lab",
     "section": "Staff",
-    "text": "Staff\n\nJacob Washburn (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nHarper LaFond \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nRaymond Wright \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "text": "Staff\n\nJacob Washburn (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nHarper LaFond \nBadges: 💻🧙\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nRaymond Wright \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
   },
   {
     "objectID": "about.html#post-docs",
@@ -67,7 +67,7 @@
     "href": "index.html#general-logistics",
     "title": "Washburn Lab Resources",
     "section": "General Logistics",
-    "text": "General Logistics\nTransferring Data Between Computers\nSingularity: RStudio in a box\n In progress: \nOverview: Suggested HPC Workflow\nUsing Open OnDemand"
+    "text": "General Logistics\nTransferring Data Between Computers\nSingularity: RStudio in a box\nUsing your Singularity container with Open OnDemand\n In progress: \nOverview: Suggested HPC Workflow\nUsing Open OnDemand"
   },
   {
     "objectID": "index.html#website-operations-and-maintenance",
@@ -144,7 +144,7 @@
     "href": "protocols/Logistics/HPC_Generic_Workflow/index.html#the-cycle",
     "title": "Generic HPC Workflow",
     "section": "“The cycle”",
-    "text": "“The cycle”\n\nIdentify new needs (libraries, tools)\nEdit .def\nVersion control\nbuild container\nSend to HPC"
+    "text": "“The cycle”\n\nIdentify new needs (libraries, tools)\nEdit .def\nVersion control\nbuild container\nSend to HPC\nDevelopment\n\nLocal or on Open OnDemand\n\nRun GPU code\n\nLocal\nExport notebook to txt and run as script."
   },
   {
     "objectID": "protocols/Logistics/HPC_Moving_Data/index.html",
@@ -159,6 +159,34 @@
     "title": "Moving Data from Computer to Computer",
     "section": "Rsync and scp",
     "text": "Rsync and scp\nCommand line tools like rsync and scp can be used to move files between workstations in the lab or to a cluster. To move data to or from Atlas one would use the following and then provide your password and authentication code.\nscp ./file <SCINet UserID>@Atlas-dtn.hpc.msstate.edu:/path/to/destination\nNote that the computer you’re connecting to is Atlas-dtn.hpc.msstate.edu instead of Atlas-Login.hpc.msstate.edu. This will access a data transfer node leaving the login nodes free for others to use.\nIf you need to move a directory, use the recursive flag -r or use rsync. With the latter this might look like:\nrsync -azv --progress ./file <SCINet UserID>@Atlas-dtn.hpc.msstate.edu:/path/to/destination\nThe options here ensure the file permissions are maintained (-a archive), files are zipped before transfer (-z zip), information is written to standard output (-v verbose), and transfer progress is provided (--progress)."
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html",
+    "href": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html",
+    "title": "Using your Singularity Container with Open OnDemand",
+    "section": "",
+    "text": "In this how-to we’ll make a singularity container accessible through Open OnDemand on Atlas. This allows for code on the HPC to be run in the same environment used for development locally. To do this, we’ll specify a new jupyter kernel that Open OnDemand will connect to."
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html#setup",
+    "href": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html#setup",
+    "title": "Using your Singularity Container with Open OnDemand",
+    "section": "Setup",
+    "text": "Setup\nThis document assumes you have a pre-built Singularity container (.sif) on Atlas. Using a custom container is recommended, but there is at least one container on Atlas that could be used (e.g. /reference/containers/jupyter-tensorflow/jupyter-tensorflow-2.2.0.sif). Note that your container should include Jupyter.\n\nCreate a symbolic link between your home directory and the project data directory.\n\ncd ~ \nln -s /projects/the_labs_project/your_directory\n\nCreate a directory to hold your container(s)\n\nmkdir ipython_containers\n\nUse Globus to transfer your container to this folder. In this example, my container is called tensorflow-21.07-tf2-py3.sif.\nSetup a kernel for your container. This will create configuration files that we will customize. They will be in a folder in .local/share/jupyter/kernels/.\n\nmodule load python\npython3 -m ipykernel install --user --name singularity-tf2py3 --display-name \"Python 3 Tensorflow 2\"\n\nCustomize kernel configuration. Open the new kernel configuration json in in your preferred text editor.\n\nvim .local/share/jupyter/kernels/singularity-tf2py3/kernel.json\n\nEdit the existing file so that it looks like the below. Be sure to edit the container path so that it has your container and username and the display_name so that your container is recognizable.\n\n\n{\n \"argv\": [\n  \"/apps/singularity-3/singularity-ce-3.11.0/bin/singularity\",\n  \"exec\",\n  \"--nv\",\n  \"-B\",\n  \"/project\",\n  \"-B\",\n  \"/90daydata\",\n  \"-B\",\n  \"/reference\",\n  \"-B\",\n  \"/local/scratch\",\n  \"/home/user.name/ipykernel_containers/tensorflow-21.07-tf2-py3.sif\",\n  \"/usr/bin/python3\",\n  \"-m\",\n  \"ipykernel\",\n  \"-f\",\n  \"{connection_file}\"\n ],\n \"interrupt_mode\": \"message\",\n \"display_name\": \"Python 3 Tensorflow 2 Singularity\",\n \"language\": \"python\"\n}"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html#usage",
+    "href": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html#usage",
+    "title": "Using your Singularity Container with Open OnDemand",
+    "section": "Usage",
+    "text": "Usage\n\nLog into Open OnDemand and begin a Jupyter session.\nSelect “Kernel” and “Change kernel”. Select your newly defined kernel.\n\nOnce the kernel starts all your code will be executed in the container!"
+  },
+  {
+    "objectID": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html#references",
+    "href": "protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html#references",
+    "title": "Using your Singularity Container with Open OnDemand",
+    "section": "References",
+    "text": "References\nThis was inspired by this MSI article and done with the help of James Huston Rogers at MSU. For cases where port forwarding is allowed (remote machines and some HPCs ) that will easier."
   },
   {
     "objectID": "protocols/Operations/Authoring_Protocols/index.html",
