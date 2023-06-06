@@ -67,7 +67,6 @@ Bare bones .def file
 ```         
 Bootstrap: docker
 From: nvcr.io/nvidia/pytorch:23.04-py3
-
 ```
 
 ## Testing container:

@@ -1,0 +1,65 @@
+---
+title: "Gridding the Reference Flight"
+author: "Madi Mitchell"
+date: "6/06/2023"
+description: How to Use QGIS to grid the reference flight 
+execute:
+  freeze: true
+date-modified: 06/01/2023
+---
+
+## Instructions:
+
+1.  Open QGIS and open a "New Project"
+
+2.  Go to the "Layer" tab at the top, then "Add Raster Layer" - where it says browse, go to the Pix4D folder for the date and field being gridded and find the orthomosaic
+
+3.  When the orthomosaic shows up on the screen, go to the "Rotation" bar in the bottom right corner and change the rotation angle until the orthomosaic is straight (As straight as it can be, doesn't have to be perfect)
+
+4.  To create the origin point where the grid will start from:
+
+    a.  Navigate to the "Layer" tab at the top of toolbar then "Create Layer" then "New Shapefile Layer"
+
+    b.  Save with the name "origin"
+
+    c.  Click the "Toggle Editing" and then "Add Feature" - make the point in the lower left corner above the GCP in between the plants in the first experimental plot
+
+    d.  When the labeling window comes up, name the point "1"
+
+5.  To get to the processing toolbox:
+
+    a.  Go to "Plugins" then "Manage and Install Plugins"
+
+    b.  Re-check the box for "Processing"
+
+    c.  Close the tab and click on the "Setting" icon that looks like a gear and the toolbox will appear
+
+6.  Click on the "R" option and in the drop down menu click "Draw Plots from points" - a window should appear with all of the options for inputting the range and row measurements. To create the grid:
+
+    a.  Based on information from the field map given, enter the number of ranges in the box for "Number of ranges per block" and enter the number of rows in the box for "Number of rows per block"
+
+    b.  In the angle of rotation, enter the opposite (+/-) number of the rotation the orthomosaic is set at, which can be seen in the bottom right corner of the screen
+
+    c.  Make the measurement unit for plot size "feet" and the ID format "serpentine"
+
+    d.  Start the numbering plots should be "bottom left"
+
+    e.  The "Full plot height" and "Data plot height should be the length of each plot in feet and the full plot width and data plot width should be the width of each plot in feet
+
+    f.  Set the Field containing ID to "123 id" (a common error with the script happens when this setting isn't correct)
+
+7.  Go to the log tab at the top of the window to see if the script runs successfully
+
+8.  When the script is finished running, the grid will generate on top of the orthomosaic with the boxes colored in. To make the boxes transparent:
+
+    a.  Click on the layer in the "Layers" Menu on the left side of the screen
+
+    b.  In the dropdown menu, go to "Properties" then "Symbology" on the left side of the window
+
+    c.  Change the fill to the red outline
+
+    d.  Click on the "Simple Line" below "Fill" and change the line width to "Hairline"
+
+    e.  Click "Ok"
+
+9.  Go through each row of the grid checking that each box contains one plot - the plots on the end of each row and range don't need a box because they're border - so when the grid is used for future flights the plots will, for the most part, already be lined up (This step will probably take the longest)

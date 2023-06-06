@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Madi Mitchell">
+<meta name="dcterms.date" content="2023-06-06">
+<meta name="description" content="How to Use QGIS to grid the reference flight">
 
-<title>Generic HPC Workflow</title>
+<title>Gridding the Reference Flight</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,9 +61,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -100,11 +100,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr">TLDR;</a></li>
-  <li><a href="#ceres-vs-atlas" id="toc-ceres-vs-atlas" class="nav-link" data-scroll-target="#ceres-vs-atlas">Ceres vs Atlas</a></li>
-  <li><a href="#testing-container" id="toc-testing-container" class="nav-link" data-scroll-target="#testing-container">Testing container:</a></li>
-  <li><a href="#finalizing-container" id="toc-finalizing-container" class="nav-link" data-scroll-target="#finalizing-container">Finalizing container</a></li>
-  <li><a href="#the-cycle" id="toc-the-cycle" class="nav-link" data-scroll-target="#the-cycle">“The cycle”</a></li>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions:</a></li>
   </ul>
 </nav>
     </div>
@@ -113,126 +109,82 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Generic HPC Workflow</h1>
+<h1 class="title">Gridding the Reference Flight</h1>
 </div>
 
+<div>
+  <div class="description">
+    How to Use QGIS to grid the reference flight
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Madi Mitchell </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 6, 2023</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">June 1, 2023</p>
+    </div>
+  </div>
     
   </div>
   
 
 </header>
 
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
-
-%% Parts
-subgraph PC
-    subgraph PC_Containers
-        def --&gt; sif
-        kern[kernel.json]
-    end
-    subgraph PC_Proj
-        PC_data[/Data/]
-        PC_code[Code]
-    end
-    subgraph PC_Sess
-        PC_shell[Bash session]
-        PC_web[Web browser]
-    end
-end
-
-
-subgraph HPC
-    HPC_shell[Bash over SSH]
-    ood[Open \nOnDemand]
-    subgraph HPC_User["`home/first.last`"]
-        HPC_sif
-        HPC_kern[kernel.json]
-    end
-    subgraph HPC_Proj["`/project/project_name`"]
-        HPC_data[/Data/]
-        HPC_code[Code]      
-    end
-end
-
-%% Connections
-PC_data -- dtn --&gt; HPC_data
-PC_code -- dtn --&gt; HPC_code
-
-sif -- dtn --&gt; HPC_sif
-kern -- dtn --&gt; HPC_kern
-
-PC_shell -- login --&gt; HPC_shell
-
-HPC_kern --&gt; ood
-HPC_code --&gt; ood
-HPC_data --&gt; ood 
-PC_web --&gt; ood
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</div>
-<section id="tldr" class="level2">
-<h2 class="anchored" data-anchor-id="tldr">TLDR;</h2>
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions:</h2>
 <ol type="1">
-<li><a href="https://atlas-ood.hpc.msstate.edu/" class="uri">https://atlas-ood.hpc.msstate.edu/</a></li>
-</ol>
-</section>
-<section id="ceres-vs-atlas" class="level2">
-<h2 class="anchored" data-anchor-id="ceres-vs-atlas">Ceres vs Atlas</h2>
-<p>Most of our work is done on Atlas so you’ll need to use this url <a href="https://atlas-ood.hpc.msstate.edu/" class="uri">https://atlas-ood.hpc.msstate.edu/</a>. SciNet may direct you to Ceres instead <a href="https://ceres-ood.scinet.usda.gov/" class="uri">https://ceres-ood.scinet.usda.gov/</a>. If you login to Ceres, you’ll see the same project directories but any data will be missing.</p>
-<p>To login you’ll need an authenticator code in addition to your login info. Your user name will be the same for both HPCs but the password should differ.</p>
-<p>In this example I want a gpu compitable container with jupyter allowing deep neural network development on Atlas.</p>
-<p>Bare bones .def file</p>
-<pre><code>Bootstrap: docker
-From: nvcr.io/nvidia/pytorch:23.04-py3</code></pre>
-</section>
-<section id="testing-container" class="level2">
-<h2 class="anchored" data-anchor-id="testing-container">Testing container:</h2>
-<ol type="1">
-<li><p>Build sandbox container: <code>singularity build --sandbox jnb jupyter.def</code></p></li>
-<li><p>Test for pytorch &amp; jupyter locally: singularity shell jnb python -c “import torch; print( torch.cuda.is_available() )” jupyter-notebook # then check on browser exit</p></li>
-<li><p>Test for pytorch on lambda:</p></li>
-<li><p>Add in jupyter:</p></li>
-</ol>
-</section>
-<section id="finalizing-container" class="level2">
-<h2 class="anchored" data-anchor-id="finalizing-container">Finalizing container</h2>
-<ol type="1">
-<li><p>Finalize</p></li>
-<li><p>Add</p></li>
-</ol>
-</section>
-<section id="the-cycle" class="level2">
-<h2 class="anchored" data-anchor-id="the-cycle">“The cycle”</h2>
-<ol type="1">
-<li>Identify new needs (libraries, tools)</li>
-<li>Edit .def</li>
-<li>Version control</li>
-<li>build container</li>
-<li>Send to HPC</li>
-<li>Development
-<ol type="1">
-<li>Local or on Open OnDemand</li>
+<li><p>Open QGIS and open a “New Project”</p></li>
+<li><p>Go to the “Layer” tab at the top, then “Add Raster Layer” - where it says browse, go to the Pix4D folder for the date and field being gridded and find the orthomosaic</p></li>
+<li><p>When the orthomosaic shows up on the screen, go to the “Rotation” bar in the bottom right corner and change the rotation angle until the orthomosaic is straight (As straight as it can be, doesn’t have to be perfect)</p></li>
+<li><p>To create the origin point where the grid will start from:</p>
+<ol type="a">
+<li><p>Navigate to the “Layer” tab at the top of toolbar then “Create Layer” then “New Shapefile Layer”</p></li>
+<li><p>Save with the name “origin”</p></li>
+<li><p>Click the “Toggle Editing” and then “Add Feature” - make the point in the lower left corner above the GCP in between the plants in the first experimental plot</p></li>
+<li><p>When the labeling window comes up, name the point “1”</p></li>
 </ol></li>
-<li>Run GPU code
-<ol type="1">
-<li>Local</li>
-<li>Export notebook to txt and run as script.</li>
+<li><p>To get to the processing toolbox:</p>
+<ol type="a">
+<li><p>Go to “Plugins” then “Manage and Install Plugins”</p></li>
+<li><p>Re-check the box for “Processing”</p></li>
+<li><p>Close the tab and click on the “Setting” icon that looks like a gear and the toolbox will appear</p></li>
 </ol></li>
+<li><p>Click on the “R” option and in the drop down menu click “Draw Plots from points” - a window should appear with all of the options for inputting the range and row measurements. To create the grid:</p>
+<ol type="a">
+<li><p>Based on information from the field map given, enter the number of ranges in the box for “Number of ranges per block” and enter the number of rows in the box for “Number of rows per block”</p></li>
+<li><p>In the angle of rotation, enter the opposite (+/-) number of the rotation the orthomosaic is set at, which can be seen in the bottom right corner of the screen</p></li>
+<li><p>Make the measurement unit for plot size “feet” and the ID format “serpentine”</p></li>
+<li><p>Start the numbering plots should be “bottom left”</p></li>
+<li><p>The “Full plot height” and “Data plot height should be the length of each plot in feet and the full plot width and data plot width should be the width of each plot in feet</p></li>
+<li><p>Set the Field containing ID to “123 id” (a common error with the script happens when this setting isn’t correct)</p></li>
+</ol></li>
+<li><p>Go to the log tab at the top of the window to see if the script runs successfully</p></li>
+<li><p>When the script is finished running, the grid will generate on top of the orthomosaic with the boxes colored in. To make the boxes transparent:</p>
+<ol type="a">
+<li><p>Click on the layer in the “Layers” Menu on the left side of the screen</p></li>
+<li><p>In the dropdown menu, go to “Properties” then “Symbology” on the left side of the window</p></li>
+<li><p>Change the fill to the red outline</p></li>
+<li><p>Click on the “Simple Line” below “Fill” and change the line width to “Hairline”</p></li>
+<li><p>Click “Ok”</p></li>
+</ol></li>
+<li><p>Go through each row of the grid checking that each box contains one plot - the plots on the end of each row and range don’t need a box because they’re border - so when the grid is used for future flights the plots will, for the most part, already be lined up (This step will probably take the longest)</p></li>
 </ol>
 
 

@@ -35,6 +35,8 @@ list.dirs(path = './protocols/')
 
 [Stitching Images with Pix4Dmapper: RE-mx Drone](/protocols/Drones/Pix4Dmapper_Stitch_RE-mx/index.html)
 
+[Gridding the Reference Flight (QGIS)](/protocols/Drones/QGIS_First_Grid/index.html)
+
 ## General Logistics
 
 [Transferring Data Between Computers](/protocols/Logistics/HPC_Moving_Data/index.html)
