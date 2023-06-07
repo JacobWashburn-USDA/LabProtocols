@@ -98,18 +98,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-up-to-speed" id="toc-getting-up-to-speed" class="nav-link active" data-scroll-target="#getting-up-to-speed">Getting up to speed:</a>
-  <ul class="collapse">
+  <li><a href="#getting-up-to-speed" id="toc-getting-up-to-speed" class="nav-link active" data-scroll-target="#getting-up-to-speed">Getting up to speed:</a></li>
   <li><a href="#lab-papers" id="toc-lab-papers" class="nav-link" data-scroll-target="#lab-papers">Lab Papers:</a>
   <ul class="collapse">
   <li><a href="#published" id="toc-published" class="nav-link" data-scroll-target="#published">Published:</a></li>
   <li><a href="#preprints" id="toc-preprints" class="nav-link" data-scroll-target="#preprints">Preprints:</a></li>
   </ul></li>
-  </ul></li>
   <li><a href="#lab-protocols" id="toc-lab-protocols" class="nav-link" data-scroll-target="#lab-protocols">Lab Protocols</a>
   <ul class="collapse">
   <li><a href="#drones" id="toc-drones" class="nav-link" data-scroll-target="#drones">Drones</a></li>
+  <li><a href="#compututational-logistics" id="toc-compututational-logistics" class="nav-link" data-scroll-target="#compututational-logistics">Compututational Logistics</a>
+  <ul class="collapse">
   <li><a href="#general-logistics" id="toc-general-logistics" class="nav-link" data-scroll-target="#general-logistics">General Logistics</a></li>
+  <li><a href="#working-with-singularity-containers" id="toc-working-with-singularity-containers" class="nav-link" data-scroll-target="#working-with-singularity-containers">Working with Singularity Containers</a></li>
+  <li><a href="#in-progress" id="toc-in-progress" class="nav-link" data-scroll-target="#in-progress"><font color="blue"> <em>In progress:</em> </font></a></li>
+  </ul></li>
+  <li><a href="#rootbot" id="toc-rootbot" class="nav-link" data-scroll-target="#rootbot">Rootbot</a></li>
   <li><a href="#website-operations-and-maintenance" id="toc-website-operations-and-maintenance" class="nav-link" data-scroll-target="#website-operations-and-maintenance">Website Operations and Maintenance</a></li>
   </ul></li>
   </ul>
@@ -143,16 +147,16 @@ ul.task-list li input[type="checkbox"] {
 <li><p>consectetur adipiscing elit,</p></li>
 <li><p>sed do eiusmod</p></li>
 </ul>
-<section id="lab-papers" class="level2">
-<h2 class="anchored" data-anchor-id="lab-papers">Lab Papers:</h2>
-<section id="published" class="level3">
-<h3 class="anchored" data-anchor-id="published">Published:</h3>
+</section>
+<section id="lab-papers" class="level1">
+<h1>Lab Papers:</h1>
+<section id="published" class="level2">
+<h2 class="anchored" data-anchor-id="published">Published:</h2>
 <p><a href="./papers/Kick_et_al_G3_2023.pdf">Kick et al 2023 (G3)</a></p>
 </section>
-<section id="preprints" class="level3">
-<h3 class="anchored" data-anchor-id="preprints">Preprints:</h3>
+<section id="preprints" class="level2">
+<h2 class="anchored" data-anchor-id="preprints">Preprints:</h2>
 <p><a href="./papers/Kick_and_Washburn_BioRxiv_2023.pdf">Kick and Washburn 2023 (<span class="math inline">\(bioR\chi iv\)</span>)</a></p>
-</section>
 </section>
 </section>
 <section id="lab-protocols" class="level1">
@@ -166,15 +170,30 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="./protocols/Drones/Pix4Dmapper_Stitch_RE-mx/index.html">Stitching Images with Pix4Dmapper: RE-mx Drone</a></p>
 <p><a href="./protocols/Drones/QGIS_First_Grid/index.html">Gridding the Reference Flight (QGIS)</a></p>
 </section>
-<section id="general-logistics" class="level2">
-<h2 class="anchored" data-anchor-id="general-logistics">General Logistics</h2>
+<section id="compututational-logistics" class="level2">
+<h2 class="anchored" data-anchor-id="compututational-logistics">Compututational Logistics</h2>
+<section id="general-logistics" class="level3">
+<h3 class="anchored" data-anchor-id="general-logistics">General Logistics</h3>
 <p><a href="./protocols/Logistics/HPC_Moving_Data/index.html">Transferring Data Between Computers</a></p>
+<p><a href="./protocols/Logistics/Do_Nothing_Scripting/index.html">“Do Nothing” Scripting to Progressively Automate tasks</a></p>
+</section>
+<section id="working-with-singularity-containers" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-singularity-containers">Working with Singularity Containers</h3>
 <p><a href="./protocols/Logistics/Container_Singularity_Rstudio/index.html">Singularity: RStudio in a box</a></p>
+<p><a href="./protocols/Logistics/Container_Singularity_PortForward/index.html">Using Port Forwarding to Access Your Jupyter Notebook</a></p>
+<p><a href="./protocols/Logistics/Container_Singularity_From_Conda/index.html">Making a Singularity Container From Your Conda Environment</a></p>
 <p><a href="./protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html">Using your Singularity container with Open OnDemand</a></p>
-<p><font color="blue"> <em>In progress:</em> </font></p>
+</section>
+<section id="in-progress" class="level3">
+<h3 class="anchored" data-anchor-id="in-progress"><font color="blue"> <em>In progress:</em> </font></h3>
 <p><a href="./protocols/Logistics/HPC_Generic_Workflow/index.html">Overview: Suggested HPC Workflow</a></p>
 <p><a href="./protocols/Logistics/HPC_Open_OnDemand/index.html">Using Open OnDemand</a></p>
-<!-- ## Rootbot -->
+</section>
+</section>
+<section id="rootbot" class="level2">
+<h2 class="anchored" data-anchor-id="rootbot">Rootbot</h2>
+<p><a href="./protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html">Restarting the Image Script on the Rootbot’s Pi</a></p>
+<p><a href="./protocols/Rootbot/Using_Sorting_Script/index.html">Using the Image Sorting Script</a></p>
 </section>
 <section id="website-operations-and-maintenance" class="level2">
 <h2 class="anchored" data-anchor-id="website-operations-and-maintenance">Website Operations and Maintenance</h2>

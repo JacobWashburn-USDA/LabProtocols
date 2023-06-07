@@ -12,13 +12,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 -   sed do eiusmod
 
-## Lab Papers:
+# Lab Papers:
 
-### Published:
+## Published:
 
 [Kick et al 2023 (G3)](/papers/Kick_et_al_G3_2023.pdf)
 
-### Preprints:
+## Preprints:
 
 [Kick and Washburn 2023 ($bioR\chi iv$)](/papers/Kick_and_Washburn_BioRxiv_2023.pdf)
 
@@ -26,7 +26,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ```{r, eval=FALSE, echo=FALSE}
 # for finding names of posts
-list.dirs(path = './protocols/')
+list.dirs(path = './protocols')
 ```
 
 ## Drones
@@ -37,21 +37,41 @@ list.dirs(path = './protocols/')
 
 [Gridding the Reference Flight (QGIS)](/protocols/Drones/QGIS_First_Grid/index.html)
 
-## General Logistics
+## Compututational Logistics
+
+### General Logistics
 
 [Transferring Data Between Computers](/protocols/Logistics/HPC_Moving_Data/index.html)
 
+["Do Nothing" Scripting to Progressively Automate tasks](/protocols/Logistics/Do_Nothing_Scripting/index.html)
+
+
+
+### Working with Singularity Containers
+
 [Singularity: RStudio in a box](/protocols/Logistics/Container_Singularity_Rstudio/index.html)
+
+
+[Using Port Forwarding to Access Your Jupyter Notebook ](/protocols/Logistics/Container_Singularity_PortForward/index.html)
+
+[Making a Singularity Container From Your Conda Environment](/protocols/Logistics/Container_Singularity_From_Conda/index.html)
 
 [Using your Singularity container with Open OnDemand](/protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html)
 
-<font color=blue> *In progress:* </font>
+
+### <font color=blue> *In progress:* </font>
 
 [Overview: Suggested HPC Workflow](/protocols/Logistics/HPC_Generic_Workflow/index.html)
 
 [Using Open OnDemand](/protocols/Logistics/HPC_Open_OnDemand/index.html)
 
-<!-- ## Rootbot -->
+
+
+## Rootbot
+
+[Restarting the Image Script on the Rootbot's Pi](/protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html)
+
+[Using the Image Sorting Script](/protocols/Rootbot/Using_Sorting_Script/index.html)
 
 ## Website Operations and Maintenance
 
