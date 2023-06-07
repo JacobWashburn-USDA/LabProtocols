@@ -1,0 +1,76 @@
+---
+title: "Converting your Conda Enviroment to a Singularity Container"
+author: "Daniel Kick"
+date: "6/7/2023"
+date-modified: "6/7/2023"
+execute:
+  freeze: true
+---
+
+For many tasks, building a container is overkill. Using a container will allow the same code to run on an HPC, but for purely local analysis a virtual environment (e.g. using `conda`, `mamba`, `renv`, or `packrat`) will do just fine. This guide supposes you have an analysis developed in a virtual environment (here I assume using `conda`) that needs to be containerized to run on a different machine.
+
+To start out, we need to export our environment's packages to a `.yml` file ([gpu.yml](gpu.yml)). For this example I'm using the `gpu` environment and export the requirements file below.
+
+``` bash
+(base) labmember@MW22-lambda2:$ conda env list
+# conda environments:
+#
+base                  *  /home/labmember/miniconda3
+gpu                      /home/labmember/miniconda3/envs/gpu
+odm                      /home/labmember/miniconda3/envs/odm
+pytorch                  /home/labmember/miniconda3/envs/pytorch
+r_env                    /home/labmember/miniconda3/envs/r_env
+
+(base) labmember@MW22-lambda2:$ conda activate gpu
+(gpu) labmember@MW22-lambda2:$ conda env export > gpu.yml
+(gpu) labmember@MW22-lambda2:$ conda deactivate
+(base) labmember@MW22-lambda2:$
+```
+
+Next, we create a `.def` file ([gpu.def](gpu.def)) that contains `conda` and will download the specified requirements.
+
+``` def
+Bootstrap: docker
+From: continuumio/miniconda3
+
+%files
+    gpu.yml
+
+%environment
+
+%post
+    ENV_NAME=$(head -1 gpu.yml | cut -d' ' -f2)
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> $SINGULARITY_ENVIRONMENT
+    echo "conda activate $ENV_NAME" >> $SINGULARITY_ENVIRONMENT
+
+    . /opt/conda/etc/profile.d/conda.sh
+    conda env create -f gpu.yml -p /opt/conda/envs/$ENV_NAME
+    conda clean --all
+
+%runscript
+    exec "$@"
+```
+
+Build the container like so:
+
+``` bash
+singularity build --fakeroot gpu.sif gpu.def
+```
+
+And then we can test that the default python is conda ...
+
+``` bash
+labmember@MW22-lambda2:$ singularity exec gpu.sif which python
+/opt/conda/envs/gpu/bin/python
+```
+
+... and that it still can access the host gpus.
+
+``` bash
+labmember@MW22-lambda2:$ singularity exec --nv gpu.sif python -c "import torch; print(torch.cuda.is_available())"
+True
+```
+
+## References
+
+The def file used here was modified from [this guide](https://csc-training.github.io/csc-env-eff/hands-on/singularity/singularity_extra_replicating-conda.html) (which uses apptainer).

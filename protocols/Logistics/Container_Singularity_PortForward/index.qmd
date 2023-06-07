@@ -1,0 +1,35 @@
+---
+title: "Testing (and using) your Singularity Container with Port Forwarding"
+author: "Daniel Kick"
+date: "6/7/2023"
+date-modified: "6/7/2023"
+execute:
+  freeze: true
+---
+
+Note: this how to guide assumes that you have a working container with jupyter installed. See [this page](/protocols/Logistics/Container_Singularity_From_Conda/index.html) for details on setting up the `gpu.sif` container used here.
+
+There are two steps to access jupyter remotely. First, start jupyter in the container. This can be done like so
+
+``` bash
+singularity exec --nv gpu.sif jupyter notebook --no-browser --port=8887
+```
+
+or can be started within a shell in the container if desired.
+
+``` bash
+user.name$ singularity shell --nv gpu.sif
+Singularity> jupyter notebook --no-browser --port=8887
+```
+
+Note that here the `--nv` flag is not needed if gpu access is not desired. Further we're specifying a port to be used for the notebook.
+
+If the above is being run on a remote machine that allows port forwarding then we can open a `ssh` session from the local machine to connect the remote port (8887) to a local port. Here we use the same port number but if that one is busy another could be used.
+
+``` bash
+ssh -N -f -Y -L 8887:localhost:8887 labmember\@10.206.28.81
+```
+
+After this session is active, then you can interact with jupyter as you normally would.
+
+![](Picture1.png)

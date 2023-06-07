@@ -164,6 +164,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#other-considerations" id="toc-other-considerations" class="nav-link" data-scroll-target="#other-considerations">Other Considerations</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -267,6 +268,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Once the kernel starts all your code will be executed in the container!</p>
 <p><img src="OOD-Jupyter2.PNG" class="img-fluid"></p></li>
 </ol>
+</section>
+<section id="other-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="other-considerations">Other Considerations</h2>
+<p>Some containers (see below) use a python other than <code>/usr/bin/python3</code> as the default python. This will cause <code>ipykernel</code> to not be found when executed. The solution is to check the location of the default python in the container like so:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">singularity</span> exec container.sif which python</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note the location and correct the path in <code>kernel.json</code>. In the case of the container created with the below <code>.def</code> file the path is <code>/opt/conda/bin/python</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode def code-with-copy"><code class="sourceCode modula2"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Bootstrap: docker</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>From: pytorch/pytorch:<span class="dv">2</span>.<span class="dv">0.1</span>-cuda11<span class="dv">.7</span>-cudnn8-runtime</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>%post</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    apt-get update</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    apt-get upgrade -y</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    ldconfig</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    apt-get install -y python3-pip</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    pip3 install --upgrade pip</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    echo <span class="st">'ipykernel==6.15.1</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>ipython==<span class="dv">8</span>.<span class="dv">4.0</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>ipython-genutils==<span class="dv">0</span>.<span class="dv">2.0</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>ipywidgets==<span class="dv">7</span>.<span class="dv">7.1</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>jupyter==<span class="dv">1</span>.<span class="dv">0.0</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>jupyter-client==<span class="dv">7</span>.<span class="dv">3.4</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>jupyter-console==<span class="dv">6</span>.<span class="dv">4.4</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>jupyter-core==<span class="dv">4</span>.<span class="dv">11.1</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>jupyter-server==<span class="dv">1</span>.<span class="dv">18.1</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>jupyterlab==<span class="dv">3</span>.<span class="dv">4.4</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>jupyterlab-pygments==<span class="dv">0</span>.<span class="dv">2.2</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>jupyterlab-server==<span class="dv">2</span>.<span class="dv">15.0</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>jupyterlab-widgets==<span class="dv">1</span>.<span class="dv">1.1</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>nbclassic==<span class="dv">0</span>.<span class="dv">4.3</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>nbclient==<span class="dv">0</span>.<span class="dv">6.6</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>nbconvert==<span class="dv">6</span>.<span class="dv">5.0</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>nbformat==<span class="dv">5</span>.<span class="dv">4.0</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>notebook==<span class="dv">6</span>.<span class="dv">4.12</span><span class="st">' &gt; requirements.txt</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    pip3 install -r requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>

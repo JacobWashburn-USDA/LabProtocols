@@ -1,0 +1,56 @@
+---
+title: "Working Towards Automation: Do Nothing Scripting"
+author: "Daniel Kick"
+date: "6/7/2023"
+date-modified: "6/7/2023"
+execute:
+  freeze: true
+---
+
+"[Do Nothing Scripting](https://blog.danslimmon.com/2019/07/15/do-nothing-scripting-the-key-to-gradual-automation/)" is a great practice. In brief the idea is to begin with a script that prints the instructions for a task but *does not* execute the instructions. Rahter it waits until the user presses a key or otherwise confirms that the task has been completed. Think of it like a check list -- it contains the instructions and will display them as you complete them. 
+
+In our lab the main languages we use are `python`, `R`, and `bash`. In each of these languages the following functions would suspend the script until the user is ready to proceed.
+
+
+``` python
+# python
+def wait_for_enter():
+    input("Press a key to continue.")
+    
+wait_for_enter()
+```
+
+``` r
+# R
+wait_for_enter <- function(){
+  readline(prompt = "Press a key to continue.")
+}
+
+wait_for_enter()
+```
+
+``` bash
+# bash
+wait_for_enter(){
+ echo "Press a key to continue."
+ read -n 1 INVALUE
+}
+
+wait_for_enter
+```
+
+Do nothing scripting can allow for steps that may change to be dynamically updated as in this example of in the rootbot sorting script. The jupyter notebook prints out instructions for the user to complete externally.
+
+``` python
+print("""Instructions:
+1. Go to """+path_base+'Experiments/'+experiment+"""
+2. Run rsync -azv --files-from=./send_files.txt ./ ../dest/
+   or if remote -azv --files-from:=./send_files.txt ./ ../dest/
+""")
+```
+
+It also allows for steps in that process to be automated over time. A step can begin as a list of instructions and ultimately be replaced by a function or external script. 
+
+
+
+
