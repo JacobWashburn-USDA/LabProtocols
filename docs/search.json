@@ -4,39 +4,11 @@
     "href": "about.html",
     "title": "About the Washburn Lab",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    "text": "Badges: [💻🧙, ]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBadges: [💻🧙, ]"
   },
   {
     "objectID": "about.html#staff",
     "href": "about.html#staff",
-    "title": "About the Washburn Lab",
-    "section": "Staff",
-    "text": "Staff\n\nJacob Washburn (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nHarper LaFond \nBadges: 💻🧙\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nRaymond Wright \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    "objectID": "about.html#post-docs",
-    "href": "about.html#post-docs",
-    "title": "About the Washburn Lab",
-    "section": "Post Docs",
-    "text": "Post Docs\n\nDaniel Kick (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nPiyush Pandey (PhD) \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    "objectID": "about.html#graduate-students",
-    "href": "about.html#graduate-students",
-    "title": "About the Washburn Lab",
-    "section": "Graduate Students",
-    "text": "Graduate Students\n\nShawn Thomas \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nEmma Leary \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    "objectID": "about.html#undergraduate-researchers",
-    "href": "about.html#undergraduate-researchers",
-    "title": "About the Washburn Lab",
-    "section": "Undergraduate Researchers",
-    "text": "Undergraduate Researchers\n\nGrace Sidberry \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nMadi Mitchell \nBadges: 💻🧙\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n\n\nMorgan Mathison \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-  },
-  {
-    "objectID": "about.html#staff-1",
-    "href": "about.html#staff-1",
     "title": "About the Washburn Lab",
     "section": "Staff",
     "text": "Staff\n\nKate Guill"
@@ -53,49 +25,21 @@
     "href": "index.html",
     "title": "Washburn Lab Resources",
     "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod"
+    "text": "Stitching Images with Pix4Dmapper\nStitching Images with Pix4Dmapper: RE-mx Drone\nGridding the Reference Flight (QGIS)\n\n\n\n\n\nTransferring Data Between Computers\n“Do Nothing” Scripting to Progressively Automate tasks\n\n\n\nSingularity: RStudio in a box\nUsing Port Forwarding to Access Your Jupyter Notebook\nMaking a Singularity Container From Your Conda Environment\nUsing your Singularity container with Open OnDemand\n\n\n\nOverview: Suggested HPC Workflow\nUsing Open OnDemand\n\n\n\n\nRestarting the Image Script on the Rootbot’s Pi\nUsing the Image Sorting Script\n\n\n\nAdding Protocols\nWebsite Overview"
   },
   {
     "objectID": "index.html#published",
     "href": "index.html#published",
     "title": "Washburn Lab Resources",
     "section": "Published:",
-    "text": "Published:\nKick et al 2023 (G3)"
+    "text": "Published:\nGenomes to Fields 2022 Maize genotype by Environment Prediction Competition, Lima et al. 2023, BMC Research Notes\nYield prediction through integration of genetic, environment, and management data through deep learning, Kick et al 2023, G3\nDistinct C 4 sub‐types and C 3 bundle sheath isolation in the Paniceae grasses, Washburn et al. 2021, Plant Direct\nPredicting phenotypes from genetic, environment, management, and historical data using CNNs, Washburn et al. 2021, Theoretical and Applied Genetics\nPredictive breeding for maize: Making use of molecular phenotypes, machine learning, and physiological crop models, Washburn et al. 2020, Crop Science"
   },
   {
     "objectID": "index.html#preprints",
     "href": "index.html#preprints",
     "title": "Washburn Lab Resources",
     "section": "Preprints:",
-    "text": "Preprints:\nKick and Washburn 2023 (\\(bioR\\chi iv\\))"
-  },
-  {
-    "objectID": "index.html#drones",
-    "href": "index.html#drones",
-    "title": "Washburn Lab Resources",
-    "section": "Drones",
-    "text": "Drones\nStitching Images with Pix4Dmapper\nStitching Images with Pix4Dmapper: RE-mx Drone\nGridding the Reference Flight (QGIS)"
-  },
-  {
-    "objectID": "index.html#compututational-logistics",
-    "href": "index.html#compututational-logistics",
-    "title": "Washburn Lab Resources",
-    "section": "Compututational Logistics",
-    "text": "Compututational Logistics\n\nGeneral Logistics\nTransferring Data Between Computers\n“Do Nothing” Scripting to Progressively Automate tasks\n\n\nWorking with Singularity Containers\nSingularity: RStudio in a box\nUsing Port Forwarding to Access Your Jupyter Notebook\nMaking a Singularity Container From Your Conda Environment\nUsing your Singularity container with Open OnDemand\n\n\n In progress: \nOverview: Suggested HPC Workflow\nUsing Open OnDemand"
-  },
-  {
-    "objectID": "index.html#rootbot",
-    "href": "index.html#rootbot",
-    "title": "Washburn Lab Resources",
-    "section": "Rootbot",
-    "text": "Rootbot\nRestarting the Image Script on the Rootbot’s Pi\nUsing the Image Sorting Script"
-  },
-  {
-    "objectID": "index.html#website-operations-and-maintenance",
-    "href": "index.html#website-operations-and-maintenance",
-    "title": "Washburn Lab Resources",
-    "section": "Website Operations and Maintenance",
-    "text": "Website Operations and Maintenance\nAdding Protocols\nWebsite Overview"
+    "text": "Preprints:\nEnsemble of BLUP, Machine Learning, and Deep Learning Models Predict Maize Yield Better Than Each Model Alone, Kick and Washburn 2023, \\(bioR\\chi iv\\)"
   },
   {
     "objectID": "protocols/Drones/Pix4Dmapper_Stitch/index.html",
@@ -137,7 +81,7 @@
     "href": "protocols/Logistics/Container_Singularity_PortForward/index.html",
     "title": "Testing (and using) your Singularity Container with Port Forwarding",
     "section": "",
-    "text": "Note: this how to guide assumes that you have a working container with jupyter installed. See this page for details on setting up the gpu.sif container used here.\nThere are two steps to access jupyter remotely. First, start jupyter in the container. This can be done like so\nsingularity exec --nv gpu.sif jupyter notebook --no-browser --port=8887\nor can be started within a shell in the container if desired.\nuser.name$ singularity shell --nv gpu.sif\nSingularity> jupyter notebook --no-browser --port=8887\nNote that here the --nv flag is not needed if gpu access is not desired. Further we’re specifying a port to be used for the notebook.\nIf the above is being run on a remote machine that allows port forwarding then we can open a ssh session from the local machine to connect the remote port (8887) to a local port. Here we use the same port number but if that one is busy another could be used.\nssh -N -f -Y -L 8887:localhost:8887 labmember\\@10.206.28.81\nAfter this session is active, then you can interact with jupyter as you normally would."
+    "text": "There are two steps to access jupyter remotely. First, start jupyter in the container. This can be done like so\nsingularity exec --nv gpu.sif jupyter notebook --no-browser --port=8887\nor can be started within a shell in the container if desired.\nuser.name$ singularity shell --nv gpu.sif\nSingularity> jupyter notebook --no-browser --port=8887\nNote that here the --nv flag is not needed if gpu access is not desired. Further we’re specifying a port to be used for the notebook.\nIf the above is being run on a remote machine that allows port forwarding then we can open a ssh session from the local machine to connect the remote port (8887) to a local port. Here we use the same port number but if that one is busy another could be used.\nssh -N -f -Y -L 8887:localhost:8887 labmember\\@10.206.28.81\nAfter this session is active, then you can interact with jupyter as you normally would."
   },
   {
     "objectID": "protocols/Logistics/Container_Singularity_Rstudio/index.html",
@@ -158,7 +102,7 @@
     "href": "protocols/Logistics/Do_Nothing_Scripting/index.html",
     "title": "Working Towards Automation: Do Nothing Scripting",
     "section": "",
-    "text": "“Do Nothing Scripting” is a great practice. In brief the idea is to begin with a script that prints the instructions for a task but does not execute the instructions. Rahter it waits until the user presses a key or otherwise confirms that the task has been completed. Think of it like a check list – it contains the instructions and will display them as you complete them.\nIn our lab the main languages we use are python, R, and bash. In each of these languages the following functions would suspend the script until the user is ready to proceed.\n# python\ndef wait_for_enter():\n    input(\"Press a key to continue.\")\n    \nwait_for_enter()\n# R\nwait_for_enter <- function(){\n  readline(prompt = \"Press a key to continue.\")\n}\n\nwait_for_enter()\n# bash\nwait_for_enter(){\n echo \"Press a key to continue.\"\n read -n 1 INVALUE\n}\n\nwait_for_enter\nDo nothing scripting can allow for steps that may change to be dynamically updated as in this example of in the rootbot sorting script. The jupyter notebook prints out instructions for the user to complete externally.\nprint(\"\"\"Instructions:\n1. Go to \"\"\"+path_base+'Experiments/'+experiment+\"\"\"\n2. Run rsync -azv --files-from=./send_files.txt ./ ../dest/\n   or if remote -azv --files-from:=./send_files.txt ./ ../dest/\n\"\"\")\nIt also allows for steps in that process to be automated over time. A step can begin as a list of instructions and ultimately be replaced by a function or external script."
+    "text": "In our lab the main languages we use are python, R, and bash. In each of these languages the following functions would suspend the script until the user is ready to proceed.\n# python\ndef wait_for_enter():\n    input(\"Press a key to continue.\")\n    \nwait_for_enter()\n# R\nwait_for_enter <- function(){\n  readline(prompt = \"Press a key to continue.\")\n}\n\nwait_for_enter()\n# bash\nwait_for_enter(){\n echo \"Press a key to continue.\"\n read -n 1 INVALUE\n}\n\nwait_for_enter\nDo nothing scripting can allow for steps that may change to be dynamically updated as in this example of in the rootbot sorting script. The jupyter notebook prints out instructions for the user to complete externally.\nprint(\"\"\"Instructions:\n1. Go to \"\"\"+path_base+'Experiments/'+experiment+\"\"\"\n2. Run rsync -azv --files-from=./send_files.txt ./ ../dest/\n   or if remote -azv --files-from:=./send_files.txt ./ ../dest/\n\"\"\")\nIt also allows for steps in that process to be automated over time. A step can begin as a list of instructions and ultimately be replaced by a function or external script."
   },
   {
     "objectID": "protocols/Logistics/HPC_Generic_Workflow/index.html",
@@ -320,5 +264,82 @@
     "title": "Website Overview",
     "section": "Deploying updates",
     "text": "Deploying updates\n<font color =“red”> *This section is intentionally left blank. Likely we will deploy through GitHub pages* </font>"
+  },
+  {
+    "objectID": "protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html",
+    "href": "protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html",
+    "title": "Restarting the Rootbot Imaging Script over SSH",
+    "section": "",
+    "text": "About half way through an experiment, ssh into the rootbot’s pi.\nCheck that pictures aren’t currently being taken by looking at the timestamps in the pictures directory (ls -lh ~/Pictures)\nFind the process id number (PID) for the script (\nrootBotPhotoScript_23Feb2021.py\n) (e.g. with top or htop)\nEnd the process with kill $pid where $pid is the value from step 3.\ngo to the folder with the script (cd \\~/rootbot/jupyter_notebooks).\nRestart the rootbot script (rootBotPhotoScript_23Feb2021.py). Don’t be fooled by the shebang line, python3 must be explicitly used. The command to do this is nohup python3 rootBotPhotoScript_23Feb2021.py &&. nohup and && ensure the process continues in the background after the terminal is closed. python3 ensures the system’s default python (2) isn’t used. The full path need not be provided for the script because the present working directory is the /jupyter_notebooks folder."
+  },
+  {
+    "objectID": "protocols/Rootbot/Using_Sorting_Script/index.html",
+    "href": "protocols/Rootbot/Using_Sorting_Script/index.html",
+    "title": "Using the Image Sorting Script",
+    "section": "",
+    "text": "On lambda2, move back to “rootbot_dev” with cd \\~/Documents/rootbot_dev\nOn lambda2, start up jupyter without a browser jupyter notebook --no-browser --port=8896\n\n\nOpen a new terminal and connect the jupyter notebook to your machine ssh -N -f -Y -L 8896:localhost:8896 labmember\\@MW22-lambda2\n\n\n\n\n\nOpen a browser and go to http://localhost:8896 (it will change to the url below if everything is okay).\n\nIf you get a login page, you’ll need to copy and paste the token from step 10\n\n\n\nIf you get a different error take a screenshot so we can debug it.\n\nThe screen should now look like this:\n\n\n\nGo to scripts\n\n\n\nOpen the “sortmaster2000”\n\n\n\nRun the script cell by cell until you get to …\n\n\n\n… until you get to this cell which contains instructions on how to get the files to your local computer\n\n\n\nOpen a terminal on lambda2\n\nIf you want to run this command on lambda2\nIt’s okay to open a new ssh session as in step 3\n\n\nIt’s also okay to reuse the terminal running the jupyter notebook. If you want to do this, press “control c”\n\n\n\nFollow the instructions in 17\n\n\nIf you want to run this command locally, on your local machine run rsync -azv --files-from:= labmember\\@MW22-lambda2:\\~/Documents/rootbot_dev/inst/extdata/Pictures/Experiments/\\(\\color{red}{20220915}\\)/send_files.txt ./$\nNote: The red above will need to be customized. The folder will need to be set to the current value and ../dest/ will need to be customized to the location on your computer you want."
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_HPC/index.html",
+    "href": "protocols/TipsAndTricks/Tips_HPC/index.html",
+    "title": "HPC Tips",
+    "section": "",
+    "text": "A handy trick with batched processes on an HPC is that you can start an interactive session in a running session. Here’s an example where I needed to check if I was nearing the maximum allowed memory:\nHere I list my active jobs to get the jobid, run bash on that node, and list the processes by memory usage.\n[daniel.kick@Atlas-login-1 BLUP_G]$ squeue -u daniel.kick\n             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)\n           2491772     atlas   BLUP-W daniel.k  R      39:56      1 Atlas-0025\n[daniel.kick@Atlas-login-1 BLUP_G]$ srun --pty --jobid 2491772 bash\n[daniel.kick@Atlas-0025 BLUP_G]$ htop"
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_Linux/index.html",
+    "href": "protocols/TipsAndTricks/Tips_Linux/index.html",
+    "title": "Linux Tips",
+    "section": "",
+    "text": "Do nothing scripting\n#!/usr/bin/bash\n#-----------------------------------------------------------------------------#\nSTEP='Step 0:'\necho \"$STEP\"\necho \"Run? (y/n)\"; read -n 1 k <&1\nif [[ $k = n ]] ; then\nprintf \"\\nSkipping $STEP\\n\"; fi\nelse\nprintf \"\\nDoing $STEP\\n\"\n# Code for step here:\nNote, Having the condition be on n instead of yes allows for the code (which will vary in length) to be at the end. This makes the control flow easy to see."
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_Python/index.html",
+    "href": "protocols/TipsAndTricks/Tips_Python/index.html",
+    "title": "Python Tips",
+    "section": "",
+    "text": "Python quirk I just learned and think is worth sharing. A missing valued doesn’t equal itself.\nHere’s the context: I’m making a list of values from a column that could not be converted to a date. Missing values can’t be converted so they end up in the list (e.g. [nan, '7/5/21 for pass 2']. So how do we discard this empty value? We use a list comprehension to see if the value is equal to itself ( [val for val in my_list if val == val] ) and will get a nan free list."
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_Python/index.html#caching-with-pickle",
+    "href": "protocols/TipsAndTricks/Tips_Python/index.html#caching-with-pickle",
+    "title": "Python Tips",
+    "section": "3/23/22 Caching with pickle",
+    "text": "3/23/22 Caching with pickle\nHere’s a useful pattern I’ve been getting a lot of mileage out of lately. If you’re running an analysis that has a time consuming step you can save the result as a python readable “pickle” file.\n\nimport pickle as pkl\n\npath = \"./data_intermediates/processed_data.pkl\"\nif os.path.exists(path):\n    processed_data = pkl.load(open(path, 'rb'))\nelse:\n    # Make `processed_data` here\n    pkl.dump(processed_data, open(path, 'wb'))\nThis also lets you batch a process so that you can do more with your resources. For example here’s a list comprehension that will (for each day from 0-287) rearrange the weather data to be in “long” format. This is concise but requires processing the whole list at once which takes a lot of resources.\nsal_long_list = [_get_weather_long(results_list = res,\n                                   current_day = ith_day) for ith_day in np.linspace(start = 0, stop = 287, num = 288)]\nIf we incorporate it into the pattern above we can hold fewer items in memory at a time and then merge them (e.g. with list.extend() ) after the fact.\nor ii in range(3):\n    file_path = '../data/result_intermediates/sal_df_W_long_part_day'+['0-95', \n                                                                       '96-191', \n                                                                       '192-287'][ii]+'.pkl'\n    if os.path.exists(file_path):\n        sal_long_list = pkl.load(open(file_path, 'rb'))\n\n    else:\n        # The original list comprehension is here, \n        # just made messier by selecting a subset of the indices.\n        sal_long_list = [_get_weather_long(                                \n            results_list = res,\n            current_day = current_day) for current_day in [\n            [int(e) for e in np.linspace(start = 0, stop = 95, num = 96)],   # Batch 1\n            [int(e) for e in np.linspace(start = 96, stop = 191, num = 96)], # Batch 2\n            [int(e) for e in np.linspace(start = 192, stop = 287, num = 96)] # Batch 3\n        ][ii]\n        ]\n        pkl.dump(sal_long_list, open(file_path, 'wb'))"
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_Python/index.html#for-those-coming-from-r-silent-in-place-replacement",
+    "href": "protocols/TipsAndTricks/Tips_Python/index.html#for-those-coming-from-r-silent-in-place-replacement",
+    "title": "Python Tips",
+    "section": "2/16/22 For those coming from R: Silent In Place Replacement",
+    "text": "2/16/22 For those coming from R: Silent In Place Replacement\nSilent, in place assignment updating an object This tripped me up even though it’s consistent with how I’ve seen other objects behave. I needed an attribute to hold data extracted from a collection of files in a directory and created a class for this.\nclass hps_search_experiment:\n    def __init__(self, path=\"\", trial_type=''):\n        self.path = path\n        self.trial_type = trial_type\n        self.hps_best_trial = None\n        \n    def process_hps_files(self):\n        # ...\n        \n        self.hps_best_trial = hps_best_trial\nHowever, running like so fails.\ntest = hps_search_experiment(\n    path = './hps_search_intermediates_G/', \n    trial_type = 'rnr')\n    \ntest = test.process_hps_files()\ntest.hps_best_trial\n\n#> AttributeError: 'NoneType' object has no attribute 'hps_best_trial'\nThis had me baffeld because I was thinking with R’s norms of data <- data %>% funciton() where in place replacement is the exception. Instead I needed to be thinking with python’s base object norms (e.g. a_list.extend(['b', 'c']) ). This fails because I overwrote test with the output of the method, which returns notthing since it’s overwriting attributes within test’s scope.\nThese would also work to update the attribute:\nself.hps_best_trial = hps_best_trial\n\nhps_search_experiment.__setattr__(self, \"hps_best_trial\", hps_best_trial)\n\n# if it's initialized as a list\nself.hps_best_trial.append([hps_best_trial]) \n# if a dict is initialized for data\nself.data = {'a':1}\nself.data.update({'hps_best_trial':hps_best_trial})"
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_Python/index.html#reusing-custom-functions",
+    "href": "protocols/TipsAndTricks/Tips_Python/index.html#reusing-custom-functions",
+    "title": "Python Tips",
+    "section": "7/13/21 Reusing custom functions",
+    "text": "7/13/21 Reusing custom functions\nI wanted to reuse a custom function across a few scripts without having copies of the same code in each script. The solution I found is to set up a module to hold these functions. This seems straightforward once you know how it’s done. \n\nSet up a directory containing your functions and a blank file called __init__.py. \n\n Add the directory containing your module directory to the system path (here MaizeModel instead of MaizeModel\\\\library). If you’re on OSX or linux you’ll probably use single forward slashes instead of double backslashes.\n\nFinally import and call your functions.\n\nCaveats: \n\nIt seems that the system path isn’t permanently altered by sys.path.append, so one would need that at the start of the script or modify it some other way.\nIf your custom functions are in the in the same directory as your script, I think you can skip all of this and just import them.\nIf your functions are in a sub-directory of the same directory as your script, I think you can get away without adding the directory to the path."
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_Python/index.html#making-data-easier-to-read",
+    "href": "protocols/TipsAndTricks/Tips_Python/index.html#making-data-easier-to-read",
+    "title": "Python Tips",
+    "section": "6/16/21 Making data easier to read",
+    "text": "6/16/21 Making data easier to read\n# [In]\nprint(results_dictionary)\nprint(\"\\n --------------------------------------------- \\n\")\nimport pprint\npprint.PrettyPrinter(indent=4).pprint(results_dictionary)\n# [Out]\n{'active': True, 'additionalInfo:programDbId': '343', 'additionalInfo:programName': 'UC Davis', 'commonCropName': 'Cassava', 'contacts': None, 'culturalPractices': None, 'dataLinks': [], \n# ...\n'trialDbId': '343', 'trialName': 'UC Davis'}\n--------------------------------------------- \n{   'active': True,\n    'additionalInfo:programDbId': '343',    'additionalInfo:programName': 'UC Davis',    'commonCropName': 'Cassava',    'contacts': None,    'culturalPractices': None,    'dataLinks': [],    # ...    'trialDbId': '343',    'trialName': 'UC Davis'}\nHere’s a tool that some may find useful when working with data that’s not yet in a [DataFrame]. It lets one “pretty-print” an object making any text that would wrap easier to read.\n6/15/21 This or similar sites can be helpful for looking up the right code/library for a plot. You can also find library specific ones. (matplotlib, plotly)\nOne of R’s main plotting libraries, ggplot2, describes plots by layering one component on top of another (e.g. starting with x and y variables, adding points, adding error bars, adding aesthetic adjustments). If that sort of approach appeals to you there is a python version of this library called plotnine (github, example use)."
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_Python/index.html#jupyter-plugins",
+    "href": "protocols/TipsAndTricks/Tips_Python/index.html#jupyter-plugins",
+    "title": "Python Tips",
+    "section": "6/9/21 Jupyter Plugins",
+    "text": "6/9/21 Jupyter Plugins\nI came across a handy set of tools for jupyter. There are of extensions for the notebooks that give you access to code snips, autocomplete by default, rendering a notebook as a slide show, and other features. To get it installed within an anaconda virtual environment you may only need to install it with this command:\nconda install -c conda-forge jupyter_contrib_nbextensions\nI not all of the extensions were showing up for me until I also ran these two lines, so it may take a bit of fiddling to get it to run.\njupyter contrib nbextension install --user\njupyter nbextension enable codefolding/main\nHere’s a linkto a page that shows some of these extensions in action."
+  },
+  {
+    "objectID": "protocols/TipsAndTricks/Tips_R/index.html",
+    "href": "protocols/TipsAndTricks/Tips_R/index.html",
+    "title": "R Tips",
+    "section": "",
+    "text": "R allows for comments to exist in tables. If there’s a # in the table you’re reading (e.g. as a part of a column name like chromosome#) then it can cause an unequal number of values between rows (everything on that line following it is ignored). The solution is to specify the comment character explicitly to be used (it can be ’’ to have no comment characters). Here’s an example:\necho \"a, b, c#, d\" > test_table.txt\n> Rscript -e \"read.table('test_table.txt')\"\n#   V1 V2 V3\n# 1 a, b,  c\n> Rscript -e \"read.table('test_table.txt', comment.char = '')\" # with no comment character, all entries will be read\n#   V1 V2  V3 V4\n# 1 a, b, c#,  d"
   }
 ]

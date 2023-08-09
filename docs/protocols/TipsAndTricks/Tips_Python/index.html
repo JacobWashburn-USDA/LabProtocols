@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Harlow Malloc">
+<meta name="dcterms.date" content="2023-05-24">
+
+<title>- Python Tips</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html">About the Washburn Lab</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#python-trivia-missing-isnt-itself" id="toc-python-trivia-missing-isnt-itself" class="nav-link active" data-scroll-target="#python-trivia-missing-isnt-itself">9/28/22 Python Trivia: Missing isn’t itself</a></li>
+  <li><a href="#caching-with-pickle" id="toc-caching-with-pickle" class="nav-link" data-scroll-target="#caching-with-pickle">3/23/22 Caching with <code>pickle</code></a></li>
+  <li><a href="#for-those-coming-from-r-silent-in-place-replacement" id="toc-for-those-coming-from-r-silent-in-place-replacement" class="nav-link" data-scroll-target="#for-those-coming-from-r-silent-in-place-replacement">2/16/22 For those coming from R: Silent In Place Replacement</a></li>
+  <li><a href="#reusing-custom-functions" id="toc-reusing-custom-functions" class="nav-link" data-scroll-target="#reusing-custom-functions">7/13/21 Reusing custom functions</a></li>
+  <li><a href="#making-data-easier-to-read" id="toc-making-data-easier-to-read" class="nav-link" data-scroll-target="#making-data-easier-to-read">6/16/21 Making data easier to read</a></li>
+  <li><a href="#jupyter-plugins" id="toc-jupyter-plugins" class="nav-link" data-scroll-target="#jupyter-plugins">6/9/21 Jupyter Plugins</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Python Tips</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">news</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">analysis</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Harlow Malloc </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 24, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="python-trivia-missing-isnt-itself" class="level2">
+<h2 class="anchored" data-anchor-id="python-trivia-missing-isnt-itself">9/28/22 Python Trivia: Missing isn’t itself</h2>
+<p>Python quirk I just learned and think is worth sharing. <em>A missing valued doesn’t equal itself.</em></p>
+<p>Here’s the context: I’m making a list of values from a column that could not be converted to a date. Missing values can’t be converted so they end up in the list (e.g.&nbsp;<code>[nan, '7/5/21 for pass 2']</code>. So how do we discard this empty value? We use a list comprehension to see if the value is equal to itself ( <code>[val for val in my_list if val == val]</code> ) and will get a nan free list.</p>
+</section>
+<section id="caching-with-pickle" class="level2">
+<h2 class="anchored" data-anchor-id="caching-with-pickle">3/23/22 Caching with <code>pickle</code></h2>
+<p>Here’s a useful pattern I’ve been getting a lot of mileage out of lately. If you’re running an analysis that has a time consuming step you can save the result as a python readable “pickle” file.</p>
+<!-- {python eval=FALSE, include=TRUE} -->
+<pre><code>import pickle as pkl
+
+path = "./data_intermediates/processed_data.pkl"
+if os.path.exists(path):
+    processed_data = pkl.load(open(path, 'rb'))
+else:
+    # Make `processed_data` here
+    pkl.dump(processed_data, open(path, 'wb'))</code></pre>
+<p>This also lets you batch a process so that you can do more with your resources. For example here’s a list comprehension that will (for each day from 0-287) rearrange the weather data to be in <a href="http://www.cookbook-r.com/Manipulating_data/Converting_data_between_wide_and_long_format/" title="http://www.cookbook-r.com/manipulating_data/converting_data_between_wide_and_long_format/">“long” format</a>. This is concise but requires processing the whole list at once which takes a lot of resources.</p>
+<pre><code>sal_long_list = [_get_weather_long(results_list = res,
+                                   current_day = ith_day) for ith_day in np.linspace(start = 0, stop = 287, num = 288)]</code></pre>
+<p>If we incorporate it into the pattern above we can hold fewer items in memory at a time and then merge them (e.g.&nbsp;with <code>list.extend()</code> ) after the fact.</p>
+<pre><code>or ii in range(3):
+    file_path = '../data/result_intermediates/sal_df_W_long_part_day'+['0-95', 
+                                                                       '96-191', 
+                                                                       '192-287'][ii]+'.pkl'
+    if os.path.exists(file_path):
+        sal_long_list = pkl.load(open(file_path, 'rb'))
+
+    else:
+        # The original list comprehension is here, 
+        # just made messier by selecting a subset of the indices.
+        sal_long_list = [_get_weather_long(                                
+            results_list = res,
+            current_day = current_day) for current_day in [
+            [int(e) for e in np.linspace(start = 0, stop = 95, num = 96)],   # Batch 1
+            [int(e) for e in np.linspace(start = 96, stop = 191, num = 96)], # Batch 2
+            [int(e) for e in np.linspace(start = 192, stop = 287, num = 96)] # Batch 3
+        ][ii]
+        ]
+        pkl.dump(sal_long_list, open(file_path, 'wb'))</code></pre>
+</section>
+<section id="for-those-coming-from-r-silent-in-place-replacement" class="level2">
+<h2 class="anchored" data-anchor-id="for-those-coming-from-r-silent-in-place-replacement">2/16/22 For those coming from R: Silent In Place Replacement</h2>
+<p>Silent, in place assignment updating an object This tripped me up even though it’s consistent with how I’ve seen other objects behave. I needed an attribute to hold data extracted from a collection of files in a directory and created a class for this.</p>
+<pre><code>class hps_search_experiment:
+    def __init__(self, path="", trial_type=''):
+        self.path = path
+        self.trial_type = trial_type
+        self.hps_best_trial = None
+        
+    def process_hps_files(self):
+        # ...
+        
+        self.hps_best_trial = hps_best_trial</code></pre>
+<p>However, running like so fails.</p>
+<pre><code>test = hps_search_experiment(
+    path = './hps_search_intermediates_G/', 
+    trial_type = 'rnr')
+    
+test = test.process_hps_files()
+test.hps_best_trial
+
+#&gt; AttributeError: 'NoneType' object has no attribute 'hps_best_trial'</code></pre>
+<p>This had me baffeld because I was thinking with R’s norms of <code>data &lt;- data %&gt;% funciton()</code> where in place replacement is the exception. Instead I needed to be thinking with python’s base object norms (e.g.&nbsp;<code>a_list.extend(['b', 'c'])</code> ). This fails because I overwrote <code>test</code> with the output of the method, which returns notthing since it’s overwriting attributes within <code>test</code>’s scope.</p>
+<p>These would also work to update the attribute:</p>
+<pre><code>self.hps_best_trial = hps_best_trial
+
+hps_search_experiment.__setattr__(self, "hps_best_trial", hps_best_trial)
+
+# if it's initialized as a list
+self.hps_best_trial.append([hps_best_trial]) 
+# if a dict is initialized for data
+self.data = {'a':1}
+self.data.update({'hps_best_trial':hps_best_trial})        </code></pre>
+</section>
+<section id="reusing-custom-functions" class="level2">
+<h2 class="anchored" data-anchor-id="reusing-custom-functions">7/13/21 Reusing custom functions</h2>
+<p>I wanted to reuse a custom function across a few scripts without having copies of the same code in each script. The solution I found is to set up a <a href="https://docs.python.org/3/tutorial/modules.html#packages" title="https://docs.python.org/3/tutorial/modules.html#packages">module</a>&nbsp;to hold these functions. This seems&nbsp;straightforward once you know how it’s done.&nbsp;</p>
+<ol type="1">
+<li><p>Set up a directory containing your functions and a blank file called <code>__init__.py</code>.&nbsp;</p>
+<p><img src=".png" class="img-fluid"><img src="Picture1.jpg" class="img-fluid"></p></li>
+<li><p>&nbsp;Add the directory containing your module directory to the system path (here <code>MaizeModel</code>&nbsp;instead of <code>MaizeModel\\library</code>). If you’re on OSX or linux you’ll probably use single forward slashes instead of double backslashes.</p>
+<p><img src="Picture2.jpg" class="img-fluid"></p></li>
+<li><p>Finally import and call your functions.</p></li>
+</ol>
+<p>Caveats:&nbsp;</p>
+<ul>
+<li>It seems that the system path isn’t permanently altered by <code>sys.path.append</code>, so one would need that at the start of the script or modify it some other way.</li>
+<li>If your custom functions are in the in the same directory as your script, I think you can skip all of this and just import them.</li>
+<li>If your functions are in a sub-directory of the same directory as your script, I think you can get away without adding the directory to the path.</li>
+</ul>
+</section>
+<section id="making-data-easier-to-read" class="level2">
+<h2 class="anchored" data-anchor-id="making-data-easier-to-read">6/16/21 Making data easier to read</h2>
+<pre><code># [In]
+print(results_dictionary)
+print("\n --------------------------------------------- \n")
+import pprint
+pprint.PrettyPrinter(indent=4).pprint(results_dictionary)
+# [Out]
+{'active': True, 'additionalInfo:programDbId': '343', 'additionalInfo:programName': 'UC Davis', 'commonCropName': 'Cassava', 'contacts': None, 'culturalPractices': None, 'dataLinks': [], 
+# ...
+'trialDbId': '343', 'trialName': 'UC Davis'}
+--------------------------------------------- 
+{   'active': True,
+    'additionalInfo:programDbId': '343',    'additionalInfo:programName': 'UC Davis',    'commonCropName': 'Cassava',    'contacts': None,    'culturalPractices': None,    'dataLinks': [],    # ...    'trialDbId': '343',    'trialName': 'UC Davis'}</code></pre>
+<p>Here’s a tool that some may find useful when working with data that’s not yet in a <code>[DataFrame]</code>. It lets one “<a href="https://docs.python.org/3/library/pprint.html" title="https://docs.python.org/3/library/pprint.html">pretty-print</a>” an object making any text that would wrap easier to read.</p>
+<p>6/15/21 <a href="https://www.python-graph-gallery.com/" title="https://www.python-graph-gallery.com/">This</a> or similar sites can be helpful for looking up the right code/library for a plot. You can also find library specific ones. (<a href="https://matplotlib.org/stable/gallery/index.html" title="https://matplotlib.org/stable/gallery/index.html">matplotlib</a>, <a href="https://plotly.com/python/" title="https://plotly.com/python/">plotly</a>)</p>
+<p>One of R’s main plotting libraries, ggplot2, describes plots by layering one component on top of another (e.g.&nbsp;starting with x and y variables, adding points, adding error bars, adding aesthetic adjustments). If that sort of approach appeals to you there is a python version of this library called plotnine (<a href="https://github.com/has2k1/plotnine" title="https://github.com/has2k1/plotnine">github</a>, <a href="https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python/index.html" title="https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python/index.html">example use</a>).</p>
+</section>
+<section id="jupyter-plugins" class="level2">
+<h2 class="anchored" data-anchor-id="jupyter-plugins">6/9/21 Jupyter Plugins</h2>
+<p>I came across a handy set of tools for jupyter. There are of extensions for the notebooks that give you access to code snips, autocomplete by default, rendering a notebook as a slide show, and other features. To get it installed within an anaconda virtual environment you may only need to install it with this command:</p>
+<p><code>conda install -c conda-forge jupyter_contrib_nbextensions</code></p>
+<p>I not all of the extensions were showing up for me until I also ran these two lines, so it may take a bit of fiddling to get it to run.</p>
+<pre><code>jupyter contrib nbextension install --user
+jupyter nbextension enable codefolding/main</code></pre>
+<p>Here’s a <a href="https://towardsdatascience.com/bringing-the-best-out-of-jupyter-notebooks-for-data-science-f0871519ca29" title="https://towardsdatascience.com/bringing-the-best-out-of-jupyter-notebooks-for-data-science-f0871519ca29">link</a>to a page that shows some of these extensions in action.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

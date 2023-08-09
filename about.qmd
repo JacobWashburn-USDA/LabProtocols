@@ -2,65 +2,39 @@
 title: "About the Washburn Lab"
 ---
 
-# Join the Lab!
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
 # Current Members:
 
-## Staff
+## Permanent Members
 
-### Jacob Washburn (PhD) ![](people/JacobDWashburn.jpg){width="100"}
+### Jacob Washburn (PhD) ![](people/JacobWashburn/JacobDWashburn.jpg){width="100"}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### Harper LaFond (MS) ![](people/HarperLaFond/HarperLaFond.jpg){width="100"}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Badges: \[💻🧙, \]
 
-### Harper LaFond ![](people/HarperLaFond.jpg){width="100"}
-
-Badges: 💻🧙
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Raymond Wright ![](people/GenericPerson.png){width="100"}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### Raymond Wright ![](people/GenericPerson/GenericPerson.png){width="100"}
 
 ## Post Docs
 
-### Daniel Kick (PhD) ![](people/DanielKick.png){width="100"}
+### Daniel Kick (PhD) ![](people/DanielKick/DanielKick.png){width="100"}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-### Piyush Pandey (PhD) ![](people/PiyushPandy.jpg){width="100"}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### Piyush Pandey (PhD) ![](people/PiyushPandy/PiyushPandy.jpg){width="100"}
 
 ## Graduate Students
 
-### Shawn Thomas ![](people/ShawnThomas.jpg){width="100"}
+### Shawn Thomas ![](people/ShawnThomas/ShawnThomas.jpg){width="100"}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-### Emma Leary ![](people/GenericPerson.png){width="100"}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### Emma Leary ![](people/GenericPerson/GenericPerson.png){width="100"}
 
 ## Undergraduate Researchers
 
-### Grace Sidberry ![](people/GraceSidberry.jpg){width="100"}
+### Grace Sidberry ![](people/GraceSidberry/GraceSidberry.jpg){width="100"}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### Madi Mitchell ![](people/MadiMitchell/MadiMitchell.jpg){width="100"}
 
-### Madi Mitchell ![](people/MadiMitchell.jpg){width="100"}
+Badges: \[💻🧙, \]
 
-Badges: 💻🧙
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-### Morgan Mathison ![](people/GenericPerson.png){width="100"}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+### Morgan Mathison ![](people/GenericPerson/GenericPerson.png){width="100"}
 
 # Past Members:
 

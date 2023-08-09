@@ -1,0 +1,26 @@
+---
+title: "Restarting the Rootbot Imaging Script over SSH"
+author: "Daniel Kick"
+date: "9/30/2022"
+date-modified: "9/30/2022"
+execute:
+  freeze: true
+---
+
+There's an unresolved memory leak in the imaging script on the Rootbot. Overtime it consumes ever more ram until the script is killed. Ideally we should rewrite the script or monitor it using [systemd](https://systemd.io/) so that the script is automatically restarted when it crashes. This has not risen to the top of the todo list so the current work around is as follows:
+
+1.  About half way through an experiment, `ssh` into the rootbot's pi.
+
+2.  Check that pictures aren't currently being taken by looking at the timestamps in the pictures directory (`ls -lh ~/Pictures`)
+
+3.  Find the process id number (PID) for the script (
+
+    `rootBotPhotoScript_23Feb2021.py`
+
+    ) (e.g. with `top` or `htop`)
+
+4.  End the process with `kill $pid` where \$pid is the value from step 3.
+
+5.  go to the folder with the script (`cd \~/rootbot/jupyter_notebooks`).
+
+6.  Restart the rootbot script (`rootBotPhotoScript_23Feb2021.py`). Don't be fooled by the shebang line, python3 must be explicitly used. The command to do this is `nohup python3 rootBotPhotoScript_23Feb2021.py &&`. `nohup` and `&&` ensure the process continues in the background after the terminal is closed. python3 ensures the system's default python (2) isn't used. The full path need not be provided for the script because the present working directory is the `/jupyter_notebooks folder`.

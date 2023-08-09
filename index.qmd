@@ -2,26 +2,6 @@
 title: "Washburn Lab Resources"
 ---
 
-# Getting up to speed:
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
--   Lorem ipsum dolor sit amet,
-
--   consectetur adipiscing elit,
-
--   sed do eiusmod
-
-# Lab Papers:
-
-## Published:
-
-[Kick et al 2023 (G3)](/papers/Kick_et_al_G3_2023.pdf)
-
-## Preprints:
-
-[Kick and Washburn 2023 ($bioR\chi iv$)](/papers/Kick_and_Washburn_BioRxiv_2023.pdf)
-
 # Lab Protocols
 
 ```{r, eval=FALSE, echo=FALSE}
@@ -45,27 +25,21 @@ list.dirs(path = './protocols')
 
 ["Do Nothing" Scripting to Progressively Automate tasks](/protocols/Logistics/Do_Nothing_Scripting/index.html)
 
-
-
 ### Working with Singularity Containers
 
 [Singularity: RStudio in a box](/protocols/Logistics/Container_Singularity_Rstudio/index.html)
 
-
-[Using Port Forwarding to Access Your Jupyter Notebook ](/protocols/Logistics/Container_Singularity_PortForward/index.html)
+[Using Port Forwarding to Access Your Jupyter Notebook](/protocols/Logistics/Container_Singularity_PortForward/index.html)
 
 [Making a Singularity Container From Your Conda Environment](/protocols/Logistics/Container_Singularity_From_Conda/index.html)
 
 [Using your Singularity container with Open OnDemand](/protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html)
-
 
 ### <font color=blue> *In progress:* </font>
 
 [Overview: Suggested HPC Workflow](/protocols/Logistics/HPC_Generic_Workflow/index.html)
 
 [Using Open OnDemand](/protocols/Logistics/HPC_Open_OnDemand/index.html)
-
-
 
 ## Rootbot
 
@@ -78,3 +52,23 @@ list.dirs(path = './protocols')
 [Adding Protocols](/protocols/Operations/Authoring_Protocols/index.html)
 
 [Website Overview](/protocols/Operations/Website_Overview/index.html)
+
+
+# Lab Papers:
+
+## Published:
+
+[Genomes to Fields 2022 Maize genotype by Environment Prediction Competition, Lima et al. 2023, BMC Research Notes](https://doi.org/10.1186/s13104-023-06421-z)
+
+[Yield prediction through integration of genetic, environment, and management data through deep learning, Kick et al 2023, G3](https://doi.org/10.1093/g3journal/jkad006)
+
+[Distinct C 4 sub‐types and C 3 bundle sheath isolation in the Paniceae grasses, Washburn et al. 2021, Plant Direct](https://doi.org/10.1002/pld3.373)
+
+[Predicting phenotypes from genetic, environment, management, and historical data using CNNs, Washburn et al. 2021, Theoretical and Applied Genetics](https://doi.org/10.1007/s00122-021-03943-7)
+
+[Predictive breeding for maize: Making use of molecular phenotypes, machine learning, and physiological crop models, Washburn et al. 2020, Crop Science](http://dx.doi.org/10.1002/csc2.20052)
+
+
+## Preprints:
+
+[Ensemble of BLUP, Machine Learning, and Deep Learning Models Predict Maize Yield Better Than Each Model Alone, Kick and Washburn 2023, $bioR\chi iv$](https://doi.org/10.1101/2023.03.30.532932)

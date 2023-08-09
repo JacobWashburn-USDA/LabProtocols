@@ -1,0 +1,111 @@
+---
+title: "Using the Image Sorting Script"
+author: "Daniel Kick"
+date: "9/26/2022"
+date-modified: "9/26/2022"
+execute:
+  freeze: true
+---
+
+1.  Log into `rootbot ssh pi\@10.206.31.189`
+
+2.  Move to Pictures `cd Pictures/`
+
+    ![](Picture1.png)
+
+    a.  Look in the folder with `ls` -- There will either be loose jpgs or they will be packaged into archive folders with the form "YYYYMMDD-Archive"
+
+3.  Log into lambda2 `ssh labmember\@MW22-lambda2`
+
+4.  On lambda2 move to the inbox `cd Documents/rootbot_dev/inst/extdata/Pictures/Inbox`
+
+    a.  We expect this inbox to be empty (but it's okay if there are some jpgs here)
+
+    ![](Picture2.png)
+
+5.  From the rootbot, copy the files over to lambda2
+
+    a.  If the jpgs are loose run (all one command) `rsync -azv ./\*.jpg labmember\@10.206.28.81:\~/Documents/rootbot_dev/inst/extdata/Pictures/Inbox/`
+
+    ![](Picture3.png)
+
+    b.  Then make a folder to archive the jpgs in with `mkdir `$\color{red}{20220922}`-Archive`
+
+    c.  Then copy each day's files like so `mv `$\color{red}{202209}`\*.jpg ./`$\color{red}{20220922}`-Archive/`
+
+        a.  ***Note!*** The red above will need to be customized
+
+        b.  Note! If multiple experiments were run then you'll need to specify each day that needs to be moved into each archive.
+
+            a.  `mv 20220922*.jpg ./20220922-Archive/`
+
+            b.  `mv 20220923*.jpg ./20220923-Archive/`
+
+            c.  ...
+
+            d.  `mv 20220929*.jpg ./20220929-Archive/`
+
+            e.  `mv 20220930*.jpg ./20220930-Archive/`
+
+6.  If the jpgs are not loose copy the jpgs from an archive (specify the archive name highlighted below) `rsync -azv ./`$\color{red}{20220922-Archive}`/\*.jpg labmember\@10.206.28.81:\~/Documents/rootbot_dev/inst/extdata/Pictures/Inbox/`
+
+7.  The terminal session on rootbot is no longer needed and can be closed.
+
+8.  Confirm the files have been moved with ls on lambda2
+
+![](Picture4.png)
+
+9.  On lambda2, move back to "rootbot_dev" with `cd \~/Documents/rootbot_dev`
+
+10. On lambda2, start up jupyter without a browser `jupyter notebook --no-browser --port=8896`
+
+![](Picture5.png)
+
+Open a new terminal and connect the jupyter notebook to your machine `ssh -N -f -Y -L 8896:localhost:8896 labmember\@MW22-lambda2` 
+
+11.
+
+![](Picture6.png)
+
+12. Open a browser and go to http://localhost:8896 (it will change to the url below if everything is okay).
+
+    a.  If you get a login page, you'll need to copy and paste the token from step 10
+
+    ![](Picture7.png)
+
+    b.  If you get a different error take a screenshot so we can debug it.
+
+13. The screen should now look like this:
+
+![](Picture8.png)
+
+14. Go to scripts
+
+![](Picture9.png)
+
+15. Open the "sortmaster2000"
+
+![](Picture10.png)
+
+16. Run the script cell by cell until you get to ...
+
+![](Picture11.png)
+
+17. ... until you get to this cell which contains instructions on how to get the files to your local computer
+
+![](Picture12.png)
+
+18. Open a terminal on lambda2
+
+    a.  If you want to run this command on lambda2
+
+    b.  It's okay to open a new ssh session as in step 3
+
+    ii. It's also okay to reuse the terminal running the jupyter notebook. If you want to do this, press "control c"
+
+    ![](Picture13.png)
+
+    iii. Follow the instructions in 17
+
+    b.  If you want to run this command locally, on your local machine run `rsync -azv --files-from:= labmember\@MW22-lambda2:\~/Documents/rootbot_dev/inst/extdata/Pictures/Experiments/`$\color{red}{20220915}$`/send_files.txt ./ `$\color{red}{../dest/}
+    c.  Note: The red above will need to be customized. The folder will need to be set to the current value and `../dest/` will need to be customized to the location on your computer you want.
