@@ -97,19 +97,22 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#lab-protocols" id="toc-lab-protocols" class="nav-link active" data-scroll-target="#lab-protocols">Lab Protocols</a>
   <ul class="collapse">
-  <li><a href="#drones" id="toc-drones" class="nav-link" data-scroll-target="#drones">Drones</a></li>
-  <li><a href="#compututational-logistics" id="toc-compututational-logistics" class="nav-link" data-scroll-target="#compututational-logistics">Compututational Logistics</a>
-  <ul class="collapse">
-  <li><a href="#general-logistics" id="toc-general-logistics" class="nav-link" data-scroll-target="#general-logistics">General Logistics</a></li>
-  <li><a href="#working-with-singularity-containers" id="toc-working-with-singularity-containers" class="nav-link" data-scroll-target="#working-with-singularity-containers">Working with Singularity Containers</a></li>
-  </ul></li>
-  <li><a href="#rootbot" id="toc-rootbot" class="nav-link" data-scroll-target="#rootbot">Rootbot</a></li>
-  </ul></li>
   <li><a href="#field-work" id="toc-field-work" class="nav-link" data-scroll-target="#field-work">Field Work</a>
   <ul class="collapse">
   <li><a href="#rovers" id="toc-rovers" class="nav-link" data-scroll-target="#rovers">Rovers</a></li>
+  <li><a href="#drones" id="toc-drones" class="nav-link" data-scroll-target="#drones">Drones</a></li>
   </ul></li>
-  <li><a href="#operations" id="toc-operations" class="nav-link" data-scroll-target="#operations">Operations</a></li>
+  <li><a href="#lab-work" id="toc-lab-work" class="nav-link" data-scroll-target="#lab-work">Lab Work</a>
+  <ul class="collapse">
+  <li><a href="#rootbot" id="toc-rootbot" class="nav-link" data-scroll-target="#rootbot">Rootbot</a></li>
+  </ul></li>
+  <li><a href="#computational-work" id="toc-computational-work" class="nav-link" data-scroll-target="#computational-work">Computational Work</a>
+  <ul class="collapse">
+  <li><a href="#general-logistics" id="toc-general-logistics" class="nav-link" data-scroll-target="#general-logistics">General Logistics</a></li>
+  <li><a href="#working-with-singularity-containers" id="toc-working-with-singularity-containers" class="nav-link" data-scroll-target="#working-with-singularity-containers">Working with Singularity Containers</a></li>
+  <li><a href="#website-operations" id="toc-website-operations" class="nav-link" data-scroll-target="#website-operations">Website Operations</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -137,14 +140,29 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 
 </div>
-<section id="drones" class="level2">
-<h2 class="anchored" data-anchor-id="drones">Drones</h2>
+<section id="field-work" class="level2">
+<h2 class="anchored" data-anchor-id="field-work">Field Work</h2>
+<section id="rovers" class="level3">
+<h3 class="anchored" data-anchor-id="rovers">Rovers</h3>
+<p><a href="./protocols/DryLab/Rovers/RoverUseInField/index.html">Rover Use in Field</a></p>
+<p><a href="./protocols/DryLab/Rovers/RoverBatteryCharge/index.html">Rover Battery Charging</a></p>
+</section>
+<section id="drones" class="level3">
+<h3 class="anchored" data-anchor-id="drones">Drones</h3>
 <p><a href="./protocols/Drones/Pix4Dmapper_Stitch/index.html">Stitching Images with Pix4Dmapper</a></p>
 <p><a href="./protocols/Drones/Pix4Dmapper_Stitch_RE-mx/index.html">Stitching Images with Pix4Dmapper: RE-mx Drone</a></p>
 <p><a href="./protocols/Drones/QGIS_First_Grid/index.html">Gridding the Reference Flight (QGIS)</a></p>
 </section>
-<section id="compututational-logistics" class="level2">
-<h2 class="anchored" data-anchor-id="compututational-logistics">Compututational Logistics</h2>
+</section>
+<section id="lab-work" class="level2">
+<h2 class="anchored" data-anchor-id="lab-work">Lab Work</h2>
+<section id="rootbot" class="level3">
+<h3 class="anchored" data-anchor-id="rootbot">Rootbot</h3>
+<p><a href="./protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html">Restarting the Image Script on the Rootbot’s Pi</a></p>
+</section>
+</section>
+<section id="computational-work" class="level2">
+<h2 class="anchored" data-anchor-id="computational-work">Computational Work</h2>
 <section id="general-logistics" class="level3">
 <h3 class="anchored" data-anchor-id="general-logistics">General Logistics</h3>
 <p><a href="./protocols/Logistics/HPC_Moving_Data/index.html">Transferring Data Between Computers</a></p>
@@ -156,31 +174,19 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="./protocols/Logistics/Container_Singularity_PortForward/index.html">Using Port Forwarding to Access Your Jupyter Notebook</a></p>
 <p><a href="./protocols/Logistics/Container_Singularity_From_Conda/index.html">Making a Singularity Container From Your Conda Environment</a></p>
 <p><a href="./protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html">Using your Singularity container with Open OnDemand</a></p>
-<p><font color="blue"> <em>In progress:</em> </font></p>
+<p><font color="gray"> <em>In progress:</em> </font></p>
 <p><a href="./protocols/Logistics/HPC_Generic_Workflow/index.html">Overview: Suggested HPC Workflow</a></p>
 <p><a href="./protocols/Logistics/HPC_Open_OnDemand/index.html">Using Open OnDemand</a></p>
 </section>
-</section>
-<section id="rootbot" class="level2">
-<h2 class="anchored" data-anchor-id="rootbot">Rootbot</h2>
-<p><a href="./protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html">Restarting the Image Script on the Rootbot’s Pi</a></p>
-</section>
-</section>
-<section id="field-work" class="level1">
-<h1>Field Work</h1>
-<section id="rovers" class="level2">
-<h2 class="anchored" data-anchor-id="rovers">Rovers</h2>
-<p><a href="./protocols/DryLab/Rovers/RoverUseInField/index.html">Rover Use in Field</a></p>
-<p><a href="./protocols/DryLab/Rovers/RoverBatteryCharge/index.html">Rover Battery Charging</a></p>
-</section>
-</section>
-<section id="operations" class="level1">
-<h1>Operations</h1>
+<section id="website-operations" class="level3">
+<h3 class="anchored" data-anchor-id="website-operations">Website Operations</h3>
 <p><a href="./protocols/Operations/Authoring_Protocols/index.html">Adding Protocols</a></p>
-<p><font color="blue"> <em>In progress:</em> </font></p>
+<p><font color="gray"> <em>In progress:</em> </font></p>
 <p><a href="./protocols/Operations/Website_Overview/index.html">Website Overview</a></p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -25,14 +25,7 @@
     "href": "index.html",
     "title": "Washburn Lab Resources",
     "section": "",
-    "text": "Stitching Images with Pix4Dmapper\nStitching Images with Pix4Dmapper: RE-mx Drone\nGridding the Reference Flight (QGIS)\n\n\n\n\n\nTransferring Data Between Computers\n“Do Nothing” Scripting to Progressively Automate tasks\n\n\n\nSingularity: RStudio in a box\nUsing Port Forwarding to Access Your Jupyter Notebook\nMaking a Singularity Container From Your Conda Environment\nUsing your Singularity container with Open OnDemand\n In progress: \nOverview: Suggested HPC Workflow\nUsing Open OnDemand\n\n\n\n\nRestarting the Image Script on the Rootbot’s Pi"
-  },
-  {
-    "objectID": "index.html#rovers",
-    "href": "index.html#rovers",
-    "title": "Washburn Lab Resources",
-    "section": "Rovers",
-    "text": "Rovers\nRover Use in Field\nRover Battery Charging"
+    "text": "Rover Use in Field\nRover Battery Charging\n\n\n\nStitching Images with Pix4Dmapper\nStitching Images with Pix4Dmapper: RE-mx Drone\nGridding the Reference Flight (QGIS)\n\n\n\n\n\n\nRestarting the Image Script on the Rootbot’s Pi\n\n\n\n\n\n\nTransferring Data Between Computers\n“Do Nothing” Scripting to Progressively Automate tasks\n\n\n\nSingularity: RStudio in a box\nUsing Port Forwarding to Access Your Jupyter Notebook\nMaking a Singularity Container From Your Conda Environment\nUsing your Singularity container with Open OnDemand\n In progress: \nOverview: Suggested HPC Workflow\nUsing Open OnDemand\n\n\n\nAdding Protocols\n In progress: \nWebsite Overview"
   },
   {
     "objectID": "protocols/Drones/Pix4Dmapper_Stitch/index.html",

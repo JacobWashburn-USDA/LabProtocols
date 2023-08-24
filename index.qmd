@@ -9,7 +9,15 @@ title: "Washburn Lab Resources"
 list.dirs(path = './protocols')
 ```
 
-## Drones
+## Field Work
+
+### Rovers
+[Rover Use in Field](/protocols/DryLab/Rovers/RoverUseInField/index.html)
+
+[Rover Battery Charging](/protocols/DryLab/Rovers/RoverBatteryCharge/index.html)
+
+
+### Drones
 
 [Stitching Images with Pix4Dmapper](/protocols/Drones/Pix4Dmapper_Stitch/index.html)
 
@@ -17,13 +25,22 @@ list.dirs(path = './protocols')
 
 [Gridding the Reference Flight (QGIS)](/protocols/Drones/QGIS_First_Grid/index.html)
 
-## Compututational Logistics
+
+## Lab Work
+
+### Rootbot
+
+[Restarting the Image Script on the Rootbot's Pi](/protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html)
+
+
+## Computational Work
 
 ### General Logistics
 
 [Transferring Data Between Computers](/protocols/Logistics/HPC_Moving_Data/index.html)
 
 ["Do Nothing" Scripting to Progressively Automate tasks](/protocols/Logistics/Do_Nothing_Scripting/index.html)
+
 
 ### Working with Singularity Containers
 
@@ -35,28 +52,17 @@ list.dirs(path = './protocols')
 
 [Using your Singularity container with Open OnDemand](/protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html)
 
-<font color=blue> *In progress:* </font>
+<font color=gray> *In progress:* </font>
 
 [Overview: Suggested HPC Workflow](/protocols/Logistics/HPC_Generic_Workflow/index.html)
 
 [Using Open OnDemand](/protocols/Logistics/HPC_Open_OnDemand/index.html)
 
-## Rootbot
 
-[Restarting the Image Script on the Rootbot's Pi](/protocols/Rootbot/Restarting_Image_Script_On_Pi/index.html)
-
-# Field Work
-
-## Rovers
-[Rover Use in Field](/protocols/DryLab/Rovers/RoverUseInField/index.html)
-
-[Rover Battery Charging](/protocols/DryLab/Rovers/RoverBatteryCharge/index.html)
-
-
-# Operations
+### Website Operations
 
 [Adding Protocols](/protocols/Operations/Authoring_Protocols/index.html)
 
-<font color=blue> *In progress:* </font>
+<font color=gray> *In progress:* </font>
 
 [Website Overview](/protocols/Operations/Website_Overview/index.html)
