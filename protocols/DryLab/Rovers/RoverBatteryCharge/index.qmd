@@ -6,25 +6,11 @@ date: "8/4/2023"
 date-modified: "8/4/2023"
 ---
 
-##Instructions
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
+## Instructions
 
 Rover & Battery
 
-Charging Batteries{.underline}
+[Charging Batteries]{.underline}
 
 · The batteries are lithium polymer batteries (LiPo), which can be very dangerous if not properly charged, stored, or mishandled. May result in [large]{.underline} and [dangerous]{.underline} **fires/explosions**. If a fire occurs, it is a chemical fire which cannot be easily put out or contained.
 
@@ -80,49 +66,51 @@ o <https://learn.adafruit.com/all-about-batteries/power-capacity-and-power-capab
 
 · Each battery has two cords coming from it. The cord with the think red and black wires and the yellow XT90 end is the main power. The cord with five small wires of different colors is for cell voltage level monitoring. NEVER use or charge the battery without the monitoring cord connected to the charger or on of the small monitor units.
 
-1. Place the battery/batteries to be charged in the green metal ammo containers. They should stay in the containers at all times while being charged. Be careful not to get sand in or under the plastic covers on the batteries as this could result in rubbing and damage.
+1.  Place the battery/batteries to be charged in the green metal ammo containers. They should stay in the containers at all times while being charged. Be careful not to get sand in or under the plastic covers on the batteries as this could result in rubbing and damage.
 
-\![\](Picture1.png)
+![](Picture1.png)
 
-2. If at any time during charging the batteries become hot to the touch, or start to hiss, swell, or make popping noises. As long as it is safe to do so,
+2.  If at any time during charging the batteries become hot to the touch, or start to hiss, swell, or make popping noises. As long as it is safe to do so,
+
+<!-- -->
 
 a.  Unplug the battery charger from the wall outlet!
 
-b. Leave the battery in the Ammo container and dump sand from the white bucket over the battery.
+b.  Leave the battery in the Ammo container and dump sand from the white bucket over the battery.
 
-c. Flip the Ammo container lid over the battery but DO NOT close the lid tightly as this could create a bomb.
+c.  Flip the Ammo container lid over the battery but DO NOT close the lid tightly as this could create a bomb.
 
-d. **PULL FIRE ALARM and/or CALL FIREDEPT IMEDIATLY.** [If safe]{.underline} to unplug XT90 battery from jumper and remove ammo can/bucket with the battery in it to outside the build do so. If not safe then leave it.
+d.  **PULL FIRE ALARM and/or CALL FIREDEPT IMEDIATLY.** [If safe]{.underline} to unplug XT90 battery from jumper and remove ammo can/bucket with the battery in it to outside the build do so. If not safe then leave it.
 
-e. **Evacuate the building** but remain in the building area and look for first responders so you can tell them about the hazard.
+e.  **Evacuate the building** but remain in the building area and look for first responders so you can tell them about the hazard.
 
 f.Report the incident to Jacob and Harper so they can file the EHS report.
 
-3. Ensure that the sperate XT90 jumper line (not the line on the batter itself) is properly plugged into the Venom charger and that the "battery balance" adaptor is also plugged into the charger on the same charging channel as the XT90 jumper. **VERY IMPORTANT**: make sure the XT90 jumper cables are plugged in correctly (Red to Red, Black to Black). **NEVER** plug the yellow XT90 end into the battery without having the Red and Black jumper ends plugged into the charger!  If the jumper is plugged into the battery and the Red and Black ends touch each other it could cause a fire! 
+3.  Ensure that the sperate XT90 jumper line (not the line on the batter itself) is properly plugged into the Venom charger and that the "battery balance" adaptor is also plugged into the charger on the same charging channel as the XT90 jumper. **VERY IMPORTANT**: make sure the XT90 jumper cables are plugged in correctly (Red to Red, Black to Black). **NEVER** plug the yellow XT90 end into the battery without having the Red and Black jumper ends plugged into the charger!  If the jumper is plugged into the battery and the Red and Black ends touch each other it could cause a fire! 
 
-\![\](Picture2.png)
+![](Picture2.png)
 
-\![\](Picture3.png)
+![](Picture3.png)
 
 4.Turn on the power for the charger; make sure the charger is plugged into an outlet.
 
-5. Use the "CHANNEL" button to select which of the 4 channels you want to charge the battery on.
+5.  Use the "CHANNEL" button to select which of the 4 channels you want to charge the battery on.
 
-6. You want to use the "LiPo BALANCE" program. **DO NOT USE** the "LiPo CHARGE" program as this will not necessarily charge each cell in a balanced manor. Depending on what was previously selected you may have to use the Stop, Decrease, Increase, and Enter buttons to find the correct program.
+6.  You want to use the "LiPo BALANCE" program. **DO NOT USE** the "LiPo CHARGE" program as this will not necessarily charge each cell in a balanced manor. Depending on what was previously selected you may have to use the Stop, Decrease, Increase, and Enter buttons to find the correct program.
 
-\![\](Picture4.png)
+![](Picture4.png)
 
-\![\](Picture5.png)
+![](Picture5.png)
 
-7. We want to charge with 7.0A, 14.8V, and (4S). If these parameters are not correct you can change them by pressing enter (short press, not long press and hold).
+7.  We want to charge with 7.0A, 14.8V, and (4S). If these parameters are not correct you can change them by pressing enter (short press, not long press and hold).
 
-\![\](Picture6.png)
+![](Picture6.png)
 
-8. Plug the battery/Batteries (Both the XT90 and the multicolored monitoring cable into the charger using the jumper lines from 2 above.
+8.  Plug the battery/Batteries (Both the XT90 and the multicolored monitoring cable into the charger using the jumper lines from 2 above.
 
-\![\](Picture7.png)
+![](Picture7.png)
 
-9. To charge the batteries, long press the start button. The charger will check that the battery is correctly detected and display both the number of cells. If the number of cells for "R:" and "S:" do not match then something is wrong and you need to recheck the battery connections and settings.
+9.  To charge the batteries, long press the start button. The charger will check that the battery is correctly detected and display both the number of cells. If the number of cells for "R:" and "S:" do not match then something is wrong and you need to recheck the battery connections and settings.
 
 10. If both "R:" and "S:" read "4SER" then you can press short press the ENTER button to begin charging. ([if you forget to press enter this second time, the batteries will not charge even if they are plugged in]{.underline}).
 
@@ -135,5 +123,3 @@ f.Report the incident to Jacob and Harper so they can file the EHS report.
 · The cells should always be within 0.1-0.2 of each other; if they are not, let someone know.
 
 · The charger will get hot so keep it in cool area.
-
-

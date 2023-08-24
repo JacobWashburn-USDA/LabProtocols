@@ -35,7 +35,7 @@ list.dirs(path = './protocols')
 
 [Using your Singularity container with Open OnDemand](/protocols/Logistics/HPC_Singularity_and_Open_OnDemand/index.html)
 
-### <font color=blue> *In progress:* </font>
+<font color=blue> *In progress:* </font>
 
 [Overview: Suggested HPC Workflow](/protocols/Logistics/HPC_Generic_Workflow/index.html)
 
@@ -50,11 +50,13 @@ list.dirs(path = './protocols')
 ## Rovers
 [Rover Use in Field](/protocols/DryLab/Rovers/RoverUseInField/index.html)
 
+[Rover Battery Charging](/protocols/DryLab/Rovers/RoverBatteryCharge/index.html)
+
 
 # Operations
 
 [Adding Protocols](/protocols/Operations/Authoring_Protocols/index.html)
 
-<font color=red> In progress: </font>
+<font color=blue> *In progress:* </font>
 
 [Website Overview](/protocols/Operations/Website_Overview/index.html)

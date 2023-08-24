@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Jacob Washburn">
+<meta name="dcterms.date" content="2023-08-04">
+<meta name="description" content="How to charge the LiPo Batteries for the Rovers">
+
+<title>- Rover Battery Charging SOP</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../../">
+<script src="../../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../../about.html">About the Washburn Lab</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Rover Battery Charging SOP</h1>
+</div>
+
+<div>
+  <div class="description">
+    How to charge the LiPo Batteries for the Rovers
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jacob Washburn </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 4, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="instructions" class="level2">
+<h2 class="anchored" data-anchor-id="instructions">Instructions</h2>
+<p>Rover &amp; Battery</p>
+<p><u>Charging Batteries</u></p>
+<p>· The batteries are lithium polymer batteries (LiPo), which can be very dangerous if not properly charged, stored, or mishandled. May result in <u>large</u> and <u>dangerous</u> <strong>fires/explosions</strong>. If a fire occurs, it is a chemical fire which cannot be easily put out or contained.</p>
+<p>The biggest warning signs for a potential fire:</p>
+<p>o A hissing noise</p>
+<p>o A very swollen battery</p>
+<p>o Punctures of any sort</p>
+<p>o Popping noises</p>
+<p>· When charging/storing/using batteries, make sure there is a “Cold” fire extinguisher (regular fire extinguishers will not work) nearby along with the green metal ammo containers with sand in the bottom and buckets of sand.</p>
+<p>o The two buckets have lids that are blue</p>
+<p>o If any of the above listed issues occur, 1) quickly place the battery in one of the ammo containers or buckets, 2) dump the (sand) from the other container on top of the battery, and 3) put the lid on top to control the flames, but <u><strong><em>DO NOT CLOSE THE LID ALL THE WAY (this could turn the container into a bomb)</em></strong></u>.</p>
+<p>o <strong>PULL FIRE ALARM and/or CALL FIREDEPT IMEDIATLY.</strong> <u>If safe</u> to remove ammo can/bucket with the battery in it to outside the build do so.</p>
+<p>o Evacuate the building but remain in the building area and look for first responders so you can tell them about the hazard.</p>
+<p>o Report the incident to Jacob and Harper so they can file the EHS report.</p>
+<p>o File any paperwork needed for incident</p>
+<p>§ EHS link: <a href="https://ehs.missouri.edu/work/accident-reporting" class="uri">https://ehs.missouri.edu/work/accident-reporting</a></p>
+<p>· More to know about LiPo batteries</p>
+<p>o <a href="https://rogershobbycenter.com/lipoguide" class="uri">https://rogershobbycenter.com/lipoguide</a></p>
+<p>o <a href="https://vdr.one/everything-you-need-to-know-about-lipo-batteries/" class="uri">https://vdr.one/everything-you-need-to-know-about-lipo-batteries/</a></p>
+<p>o <a href="https://www.youtube.com/watch?v=ogb0DTqsZEs" class="uri">https://www.youtube.com/watch?v=ogb0DTqsZEs</a></p>
+<p>o <a href="https://www.youtube.com/watch?v=eKLHD7_zzCE&amp;t=0s" class="uri">https://www.youtube.com/watch?v=eKLHD7_zzCE&amp;t=0s</a></p>
+<p>o What will happen if the LiPo explodes/catches on fire: <a href="https://msadowski.github.io/lipo-safety/#:~:text=If%20your%20battery%20starts%20making,unplug%20it%20from%20the%20charger" class="uri">https://msadowski.github.io/lipo-safety/#:~:text=If%20your%20battery%20starts%20making,unplug%20it%20from%20the%20charger</a>.</p>
+<p><u>Charging</u></p>
+<p>·Each battery has 4 cells that are 20 aH (amp hour).</p>
+<p>o <a href="https://learn.adafruit.com/all-about-batteries/power-capacity-and-power-capability" class="uri">https://learn.adafruit.com/all-about-batteries/power-capacity-and-power-capability</a></p>
+<p>· The max charge for each battery is 16.8 Volts, which is 4.2 Volts per cell.</p>
+<p>· The Venom charger can theoretically charge 4 batteries at once, but we typically only charge two batteries at a time.</p>
+<p>·Each of the four cells in the battery needs to be charged and discharged in a balanced manner (e.g., one cell at 2 Volts and another at 4 Volts is dangerous).</p>
+<p>· Each battery has two cords coming from it. The cord with the think red and black wires and the yellow XT90 end is the main power. The cord with five small wires of different colors is for cell voltage level monitoring. NEVER use or charge the battery without the monitoring cord connected to the charger or on of the small monitor units.</p>
+<ol type="1">
+<li>Place the battery/batteries to be charged in the green metal ammo containers. They should stay in the containers at all times while being charged. Be careful not to get sand in or under the plastic covers on the batteries as this could result in rubbing and damage.</li>
+</ol>
+<p><img src="Picture1.png" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>If at any time during charging the batteries become hot to the touch, or start to hiss, swell, or make popping noises. As long as it is safe to do so,</li>
+</ol>
+<!-- -->
+<ol type="a">
+<li><p>Unplug the battery charger from the wall outlet!</p></li>
+<li><p>Leave the battery in the Ammo container and dump sand from the white bucket over the battery.</p></li>
+<li><p>Flip the Ammo container lid over the battery but DO NOT close the lid tightly as this could create a bomb.</p></li>
+<li><p><strong>PULL FIRE ALARM and/or CALL FIREDEPT IMEDIATLY.</strong> <u>If safe</u> to unplug XT90 battery from jumper and remove ammo can/bucket with the battery in it to outside the build do so. If not safe then leave it.</p></li>
+<li><p><strong>Evacuate the building</strong> but remain in the building area and look for first responders so you can tell them about the hazard.</p></li>
+</ol>
+<p>f.Report the incident to Jacob and Harper so they can file the EHS report.</p>
+<ol start="3" type="1">
+<li>Ensure that the sperate XT90 jumper line (not the line on the batter itself) is properly plugged into the Venom charger and that the “battery balance” adaptor is also plugged into the charger on the same charging channel as the XT90 jumper. <strong>VERY IMPORTANT</strong>: make sure the XT90 jumper cables are plugged in correctly (Red to Red, Black to Black). <strong>NEVER</strong> plug the yellow XT90 end into the battery without having the Red and Black jumper ends plugged into the charger!&nbsp; If the jumper is plugged into the battery and the Red and Black ends touch each other it could cause a fire!&nbsp;</li>
+</ol>
+<p><img src="Picture2.png" class="img-fluid"></p>
+<p><img src="Picture3.png" class="img-fluid"></p>
+<p>4.Turn on the power for the charger; make sure the charger is plugged into an outlet.</p>
+<ol start="5" type="1">
+<li><p>Use the “CHANNEL” button to select which of the 4 channels you want to charge the battery on.</p></li>
+<li><p>You want to use the “LiPo BALANCE” program. <strong>DO NOT USE</strong> the “LiPo CHARGE” program as this will not necessarily charge each cell in a balanced manor. Depending on what was previously selected you may have to use the Stop, Decrease, Increase, and Enter buttons to find the correct program.</p></li>
+</ol>
+<p><img src="Picture4.png" class="img-fluid"></p>
+<p><img src="Picture5.png" class="img-fluid"></p>
+<ol start="7" type="1">
+<li>We want to charge with 7.0A, 14.8V, and (4S). If these parameters are not correct you can change them by pressing enter (short press, not long press and hold).</li>
+</ol>
+<p><img src="Picture6.png" class="img-fluid"></p>
+<ol start="8" type="1">
+<li>Plug the battery/Batteries (Both the XT90 and the multicolored monitoring cable into the charger using the jumper lines from 2 above.</li>
+</ol>
+<p><img src="Picture7.png" class="img-fluid"></p>
+<ol start="9" type="1">
+<li><p>To charge the batteries, long press the start button. The charger will check that the battery is correctly detected and display both the number of cells. If the number of cells for “R:” and “S:” do not match then something is wrong and you need to recheck the battery connections and settings.</p></li>
+<li><p>If both “R:” and “S:” read “4SER” then you can press short press the ENTER button to begin charging. (<u>if you forget to press enter this second time, the batteries will not charge even if they are plugged in</u>).</p></li>
+<li><p>Once charging begins, <strong>DO NOT LEAVE THE ROOM (even for 30 seconds) UNLESS YOU TELL SOMEONE SO THEY CAN WATCH OVER THE BATTERIES</strong></p></li>
+<li><p>You can check the status of the batteries on the displayed screen. Pushing “INC” or “DEC” will take you to a second screen where you can see the status of each of the four cells in the battery.</p></li>
+<li><p>After a long period of time, the charger may time out and you will need to restart it (press start button twice) if the battery is not all the way charged.</p></li>
+</ol>
+<p>· The cells should always be within 0.1-0.2 of each other; if they are not, let someone know.</p>
+<p>· The charger will get hot so keep it in cool area.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
