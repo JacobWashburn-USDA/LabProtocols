@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Daniel Kick">
+<meta name="dcterms.date" content="2023-09-13">
+
+<title>- Save only what you need</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+<script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html">About the Washburn Lab</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#how-we-got-to-this-point" id="toc-how-we-got-to-this-point" class="nav-link active" data-scroll-target="#how-we-got-to-this-point">How we got to this point:</a></li>
+  <li><a href="#reclaiming-88-storage-space" id="toc-reclaiming-88-storage-space" class="nav-link" data-scroll-target="#reclaiming-88-storage-space">Reclaiming 88% Storage Space</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Save only what you need</h1>
+<p class="subtitle lead">Saving 88% disk space with a few lines of <code>R</code></p>
+  <div class="quarto-categories">
+    <div class="quarto-category">code</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Daniel Kick </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 13, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7424.908</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 735.05</code></pre>
+</div>
+</div>
+<section id="how-we-got-to-this-point" class="level2">
+<h2 class="anchored" data-anchor-id="how-we-got-to-this-point">How we got to this point:</h2>
+<p>Collecting data from many sites is expensive but using a biophysical model, many sites and years can be ‘harvested’ in minutes. I’m building a dataset with many cultivars planted across the united states. The problem is that I’m being greedy – I want to have the a day by day account of plant’s growth at ~1,300 locations from 1984-2022, varying cultivar, and planting date.</p>
+<p>In my initial implementation the results from the model are written to a csv for each location…</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Picture1.PNG" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Oh <em>no</em>.</figcaption><p></p>
+</figure>
+</div>
+<p>This file has a boat load of data. It’s a table of 25,243,175 rows by 19 columns – <em>479,620,325 billion</em> cells. By the end of the experiment much of my hard drive will be taken up by these.</p>
+</section>
+<section id="reclaiming-88-storage-space" class="level2">
+<h2 class="anchored" data-anchor-id="reclaiming-88-storage-space">Reclaiming 88% Storage Space</h2>
+<p>An easy place to cut cells is from redundant or unneeded columns. These are produced by the simulation but the way I have the experiment structured, they aren’t needed after it’s done running.</p>
+<pre><code># YAGNI isn't just for code
+df &lt;- df[, c(
+      # Indepenent Variables
+      'ith_lon', 'ith_lat', 'soils_i', 'SowDate', 'Genotype', 'Date',
+      
+      # Dependent Variables
+      'Maize.AboveGround.Wt', 'Maize.LAI', 'yield_Kgha'
+
+      # Redundant or not needed
+      #'X', 'ith_year_start', 'ith_year_end', 'factorial_file', 'CheckpointID', 
+      #'SimulationID', 'Experiment', 'FolderName', 'Zone', 'Clock.Today'
+      )]</code></pre>
+<p>This is an easy way to get rid of over half the cells (down to 47.36%) (and really I should not have saved these in the first place) but we can do better still.</p>
+<p>Many of the rows represent times before planting without any data collected. All rows where <code>Maize.AboveGround.Wt</code>, <code>Maize.LAI</code>, and <code>Maize.AboveGround.Wt</code> are 0 can be dropped. Because so much of the year is out of the growing season this is quite helpful and cuts about half of the observations (20.09%).</p>
+<p>Splitting these data into two tables with independent variables or dependent variables (with a key) gets the total down to 10,602 + 53,530,975 = 53,541,577. Still a lot but only 11.16% of the starting size!</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Data </th>
+   <th style="text-align:right;"> Size </th>
+   <th style="text-align:right;"> Percent Original </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Original </td>
+   <td style="text-align:right;"> 479620325 </td>
+   <td style="text-align:right;"> 100.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Select Cols. </td>
+   <td style="text-align:right;"> 227188575 </td>
+   <td style="text-align:right;"> 47.37 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Filter Rows </td>
+   <td style="text-align:right;"> 96355755 </td>
+   <td style="text-align:right;"> 20.09 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Split Tables </td>
+   <td style="text-align:right;"> 53541577 </td>
+   <td style="text-align:right;"> 11.16 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<p>I could probably go even further, but now that each experiment takes up only 482 MB instead of 4.64 GB. Furhter optimization can wait for another day.</p>
+<p>While storage space is important (at this scale), another factor for the performance (and quality of life) is reading in the data. Using the basic <code>read.csv</code> function it takes 4 minutes 23 seconds to read in. Using the <code>vroom</code> library instead can read in these data in only <em>4.04 seconds</em>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

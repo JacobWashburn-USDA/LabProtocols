@@ -1,0 +1,15 @@
+---
+title: "Capturing Tacit Knowledge Through Blogging"
+subtitle: "(Or why am I writing and who is it for?)"
+author: "Daniel Kick"
+date: "2023-09-12"
+categories: [code]
+---
+
+## Advice à la carte
+
+One of my goals with mentoring is to help others avoid places I got stuck (or get through them more easily) when I was learning. Part of this is writing guides, documentation, SOPs, etc. that I wish I had, but there's some knowledge that doesn't fit into a nice long form documents.
+
+Tacit knowledge (e.g. how to approach different problems) or helpful little tricks aren't well suited to that sort of format. Posts in this series are designed to collect thoughts in this vein to hopefully help out a fellow computational traveler starting their journey.
+
+To that end these posts will be a mix of tricks, advice, retrospectives, and maybe a few guides that don't fit in the `protocols/` folder.

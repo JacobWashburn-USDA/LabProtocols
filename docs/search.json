@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "About the Washburn Lab",
     "section": "",
-    "text": "Badges: [💻🧙, ]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBadges: [💻🧙, ]"
+    "text": "Badges: [💻🧙, ] Harper LaFond joined the Washburn Lab in 2022 as the lab technician. She received her B.S. in Fisheries and Wildlife and her M.S. in Plant, Insect & Microbial Sciences specializing in entomology, both at the University of Missouri – Columbia. Harper has enjoyed working an array of field technician jobs with all sorts of living things from bugs and birds of prey to sturgeon and river carp. She then worked at the University of Missouri, Grape and Wine Institute as the viticulture extension specialist before joining the maize group at the USDA (she only works with crops that can be fermented into tasty drinks). Harper enjoys listening to podcasts on her walks to and from work, cooking dinner with her husband and sharing the leftovers with their dog, Chase.\n\n\n\n\n\n\n\n\n\nDaniel joined in 2021 and works with predicting phenotypes over a range of genotypes and environments. His public notes can be found here and personal page can be found here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBadges: [💻🧙, ]"
   },
   {
     "objectID": "about.html#staff",
@@ -26,6 +26,41 @@
     "title": "Washburn Lab Resources",
     "section": "",
     "text": "Rover Use in Field\nRover Battery Charging\n\n\n\nStitching Images with Pix4Dmapper\nStitching Images with Pix4Dmapper: RE-mx Drone\nGridding the Reference Flight (QGIS)\n\n\n\n\n\n\nRestarting the Image Script on the Rootbot’s Pi\n\n\n\n\n\n\nTransferring Data Between Computers\n“Do Nothing” Scripting to Progressively Automate tasks\n\n\n\nSingularity: RStudio in a box\nUsing Port Forwarding to Access Your Jupyter Notebook\nMaking a Singularity Container From Your Conda Environment\nUsing your Singularity container with Open OnDemand\n In progress: \nOverview: Suggested HPC Workflow\nUsing Open OnDemand\n\n\n\nAdding Protocols\n In progress: \nWebsite Overview"
+  },
+  {
+    "objectID": "posts/DanielKick/230912_vignettes_for_tacit_knowledge/index.html",
+    "href": "posts/DanielKick/230912_vignettes_for_tacit_knowledge/index.html",
+    "title": "Capturing Tacit Knowledge Through Blogging",
+    "section": "",
+    "text": "One of my goals with mentoring is to help others avoid places I got stuck (or get through them more easily) when I was learning. Part of this is writing guides, documentation, SOPs, etc. that I wish I had, but there’s some knowledge that doesn’t fit into a nice long form documents.\nTacit knowledge (e.g. how to approach different problems) or helpful little tricks aren’t well suited to that sort of format. Posts in this series are designed to collect thoughts in this vein to hopefully help out a fellow computational traveler starting their journey.\nTo that end these posts will be a mix of tricks, advice, retrospectives, and maybe a few guides that don’t fit in the protocols/ folder."
+  },
+  {
+    "objectID": "posts/DanielKick/230913_filtering_to_save_88pr_space/index.html",
+    "href": "posts/DanielKick/230913_filtering_to_save_88pr_space/index.html",
+    "title": "Save only what you need",
+    "section": "",
+    "text": "[1] 7424.908\n\n\n[1] 735.05"
+  },
+  {
+    "objectID": "posts/DanielKick/230913_filtering_to_save_88pr_space/index.html#how-we-got-to-this-point",
+    "href": "posts/DanielKick/230913_filtering_to_save_88pr_space/index.html#how-we-got-to-this-point",
+    "title": "Save only what you need",
+    "section": "How we got to this point:",
+    "text": "How we got to this point:\nCollecting data from many sites is expensive but using a biophysical model, many sites and years can be ‘harvested’ in minutes. I’m building a dataset with many cultivars planted across the united states. The problem is that I’m being greedy – I want to have the a day by day account of plant’s growth at ~1,300 locations from 1984-2022, varying cultivar, and planting date.\nIn my initial implementation the results from the model are written to a csv for each location…\n\n\n\nOh no.\n\n\nThis file has a boat load of data. It’s a table of 25,243,175 rows by 19 columns – 479,620,325 billion cells. By the end of the experiment much of my hard drive will be taken up by these."
+  },
+  {
+    "objectID": "posts/DanielKick/230913_filtering_to_save_88pr_space/index.html#reclaiming-88-storage-space",
+    "href": "posts/DanielKick/230913_filtering_to_save_88pr_space/index.html#reclaiming-88-storage-space",
+    "title": "Save only what you need",
+    "section": "Reclaiming 88% Storage Space",
+    "text": "Reclaiming 88% Storage Space\nAn easy place to cut cells is from redundant or unneeded columns. These are produced by the simulation but the way I have the experiment structured, they aren’t needed after it’s done running.\n# YAGNI isn't just for code\ndf <- df[, c(\n      # Indepenent Variables\n      'ith_lon', 'ith_lat', 'soils_i', 'SowDate', 'Genotype', 'Date',\n      \n      # Dependent Variables\n      'Maize.AboveGround.Wt', 'Maize.LAI', 'yield_Kgha'\n\n      # Redundant or not needed\n      #'X', 'ith_year_start', 'ith_year_end', 'factorial_file', 'CheckpointID', \n      #'SimulationID', 'Experiment', 'FolderName', 'Zone', 'Clock.Today'\n      )]\nThis is an easy way to get rid of over half the cells (down to 47.36%) (and really I should not have saved these in the first place) but we can do better still.\nMany of the rows represent times before planting without any data collected. All rows where Maize.AboveGround.Wt, Maize.LAI, and Maize.AboveGround.Wt are 0 can be dropped. Because so much of the year is out of the growing season this is quite helpful and cuts about half of the observations (20.09%).\nSplitting these data into two tables with independent variables or dependent variables (with a key) gets the total down to 10,602 + 53,530,975 = 53,541,577. Still a lot but only 11.16% of the starting size!\n\n\n\n\n \n  \n    Data \n    Size \n    Percent Original \n  \n \n\n  \n    Original \n    479620325 \n    100.00 \n  \n  \n    Select Cols. \n    227188575 \n    47.37 \n  \n  \n    Filter Rows \n    96355755 \n    20.09 \n  \n  \n    Split Tables \n    53541577 \n    11.16 \n  \n\n\n\n\n\nI could probably go even further, but now that each experiment takes up only 482 MB instead of 4.64 GB. Furhter optimization can wait for another day.\nWhile storage space is important (at this scale), another factor for the performance (and quality of life) is reading in the data. Using the basic read.csv function it takes 4 minutes 23 seconds to read in. Using the vroom library instead can read in these data in only 4.04 seconds."
+  },
+  {
+    "objectID": "posts/DanielKick/index.html",
+    "href": "posts/DanielKick/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "code\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\ncode\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "protocols/Drones/Pix4Dmapper_Stitch/index.html",

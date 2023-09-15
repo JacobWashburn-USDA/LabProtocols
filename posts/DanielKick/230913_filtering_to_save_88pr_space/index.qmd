@@ -1,0 +1,68 @@
+---
+title: "Save only what you need"
+subtitle: "Saving 88% disk space with a few lines of `R`"
+author: "Daniel Kick"
+date: "2023-09-13"
+categories: [code]
+---
+
+```{r, echo=FALSE}
+#| warning: false
+library(tidyverse)
+library(kableExtra)
+
+#nrow(gps)*size of one csv
+1525*4.868792 # GB without reduction
+1525*.482     # with reduction
+```
+
+
+## How we got to this point:
+
+Collecting data from many sites is expensive but using a biophysical model, many sites and years can be 'harvested' in minutes. I'm building a dataset with many cultivars planted across the united states. The problem is that I'm being greedy -- I want to have the a day by day account of plant's growth at ~1,300 locations from 1984-2022, varying cultivar, and planting date.
+
+In my initial implementation the results from the model are written to a csv for each location...
+
+![Oh *no*.](Picture1.PNG)
+
+This file has a boat load of data. It's a table of 25,243,175 rows by 19 columns -- *479,620,325 billion* cells. By the end of the experiment much of my hard drive will be taken up by these. 
+
+## Reclaiming 88% Storage Space
+
+An easy place to cut cells is from redundant or unneeded columns. These are produced by the simulation but the way I have the experiment structured, they aren't needed after it's done running. 
+
+```
+# YAGNI isn't just for code
+df <- df[, c(
+      # Indepenent Variables
+      'ith_lon', 'ith_lat', 'soils_i', 'SowDate', 'Genotype', 'Date',
+      
+      # Dependent Variables
+      'Maize.AboveGround.Wt', 'Maize.LAI', 'yield_Kgha'
+
+      # Redundant or not needed
+      #'X', 'ith_year_start', 'ith_year_end', 'factorial_file', 'CheckpointID', 
+      #'SimulationID', 'Experiment', 'FolderName', 'Zone', 'Clock.Today'
+      )]
+```
+This is an easy way to get rid of over half the cells (down to 47.36%) (and really I should not have saved these in the first place) but we can do better still. 
+
+Many of the rows represent times before planting without any data collected. All rows where `Maize.AboveGround.Wt`, `Maize.LAI`, and `Maize.AboveGround.Wt` are 0 can be dropped. 
+Because so much of the year is out of the growing season this is quite helpful and cuts about half of the observations (20.09%).
+
+Splitting these data into two tables with independent variables or dependent variables (with a key) gets the total down to 10,602 + 53,530,975 = 53,541,577. Still a lot but only 11.16% of the starting size!
+
+```{r, echo=FALSE}
+data.frame(
+  Data = c('Original', 'Select Cols.', 'Filter Rows', 'Split Tables'),
+  Size = c( 479620325,      227188575,      96355755,     53541577)
+) |> 
+  mutate(`Percent Original` = round(100*Size/479620325, 2)) |>
+  kbl() |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+
+```
+
+I could probably go even further, but now that each experiment takes up only 482 MB instead of 4.64 GB. Furhter optimization can wait for another day.
+
+While storage space is important (at this scale), another factor for the performance (and quality of life) is reading in the data. Using the basic `read.csv` function it takes 4 minutes 23 seconds to read in. Using the `vroom` library instead can read in these data in only _4.04 seconds_.
