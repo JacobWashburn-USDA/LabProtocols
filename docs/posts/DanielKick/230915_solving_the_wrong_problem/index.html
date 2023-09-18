@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Daniel Kick">
+<meta name="dcterms.date" content="2023-09-15">
+
+<title>- Solving the Wrong Problem</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html">About the Washburn Lab</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-you-know-that-aint-so" id="toc-what-you-know-that-aint-so" class="nav-link active" data-scroll-target="#what-you-know-that-aint-so">What you know that ain’t so</a></li>
+  <li><a href="#a-recent-example" id="toc-a-recent-example" class="nav-link" data-scroll-target="#a-recent-example">A recent example:</a></li>
+  <li><a href="#so-wheres-the-problem" id="toc-so-wheres-the-problem" class="nav-link" data-scroll-target="#so-wheres-the-problem">So where’s the problem?</a></li>
+  <li><a href="#take-home" id="toc-take-home" class="nav-link" data-scroll-target="#take-home">Take home:</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Solving the Wrong Problem</h1>
+<p class="subtitle lead">(or why you shouldn’t believe things you know)</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">debugging</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Daniel Kick </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 15, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="what-you-know-that-aint-so" class="level2">
+<h2 class="anchored" data-anchor-id="what-you-know-that-aint-so">What you know that ain’t so</h2>
+<p>There’s a perspective that “it is better to know nothing than to know what ain’t so.”<a href="https://quoteinvestigator.com/2015/05/30/better-know/">1</a> In my experience this is certainly the case with debugging because “knowing” will lead you down a rabbit trail of trying to solve the wrong problem.</p>
+<p>The approach that works well for me is to “trust but verify” your knowledge. If your initial attempts to fix the bug in your code don’t work, take some time to check your assumptions – specifically your assumptions about where the bug is. This slows down your work initially because you’re often testing things that <em>are</em> behaving as you expect expectations, but this saves you from spending a lot of time trying to fix the wrong problems.</p>
+</section>
+<section id="a-recent-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-recent-example">A recent example:</h2>
+<p>I’m writing a model that uses relationships between genes to predict a trait. The problem is that the model isn’t something I can write by hand (there are 6,067 inputs) and is way to slow – I’ve estimated it would take about 1.7 days to complete a <em>single</em> epoch (training cycle).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ExampleConnectionsKegg.png" class="img-fluid figure-img" width="400"></p>
+<p></p><figcaption class="figure-caption">Here are all the model’s processes for just <em>two</em> input genes.</figcaption><p></p>
+</figure>
+</div>
+<p>In the diagram above, data from each gene (the nodes at the top) is fed into different functions (nodes 0-23) representing associations between different biological processes until they reach the output node (24) which predicts the trait.</p>
+<p>Some nodes share the same input (here node 14 and 10 both need node 11 as input). Under the hood I have the model storing the output of these nodes so it doesn’t have to re-calculate outputs un-necessarily (here the model would look-up the output of node 11 instead of recalculating it). This seems to work nicely but is a little unusual – in over two years this is the first time I’ve manually done this sort of thing.</p>
+<p>Because of that, when I move my model from a tiny demo data set to the real thing and saw it was slow as molasses <em>I “knew” my model slow because it was storing and retrieving intermediate results.</em></p>
+<p>One assumption underlying this is that the model library is effectively designed and optimized such that it’s easier to get worse performance by doing unconventional things than better performance. This isn’t a bad assumption most of the time but we’ll see how it got me thinking about the wrong problem. My thought process went something like this:</p>
+<p>“Okay, so I’m doing something a little unconventional by looking up module outputs. Maybe if I can rewrite the model without this, some <em>☆<code>Pytorch</code> magic☆</em> will happen improving training speed.”</p>
+<p>“Hmm, the most straightforward way to write a model would be to chain the inputs and outputs like so”</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>input_1 <span class="op">=</span> x_list[<span class="dv">0</span>]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>module_2 <span class="op">=</span> x_list[<span class="dv">1</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>intermediate_1 <span class="op">=</span> module_1(input_1)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>intermediate_2 <span class="op">=</span> module_2(input_2)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>output  <span class="op">=</span> module_3(nn.Concatenate([intermediate_1, intermediate_2], axis <span class="op">=</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>“But it would be unfeasible to do this because I’d have to write a line for each input and process <em>8,868 in total… or would it?</em>”</p>
+<p>This should have seemed like a totally unreasonable thing to do and been where I stopped to think if there was another way to get a speed increase (or tested this by writing a tiny neural net by hand with and without caching results and looked for a tiny difference in speed). However, years ago I met a class deadline by using python2 to write python2 code so this seemed perfectly feasible.</p>
+<p>So the plan became :</p>
+<ol type="1">
+<li><p>Generate a boat load strings containing python code</p></li>
+<li><p>Use Python’s <code>exec()</code> and <code>eval()</code> functions to run each string</p></li>
+<li><p>Sit back and think about what a clever idea it was having my code write my code.</p></li>
+</ol>
+<p>Several hours later I’ve learned a fair bit about how <code>exec()</code> and <code>eval()</code> handle scope and that their behavior between python2 and python3 has changed and still have no working model. So I decide to print the code I wanted executed to the console paste it (all 8,868 lines of it) into my model definition, and run it.</p>
+<p>This solution was inelegant but quick to implement and <em>exactly</em> what needed to happen because the model didn’t perform any better<em>. If anything it was slower,</em> so there definitely wasn’t any <em>☆<code>Pytorch</code> magic☆</em> happening. This was a big enough surprise that it got me to question if the model was the problem after all instead of running down other rabbit trails.</p>
+</section>
+<section id="so-wheres-the-problem" class="level2">
+<h2 class="anchored" data-anchor-id="so-wheres-the-problem">So where’s the problem?</h2>
+<p>Building a model may be the most evocative part of the data science workflow, but the steps that precede it are often as or more important. Choices around how to handle missing or potentially unrepresentative data are important as are how data is stored and moved around. In this case, I wasn’t thinking about these critical choices.</p>
+<p>For each individual, there are data for genes throughout its genome (<code>x_list</code>, a list where each entry is a gene’s SNPs), and it’s trait of interest (<code>y</code>). Here’s the (simplified) code for this data set:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ListDataset(Dataset):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, y, x_list):</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x_list <span class="op">=</span> x_list</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.y)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, idx):</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Get the data for index `idx`</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        y_idx <span class="op">=</span><span class="va">self</span>.y[idx]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        x_idx <span class="op">=</span>[x[idx, ] <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.x_list]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Move to GPU so model can access it</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        y_idx.to(<span class="st">'cuda'</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        x_idx <span class="op">=</span> [x.to(<span class="st">'cuda'</span>) <span class="cf">for</span> x <span class="kw">in</span> x_idx]</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> y_idx, x_idx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Do you spot what’s happening? When <code>__getitem__</code> loads an observation, it has to move data from each gene to the GPU. This process isn’t instantaneous and is happening for each of the 6,067 genes every time an observation is loaded.</p>
+<p>Training a network with a mere 100 observations (batch size of 10) takes 101.89s/it but if all the data is moved to the GPU before its <em>15% faster</em> at 86.34s/it.</p>
+<p>That’s nice, but since there are over 80,000 observations, it’s not enough to make training this model feasible. There’s another place we can look for improvements, and that’s the batch size. Increasing the batch size will mean that more observations are being moved to the GPU at a time so it has to happen fewer times. In this example getting all training observations in a single batch makes training <em>86% faster</em> at 13.44s/it.</p>
+</section>
+<section id="take-home" class="level2">
+<h2 class="anchored" data-anchor-id="take-home">Take home:</h2>
+<p>Testing your assumptions (especially while debugging) is like insurance. When you’re on the right track from the start, it’ll cost you a little time that you otherwise wouldn’t have spent but it’ll keep you from spending a lot of time trying to solve the wrong problem.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
