@@ -81,7 +81,7 @@
     "href": "posts/DanielKick/230915_solving_the_wrong_problem/index.html#take-home",
     "title": "Solving the Wrong Problem",
     "section": "Take home:",
-    "text": "Take home:\nTesting your assumptions (especially while debugging) is like insurance. When you’re on the right track from the start, it’ll cost you a little time that you otherwise wouldn’t have spent but it’ll keep you from spending a lot of time trying to solve the wrong problem."
+    "text": "Take home:\nTesting your assumptions (especially while debugging) is like insurance. When you’re on the right track from the start, it’ll cost you a little time that you otherwise wouldn’t have spent but it’ll keep you from spending a lot of time trying to solve the wrong problem.\npost script:\nEven solving the right problem the result may not be what you want. Extrapolating from a more realistic subset of the data results in an estimated 5.6 hours per epoch. Better than 1.7 days, but not a home run ."
   },
   {
     "objectID": "posts/DanielKick/index.html",
