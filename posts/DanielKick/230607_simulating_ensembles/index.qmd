@@ -368,12 +368,13 @@ Once this runs we can look at the results. Let's consider the high accuracy `y2`
 #| cache: true
 #| error: false
 #| echo: false
+#| 
 # where on the graph does rmse become best?
-xmin_rmse_best <- sim_data %>% 
-  pivot_wider(names_from = 'name', values_from = 'y_rmse') %>% 
-  filter(y2>rmse) %>% 
-  summarise(mean2 = min(mean2)) %>% 
-  unlist()
+# xmin_rmse_best <- sim_data %>% 
+#   pivot_wider(names_from = 'name', values_from = 'y_rmse') %>% 
+#   filter(y2>rmse) %>% 
+#   summarise(mean2 = min(mean2)) %>% 
+#   unlist()
 
 sim_data <- sim_data %>% 
   mutate(line_type = case_when(name != 'y1'~ 'a',
@@ -415,11 +416,11 @@ Now let's add in the case where one model is highly inaccurate. In this case, as
 #| error: false
 #| echo: false
 # where on the graph does rmse become best?
-xmin_rmse_best <- sim_data %>% 
-  pivot_wider(names_from = 'name', values_from = 'y_rmse') %>% 
-  filter(y2>rmse) %>% 
-  summarise(mean2 = min(mean2)) %>% 
-  unlist()
+# xmin_rmse_best <- sim_data %>% 
+#   pivot_wider(names_from = 'name', values_from = 'y_rmse') %>% 
+#   filter(y2>rmse) %>% 
+#   summarise(mean2 = min(mean2)) %>% 
+#   unlist()
 
 sim_data <- sim_data %>% 
   mutate(line_type = case_when(name != 'y1'~ 'a',
@@ -535,6 +536,7 @@ Consistent with what we've seen, for most of these combinations $rmse^{-1}$ perf
 
 ```{r}
 #| echo: false
+#| warning: false
 left_join(data.frame(name = c('rmse', 'unif', 'var', 'y1', 'y2')),
           left_join(temp, sim_data)
           ) |>
@@ -550,7 +552,7 @@ It looks like there's a sort of saddle shape off the diagonal. We'll re-plot the
 
 ```{r}
 #| echo: false
-#| 
+#| warning: false
 tmp <- left_join(data.frame(name = c('rmse', 'unif', 'var', 'y1', 'y2')),
           left_join(temp, sim_data)
           ) %>% drop_na()
