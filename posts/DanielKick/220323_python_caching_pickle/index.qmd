@@ -1,0 +1,59 @@
+---
+title: "Tips: Cache Intermediate Results with `pickle`"
+author: "Daniel Kick"
+date: "2022-03-23"
+image: "Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
+categories: 
+  - code
+  - python
+  - intermediate
+  - tips
+draft: false
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg -->
+
+Here's a useful pattern I've been getting a lot of mileage out of lately. If you're running an analysis that has a time consuming step you can save the result as a python readable "pickle" file. _Addendum:_ In some cases pickling a python objects can sometimes succeed in storing and retrieving data where a library's built in functions for saving/loading data fails. 
+
+``` python
+import pickle as pkl
+
+path = "./data_intermediates/processed_data.pkl"
+if os.path.exists(path):
+    processed_data = pkl.load(open(path, 'rb'))
+else:
+    # Make `processed_data` here
+    pkl.dump(processed_data, open(path, 'wb'))
+```
+
+This also lets you batch a process so that you can do more with your resources. For example here's a list comprehension that will (for each day from 0-287) rearrange the weather data to be in ["long" format](http://www.cookbook-r.com/Manipulating_data/Converting_data_between_wide_and_long_format/ "http://www.cookbook-r.com/manipulating_data/converting_data_between_wide_and_long_format/"). This is concise but requires processing the whole list at once which takes a lot of resources.
+
+``` python
+sal_long_list = [_get_weather_long(results_list = res,
+                                   current_day = ith_day) for ith_day in np.linspace(start = 0, stop = 287, num = 288)]
+```
+
+If we incorporate it into the pattern above we can hold fewer items in memory at a time and then merge them (e.g. with `list.extend()` ) after the fact.
+
+``` python
+for ii in range(3):
+    file_path = '../data/result_intermediates/sal_df_W_long_part_day'+['0-95', 
+                                                                       '96-191', 
+                                                                       '192-287'][ii]+'.pkl'
+    if os.path.exists(file_path):
+        sal_long_list = pkl.load(open(file_path, 'rb'))
+
+    else:
+        # The original list comprehension is here, 
+        # just made messier by selecting a subset of the indices.
+        sal_long_list = [_get_weather_long(                                
+            results_list = res,
+            current_day = current_day) for current_day in [
+            [int(e) for e in np.linspace(start = 0, stop = 95, num = 96)],   # Batch 1
+            [int(e) for e in np.linspace(start = 96, stop = 191, num = 96)], # Batch 2
+            [int(e) for e in np.linspace(start = 192, stop = 287, num = 96)] # Batch 3
+        ][ii]
+        ]
+        pkl.dump(sal_long_list, open(file_path, 'wb'))
+```
+

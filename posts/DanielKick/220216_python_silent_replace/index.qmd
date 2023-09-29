@@ -1,0 +1,62 @@
+---
+title: "Tips: For those coming from R: Silent In Place Replacement"
+author: "Daniel Kick"
+date: "2022-02-16"
+image: "Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
+categories: 
+  - code
+  - python
+  - r
+  - intermediate
+  - tips
+draft: false
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg -->
+
+Silent, in place assignment updating an object This tripped me up even though it's consistent with how I've seen other objects behave. I needed an attribute to hold data extracted from a collection of files in a directory and created a class for this.
+
+``` python      
+class hps_search_experiment:
+    def __init__(self, path="", trial_type=''):
+        self.path = path
+        self.trial_type = trial_type
+        self.hps_best_trial = None
+        
+    def process_hps_files(self):
+        # ...
+        
+        self.hps_best_trial = hps_best_trial
+```
+
+However, running like so fails.
+
+``` python         
+test = hps_search_experiment(
+    path = './hps_search_intermediates_G/', 
+    trial_type = 'rnr')
+    
+test = test.process_hps_files()
+test.hps_best_trial
+
+#> AttributeError: 'NoneType' object has no attribute 'hps_best_trial'
+```
+
+This had me baffeld because I was thinking with R's norms of `data <- data %>% funciton()` where in place replacement is the exception. Instead I needed to be thinking with python's base object norms (e.g. `a_list.extend(['b', 'c'])` ). This fails because I overwrote `test` with the output of the method, which returns notthing since it's overwriting attributes within `test`'s scope.
+
+These would also work to update the attribute:
+
+``` python      
+self.hps_best_trial = hps_best_trial
+
+hps_search_experiment.__setattr__(self, "hps_best_trial", hps_best_trial)
+
+# if it's initialized as a list
+self.hps_best_trial.append([hps_best_trial]) 
+# if a dict is initialized for data
+self.data = {'a':1}
+self.data.update({'hps_best_trial':hps_best_trial})        
+```
+
+
+

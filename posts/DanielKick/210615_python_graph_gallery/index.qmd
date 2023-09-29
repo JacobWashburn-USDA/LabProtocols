@@ -1,0 +1,18 @@
+---
+title: "Tips: Find the Graph you want in using a Graph Gallery"
+author: "Daniel Kick"
+date: "2021-06-15"
+image: "800px-Burmese_python_in_Berlin.jpg"
+categories: 
+  - code
+  - python
+  - beginner
+  - tips
+draft: false
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Burmese_python_in_Berlin.jpg -->
+
+[This](https://www.python-graph-gallery.com/ "https://www.python-graph-gallery.com/") or similar sites can be helpful for looking up the right code/library for a plot. You can also find library specific ones. ([matplotlib](https://matplotlib.org/stable/gallery/index.html "https://matplotlib.org/stable/gallery/index.html"), [plotly](https://plotly.com/python/ "https://plotly.com/python/"))
+
+One of R's main plotting libraries, ggplot2, describes plots by layering one component on top of another (e.g. starting with x and y variables, adding points, adding error bars, adding aesthetic adjustments). If that sort of approach appeals to you there is a python version of this library called plotnine ([github](https://github.com/has2k1/plotnine "https://github.com/has2k1/plotnine"), [example use](https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python/index.html "https://datacarpentry.org/python-ecology-lesson/07-visualization-ggplot-python/index.html")).

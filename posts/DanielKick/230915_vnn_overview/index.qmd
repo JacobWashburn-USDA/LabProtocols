@@ -2,7 +2,9 @@
 title: "Making a \"Visible\" Neural Network"
 author: "Daniel Kick"
 date: "2023-09-15"
-categories: [code]
+categories: 
+  - code
+  - advanced
 draft: True
 ---
 

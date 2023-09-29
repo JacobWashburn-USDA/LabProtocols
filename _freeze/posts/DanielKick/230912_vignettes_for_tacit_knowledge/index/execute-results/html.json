@@ -1,0 +1,14 @@
+{
+  "hash": "0f97f76b7c8f8a14e44c6258c55e9186",
+  "result": {
+    "markdown": "---\ntitle: \"Capturing Tacit Knowledge Through Blogging\"\nsubtitle: \"(Or why am I writing and who is it for?)\"\nauthor: \"Daniel Kick\"\ndate: \"2023-09-12\"\nimage: \"800px-Apprenticeship.jpg\"\ncategories: [code]\nfreeze: true\n---\n\n::: {.cell}\n\n:::\n\n\n\n## Advice à la carte\n\nOne of my goals with mentoring is to help others avoid places I got stuck (or get through them more easily) when I was learning. Part of this is writing guides, documentation, SOPs, etc. that I wish I had, but there's some knowledge that doesn't fit into a nice long form documents.\n\nTacit knowledge (e.g. how to approach different problems) or helpful little tricks aren't well suited to that sort of format. Posts in this series are designed to collect thoughts in this vein to hopefully help out a fellow computational traveler starting their journey.\n\nTo that end these posts will be a mix of tricks, advice, retrospectives, and maybe a few guides that don't fit in the `protocols/` folder.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

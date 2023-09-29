@@ -3,8 +3,19 @@ title: "Capturing Tacit Knowledge Through Blogging"
 subtitle: "(Or why am I writing and who is it for?)"
 author: "Daniel Kick"
 date: "2023-09-12"
-categories: [code]
+image: "800px-Apprenticeship.jpg"
+categories: 
+  - tacit knowlege
+  - beginner
+freeze: true
 ---
+
+```{r}
+#| echo: false
+#| eval: false
+# https://commons.wikimedia.org/wiki/File:Apprenticeship.jpg
+```
+
 
 ## Advice à la carte
 

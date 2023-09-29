@@ -1,0 +1,27 @@
+---
+title: "Tips: Jupyter Plugins"
+author: "Daniel Kick"
+date: "2021-06-09"
+image: "800px-Burmese_python_in_Berlin.jpg"
+categories: 
+  - code
+  - python
+  - beginner
+  - tips
+draft: false
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Burmese_python_in_Berlin.jpg -->
+
+I came across a handy set of tools for jupyter. There are of extensions for the notebooks that give you access to code snips, autocomplete by default, rendering a notebook as a slide show, and other features. To get it installed within an anaconda virtual environment you may only need to install it with this command:
+
+`conda install -c conda-forge jupyter_contrib_nbextensions`
+
+I not all of the extensions were showing up for me until I also ran these two lines, so it may take a bit of fiddling to get it to run.
+
+```         
+jupyter contrib nbextension install --user
+jupyter nbextension enable codefolding/main
+```
+
+Here's a [link](https://towardsdatascience.com/bringing-the-best-out-of-jupyter-notebooks-for-data-science-f0871519ca29 "https://towardsdatascience.com/bringing-the-best-out-of-jupyter-notebooks-for-data-science-f0871519ca29")to a page that shows some of these extensions in action.

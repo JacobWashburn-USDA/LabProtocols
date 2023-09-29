@@ -2,13 +2,20 @@
 title: "Simulation as a Super Power"
 author: "Daniel Kick"
 date: "2023-09-21"
-categories: [code]
-draft: False
+image: "Two_women_operating_ENIAC.gif"
+categories: 
+  - code
+  - intermediate
+  - ensembling
+draft: false
+freeze: true
 ---
 
 ```{r}
 #| echo: false
 #| warning: false
+
+# https://commons.wikimedia.org/wiki/File:Two_women_operating_ENIAC.gif
 
 library(tidyverse)
 theme_set(theme_minimal())

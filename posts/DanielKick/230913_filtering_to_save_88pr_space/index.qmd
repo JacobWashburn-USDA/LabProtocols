@@ -3,11 +3,18 @@ title: "Save only what you need"
 subtitle: "Saving 88% disk space with a few lines of `R`"
 author: "Daniel Kick"
 date: "2023-09-13"
-categories: [code]
+image: "IBM_card_storage.NARA.jpg"
+categories: 
+  - code
+  - debugging
+  - tacit knowledge
+  - beginner
+freeze: true
 ---
 
 ```{r, echo=FALSE}
 #| warning: false
+# https://commons.wikimedia.org/wiki/File:IBM_card_storage.NARA.jpg
 library(tidyverse)
 library(kableExtra)
 

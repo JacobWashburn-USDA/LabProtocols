@@ -1,0 +1,19 @@
+---
+title: "Trivia: In Python Missing Isn't Equal to Itself"
+author: "Daniel Kick"
+date: "2022-09-28"
+image: "800px-Burmese_python_in_Berlin.jpg"
+categories: 
+  - code
+  - python
+  - beginner
+  - tips
+  - trivia
+draft: false
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Burmese_python_in_Berlin.jpg -->
+
+Python quirk I just learned and think is worth sharing. *A missing valued doesn't equal itself.*
+
+Here's the context: I'm making a list of values from a column that could not be converted to a date. Missing values can't be converted so they end up in the list (e.g. `[nan, '7/5/21 for pass 2']`. So how do we discard this empty value? We use a list comprehension to see if the value is equal to itself ( `[val for val in my_list if val == val]` ) and will get a nan free list.

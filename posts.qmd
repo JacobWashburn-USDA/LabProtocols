@@ -1,0 +1,4 @@
+---
+title: "Writings from the Lab"
+---
+[Daniel Kick](/posts/DanielKick/index.html)

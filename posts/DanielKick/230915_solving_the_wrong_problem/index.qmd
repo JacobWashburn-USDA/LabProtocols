@@ -3,7 +3,13 @@ title: "Solving the Wrong Problem"
 subtitle: "(or why you shouldn't believe things you know)"
 author: "Daniel Kick"
 date: "2023-09-15"
-categories: [code, debugging]
+image: "ExampleConnectionsKegg.png"
+categories: 
+  - code
+  - debugging
+  - tacit knowledge
+  - intermediate
+freez: true
 draft: false
 ---
 

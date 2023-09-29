@@ -2,9 +2,20 @@
   {
     "listing": "/posts/DanielKick/index.html",
     "items": [
+      "/posts/DanielKick/230607_simulating_ensembles/index.html",
       "/posts/DanielKick/230915_solving_the_wrong_problem/index.html",
       "/posts/DanielKick/230913_filtering_to_save_88pr_space/index.html",
-      "/posts/DanielKick/230912_vignettes_for_tacit_knowledge/index.html"
+      "/posts/DanielKick/230912_vignettes_for_tacit_knowledge/index.html",
+      "/posts/DanielKick/230524_linux_do_nothing_scripting/index.html",
+      "/posts/DanielKick/220523_r_comments_in_tables/index.html",
+      "/posts/DanielKick/221027_hpc_access_running_session/index.html",
+      "/posts/DanielKick/220928_python_trivia_missing/index.html",
+      "/posts/DanielKick/220323_python_caching_pickle/index.html",
+      "/posts/DanielKick/220216_python_silent_replace/index.html",
+      "/posts/DanielKick/210713_python_custom_functions/index.html",
+      "/posts/DanielKick/210621_python_data_readability/index.html",
+      "/posts/DanielKick/210615_python_graph_gallery/index.html",
+      "/posts/DanielKick/210609_python_jupyter_plugins/index.html"
     ]
   }
 ]
