@@ -572,5 +572,47 @@
     "title": "Restarting the Rootbot Imaging Script over SSH",
     "section": "",
     "text": "There’s an unresolved memory leak in the imaging script on the Rootbot. Overtime it consumes ever more ram until the script is killed. Ideally we should rewrite the script or monitor it using systemd so that the script is automatically restarted when it crashes. This has not risen to the top of the todo list so the current work around is as follows:\n\nAbout half way through an experiment, ssh into the rootbot’s pi.\nCheck that pictures aren’t currently being taken by looking at the timestamps in the pictures directory (ls -lh ~/Pictures)\nFind the process id number (PID) for the script (\nrootBotPhotoScript_23Feb2021.py\n) (e.g. with top or htop)\nEnd the process with kill $pid where $pid is the value from step 3.\ngo to the folder with the script (cd \\~/rootbot/jupyter_notebooks).\nRestart the rootbot script (rootBotPhotoScript_23Feb2021.py). Don’t be fooled by the shebang line, python3 must be explicitly used. The command to do this is nohup python3 rootBotPhotoScript_23Feb2021.py &&. nohup and && ensure the process continues in the background after the terminal is closed. python3 ensures the system’s default python (2) isn’t used. The full path need not be provided for the script because the present working directory is the /jupyter_notebooks folder."
+  },
+  {
+    "objectID": "posts/DanielKick/231003_profdev_r_for_cv/index.html",
+    "href": "posts/DanielKick/231003_profdev_r_for_cv/index.html",
+    "title": "Use a spreadsheet to manage your CV & Resume",
+    "section": "",
+    "text": "For the past year I’ve been using a spreadsheet and RStudio to manage my resume and curriculum vitae. This post is a pitch for why you might want to do this and an overview of the system. There will be a follow up post on how to get started if you decide to use his approach."
+  },
+  {
+    "objectID": "posts/DanielKick/231003_profdev_r_for_cv/index.html#why-use-a-spreadsheet",
+    "href": "posts/DanielKick/231003_profdev_r_for_cv/index.html#why-use-a-spreadsheet",
+    "title": "Use a spreadsheet to manage your CV & Resume",
+    "section": "Why use a spreadsheet?",
+    "text": "Why use a spreadsheet?\nThe key reason why you should use a spreadsheet to manage your resume is that it enables easy filtering and sorting. In essence your spreadsheet becomes a personal work history database from which you can quickly retrieve entries relevant to the application at hand.\nIf instead all your experiences went into an all encompassing text document, tailoring a document to a position would require you to go through each section and cut out most of the entries. To be clear – there are far worse strategies out there. Having a single reference document keeps your information together and means that much of your formatting work is done ahead of time.\nThis is where RStudio comes in. Rmarkdown gives you a way to draw entries from your spreadsheet, filter them, and then turn those entries into beautifully formatted text. Not to mention that you can have R update text for you1."
+  },
+  {
+    "objectID": "posts/DanielKick/231003_profdev_r_for_cv/index.html#overview",
+    "href": "posts/DanielKick/231003_profdev_r_for_cv/index.html#overview",
+    "title": "Use a spreadsheet to manage your CV & Resume",
+    "section": "Overview",
+    "text": "Overview\nLet’s see how this works. All the code and data for my resume and cv is on GitHub. Every time I update the spreadsheet or tweak the documents’ aesthetics I add a commit.\n\nUpdating the documents is a 4 step process that takes just a few moments. Earlier this month when a paper of mine was accepted. To update my documents I…\n\nedited the positions.csv document and added a row with the paper’s bibliographic information and url.\nopened my Rmarkdown files Curriculum-Vitae.Rmd and Resume.Rmd and knit them to pdfs.\ncopied the output pdfs to a second repository to share with others\ncommited and pushed these new documents to GitHub (and then did the same for the cv repository)\n\n\nYou might be wondering – what’s with the last two steps? Why move the documents and then push to GitHub instead of keeping them where they are? And why put these on GitHub in the first place?\nPutting these on GitHub (or online for that matter) makes it easy to go from your resume to your online presence (LinkedIn, Orcid, personal website, etc.) from links in your resume. This means that if you embed a link to your resume in your resume then every paper copy you hand out and every business card links to the most up to date version.\n\nUsing a second repository is just to have a cleaner presentation. Every file that isn’t your resume is a distraction – and if your recipient wants to see your GitHub they’ll be just one click away."
+  },
+  {
+    "objectID": "posts/DanielKick/231003_profdev_r_for_cv/index.html#a-more-detailed-look",
+    "href": "posts/DanielKick/231003_profdev_r_for_cv/index.html#a-more-detailed-look",
+    "title": "Use a spreadsheet to manage your CV & Resume",
+    "section": "A More Detailed Look:",
+    "text": "A More Detailed Look:\nLet’s take a look at positions.csv.\nThe first column, section, is the categories in your document. Several categories might be presented together (e.g. national_presentations and regional_presentations) but they aren’t assumed to be. The next column, in_resume, is a simple filter. Everything goes into the curriculum vitae, not so with the resume. Next we have institution. This one is a little odd because it includes university or organization names but also lists of authors (e.g. row 44). This is because all the items in this column are formatted the same way. After showing the title of an entry, we want to show this information. Dates are included using the start and end columns and location information (here urls) in loc. Finally, are several description_ columns. Extra information you want can be added to these.\n\nWhen I updated this spreadsheet I already had an entry from when I submitted the paper and put it $bioR\\chiiv$.\n\nOnly three cells had to change, moving it from the in review section to the academic articles section, tweaking the title, and updating the url.\n\nIn RStudio, the CV is ready to go. All I had to do was click the Knit button and wait for the pdf.\nThe resume took ever so slightly more work. For space and aesthetic reasons I use a non-default formatting for my publications. This is a manual step but is not hard at all. All I did was:\n\nRead in the position data and run line 433 position_data %&gt;% print_section('academic_articles'). This produces markdown formatted text. Each line of text is treated as a separate “item” and will be formatted according to some rules.\nCopy the markdown formatted text for the new publication.\nPaste it into the document and tweak the formatting:\n\nUse a smaller font size for everything between &lt;font size=\"1\"&gt; and &lt;/font&gt; .\nBold my name using ***\nDisplay authors and link together as the second line and don’t apply the third line’s formatting rules to anything (N/A)\n\n\n\nWith those edits made I click the “Knit” button again et voilà! Resume updated and ready to go."
+  },
+  {
+    "objectID": "posts/DanielKick/231003_profdev_r_for_cv/index.html#bonus-updating-values-in-the-text",
+    "href": "posts/DanielKick/231003_profdev_r_for_cv/index.html#bonus-updating-values-in-the-text",
+    "title": "Use a spreadsheet to manage your CV & Resume",
+    "section": "Bonus: Updating values in the text",
+    "text": "Bonus: Updating values in the text\nOne of the coolest tricks you can do if your resume is in R is to update text dynamically. You don’t have to search through and count how many students you’ve mentored, or papers you published2.\nHere’s a simple example. I want to include how long I’ve been using R, but I don’t want to have to update that by hand. You could calculate this in R like so:\n\ntoday     &lt;- as.Date(format(Sys.time(), \"%Y-%m-%d\")) # Get today's date\nstart_R   &lt;- as.Date(\"2017-01-29\")                   # Set starting date\ndays_diff &lt;- difftime(today, start_R)                # Calc. days elapsed\nyears     &lt;- as.numeric(days_diff) / 365             # Convert to years\nyears     &lt;- round(years)                            # Round\nyears\n\nRMarkdown let’s you embed this calculation in the text. In my documents I have something like this “R Programming (7years )” which will show up in the pdf as “R Programming (# years)”."
+  },
+  {
+    "objectID": "posts/DanielKick/231003_profdev_r_for_cv/index.html#footnotes",
+    "href": "posts/DanielKick/231003_profdev_r_for_cv/index.html#footnotes",
+    "title": "Use a spreadsheet to manage your CV & Resume",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSee the bonus at the very end.↩︎\nLook at line 430 in Resume.Rmd↩︎"
   }
 ]
