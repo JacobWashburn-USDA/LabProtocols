@@ -1,0 +1,331 @@
+---
+title: "Worse is better and not doing things \"right\""
+subtitle: "Avoid premature optimization"
+author: "Daniel Kick"
+date: "2023-10-13"
+image: "Alwac_III_computer,_1959.jpg"
+categories: 
+  - tacit knowledge
+  - beginner
+  - intermediate
+  - code
+  - deep learning
+freeze: true
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Alwac_III_computer,_1959.jpg -->
+
+"Worse is better" is an idea I get a lot of mileage out of. Here's the crux of it:
+
+> It refers to the argument that software quality does not necessarily increase with functionality: that there is a point where less functionality ("worse") is a preferable option ("better") in terms of practicality and usability. [source](https://en.wikipedia.org/wiki/Worse_is_better)
+
+I find this is useful descriptively^[e.g. If scientific manuscripts with embedded code are valuable for reproducibility, why haven't they become the default? There's a lot of energy needed to switch and all of your collaborators already know word. 🤷🏼‍♂ ] but also prescriptively as a way to spend less time doing work that doesn't need to be done. 
+
+In brief the idea is that once you have something that works it's often not worth altering it to make it faster, more efficient, or more elegant ... at least initially. Optimization is important ([example](/posts/DanielKick/230913_filtering_to_save_88pr_space/index.html) but what I'm talking about here _premature optimization_. Avoiding the urge to improve things that aren't the priority can be difficult, especially when you conceptually know what you would change. 
+
+
+## Simplified Example 
+
+Here's an example: I'm building a network that 'compresses' information. The key idea is that there's a function, `f()`, takes in some number of values and outputs _fewer_ values. We can use this function over and over again to compress the values more and more. Once they're 'compressed' we can do the reverse procedure and get more values until we're back at the starting number. 
+
+There's a catch however, and that's that the function can only output an integer number of values even if the number should be a fraction. It's like this division function. If the `numerator` argument is the number of input values and it will return `numerator/3` values.
+
+```{r}
+div_it <- function(numerator, divisor = 3){
+  res = numerator/divisor
+  res = round(res)
+  return(res)
+}
+
+div_it(100)
+```
+
+Because it can only return whole numbers, we can't reverse this procedure and always get back the same number -- sometimes we have to add or subtract a little bit. 
+```{r}
+inv_div_it <- function(numerator, divisor = 3){
+  return(numerator*divisor)
+}
+
+inv_div_it(33)
+
+inv_div_it(33)+1
+```
+
+
+If we want to really compress the input (`f(X) |> f(X) |> f(X) |> f(X)` or `f(f(f(f(X))))`) then the number of values at each level would be:
+```{r}
+vals <- c(100)
+for(i in 1:4){
+  i_val <- vals[length(vals)]
+  vals[length(vals)+1] <- div_it(i_val) 
+}
+vals
+```
+
+Ideally running the inverse procedure multiple times on the last output above (just one value) would output produce:   
+```{r}
+vals_reverse <- vals[length(vals):1]
+vals_reverse
+```
+
+But using the inverse function defined above (`inv_div_it()`) we get:
+```{r}
+recover_vals <- c(1)
+for(i in 1:4){
+  i_val <- recover_vals[length(recover_vals)]
+  recover_vals[length(recover_vals)+1] <- inv_div_it(i_val) 
+}
+recover_vals
+```
+
+To get back to 100 values we need to add a new value (imagine appending a `1` to an array) sometimes, and drop a value others, or make no change to output other times.
+```{r}
+add_vals <- c(1, -1, 0, 1)
+
+recover_vals <- c(1)
+for(i in 1:4){
+  i_val <- recover_vals[length(recover_vals)]
+  print(add_vals[i])
+  recover_vals[length(recover_vals)+1] <- inv_div_it(i_val) + add_vals[i]
+}
+recover_vals
+```
+
+We could keep track of the remainder each time `f()` is called and use that to figure out when to add or subtract 1. That would be the _elegant and efficient_ solution. We know the desired output (100 values) and the number of times `f()` was called (4) so we could also try changing the numbers in `add_vals` until we have four numbers that. This solution would be _inelegant but still effective_. 
+
+If a piece of code only needs to be a few times then the cost of the time you'd spend optimizing it will probably be worth more than than cost of the time the computer spends running it ([see also](https://xkcd.com/1205/)).
+
+If the sloppy way to express what you want is good enough then don't worry about it. Good enough now is often better than perfect later.   
+
+
+## Example in Context (`python`)
+
+The motivating problem behind this write up is that 'compressing' weather data (17 measurements for 365 days) into fewer values. I'm using a variation autoencoder with convolution layers which you can imagine as passing a sliding window over a 17x365 grid and summarizing each windowed chunk to get fewer values. 
+
+To check if the compression is effective, we have to compress 17x365 values down to something smaller (e.g. 17x23), and inflate them back to 17x365 so we can compare the input weather to the output weather. If we can get back the same 17x365 values (or something pretty close) then the comprssion is effective.. 
+
+
+From the input data's length (days) you can calculate what a convolutional layer's output length will be like so:
+
+```python
+def L_out_conv1d(
+    L_in = 365, 
+    kernel_size=3, stride = 2, padding=1, dilation = 1
+): return ((L_in +2*padding-dilation*(kernel_size-1)-1)/stride)+1
+
+L_out_conv1d(L_in = 365) # 183.0
+
+```
+And the same for reversing the operation (with a transposed convolution).
+```python
+def L_out_convT1d(
+    L_in = 183, 
+    kernel_size=3, stride = 2, padding=1, output_padding=0, dilation = 1
+): return (L_in - 1)*stride-2*padding+dilation*(kernel_size-1)+output_padding+1
+
+L_out_convT1d(L_in = 183) # 365.0
+
+```
+
+The trouble is that if I stack convolution layers the output length can become a fraction, which is forced to an integer, and prevents the reverse operation  from producing the right number. When I use 4 layers the length should be `[365, 183.0, 92.0, 46.5, 23.75]` which as integers is `[365, 183, 92, 46, 23]`. Reversing the operation produces `[23, 45, 89, 177, 353]`. 
+
+We can get back to 365 days by increasing the output's length in _some_ of the transposed convolution layers by adding a non-zero `output_padding`. I don't know how many layers will be best, so I can't hard code these values. I could use the functions above to calculate what when the `output_padding` should be 0 and when it shouldn't (the _elegant_ solution), but that's not what I did. 
+
+
+Instead I made a simple disposable neural network just to check if I had the `output_padding`s right by tracking the lengths of the tensor after each layer. 
+```python
+# input data. One observation, 17 measurements, 365 days of measurements. 
+# It's all 0s because all I care about right now is the dimensions of the data.
+xin = torch.zeros((1, 17, 365))
+
+# Proposed output_padding for each layer in the decoder network
+layer_output_padding = [0, 0, 0, 0, 0, 0, 0, 0]
+
+# encoder network
+ne = nn.ModuleList([
+    nn.Sequential(nn.Conv1d(
+    17, out_channels=17, kernel_size= 3, stride= 2, padding  = 1), nn.BatchNorm1d(
+    17), nn.LeakyReLU())
+    for i in range(len(layer_output_padding))
+])
+
+# Decoder network
+nd = nn.ModuleList([
+    nn.Sequential(nn.ConvTranspose1d(
+    17, 17, 
+    kernel_size=3, stride = 2, padding=1, output_padding=layer_output_padding[i]), nn.BatchNorm1d(
+    17), nn.LeakyReLU())
+    for i in range(len(layer_output_padding))
+])
+```
+
+Then I can run this network ...
+
+```python
+# list to store lengths
+tensor_Ls = []
+
+# add the input data's length (days)
+tensor_Ls += [list(xin.shape)[-1]] 
+
+# encode data
+for mod in ne:
+    xin = mod(xin)
+    tensor_Ls += [list(xin.shape)[-1]]
+
+# add the encoded data's 
+tensor_Ls += [str(tensor_Ls[-1])]
+
+# decode data
+for mod in nd:
+    xin = mod(xin)
+    tensor_Ls += [list(xin.shape)[-1]]
+```
+... and look at the first and last value of the list of lengths (`tensor_Ls`) to see if the proposed output paddings will work.
+
+```python
+tensor_Ls[0] == tensor_Ls[-1]
+# False
+tensor_Ls
+# [365, 183, 92, 46, 23, 12, 6, 3, 2, '2', 3, 5, 9, 17, 33, 65, 129, 257]
+
+```
+
+Next I need a way to systematically produce different paddings. For a decoder of four layers I would test paddings `[0, 0, 0, 0], [1, 0, 0, 0], ... [1, 1, 1, 1]` stopping at the first list that works. So I'll write a function to increment `[0, 0, 0, 0]` to `[1, 0, 0, 0]`.
+
+```python
+def increment_list(
+    in_list = [0, 0, 0, 0],
+    min_value = 0,
+    max_value = 1):
+    # Check that all entries are within min/max
+    if False in [True if e <= max_value else False for e in in_list]:
+        print('Value(s) above maximum!')
+    elif False in [True if e >= min_value else False for e in in_list]:
+        print('Value(s) below minimum!')
+    elif [e for e in in_list if e != max_value] == []:
+        print('List at maximum value!')
+    else:    
+        # start cursor at first non-max value
+        for i in range(len(in_list)):
+            if in_list[i] < max_value:
+                in_list[i] += 1
+                break
+            else:
+                in_list[i] = min_value
+    return(in_list)
+
+increment_list()
+# [1, 0, 0, 0]
+
+```
+
+Then we can loop through possible paddings until we find one that works or have tried all of them.
+
+```python
+# Proposed output_padding for each layer in the decoder network
+layer_output_padding = [0, 0, 0, 0, 0, 0, 0, 0]
+
+while True:
+    # save a backup of the current padding
+    old_layer_output_padding = layer_output_padding.copy()
+    
+    
+    # ... define and run network here ...
+    
+    
+    # If it did work we're done
+    if True == (tensor_Ls[0] == tensor_Ls[-1]):
+        print('done!')
+        
+    # If the padding _didn't_ work change it
+    else:
+        layer_output_padding = increment_list(
+            in_list = layer_output_padding,
+            min_value = 0,
+            max_value = 1)
+    
+    # If the proposed new padding is the same as the backup, then we have tried all the possible paddings and will stop. 
+    if layer_output_padding == old_layer_output_padding: 
+        break
+```
+
+
+### All together
+
+Here's the full loop and its output:
+
+```python
+
+# Proposed output_padding for each layer in the decoder network
+layer_output_padding = [0, 0, 0, 0, 0, 0, 0, 0]
+
+while True:
+    # save a backup of the current padding
+    old_layer_output_padding = layer_output_padding.copy()
+    
+    # input data. One observation, 17 measurements, 365 days of measurements. 
+    # It's all 0s because all I care about right now is the dimensions of the data.
+    xin = torch.zeros((1, 17, 365))
+
+    # encoder network
+    ne = nn.ModuleList([
+        nn.Sequential(nn.Conv1d(
+        17, out_channels=17, kernel_size= 3, stride= 2, padding  = 1), nn.BatchNorm1d(
+        17), nn.LeakyReLU())
+        for i in range(len(layer_output_padding))
+    ])
+
+    # Decoder network
+    nd = nn.ModuleList([
+        nn.Sequential(nn.ConvTranspose1d(
+        17, 17, 
+        kernel_size=3, stride = 2, padding=1, output_padding=layer_output_padding[i]), nn.BatchNorm1d(
+        17), nn.LeakyReLU())
+        for i in range(len(layer_output_padding))
+    ])
+    
+    # list to store lengths
+    tensor_Ls = []
+
+    # add the input data's length (days)
+    tensor_Ls += [list(xin.shape)[-1]] 
+
+    # encode data
+    for mod in ne:
+        xin = mod(xin)
+        tensor_Ls += [list(xin.shape)[-1]]
+
+    # add the encoded data's 
+    tensor_Ls += [str(tensor_Ls[-1])]
+
+    # decode data
+    for mod in nd:
+        xin = mod(xin)
+        tensor_Ls += [list(xin.shape)[-1]]    
+    
+    # If it did work we're done
+    if True == (tensor_Ls[0] == tensor_Ls[-1]):
+        print('done!')
+        
+    # If the padding _didn't_ work change it
+    else:
+        layer_output_padding = increment_list(
+            in_list = layer_output_padding,
+            min_value = 0,
+            max_value = 1)
+    
+    # If the proposed new padding is the same as the backup, then we have tried all the possible paddings and will stop. 
+    if layer_output_padding == old_layer_output_padding: 
+        break
+
+# done!
+
+layer_output_padding  
+# [0, 1, 1, 0, 1, 1, 0, 0]
+
+tensor_Ls
+# [365, 183, 92, 46, 23, 12, 6, 3, 2, '2', 3, 6, 12, 23, 46, 92, 183, 365]
+
+```
+This may not be as not as _elegant_ or as _efficient_ as it could be, but it doesn't matter. It only takes about 200ms so it's not worth improving unless.
