@@ -5,7 +5,7 @@ date: "2023-09-15"
 categories: 
   - code
   - advanced
-draft: True
+draft: False
 ---
 
 ## What's a visual neural network?
