@@ -24,8 +24,6 @@ Harper LaFond joined the Washburn Lab in 2022 as the lab technician. She receive
 
 Daniel joined in 2021 and works with predicting phenotypes over a range of genotypes and environments. His public notes can be found [here](/posts/DanielKick/index.html) and personal page can be found [here](www.danielkick.com).
 
-### Piyush Pandey (PhD) ![](people/PiyushPandy/PiyushPandy.jpg){width="100"}
-
 
 ## Graduate Students
 
@@ -45,14 +43,22 @@ Madi can be found [here.](https://mnmzbd24.github.io/)
 
 ### Morgan Mathison ![](people/GenericPerson/GenericPerson.png){width="100"}
 
+### Paige Hughes ![](people/GenericPerson/GenericPerson.png){width="100"}
+
+### Henry Bloch ![](people/GenericPerson/GenericPerson.png){width="100"}
+
 # Past Members:
 
-## Staff
+## Post Docs
 
-### Kate Guill
+### Piyush Pandey (PhD) ![](people/PiyushPandy/PiyushPandy.jpg){width="100"}
 
 ## Undergraduate Researchers
 
 ### Mia Ruppel
 
 ### Brady Blanton
+
+## Staff
+
+### Kate Guill
