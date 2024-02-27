@@ -37,6 +37,8 @@ list.dirs(path = './protocols')
 
 ### General Logistics
 
+[Making QR Codes for Samples and Plants](protocols/Operations/Ops_QRCodeGen/index.html)
+
 [Transferring Data Between Computers](/protocols/Logistics/HPC_Moving_Data/index.html)
 
 ["Do Nothing" Scripting to Progressively Automate tasks](/protocols/Logistics/Do_Nothing_Scripting/index.html)
