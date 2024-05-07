@@ -11,3 +11,7 @@ Encoding: UTF-8
 
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
+
+PythonType: conda
+PythonVersion: 3.11.9
+PythonPath: C:/Users/Daniel.Kick/AppData/Local/anaconda3/envs/reticulate_py/python.exe

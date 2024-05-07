@@ -1,0 +1,17 @@
+---
+title: "Kick Off Meeting"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+date: "2024-05-07"
+image: "Picture1.gif"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+freeze: true
+---
+
+[Demo Excel](./0502_nn_demo.xlsx)
+
+[Meeting Slides](./0507_KickOffMeeting.pptx)
+

@@ -10,6 +10,8 @@ website:
         text: Home
       - about.qmd
       - posts.qmd
+      - href: ./posts/DeepLearningCommunityofPractice/index.qmd
+        text: Deep Learning Community
 
 format:
   html:
