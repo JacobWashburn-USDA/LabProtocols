@@ -207,7 +207,21 @@
     "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html",
     "title": "Kick Off Meeting",
     "section": "",
-    "text": "Demo Excel\nMeeting Slides"
+    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nPlease watch at least the first 1h22m of Andrej Karpathy’s lecture here and try to follow along in your Jupyter Notebook.\nPlease note what you find confusing – someone else probably finds it confusing too!\nReminder: For this you’ll need to install numpy, matplotlib, graphviz, and pytorch.\n\nIf you’re using conda you may need to install graphviz using pip. You can do this from your notebook by typing the command !pip install graphviz. The leading ! will cause this to be treated as a shell command rather than a python command.\nnumpy conda pip\nmatplotlib conda pip\ngraphviz conda pip\npytorch Install Instructions"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#for-next-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#for-next-meeting",
+    "title": "Kick Off Meeting",
+    "section": "",
+    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nPlease watch at least the first 1h22m of Andrej Karpathy’s lecture here and try to follow along in your Jupyter Notebook.\nPlease note what you find confusing – someone else probably finds it confusing too!\nReminder: For this you’ll need to install numpy, matplotlib, graphviz, and pytorch.\n\nIf you’re using conda you may need to install graphviz using pip. You can do this from your notebook by typing the command !pip install graphviz. The leading ! will cause this to be treated as a shell command rather than a python command.\nnumpy conda pip\nmatplotlib conda pip\ngraphviz conda pip\npytorch Install Instructions"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#materials",
+    "title": "Kick Off Meeting",
+    "section": "Materials",
+    "text": "Materials\n\nHere is a tiny neural network in Excel ( File). Download it and try changing the weights and biases of the layers! In practice we’ll change all the weights and biases at once, but this is nice for building intuition.\nHere are the Meeting Slides."
   },
   {
     "objectID": "posts/DanielKick/index.html",

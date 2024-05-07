@@ -113,7 +113,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#for-next-meeting" id="toc-for-next-meeting" class="nav-link active" data-scroll-target="#for-next-meeting">For Next Meeting</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -155,10 +162,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="./0502_nn_demo.xlsx">Demo Excel</a></p>
-<p><a href="./0507_KickOffMeeting.pptx">Meeting Slides</a></p>
+<section id="for-next-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="for-next-meeting">For Next Meeting</h2>
+<ul>
+<li><p>We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.</p></li>
+<li><p>Please watch <em>at least</em> the first 1h22m of Andrej Karpathy’s lecture <a href="https://www.youtube.com/watch?v=VMj-3S1tku0">here</a> and try to follow along in your Jupyter Notebook.</p></li>
+<li><p>Please note what you find confusing – someone else probably finds it confusing too!</p></li>
+<li><p>Reminder: For this you’ll need to install <code>numpy</code>, <code>matplotlib</code>, <code>graphviz</code>, and <code>pytorch</code>.</p>
+<ul>
+<li><p>If you’re using <code>conda</code> you may need to install <code>graphviz</code> using <code>pip</code>. You can do this <em>from your notebook</em> by typing the command <code>!pip install graphviz</code>. The leading <code>!</code> will cause this to be treated as a shell command rather than a python command.</p></li>
+<li><p><code>numpy</code> <a href="https://anaconda.org/anaconda/numpy">conda</a> <a href="https://pypi.org/project/numpy/">pip</a></p></li>
+<li><p><code>matplotlib</code> <a href="https://anaconda.org/anaconda/matplotlib">conda</a> <a href="https://pypi.org/project/matplotlib/">pip</a></p></li>
+<li><p><code>graphviz</code> <a href="https://anaconda.org/anaconda/graphviz">conda</a> <a href="https://pypi.org/project/graphviz/">pip</a></p></li>
+<li><p><code>pytorch</code> <a href="https://pytorch.org/">Install Instructions</a></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<ul>
+<li><p>Here is a tiny neural network in Excel ( <a href="./0502_nn_demo.xlsx">File</a>). Download it and try changing the weights and biases of the layers! In practice we’ll change all the weights and biases at once, but this is nice for building intuition.</p></li>
+<li><p>Here are the <a href="./0507_KickOffMeeting.pptx">Meeting Slides</a>.</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
