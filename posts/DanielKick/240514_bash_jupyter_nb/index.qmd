@@ -1,0 +1,38 @@
+---
+title: "Quick Tip: Write notebooks, run scripts"
+subtitle: "`jupyter` + `nohup`"
+author: "Daniel Kick"
+date: "2024-05-14"
+image: "PIA21972_Jupiter_Blues.jpg"
+categories: 
+  - beginner
+  - code
+  - bash
+freeze: true
+---
+
+Much of what I write is in notebooks (thanks to the lovely [nbdev](https://nbdev.fast.ai/) library) but there are times where this is not convenient. For instance, while tuning hyperparameters or running other processes that can take a long time, it would be useful to detach a notebook from my IDE while it's running. One dead simple way to do this on linux is with the "no hangup" command (`nohup`). 
+
+All we have to do is:
+1. activate the enviroment:
+
+`$ conda activate my_env`
+
+2. use `jupyter` to create a python script from the desired notebook:
+`(my_env) $ jupyter nbconvert --to python my_notebook.ipynb`
+
+3. run the notebook (in our environment) with `nohup` so that the shell can be disconnected and `&` to run the command in the background 
+`(my_env) $ nohup python ./my_notebook &`
+
+*Et voilà!* The process shows up on the GPU and we don't have to worry about a bad internet connection or anything else stopping it before it's finished.  
+
+``` bash
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      1461      G   /usr/lib/xorg/Xorg                            4MiB |
+|    0   N/A  N/A    767952      C   python                                     3764MiB |
++---------------------------------------------------------------------------------------+
+```
