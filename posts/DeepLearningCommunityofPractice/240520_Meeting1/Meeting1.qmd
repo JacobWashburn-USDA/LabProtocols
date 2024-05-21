@@ -1,0 +1,152 @@
+---
+title: "Meeting 1"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+image: "Two_women_operating_ENIAC.gif"
+date: "2024-05-21"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+format: revealjs
+freeze: true
+---
+
+## Discussion
+
+-   What are the key ideas you took from the video?
+
+-   Did you implement code from the video? How did it go?
+
+-   For those who are beginning with `python` where there sticking points you encounter?
+
+    -   "High level" class organization?
+
+    -   "Low level" syntax?
+
+    -   Would a `python` office hours next week be useful?
+
+-   How long did you spend on the material?
+
+    -   Was this too much for a two week period?
+
+    -   Would video + take home challenge be a better pairing?
+
+## Key Ideas From Main Session:
+
+-   Functions approximated by combining many non-linear functions.
+
+-   Parameters of the functions nudged to decrease error.
+
+![Credit Randall Munroe ("Machine Learning" XKCD)](machine_learning.png){width="300"}
+
+## Key Ideas From Homework
+
+-   A computational graph allows us to track gradients through many operations
+
+-   Given the derivative of each function in a graph we use backpropagation to determine derivative of each parameter with respect to the loss
+
+-   Having the set of derivatives (the gradient) parameters can be nudged to reduce the loss
+
+## Looking Forward:
+
+```{mermaid}
+%%| fig-height: 2.5
+flowchart TD
+    A[backpropagation]
+    B[Text encoding\nand generation]
+    C[MLPs and logistics]
+    D[Advanced MLPs]
+    E[Advanced\nbackpropagation]
+    F[Convolutional\nnetworks]
+    G[Transformers]
+    
+    a(Learning Partners)
+    b(Learning Problem)
+    c(High Level Model)
+    or{or}
+    d(Low Level\nModel)
+    e(Advanced\nModel)
+    f(Advanced\nInterpretation)
+    
+    A --> B --> C --> D --> E --> F --> G
+    a --> b --> c --> or
+    or--> d
+    or--> e
+    or--> f
+    
+    A --- a
+    D ~~~ d
+
+```
+
+## Why learn about non-biological data?
+
+The core *mechanisms* of deep learning apply across types of data and tasks.
+
+-   Tasks (outputs)
+
+-   Data types and shapes (inputs)
+
+## Core Tasks
+
+-   Classification - Predict a discrete value (label)
+
+-   Regression - Predict a continuous value
+
+-   Density - How similar are different populations of observations?
+
+## Data Types
+
+Reminder: Categories of data
+
+|          | Categories | Ranked | Evenly Spaced | Natural 0 |
+|---------:|------------|--------|---------------|-----------|
+|  Nominal | X          |        |               |           |
+|  Ordinal | X          | X      |               |           |
+| Interval | X          | X      | X             |           |
+|    Ratio | X          | X      | X             | X         |
+
+## Data Types Continuted
+
+-   Think about generalized linear models to get a non-linear response we pass a linear model into a link function. (How is this similar to a neuron?)
+
+-   To flexibly use or predict different data types we change
+
+    -   How data is *encoded* (e.g. $Adenine \rightarrow [1, 0, 0, 0]$ )
+
+    -   The number of values output
+
+    -   How loss is calculated
+
+## Data Shapes
+
+| Tensor Rank | Name   | Example                 | Example Dims.\* |
+|------------:|--------|-------------------------|-----------------|
+|           0 | Scalar | Height                  |                 |
+|           1 | Vector | Height for several obs. | `n`             |
+|           2 | Matrix | Sequence on/off         | `n, c`          |
+|           3 | Cube   | Picture (bw)            | `n, h, w`       |
+|             |        | Gene                    | `n, l, c`       |
+|           4 | ?      | Picture (rgb)           | `n, c, h, w, l` |
+|           5 | ?      | Video (rgb)             | `n, c, h, w, l` |
+
+\*order changes based on conventions
+
+## For Next Meeting
+
+-   If you are have not found a learning partner please reach out to at least one person who
+
+    -   Doesn't have a partner yet and
+
+    -   has a different programming comfort (the median is 3)
+
+-   Think about if there is a small dataset that you would enjoy working with
+
+    -   RT-qPCR experiment?
+
+    -   Images with a plant diseased/non?
+
+    -   Sequences of nucleotides for genes in two families?
+
+-   Please watch *at least* the first 1h4m (*strongly recommend the full 1h57*) of Andrej Karpathy's lecture [here](https://www.youtube.com/watch?v=PaCmpygFfXo) and follow along in your Jupyter Notebook.
