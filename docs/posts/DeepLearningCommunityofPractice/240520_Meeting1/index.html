@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Daniel Kick">
+<meta name="dcterms.date" content="2024-05-21">
 
-<title>Deep Learning Community of Practice</title>
+<title>Meeting 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,35 +68,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
+<meta name="mermaid-theme" content="neutral">
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -128,13 +103,13 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
@@ -144,19 +119,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About the Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../../../posts.html"> 
 <span class="menu-text">Writings from the Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../posts/DeepLearningCommunityofPractice/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../posts/DeepLearningCommunityofPractice/index.html"> 
 <span class="menu-text">Deep Learning Community</span></a>
   </li>  
 </ul>
@@ -167,190 +142,295 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Deep Learning Community of Practice</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(4)</span></div><div class="category" data-category="beginner">beginner <span class="quarto-category-count">(4)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(4)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link active" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#key-ideas-from-main-session" id="toc-key-ideas-from-main-session" class="nav-link" data-scroll-target="#key-ideas-from-main-session">Key Ideas From Main Session:</a></li>
+  <li><a href="#key-ideas-from-homework" id="toc-key-ideas-from-homework" class="nav-link" data-scroll-target="#key-ideas-from-homework">Key Ideas From Homework</a></li>
+  <li><a href="#looking-forward" id="toc-looking-forward" class="nav-link" data-scroll-target="#looking-forward">Looking Forward:</a></li>
+  <li><a href="#core-tasks" id="toc-core-tasks" class="nav-link" data-scroll-target="#core-tasks">Core Tasks</a></li>
+  <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data Types</a></li>
+  <li><a href="#data-shapes" id="toc-data-shapes" class="nav-link" data-scroll-target="#data-shapes">Data Shapes</a></li>
+  <li><a href="#for-next-meeting" id="toc-for-next-meeting" class="nav-link" data-scroll-target="#for-next-meeting">For Next Meeting</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Meeting 1</h1>
+<p class="subtitle lead">Deep Learning Community of Practice</p>
+  <div class="quarto-categories">
+    <div class="quarto-category">beginner</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">Deep Learning</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Daniel Kick </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 21, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
+</header>
 
 
+<!-- https://commons.wikimedia.org/wiki/File:Two_women_operating_ENIAC.gif -->
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<ul>
+<li><p>What are the key ideas you took from the video?</p></li>
+<li><p>Did you implement code from the video? How did it go?</p></li>
+<li><p>For those who are beginning with <code>python</code> where there sticking points you encounter?</p>
+<ul>
+<li><p>“High level” class organization?</p></li>
+<li><p>“Low level” syntax?</p></li>
+<li><p>Both?</p></li>
+<li><p>Would a python office hours next week be useful?</p></li>
+</ul></li>
+<li><p>How long did you spend on the material?</p>
+<ul>
+<li><p>Was this too much for a two week period?</p></li>
+<li><p>Would video + take home challenge be a better pairing?</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="key-ideas-from-main-session" class="level2">
+<h2 class="anchored" data-anchor-id="key-ideas-from-main-session">Key Ideas From Main Session:</h2>
+<ul>
+<li><p>Functions approximated by combining many non-linear functions.</p></li>
+<li><p>Parameters of the functions nudged to decrease error.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="machine_learning.png" class="img-fluid figure-img" width="234"></p>
+<figcaption>Credit Randall Munroe (“Machine Learning” XKCD)</figcaption>
+</figure>
+</div>
+</section>
+<section id="key-ideas-from-homework" class="level2">
+<h2 class="anchored" data-anchor-id="key-ideas-from-homework">Key Ideas From Homework</h2>
+<ul>
+<li><p>A computational graph allows us to track gradients through many operations</p></li>
+<li><p>Given the derivative of each function in a graph we use backpropagation to determine derivative of each parameter with respect to the loss</p></li>
+<li><p>Having the set of derivatives (the gradient) parameters can be nudged to reduce the loss</p></li>
+</ul>
+</section>
+<section id="looking-forward" class="level2">
+<h2 class="anchored" data-anchor-id="looking-forward">Looking Forward:</h2>
+<div class="cell" data-fig-height="2.5" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    A[backpropagation]
+    B[Text encoding\nand generation]
+    C[MLPs and logistics]
+    D[Advanced MLPs]
+    E[Advanced\nbackpropagation]
+    F[Convolutional\nnetworks]
+    G[Transformers]
+    
+    a(Learning Partners)
+    b(Learning Problem)
+    c(High Level Model)
+    or{or}
+    d(Low Level\nModel)
+    e(Advanced\nModel)
+    f(Advanced\nInterpretation)
+    
+    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F --&gt; G
+    a --&gt; b --&gt; c --&gt; or
+    or--&gt; d
+    or--&gt; e
+    or--&gt; f
+    
+    A --- a
+    D ~~~ d
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The core <em>mechanisms</em> of deep learning apply across types of data and tasks.</p>
+<ul>
+<li><p>Tasks (outputs)</p></li>
+<li><p>Data types and shapes (inputs)</p></li>
+</ul>
+</section>
+<section id="core-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="core-tasks">Core Tasks</h2>
+<ul>
+<li><p>Classification - Predict a discrete value (label)</p></li>
+<li><p>Regression - Predict a continuous value</p></li>
+<li><p>Density - How similar are different populations of observations?</p></li>
+</ul>
+</section>
+<section id="data-types" class="level2">
+<h2 class="anchored" data-anchor-id="data-types">Data Types</h2>
+<p>Reminder: Categories of data</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: right;"></th>
+<th>Categories</th>
+<th>Ranked</th>
+<th>Evenly Spaced</th>
+<th>Natural 0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">Nominal</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Ordinal</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">Interval</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">Ratio</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Think about generalized linear models to get a non-linear response we pass a linear model into a link function. (How is this similar to a neuron?)</p></li>
+<li><p>To flexibly use or predict different data types we change</p>
+<ul>
+<li><p>How data is <em>encoded</em> (e.g.&nbsp;<span class="math inline">\(Adenine \rightarrow [1, 0, 0, 0]\)</span> )</p></li>
+<li><p>The number of values output</p></li>
+<li><p>How loss is calculated</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="data-shapes" class="level2">
+<h2 class="anchored" data-anchor-id="data-shapes">Data Shapes</h2>
+<p>Dimensions of data</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Tensor Rank</th>
+<th>Name</th>
+<th>Example</th>
+<th>Example Dims.*</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td>Scalar</td>
+<td>Height</td>
+<td></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td>Vector</td>
+<td>Height for several obs.</td>
+<td><code>n</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td>Matrix</td>
+<td>Sequence on off</td>
+<td><code>n, c</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td>Cube</td>
+<td>Picture (bw)</td>
+<td><code>n, h, w</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"></td>
+<td></td>
+<td>Sequence of nucleotides</td>
+<td><code>n, l, c</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td>?</td>
+<td>Picture (rgb)</td>
+<td><code>n, c, h, w, l</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td>?</td>
+<td>Video (rgb)</td>
+<td><code>n, c, h, w, l</code></td>
+</tr>
+</tbody>
+</table>
+<p>*order changes based on conventions</p>
+</section>
+<section id="for-next-meeting" class="level2">
+<h2 class="anchored" data-anchor-id="for-next-meeting">For Next Meeting</h2>
+<ul>
+<li><p>If you are have not found a learning partner please reach out to at least one person who</p>
+<ul>
+<li><p>Doesn’t have a partner yet and</p></li>
+<li><p>has a different programming comfort (the median is 3)</p></li>
+</ul></li>
+<li><p>Think about if there is a small dataset that you would enjoy working with</p>
+<ul>
+<li><p>RT-qPCR experiment?</p></li>
+<li><p>Images with a plant diseased/non?</p></li>
+<li><p>Sequences of nucleotides for genes in two families?</p></li>
+</ul></li>
+<li><p>Please watch <em>at least</em> the first 1h4m (<em>strongly recommend the full 1h57</em>) of Andrej Karpathy’s lecture <a href="https://www.youtube.com/watch?v=PaCmpygFfXo">here</a> and follow along in your Jupyter Notebook.</p></li>
+</ul>
+<!-- ## Materials -->
+<!-- -   Supplement: [The Little Book of Deep Learning](https://fleuret.org/francois/lbdl.html) -->
 
 
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1716267600000" data-listing-file-modified-sort="1716306296528" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1146">
-<a href="../../posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240520_Meeting1/Two_women_operating_ENIAC.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Meeting 1
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-What are the key ideas you took from the video?
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-May 21, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1716267600000" data-listing-file-modified-sort="1716306784256" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1141">
-<a href="../../posts/DeepLearningCommunityofPractice/240520_Meeting1/Meeting1.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240520_Meeting1/Two_women_operating_ENIAC.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Meeting 1
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
+</section>
 
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-May 21, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1715058000000" data-listing-file-modified-sort="1715096814324" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="581">
-<a href="../../posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240501_PreMeeting/Picture1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Pre-Meeting Preparation
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-Hello Everyone!
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-May 7, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1715058000000" data-listing-file-modified-sort="1715103538086" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208">
-<a href="../../posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240507_Meeting0/Picture1.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Kick Off Meeting
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-May 7, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

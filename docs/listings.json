@@ -3,6 +3,7 @@
     "listing": "/posts/DanielKick/index.html",
     "items": [
       "/posts/DanielKick/240514_bash_jupyter_nb/index.html",
+      "/posts/DanielKick/240516_r_qr_email/index.html",
       "/posts/DanielKick/231229_scheduling_worse_is_better/index.html",
       "/posts/DanielKick/231013_premature_optimiztion_worse_is_better/index.html",
       "/posts/DanielKick/231003_profdev_r_for_cv/index.html",
@@ -26,6 +27,8 @@
   {
     "listing": "/posts/DeepLearningCommunityofPractice/index.html",
     "items": [
+      "/posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html",
+      "/posts/DeepLearningCommunityofPractice/240520_Meeting1/Meeting1.html",
       "/posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html",
       "/posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html"
     ]
