@@ -1,0 +1,143 @@
+---
+title: "Meeting 2"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+image: "580px-Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg"
+date: "2024-06-04"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+format:
+  html:
+    mermaid:
+      theme: neutral
+freeze: true
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg -->
+
+## Key Ideas from the last session
+
+-   A bigram model predicts the next letter given a letter
+
+    -   This can be though of as modeling the transition probabilities
+
+-   Different approaches to learn parameters
+
+    -   Normalized counts
+
+    -   Optimization
+
+## Connections to Biology:
+
+We can think of the bigram probability matrix as a graph where the edges between nodes are the likelihood of moving from one state (here letter) to another.
+
+```{dot}
+digraph G {
+  layout = neato
+  overlap = false
+  start->a [label=".5"]
+  start->b [label=".5"]
+  a->a     [label=".1"]
+  a->b     [label=".7"]
+  b->b     [label=".2"]
+  b->a     [label=".3"]
+  a->end   [label=".2"]
+  b->end   [label=".5"]
+}
+```
+
+Through optimization we can estimate these probabilities of moving between states.
+
+We have plenty of these sort of state graphs in biology. We might think about the SIR model in epidemiology.
+
+```{dot}
+digraph G {
+  layout = dot
+  overlap = false
+  Susceptible->Infected
+  Infected->Recovered 
+  Recovered->Recovered
+  Recovered->Susceptible
+}
+```
+
+Or we might think about a region of DNA switching between introns and exons.
+
+```{dot}
+digraph G {
+  layout = dot
+  overlap = false
+  Exon->Intron
+  Exon->Exon
+  Intron->Intron
+  Intron->Exon
+}
+```
+
+While ideas may "rhyme" with bigram models it's not a perfect match. This sort of model would be more commonly represented as a hidden markov models (e.g. [hmmer](http://hmmer.org/)). That being said, we could build a bigram model using nucleotides or amino acids in the same way that we're using characters.
+
+## Next Session: Multilevel Perceptrons + Logistics
+
+The lecture for next session is *great*. It implements the generative model using Multilevel perceptrons (aka "fully connected" or "dense" networks). It also introduces topics that are useful from theory to practice such as how to select optimizer learning rates.
+
+For next session please:
+
+-   Work through all of this [Lecture](https://www.youtube.com/watch?v=TCH_1BHY58I) (1h15m).
+
+-   Identify a dataset and problem for your learning project (more below).
+
+-   Find a learning partner if you have not and want one (you can but don't need to work on a learning project together).
+
+## Reminder: Learning Projects
+
+Putting the ideas we've seen into practice will aid your understanding and recall. Previously we discussed this workflow as a way to think about your learning project.
+
+```{mermaid}
+flowchart LR
+    a(Learning\nPartners)
+    b(Learning\nProblem)
+    c(High Level\nModel)
+    or{or}
+    d(Low Level\nModel)
+    e(Advanced\nModel)
+    f(Advanced\nInterpretation)
+    
+    a --> b --> c --> or
+    or--> d
+    or--> e
+    or--> f
+```
+
+I recommend beginning by identifying the dataset or datasets that you'd like to use.
+
+-   Look for a dataset that is
+
+    -   Interesting or evocative
+
+    -   Small (for fast iteration and so we can start building models without a gpu)
+
+    -   Familiar (to make it easy to start)
+
+    -   Similar 'shape' to data you'd like to use in the future
+
+If you have research data that you would like to use consider using a subset to begin with. If you have genomic data, perhaps you use 3 genotypes and 1000 SNPs to start off with. Of if you want to work with hyperspectral images maybe you begin with a single channel and low resolution. After you are comfortable with this reduced data you can take what you've learned and apply it to the larger dataset.
+
+After you've chosen a dataset you'll need to select a task to complete. These tend to fall into the categories of **classification**, **regression**, and **distribution modeling**. You should also consider if you want your model to be *generative*. For many scientific applications we don't but that shouldn't limit your imagination!
+
+For example let's say I have a small dataset of mRNA abundances for a few (\<200) cells of several cell types. I could try to predict cell type from mRNA counts (classification). Instead I might try to predict some mRNA abundance from other mRNAs' abundances (regression). Or I could try to detect outliers or measure how dissimilar different cell types are (distribution modeling). With this last approach I could try to produce new observations of mRNA abundances given a cell type[^1] (generative).
+
+[^1]: Sampling in a cell type's region of latent space
+
+### Alternative: Implement a different model using torch
+
+Since neural networks implement linear operations followed by a non-linear transformation you could try...
+
+-   Implementing a generalized linear model
+
+-   Building about a *really* big linear model
+
+-   Fitting a linear model with a loss function other than mean squared error
+
+-   ...

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Kick">
-<meta name="dcterms.date" content="2024-05-17">
+<meta name="dcterms.date" content="2024-06-04">
 
-<title>A few notes on SQL</title>
+<title>Meeting 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,6 +68,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -151,7 +121,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sqlite" id="toc-sqlite" class="nav-link active" data-scroll-target="#sqlite">SQLite</a></li>
+  <li><a href="#key-ideas-from-the-last-session" id="toc-key-ideas-from-the-last-session" class="nav-link active" data-scroll-target="#key-ideas-from-the-last-session">Key Ideas from the last session</a></li>
+  <li><a href="#connections-to-biology" id="toc-connections-to-biology" class="nav-link" data-scroll-target="#connections-to-biology">Connections to Biology:</a></li>
+  <li><a href="#next-session-multilevel-perceptrons-logistics" id="toc-next-session-multilevel-perceptrons-logistics" class="nav-link" data-scroll-target="#next-session-multilevel-perceptrons-logistics">Next Session: Multilevel Perceptrons + Logistics</a></li>
+  <li><a href="#reminder-learning-projects" id="toc-reminder-learning-projects" class="nav-link" data-scroll-target="#reminder-learning-projects">Reminder: Learning Projects</a>
+  <ul class="collapse">
+  <li><a href="#alternative-implement-a-different-model-using-torch" id="toc-alternative-implement-a-different-model-using-torch" class="nav-link" data-scroll-target="#alternative-implement-a-different-model-using-torch">Alternative: Implement a different model using torch</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -160,11 +136,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">A few notes on SQL</h1>
+<h1 class="title">Meeting 2</h1>
+<p class="subtitle lead">Deep Learning Community of Practice</p>
   <div class="quarto-categories">
-    <div class="quarto-category">code</div>
-    <div class="quarto-category">SQL</div>
     <div class="quarto-category">beginner</div>
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">Deep Learning</div>
   </div>
   </div>
 
@@ -182,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 17, 2024</p>
+      <p class="date">June 4, 2024</p>
     </div>
   </div>
   
@@ -194,175 +171,304 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>There are some tools that are neither new nor ‘shiny’ but are very much worth learning. Some technologies are like <code>vim</code> or <code>LISP</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> can introduce ways of approaching about tasks and problems that may be new to you. Often these tools <em>appear</em> dated because they’ve been around so long. Learning new tools and frameworks is great, but based on the <a href="https://en.wikipedia.org/wiki/Lindy_effect">Lindy effect</a> it’s arguably <em>more</em> important to learn what the “old” tools have to offer.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>I especially like this metaphor about SQL, which has been with us since 1970.</p>
-<blockquote class="blockquote">
-<p>[R]relational databases aren’t dinosaurs. They aren’t lumbering prehistoric relics doomed to extinction by a changing world. They are sharks. Apex predators honed by millions of years of evolution into a perfectly adapted creature that is just as effective today as it was eons ago.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</blockquote>
-<p>So let’s talk about the shark in the room.</p>
-<p><a href="https://josiahparry.com/posts/2024-05-16-databases-for-ds" class="uri">https://josiahparry.com/posts/2024-05-16-databases-for-ds</a></p>
+<!-- https://commons.wikimedia.org/wiki/File:Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg -->
+<section id="key-ideas-from-the-last-session" class="level2">
+<h2 class="anchored" data-anchor-id="key-ideas-from-the-last-session">Key Ideas from the last session</h2>
 <ul>
-<li><p>RDBMS - Relational database management system</p></li>
-<li><p>Primary Keys</p></li>
-<li><p>Foreign keys</p></li>
-<li><p>Database normalization (and when it’s useful)</p></li>
-<li><p>Schemas vs tables</p></li>
-<li><p>Views vs tables</p></li>
-<li><p>Table indexes</p></li>
-<li><p>to read up on:</p>
+<li><p>A bigram model predicts the next letter given a letter</p>
 <ul>
-<li><p>parquet</p></li>
-<li><p>apache arrow</p></li>
-<li><p>DuckDB</p></li>
+<li>This can be though of as modeling the transition probabilities</li>
+</ul></li>
+<li><p>Different approaches to learn parameters</p>
+<ul>
+<li><p>Normalized counts</p></li>
+<li><p>Optimization</p></li>
 </ul></li>
 </ul>
-<p><a href="https://www.simplethread.com/relational-databases-arent-dinosaurs-theyre-sharks/" class="uri">https://www.simplethread.com/relational-databases-arent-dinosaurs-theyre-sharks/</a></p>
-<table class="table">
-<colgroup>
-<col style="width: 12%">
-<col style="width: 87%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>ACID: SQL properties</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Atomicity</td>
-<td>A set of operations either all succeed or all fail. It can’t half work and mess up the state.</td>
-</tr>
-<tr class="even">
-<td>Consistency</td>
-<td>Operations don’t create invalid states.</td>
-</tr>
-<tr class="odd">
-<td>Isolation</td>
-<td>Transactions can’t see data modified by other transactions. Transactions acting at the same time behave the same as if they were happening sequentially.</td>
-</tr>
-<tr class="even">
-<td>Durability</td>
-<td>After a transaction is committed the system can go down and that change will still be there.</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 85%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>BASE: NoSQL Compromises</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Basically Available</td>
-<td><p>The system returns a value but it might not return the same value for everyone because a database can provide only two of the following:</p>
+</section>
+<section id="connections-to-biology" class="level2">
+<h2 class="anchored" data-anchor-id="connections-to-biology">Connections to Biology:</h2>
+<p>We can think of the bigram probability matrix as a graph where the edges between nodes are the likelihood of moving from one state (here letter) to another.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 187.10 139.57" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 135.57)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-135.57 183.1,-135.57 183.1,4 -4,4"></polygon>
+<!-- start -->
+<g id="node1" class="node">
+<title>start</title>
+<ellipse fill="none" stroke="black" cx="27.66" cy="-49.73" rx="27.83" ry="18"></ellipse>
+<text text-anchor="middle" x="27.66" y="-45.53" font-family="Times,serif" font-size="14.00">start</text>
+</g>
+<!-- a -->
+<g id="node2" class="node">
+<title>a</title>
+<ellipse fill="none" stroke="black" cx="123.6" cy="-61.45" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="123.6" y="-57.25" font-family="Times,serif" font-size="14.00">a</text>
+</g>
+<!-- start&#45;&gt;a -->
+<g id="edge1" class="edge">
+<title>start-&gt;a</title>
+<path fill="none" stroke="black" d="M54.9,-53.06C64.79,-54.26 76.13,-55.65 86.71,-56.94"></path>
+<polygon fill="black" stroke="black" points="86.61,-60.46 96.96,-58.2 87.46,-53.51 86.61,-60.46"></polygon>
+<text text-anchor="middle" x="65.56" y="-59.2" font-family="Times,serif" font-size="14.00">.5</text>
+</g>
+<!-- b -->
+<g id="node3" class="node">
+<title>b</title>
+<ellipse fill="none" stroke="black" cx="99.38" cy="-18" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="99.38" y="-13.8" font-family="Times,serif" font-size="14.00">b</text>
+</g>
+<!-- start&#45;&gt;b -->
+<g id="edge2" class="edge">
+<title>start-&gt;b</title>
+<path fill="none" stroke="black" d="M50.75,-39.51C56.1,-37.15 61.89,-34.59 67.54,-32.09"></path>
+<polygon fill="black" stroke="black" points="69.1,-35.22 76.83,-27.98 66.26,-28.82 69.1,-35.22"></polygon>
+<text text-anchor="middle" x="64.39" y="-40" font-family="Times,serif" font-size="14.00">.5</text>
+</g>
+<!-- a&#45;&gt;a -->
+<g id="edge3" class="edge">
+<title>a-&gt;a</title>
+<path fill="none" stroke="black" d="M149.04,-68.14C159.63,-68.6 168.6,-66.37 168.6,-61.45 168.6,-58.22 164.74,-56.15 159.09,-55.24"></path>
+<polygon fill="black" stroke="black" points="159.2,-51.74 149.04,-54.76 158.87,-58.73 159.2,-51.74"></polygon>
+<text text-anchor="middle" x="173.85" y="-57.25" font-family="Times,serif" font-size="14.00">.1</text>
+</g>
+<!-- a&#45;&gt;b -->
+<g id="edge4" class="edge">
+<title>a-&gt;b</title>
+<path fill="none" stroke="black" d="M120.9,-43.36C120.65,-42.81 120.39,-42.26 120.13,-41.72"></path>
+<polygon fill="black" stroke="black" points="123.17,-39.99 115.31,-32.89 117.03,-43.34 123.17,-39.99"></polygon>
+<text text-anchor="middle" x="125.76" y="-29.94" font-family="Times,serif" font-size="14.00">.7</text>
+</g>
+<!-- end -->
+<g id="node4" class="node">
+<title>end</title>
+<ellipse fill="none" stroke="black" cx="95.56" cy="-113.57" rx="27" ry="18"></ellipse>
+<text text-anchor="middle" x="95.56" y="-109.37" font-family="Times,serif" font-size="14.00">end</text>
+</g>
+<!-- a&#45;&gt;end -->
+<g id="edge7" class="edge">
+<title>a-&gt;end</title>
+<path fill="none" stroke="black" d="M114.42,-78.52C112.89,-81.37 111.26,-84.38 109.64,-87.39"></path>
+<polygon fill="black" stroke="black" points="106.51,-85.82 104.86,-96.28 112.68,-89.14 106.51,-85.82"></polygon>
+<text text-anchor="middle" x="117.28" y="-87.16" font-family="Times,serif" font-size="14.00">.2</text>
+</g>
+<!-- b&#45;&gt;a -->
+<g id="edge6" class="edge">
+<title>b-&gt;a</title>
+<path fill="none" stroke="black" d="M102.08,-36.09C102.33,-36.64 102.59,-37.19 102.85,-37.74"></path>
+<polygon fill="black" stroke="black" points="99.81,-39.46 107.67,-46.57 105.95,-36.11 99.81,-39.46"></polygon>
+<text text-anchor="middle" x="97.22" y="-41.12" font-family="Times,serif" font-size="14.00">.3</text>
+</g>
+<!-- b&#45;&gt;b -->
+<g id="edge5" class="edge">
+<title>b-&gt;b</title>
+<path fill="none" stroke="black" d="M124.82,-24.69C135.41,-25.15 144.38,-22.92 144.38,-18 144.38,-14.77 140.51,-12.7 134.87,-11.79"></path>
+<polygon fill="black" stroke="black" points="134.98,-8.29 124.82,-11.31 134.64,-15.28 134.98,-8.29"></polygon>
+<text text-anchor="middle" x="149.63" y="-13.8" font-family="Times,serif" font-size="14.00">.2</text>
+</g>
+<!-- b&#45;&gt;end -->
+<g id="edge8" class="edge">
+<title>b-&gt;end</title>
+<path fill="none" stroke="black" d="M98.64,-36.43C98.09,-50.26 97.32,-69.46 96.69,-85.25"></path>
+<polygon fill="black" stroke="black" points="93.18,-85.39 96.28,-95.52 100.18,-85.67 93.18,-85.39"></polygon>
+<text text-anchor="middle" x="92.42" y="-65.04" font-family="Times,serif" font-size="14.00">.5</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Through optimization we can estimate these probabilities of moving between states.</p>
+<p>We have plenty of these sort of state graphs in biology. We might think about the SIR model in epidemiology.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 155.99 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 151.99,-184 151.99,4 -4,4"></polygon>
+<!-- Susceptible -->
+<g id="node1" class="node">
+<title>Susceptible</title>
+<ellipse fill="none" stroke="black" cx="77.67" cy="-162" rx="55.62" ry="18"></ellipse>
+<text text-anchor="middle" x="77.67" y="-157.8" font-family="Times,serif" font-size="14.00">Susceptible</text>
+</g>
+<!-- Infected -->
+<g id="node2" class="node">
+<title>Infected</title>
+<ellipse fill="none" stroke="black" cx="42.67" cy="-90" rx="42.83" ry="18"></ellipse>
+<text text-anchor="middle" x="42.67" y="-85.8" font-family="Times,serif" font-size="14.00">Infected</text>
+</g>
+<!-- Susceptible&#45;&gt;Infected -->
+<g id="edge1" class="edge">
+<title>Susceptible-&gt;Infected</title>
+<path fill="none" stroke="black" d="M69.19,-144.05C65.11,-135.89 60.12,-125.91 55.58,-116.82"></path>
+<polygon fill="black" stroke="black" points="58.66,-115.17 51.06,-107.79 52.4,-118.3 58.66,-115.17"></polygon>
+</g>
+<!-- Recovered -->
+<g id="node3" class="node">
+<title>Recovered</title>
+<ellipse fill="none" stroke="black" cx="77.67" cy="-18" rx="52.15" ry="18"></ellipse>
+<text text-anchor="middle" x="77.67" y="-13.8" font-family="Times,serif" font-size="14.00">Recovered</text>
+</g>
+<!-- Infected&#45;&gt;Recovered -->
+<g id="edge2" class="edge">
+<title>Infected-&gt;Recovered</title>
+<path fill="none" stroke="black" d="M51.14,-72.05C55.22,-63.89 60.21,-53.91 64.75,-44.82"></path>
+<polygon fill="black" stroke="black" points="67.93,-46.3 69.27,-35.79 61.67,-43.17 67.93,-46.3"></polygon>
+</g>
+<!-- Recovered&#45;&gt;Susceptible -->
+<g id="edge4" class="edge">
+<title>Recovered-&gt;Susceptible</title>
+<path fill="none" stroke="black" d="M84.56,-35.86C88.37,-46.12 92.73,-59.59 94.67,-72 97.14,-87.81 97.14,-92.19 94.67,-108 93.31,-116.69 90.77,-125.9 88.06,-134.16"></path>
+<polygon fill="black" stroke="black" points="84.73,-133.07 84.73,-143.67 91.34,-135.38 84.73,-133.07"></polygon>
+</g>
+<!-- Recovered&#45;&gt;Recovered -->
+<g id="edge3" class="edge">
+<title>Recovered-&gt;Recovered</title>
+<path fill="none" stroke="black" d="M113.85,-31.1C131.89,-32.91 147.99,-28.55 147.99,-18 147.99,-9.51 137.57,-5.03 124.09,-4.54"></path>
+<polygon fill="black" stroke="black" points="123.72,-1.05 113.85,-4.9 123.96,-8.05 123.72,-1.05"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Or we might think about a region of DNA switching between introns and exons.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 95.27 116.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>G</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 91.27,-112 91.27,4 -4,4"></polygon>
+<!-- Exon -->
+<g id="node1" class="node">
+<title>Exon</title>
+<ellipse fill="none" stroke="black" cx="34.64" cy="-90" rx="31.34" ry="18"></ellipse>
+<text text-anchor="middle" x="34.64" y="-85.8" font-family="Times,serif" font-size="14.00">Exon</text>
+</g>
+<!-- Exon&#45;&gt;Exon -->
+<g id="edge2" class="edge">
+<title>Exon-&gt;Exon</title>
+<path fill="none" stroke="black" d="M57.26,-102.6C71.03,-105.52 84.06,-101.32 84.06,-90 84.06,-81.51 76.73,-77.02 67.25,-76.54"></path>
+<polygon fill="black" stroke="black" points="66.92,-73.06 57.26,-77.4 67.52,-80.03 66.92,-73.06"></polygon>
+</g>
+<!-- Intron -->
+<g id="node2" class="node">
+<title>Intron</title>
+<ellipse fill="none" stroke="black" cx="34.64" cy="-18" rx="34.77" ry="18"></ellipse>
+<text text-anchor="middle" x="34.64" y="-13.8" font-family="Times,serif" font-size="14.00">Intron</text>
+</g>
+<!-- Exon&#45;&gt;Intron -->
+<g id="edge1" class="edge">
+<title>Exon-&gt;Intron</title>
+<path fill="none" stroke="black" d="M28.76,-72.05C27.93,-64.23 27.69,-54.75 28.05,-45.98"></path>
+<polygon fill="black" stroke="black" points="31.55,-46.01 28.78,-35.79 24.57,-45.51 31.55,-46.01"></polygon>
+</g>
+<!-- Intron&#45;&gt;Exon -->
+<g id="edge4" class="edge">
+<title>Intron-&gt;Exon</title>
+<path fill="none" stroke="black" d="M40.5,-35.79C41.34,-43.59 41.58,-53.07 41.23,-61.85"></path>
+<polygon fill="black" stroke="black" points="37.73,-61.83 40.51,-72.05 44.71,-62.33 37.73,-61.83"></polygon>
+</g>
+<!-- Intron&#45;&gt;Intron -->
+<g id="edge3" class="edge">
+<title>Intron-&gt;Intron</title>
+<path fill="none" stroke="black" d="M59.27,-30.71C73.74,-33.42 87.27,-29.18 87.27,-18 87.27,-9.53 79.5,-5.04 69.44,-4.55"></path>
+<polygon fill="black" stroke="black" points="68.99,-1.07 59.27,-5.29 69.5,-8.05 68.99,-1.07"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>While ideas may “rhyme” with bigram models it’s not a perfect match. This sort of model would be more commonly represented as a hidden markov models (e.g.&nbsp;<a href="http://hmmer.org/">hmmer</a>). That being said, we could build a bigram model using nucleotides or amino acids in the same way that we’re using characters.</p>
+</section>
+<section id="next-session-multilevel-perceptrons-logistics" class="level2">
+<h2 class="anchored" data-anchor-id="next-session-multilevel-perceptrons-logistics">Next Session: Multilevel Perceptrons + Logistics</h2>
+<p>The lecture for next session is <em>great</em>. It implements the generative model using Multilevel perceptrons (aka “fully connected” or “dense” networks). It also introduces topics that are useful from theory to practice such as how to select optimizer learning rates.</p>
+<p>For next session please:</p>
 <ul>
-<li><p>Consistency: Everyone reading sees the most up-to-date info.</p></li>
-<li><p>Availibility: Every request returns a value</p></li>
-<li><p>Partition tolerance: If messages are delayed or dropped between nodes the system still works.</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>Soft State</td>
-<td>Values may change without interaction because of eventual consistency.</td>
-</tr>
-<tr class="odd">
-<td>Eventual Consistency</td>
-<td>Written data won’t necessarily be available to everyone right out of the gate. Different people may receive different results during this window.</td>
-</tr>
-</tbody>
-</table>
-<p>These compromises provide benefits to performance and ease of storing different data types.</p>
-<section id="sqlite" class="level2">
-<h2 class="anchored" data-anchor-id="sqlite">SQLite</h2>
-<ul>
-<li>RDBMS generally need a server process to interact with the files. SQLite does not.</li>
+<li><p>Work through all of this <a href="https://www.youtube.com/watch?v=TCH_1BHY58I">Lecture</a> (1h15m).</p></li>
+<li><p>Identify a dataset and problem for your learning project (more below).</p></li>
+<li><p>Find a learning partner if you have not and want one (you can but don’t need to work on a learning project together).</p></li>
 </ul>
-<p><a href="https://www.sqlitetutorial.net/" class="uri">https://www.sqlitetutorial.net/</a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a># <span class="kw">Start</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sqlite3 sim_1698728407_78912.sqlite</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a># alternate: </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a># sqlite3</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a># .<span class="kw">open</span> <span class="op">/</span>path<span class="op">/</span><span class="kw">to</span><span class="op">/</span><span class="kw">file</span>.db</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a># <span class="cf">if</span> you <span class="kw">open</span> a path that doesn<span class="st">'t exist a new database will be initialized</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="st"># Show all tables</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="st">sqlite&gt; .tables</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">DefaultCultivarsAll  Ids</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">Genotypes            Results</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="st"># find a table with a following a pattern</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="st">sqlite&gt; .table '</span>%s<span class="st">'</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st">Genotypes  Ids        Results</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st"># examing a table</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st"># without table name you'</span>ll be shown <span class="kw">all</span> <span class="kw">tables</span> schemas</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>sqlite<span class="op">&gt;</span> .<span class="kw">schema</span> Ids</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> `Ids` (</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  `Longitude` <span class="dt">REAL</span>,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  `Latitude` <span class="dt">REAL</span>,</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  `SoilIdx` <span class="dt">REAL</span>,</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  `SowDate` TEXT,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  `Genotype` TEXT,</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  `FactorialUID` <span class="dt">INTEGER</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>);</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a># <span class="kw">to</span> see <span class="kw">the</span> <span class="kw">schema</span> <span class="cf">for</span> <span class="kw">all</span> <span class="kw">tables</span> <span class="kw">and</span> a <span class="kw">statistics</span> <span class="kw">table</span> <span class="kw">use</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>.fullschema </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a># show <span class="kw">indexes</span> <span class="cf">for</span> <span class="kw">database</span> (mine doesn<span class="st">'t have any)</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="st">.indexes </span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="st"># databases in current connection</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="st">.databases</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="st"># Saving results out:</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="st">sqlite&gt; .output deleteme.txt</span></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="st">sqlite&gt; SELECT SoilIdx FROM Ids;</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="st">   </span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="st"># Read SQL commands from a file</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="st">.read /path/to/script.txt</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="st"># exit</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="st">.exit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>https://gitlab.com/Screwtapello/sqlite-schema-diagram/-/tree/main?ref_type=heads https://www.sqlitetutorial.net/ https://gvwilson.github.io/sql-tutorial/core/ https://sqlzoo.net/wiki/SQL_Tutorial https://use-the-index-luke.com/</p>
-<p>strings should be in single quotes</p>
-<p>SELECT cols FROM table WHERE name = ‘Germany’;</p>
-<p>WHERE name IN (‘item1’, ‘item2’);</p>
-<p>WHERE area BETWEEN 200000 AND 250000</p>
-<p>WHERE name LIKE “Al%”</p>
-<p># matches</p>
-<p>LEFT(s,n) extracts n characters form the left</p>
-<p>AND OR XOR NOT</p>
-<p>= &gt; &lt;</p>
-<p>&lt;&gt; # inequality</p>
-<p>exclude characters name not like ‘%a%’</p>
-<p>length(name) round</p>
-<p>Nested select with parens SELECT name FROM world WHERE population &gt; (SELECT population FROM world WHERE name=‘Russia’)</p>
-<p>Order by col ASC</p>
+</section>
+<section id="reminder-learning-projects" class="level2">
+<h2 class="anchored" data-anchor-id="reminder-learning-projects">Reminder: Learning Projects</h2>
+<p>Putting the ideas we’ve seen into practice will aid your understanding and recall. Previously we discussed this workflow as a way to think about your learning project.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    a(Learning\nPartners)
+    b(Learning\nProblem)
+    c(High Level\nModel)
+    or{or}
+    d(Low Level\nModel)
+    e(Advanced\nModel)
+    f(Advanced\nInterpretation)
+    
+    a --&gt; b --&gt; c --&gt; or
+    or--&gt; d
+    or--&gt; e
+    or--&gt; f
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>I recommend beginning by identifying the dataset or datasets that you’d like to use.</p>
+<ul>
+<li><p>Look for a dataset that is</p>
+<ul>
+<li><p>Interesting or evocative</p></li>
+<li><p>Small (for fast iteration and so we can start building models without a gpu)</p></li>
+<li><p>Familiar (to make it easy to start)</p></li>
+<li><p>Similar ‘shape’ to data you’d like to use in the future</p></li>
+</ul></li>
+</ul>
+<p>If you have research data that you would like to use consider using a subset to begin with. If you have genomic data, perhaps you use 3 genotypes and 1000 SNPs to start off with. Of if you want to work with hyperspectral images maybe you begin with a single channel and low resolution. After you are comfortable with this reduced data you can take what you’ve learned and apply it to the larger dataset.</p>
+<p>After you’ve chosen a dataset you’ll need to select a task to complete. These tend to fall into the categories of <strong>classification</strong>, <strong>regression</strong>, and <strong>distribution modeling</strong>. You should also consider if you want your model to be <em>generative</em>. For many scientific applications we don’t but that shouldn’t limit your imagination!</p>
+<p>For example let’s say I have a small dataset of mRNA abundances for a few (&lt;200) cells of several cell types. I could try to predict cell type from mRNA counts (classification). Instead I might try to predict some mRNA abundance from other mRNAs’ abundances (regression). Or I could try to detect outliers or measure how dissimilar different cell types are (distribution modeling). With this last approach I could try to produce new observations of mRNA abundances given a cell type<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> (generative).</p>
+<section id="alternative-implement-a-different-model-using-torch" class="level3">
+<h3 class="anchored" data-anchor-id="alternative-implement-a-different-model-using-torch">Alternative: Implement a different model using torch</h3>
+<p>Since neural networks implement linear operations followed by a non-linear transformation you could try…</p>
+<ul>
+<li><p>Implementing a generalized linear model</p></li>
+<li><p>Building about a <em>really</em> big linear model</p></li>
+<li><p>Fitting a linear model with a loss function other than mean squared error</p></li>
+<li><p>…</p></li>
+</ul>
 
 
+</section>
 </section>
 
 
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Hopefully more on this later. Reading bit of SICP unexpectedly helped me with a deep learning problem last year.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Sometimes the good ideas end up being reincarnated too. I’ve spend far more time running joins in <code>R</code> with <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> than with SQL<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://www.simplethread.com/relational-databases-arent-dinosaurs-theyre-sharks/">Relational Databases Aren’t Dinosaurs, They’re Sharks</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Sampling in a cell type’s region of latent space<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
