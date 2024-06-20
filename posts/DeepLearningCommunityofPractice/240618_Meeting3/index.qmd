@@ -1,0 +1,35 @@
+---
+title: "Meeting 3"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+image: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Perceptron_4layers.png"
+date: "2024-06-18"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+format:
+  html:
+    mermaid:
+      theme: neutral
+freeze: true
+---
+
+<!-- https://commons.wikimedia.org/wiki/File:Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg -->
+
+## Recap:
+
+This week we supplemented the lecture material with supplemental sides which can be found [here](./0618_Meeting3Notes.pptx). Specifically we discussed common considerations for defining training and testing splits (e.g. information leakage) and several common hyperparameter tuning libraries (with an example using [Ax](https://ax.dev/))
+
+
+## Preparation for Next Session
+
+Based on our conversation we will proceed with our current materials and I’ll aim to have an implementation in a high level library so we can see how the network might look if we weren’t working from scratch.
+
+[The lecture for next session](https://youtu.be/P6sfmUTpUmc) is on the longer side (1h55m). If there are sections that one skip for the sake of time I’ll send an email noting the timestamps for these sections early next week.
+
+We also discussed presentations of everyone’s learning projects. These will likely start towards the end of July or in August (or sooner if anyone is champing at the bit!). Don’t worry about presenting on a work in progress – this may be more helpful to your peers than seeing a fully polished model.
+
+Cheers,
+
+Daniel

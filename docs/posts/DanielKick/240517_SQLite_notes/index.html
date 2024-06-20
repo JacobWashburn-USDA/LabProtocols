@@ -352,6 +352,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>length(name) round</p>
 <p>Nested select with parens SELECT name FROM world WHERE population &gt; (SELECT population FROM world WHERE name=‘Russia’)</p>
 <p>Order by col ASC</p>
+<p>“correlated” or “synchronized” sub query</p>
+<p>SELECT continent, name, area FROM world x WHERE area &gt;= ALL # largest area (SELECT area FROM world y # WHERE y.continent=x.continent # where continents between tables are the same AND population&gt;0) # and values aren’t null</p>
 
 
 </section>
