@@ -2,7 +2,7 @@
 title: "Meeting 4"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
-image: "https://commons.wikimedia.org/wiki/File:Dissolve_noise.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/30/256x256_Dissolve_Noise_Texture.png"
 date: "2024-07-02"
 categories: 
   - beginner
