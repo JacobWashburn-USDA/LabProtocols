@@ -1,0 +1,41 @@
+---
+title: "Meeting 4"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+image: "https://commons.wikimedia.org/wiki/File:Dissolve_noise.jpg"
+date: "2024-07-02"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+freeze: true
+---
+
+## Recap:
+
+This supplementary presentation from this week can be found [here](./240702_Meeting4.pptx).
+
+-   Connections between transforming non-normal data before fitting a linear model to batch normalization
+-   A motivating puzzle for learning more about the low level operations. I showed a simple MLP to output 0 given 1 or output 1 given 0. This model *inconsistently* learns. After learning more about backpropagation you'll be able to easily spot why.
+-   Finally we discussed why Batch Norm works and the evidence in that it's *not* by reducing the change in parameters from cycle to cycle (internal covariance shift "ICS").
+-   In brief in [Santurkar, et al. 2018](https://arxiv.org/abs/1805.11604) ("How Does Batch Normalization Help Optimization?") the authors demonstrate:
+    -   A standard model vs batch norm model has no apparent qualitative difference in ICS
+    -   A batch norm model with ICS induced (positive control) neither trains more slowly nor is less performant than a standard model.
+    -   Direct quantification of ICS shows it is often equal to or greater in models with batch norm
+    -   The range of errors is smaller in models with batch norm in conjunction with other measures this suggests that the "smoothness" of the loss landscape is altered which results in an easier optimization.
+
+## Preparation for Next Session
+
+By request we're going to pause so that everyone can catch up to the current lecture. We'll not meet in two weeks but will have **Python office hours** on Tuesdays so long as at least one person requests them.
+
+For next session (tentatively slated for July 30) there are two options:
+
+-   If you're interested predominantly in high level application work through this video on [Wavenet](https://youtu.be/t3YJ5hKiMQ0).
+
+-   If you're also interested in the low level work through this video on [revisiting backpropagation](https://youtu.be/q8SA3rM6ckI) and then [Wavenet](https://youtu.be/t3YJ5hKiMQ0).
+
+    -   Please note that the material on backpropagation is dense. To help visualize the network I have made a diagram of all the tensors in the network [here](./MLP_Graph.pptx). I recommend printing a copy of it and annotating it with the backward pass. Personally I find the graphical representation to complement to the code nicely.
+
+Cheers,
+
+Daniel

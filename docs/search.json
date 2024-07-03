@@ -205,23 +205,23 @@
   {
     "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html",
     "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html",
-    "title": "Meeting 3",
+    "title": "Meeting 4",
     "section": "",
-    "text": "This week we supplemented the lecture material with supplemental sides which can be found here. Specifically we discussed common considerations for defining training and testing splits (e.g. information leakage) and several common hyperparameter tuning libraries (with an example using Ax)"
+    "text": "This supplementary presentation from this week can be found here.\n\nConnections between transforming non-normal data before fitting a linear model to batch normalization\nA motivating puzzle for learning more about the low level operations. I showed a simple MLP to output 0 given 1 or output 1 given 0. This model inconsistently learns. After learning more about backpropagation you’ll be able to easily spot why.\nFinally we discussed why Batch Norm works and the evidence in that it’s not by reducing the change in parameters from cycle to cycle (internal covariance shift “ICS”).\nIn brief in Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) the authors demonstrate:\n\nA standard model vs batch norm model has no apparent qualitative difference in ICS\nA batch norm model with ICS induced (positive control) neither trains more slowly nor is less performant than a standard model.\nDirect quantification of ICS shows it is often equal to or greater in models with batch norm\nThe range of errors is smaller in models with batch norm in conjunction with other measures this suggests that the “smoothness” of the loss landscape is altered which results in an easier optimization."
   },
   {
     "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#recap",
     "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#recap",
-    "title": "Meeting 3",
+    "title": "Meeting 4",
     "section": "",
-    "text": "This week we supplemented the lecture material with supplemental sides which can be found here. Specifically we discussed common considerations for defining training and testing splits (e.g. information leakage) and several common hyperparameter tuning libraries (with an example using Ax)"
+    "text": "This supplementary presentation from this week can be found here.\n\nConnections between transforming non-normal data before fitting a linear model to batch normalization\nA motivating puzzle for learning more about the low level operations. I showed a simple MLP to output 0 given 1 or output 1 given 0. This model inconsistently learns. After learning more about backpropagation you’ll be able to easily spot why.\nFinally we discussed why Batch Norm works and the evidence in that it’s not by reducing the change in parameters from cycle to cycle (internal covariance shift “ICS”).\nIn brief in Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) the authors demonstrate:\n\nA standard model vs batch norm model has no apparent qualitative difference in ICS\nA batch norm model with ICS induced (positive control) neither trains more slowly nor is less performant than a standard model.\nDirect quantification of ICS shows it is often equal to or greater in models with batch norm\nThe range of errors is smaller in models with batch norm in conjunction with other measures this suggests that the “smoothness” of the loss landscape is altered which results in an easier optimization."
   },
   {
     "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#preparation-for-next-session",
     "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#preparation-for-next-session",
-    "title": "Meeting 3",
+    "title": "Meeting 4",
     "section": "Preparation for Next Session",
-    "text": "Preparation for Next Session\nBased on our conversation we will proceed with our current materials and I’ll aim to have an implementation in a high level library so we can see how the network might look if we weren’t working from scratch.\nThe lecture for next session is on the longer side (1h55m). If there are sections that one skip for the sake of time I’ll send an email noting the timestamps for these sections early next week.\nWe also discussed presentations of everyone’s learning projects. These will likely start towards the end of July or in August (or sooner if anyone is champing at the bit!). Don’t worry about presenting on a work in progress – this may be more helpful to your peers than seeing a fully polished model.\nCheers,\nDaniel"
+    "text": "Preparation for Next Session\nBy request we’re going to pause so that everyone can catch up to the current lecture. We’ll not meet in two weeks but will have Python office hours on Tuesdays so long as at least one person requests them.\nFor next session (tentatively slated for July 30) there are two options:\n\nIf you’re interested predominantly in high level application work through this video on Wavenet.\nIf you’re also interested in the low level work through this video on revisiting backpropagation and then Wavenet.\n\nPlease note that the material on backpropagation is dense. To help visualize the network I have made a diagram of all the tensors in the network here. I recommend printing a copy of it and annotating it with the backward pass. Personally I find the graphical representation to complement to the code nicely.\n\n\nCheers,\nDaniel"
   },
   {
     "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html",
@@ -914,7 +914,7 @@
     "href": "posts/DeepLearningCommunityofPractice/index.html",
     "title": "Deep Learning Community of Practice",
     "section": "",
-    "text": "Meeting 3\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 3\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 2\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 1\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPre-Meeting Preparation\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Meeting 4\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 3\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 2\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 1\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPre-Meeting Preparation\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "protocols/Drones/Pix4Dmapper_Stitch/index.html",
