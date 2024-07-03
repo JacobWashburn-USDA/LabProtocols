@@ -1,0 +1,91 @@
+---
+title: "Building a GWAS Container"
+author: "Daniel Kick"
+date: "2024-06-24"
+image: "https://commons.wikimedia.org/wiki/File:Caract%C3%A8re_latin_d%27%C3%A9criture,_R_r.png"
+categories: 
+  - code
+  - r
+  - bash
+  - intermediate
+  - containers
+  - GWAS
+draft: false
+---
+
+Today we're going to look at building a container to run a GWAS[^1] on a computing cluster. Container construction *can* be rigorous and necessitate a fair bit of understanding but we can get a lot of the benefits without, say, doing everything we can to make the container small enough to run on the idea of a computer.
+
+[^1]: a Genome Wide Association Study identifies regions in a genome that are associated with a trait
+
+We'll start by looking at a simple script to run GWAS with `GAPIT`. We need only install `tidyverse` and `GAPIT` so our container will be simple.
+
+``` r
+#!/usr/bin/R
+library(tidyverse)
+library(GAPIT)
+
+phno <- as.data.frame(
+  read.table(
+    "./phno.txt", 
+    head = TRUE, 
+    skip = 2
+  ))
+
+# To prevent columns containing "#" (e.g. chromosome #) from truncating the file `comment.char` should be set explicitly
+# Similarly setting `sep` will prevent empty columns from being dropped
+geno <- read.table(
+  "./geno.hmp.txt",
+  head = FALSE,
+  comment.char = '',
+  sep = '\t'
+)
+
+res <- GAPIT(
+  Y=phno,
+  G=geno,
+  PCA.total=3,
+  model="CMLM"
+)
+```
+
+Instead of `Docker` we're going to use `singularity` (aka `apptainer`) to avoid needing root access -- which we won't have on an HPC. We begin by creating a [definition file](https://docs.sylabs.io/guides/latest/user-guide/definition_files.html) with installation instructions for our analysis' dependencies. Happily, we can build off the `Docker` ecosystem which lets us avoid a lot of steps by simply using an image from the [rocker project](https://rocker-project.org/images/) with `R` installed. Additional dependencies are installed as if we were working on the linux command line[^2].
+
+[^2]: While beyond the scope of this post, you can also create sandbox images which exist as a directory instead of .sif file. Running a such an image in writable mode allows for interactive tinkering.
+
+``` def
+Bootstrap: docker
+From: rocker/r-ver 
+Stage: build
+
+%files
+
+%environment
+
+%post
+    apt-get update
+    Rscript -e 'install.packages("devtools")'
+    Rscript -e 'devtools::install_github("jiabowang/GAPIT", force=TRUE)'
+    Rscript -e 'install.packages("tidyverse")'
+
+%labels
+    # adds metadata 
+    Author Daniel.Kick@usda.gov
+    Version v0.0.1
+```
+
+Next we build the container. If you have root access the first command will work. Otherwise try the second. The machine that builds the container will need internet access. I’d recommend using a local machine to build this (if you're on windows, take a look into the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/about) ). Depending on the HPC you're using there might be a node set aside on the HPC for this (using the login nodes for this sort of thing is ***not*** recommended – it can interfere with other people accessing it).
+
+``` bash
+sudo singularity build gapit.sif gapit.def
+
+singularity build --fakeroot gapit.sif gapit.def
+```
+
+After you’ve moved your files and the container to the HPC you can open a shell in the container. This shell should still have access to the host’s files ([but here's a link to how to bind baths in case it doesn't](https://docs.sylabs.io/guides/3.0/user-guide/bind_paths_and_mounts.html)). From there you can start `R` in interactive mode or launch the `R` script.
+
+
+``` bash
+module load singularity  # or "module load apptainer"
+singularity shell gapit.sif
+Singularity> Rscript ./gwas_GAPIT.R
+```

@@ -1,0 +1,204 @@
+---
+title: "Running GWAS _en masse_."
+author: "Daniel Kick"
+date: "2024-07-02"
+image: "https://commons.wikimedia.org/wiki/File:Ariopelta_capensis.png"
+categories: 
+  - code
+  - bash
+  - HPC
+  - SLURM
+  - intermediate
+  - GWAS
+draft: false
+---
+
+## Context
+
+As part of a project I'm about to run *a lot* of analyses. Below are some initial tricks I've figured out with (hopefully) more posts like this to come as I find more effective patterns.
+
+The goal here was to run a GWAS for some number of phenotypes using one or more genotype file and save all the output into a reasonably named subdirectory. Here's the directory structure:
+
+```         
+.
+├── gapit.sif     # Discussed previously
+├── gwas.R        #
+├── 01_mkqueue.sh    # We'll focus on these two
+├── 02_next.sh       #    
+├── run_gwas.sbatch     # Loads apptainer and runs 02_next.sh
+│
+├── genotypes
+│   └── 5_Genotype_Data_All_Years_30000.hmp.txt
+│
+├── phenotypes
+│   ├── phno_Ear_Height_cm.txt
+│   ├── ... 
+│   └── phno_Yield_Mg_ha.txt
+│
+└── output
+```
+
+## Design
+
+We *could* modify `gwas.R` for each genotype/phenotype pair that needs to be run, create sbatch files for `gwas_1.R` to `gwas_n.R` and run them that way. This approach would be relatively fast[^1] to implement, but depends on 1) not making errors in editing these files and 2) isn't a transferable solution to new datasets.
+
+[^1]: i.e. faster than what I'm about to describe
+
+Let's start by breaking this down into manageable components:
+
+1.  Identify all the combinations of parameters that the script should be run with.
+2.  Put those combinations in a queue
+3.  Until the queue is empty...
+    1.  Pop an entry from from the queue
+    2.  Edit the R script to contain the new parameters
+    3.  Run the script in using the singularity container.
+
+This approach is nice in that since we're modifying a shared queue we can refer to the same files over and over again. Instead of ending up with `n` versions of `gwas.R` and `n` sbatch files we'll have only *one* sbatch file that we'll run again and again until the queue is empty.
+
+## Building a queue: `01_mkqueue.sh`
+
+In this example we have many phenotpe files but only one genotype file. Despite this, instead of hardcoding the genotype we'll pretend we might have more at some future date (maybe we want to try different snp densities). We'll build a simple queue by globbing all the hapmaps in `genotypes/` and all the phnotype files in `phenotypes/` and appending them to `queue.txt`.
+
+``` bash
+for i in ./genotypes/*.hmp.txt; 
+do 
+    for j in ./phenotypes/phno*.txt; 
+    do  
+        echo $i $j >> ./queue.txt; 
+    done; 
+done
+```
+
+## Modifying the R script on the fly
+
+Each line in `queue.txt` contains parameters we would like to run `gwas.R` with. There are different ways to accomplish this. For instance we could change `gwas.R` to read the top line from the queue file and parse it as parameters. This approach is one that I intend to use in the future but is *not* what I've done here. Here I've put the paths that the parameters will replace near the top of the file and changed nothing else.
+
+``` r
+phno_file="./hmp_phno.txt"
+geno_file="./geno.hmp.txt"
+```
+
+For each analysis I'll duplicate this template file, move it to the output directory and then swap out these paths using `sed`. This works nicely and leaves a record of the code that was run but for more complex scripts might risk unintentionally editing lines you weren't expecting to.
+
+## Running a single GWAS: `02_next.sh`
+
+Now we're to the real core of the system. We need to manage the queue and modify and run the `R` script. We begin by reading the first line of the `queue.txt` file with `head` and using `awk` to grab the fields[^2] containing the genotype and phenotype paths.
+
+[^2]: There's a space between them so \`awk '{print \$1}\` will return the text before the space.
+
+``` bash
+geno_path=$(head -n 1 queue.txt |awk '{print $1}')
+phno_path=$(head -n 1 queue.txt |awk '{print $2}')
+```
+
+Next we want to overwrite `queue.txt` without the first line. First we check how many lines are in the file with `wc` and then use `tail` to all but the top line. This updated queue we save to a temp file and then use `mv` to overwrite the queue file. We have to write an intermediate file because the pipe `>` will activate before `tail` resulting queue being overwritten with an empty file.
+
+``` bash
+# find the lenght of the queue so it can be shortened
+tmp=($(wc --lines ./queue.txt))
+nlines=${tmp[0]}
+
+# This the pipe runs before tail so we have to use a temp file and then rename it.
+tail -n $((nlines -1)) queue.txt > queue.tmp && mv queue.tmp queue.txt
+```
+
+Now we can parse the paths into a directory name we can make use of. We'll do this by using `sed` to replace text in this string to remove the directory information ( `s|./.*/||` ) and file extension (e.g. `s|\.hmp\.txt||` ). These file names we'll concatenate into the name of the output directory (`$save_dir`).
+
+``` bash
+# create a new save location
+# remove the ./dir/ and .txt 
+phno_name=$(echo $phno_path |sed 's|\./.*/||' |sed 's|\.txt||')
+geno_name=$(echo $geno_path |sed 's|\./.*/||' |sed 's|\.hmp\.txt||')
+
+save_dir='./output/'$phno_name'__'$geno_name
+```
+
+The `R` script writes its output into the working directory so we'll make a directory for this set of parameters, `cd` into it, and copy the template script in.
+
+``` bash
+mkdir $save_dir
+
+# change pwd 
+# copy gwas.R to the save dir
+cd  './'$save_dir
+cp ../../gwas.R ./gwas.R
+```
+
+Using `sed` again, this time with the inplace option `-i`, we swap out the placeholder paths with a new path relative to the working directory.
+
+``` bash
+# modify the paths with a leading '.' to be '../'
+# use sed to replace the run settings
+sed -i 's|./hmp_phno.txt|../.'$phno_path'|' ./gwas.R
+sed -i 's|./geno.hmp.txt|../.'$geno_path'|' ./gwas.R
+```
+
+With those changes made we can execute this script using the singularity container `gapit.sif` in the root of the project.
+
+``` bash
+singularity exec ../../gapit.sif Rscript ./gwas.R > run.out
+```
+
+Here's the whole script all together.
+
+``` bash
+#!/bin/bash
+
+geno_path=$(head -n 1 queue.txt |awk '{print $1}')
+phno_path=$(head -n 1 queue.txt |awk '{print $2}')
+
+# find the lenght of the queue so it can be shortened
+tmp=($(wc --lines ./queue.txt))
+nlines=${tmp[0]}
+
+# This the pipe runs before tail so we have to use a temp file and then rename it.
+tail -n $((nlines -1)) queue.txt > queue.tmp && mv queue.tmp queue.txt
+
+# create a new save location
+# remove the ./dir/ and .txt 
+phno_name=$(echo $phno_path |sed 's|\./.*/||' |sed 's|\.txt||')
+geno_name=$(echo $geno_path |sed 's|\./.*/||' |sed 's|\.hmp\.txt||')
+
+save_dir='./output/'$phno_name'__'$geno_name
+mkdir $save_dir
+
+# change pwd 
+# copy gwas.R to the save dir
+cd  './'$save_dir
+cp ../../gwas.R ./gwas.R
+
+# modify the paths with a leading '.' to be '../'
+# use sed to replace the run settings
+sed -i 's|./hmp_phno.txt|../.'$phno_path'|' ./gwas.R
+sed -i 's|./geno.hmp.txt|../.'$geno_path'|' ./gwas.R
+
+singularity exec ../../gapit.sif Rscript ./gwas.R > run.out
+```
+
+## Putting it all together
+
+The last thing we need to do is write a simple sbatch file to load apptainer (or singlularity) and run `02_next.sh`. I've saved this as `run_gwas.sbatch`.
+
+``` sbatch
+# ... 
+# Your node settings here
+# ...
+
+module load apptainer
+bash 02_next.sh
+```
+
+Now we can put it all together. First run `01_mkqueue.sh` to build the queue and then run `sbatch run_gwas.sbatch` over and over. Recycling the code from above to find the length of the queue we can set up a simple for loop to run `sbatch` the needed number of times.
+
+``` bash
+
+bash 01_mkqueue.sh
+n_runs=$(wc --lines ./queue.txt |awk '{print $1}')
+for i in $(seq 1 $n_runs); 
+do  
+    echo $i
+    sbatch run_gwas.sbatch 
+done
+```
+
+And that's it! Now we let this churn away filling `output/` with the nicely organized results for all our phenotypes.

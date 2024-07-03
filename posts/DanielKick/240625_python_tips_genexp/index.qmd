@@ -1,0 +1,145 @@
+---
+title: ""
+author: "Daniel Kick"
+date: "2024-06-25"
+image: "https://commons.wikimedia.org/wiki/File:Burmese_python_in_Berlin.jpg"
+categories: 
+  - code
+  - python
+  - beginner
+  - tips
+draft: true
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+I adore *R* with it's first rate statistical tooling and evaluation
+tricks[^1] but Python has a number of features I miss when I'm working
+elsewhere.
+
+[^1]: Ever wonder how ggplot get's the name and value of the arguments
+    in \`aes()\`?
+
+``` python
+```
+
+Hi Grace and Madi,
+
+I remember recently one of you needed to make a phenotype file for
+BLINK. I think the solution was to write a table from python and then
+insert the header with a text editor. (Apologies in advance if I’m
+misremembering and what I’m about to write is review.)
+
+I needed to do the same thing noticed it would be a good example of one
+of the useful features in python that I don’t think we’ve talked about.
+I’ll start with the trick (using a generator expression) and then add
+some related tricks/ context later.
+
+Daniel
+
+Review & Setup: In python you can combine strings with “+” 'a'+'b'
+\>'ab'
+
+In python you can create formatted strings (“f-strings”) that will
+substitute variables in curly braces {} with their values a = 'b' f'a
+has value {a}' \>'a has value b'
+
+You can also concatenate a list of strings into a string with a specific
+separator (similar to paste(…, collapse = ‘ sep ’) in R ) with the .join
+method. For example, here we get the column names from data frame x
+using list, then insert a tab character between them. '\t'.join(list(x))
+\>'Taxa\tYield\_Mg_ha’
+
+I have a data frame called “x”. Each row can be accessed by its index
+with x.loc\[i\] Taxa Yield_Mg_ha 0 2369/DK3IIH6 9.053325 1 2369/PHN82
+10.198227 2 2369/PHZ51 8.229352
+
+Generator Expression: To make the target file we need to create a text
+file, write the header, and then write the table.
+
+out_path = './hmp_phno.txt' with open(out_path, 'w') as f: \# Create or
+open the file in write mode f.write("<Phenotype>\ntaxa\tdata\n") \#
+write the header f.write('\t'.join(list(x))+'\n') \# write the column
+names for taxa, yvar in (x.loc\[i\] for i in x.index): \# create all
+taxa/phenotype pairs f.write(f"{taxa}\t{yvar}\n") \# write each to the
+file on a new line
+
+So, what’s interesting here or is it just a for loop with some text
+written outside of it? To see what’s happening we’re going to re-write
+it to be less terse. This should do the same thing.
+
+for i in x.index: taxa, yvar = x.loc\[i\] f.write(f"{taxa}\t{yvar}\n")
+
+So we loop over the index of x, then get the taxa and phenotype, save
+them as taxa and yvar variables then use a f-string to format them.
+What’s strange here is we are accessing one thing (the ith row of x) and
+getting two variables1. As long as we know how many things to expect we
+can “unpack” them into individual variables.
+
+Okay so what’s happening in taxa, yvar in (x.loc\[i\] for i in x.index)?
+We’re unpacking x.loc\[i\] but now have wrapped () around what a for
+loop? This is called a generator expression (genexp). It let’s you get
+the output of the thing you want to iterate over one at a time. Instead
+of making a big list of values and stepping over them we create them on
+the fly so there’s less we have to store2.
+
+Foot notes: 1 The jargony term for this is “tuple unpacking” . 2 This
+usually isn’t an issue in our line of work but with large data sets (or
+computers with limited resources) iterating in other ways might cause
+problems.
+
+Related Tricks and Context Generator expressions use a sort of
+“backwards” for loop structure that trips some people up (it tripped me
+up when I was learning).
+
+For a standard loop we write for i in range(5): i
+
+but for a generator expression we write (i for i in range(5))
+
+note, using two lines here isn’t necessary, just to highlight that we’ve
+only flipped the order.
+
+We can even use nested loops in a generator. e.g. ( (i, j) for i in
+range(5) for j in range(5))
+
+You can use a genexp just about anywhere you would use a for loop.
+Sometimes this will make your code easier to read and sometimes it will
+make it harder to read (use your best judgment).
+
+What if we don’t want to just run some code a bunch of inputs (e.g.
+indices) but we want to retain the result from each? We could set up a
+variable to hold output for a genexp or for loop like so: x = list() for
+i in range(5): x.append(i) x \> \[0, 1, 2, 3, 4\]
+
+This gets the job done but we can instead write this: \[i for i in
+range(5)\] \> \[0, 1, 2, 3, 4\]
+
+This looks like a genexp but we use brackets \[\]. This is called a list
+comprehension and is exceptionally useful . It lets you succinctly
+express how to turn one list into another list. The format is a little
+confusing so I’ll spend a moment on it. If you want to make a list from
+an iterator you put what you want returned up front like we saw above:
+\[i for i in range(5)\] \> \[0, 1, 2, 3, 4\]
+
+If you want to apply a transformation or function you can do that like
+so: \[2\*i for i in range(5)\] \> \[0, 2, 4, 6, 8\]
+
+What if you want to apply an if condition, that goes at the end \[i for
+i in range(5) if i \< 3\] \> \[0, 1, 2\]
+
+So, if you want to apply an if / else then it goes at then end right?
+Nope. Because else specifies what is returned if / else goes up at the
+front. \[i if i \< 3 else -9 for i in range(5)\] \[0, 1, 2, -9, -9\]
+
+So, we can take this “backwards for loop” syntax and build generators or
+lists but there’s one more trick we can do. Suppose we have giant list
+of genes and want to be able to go from gene name to position in list.
+We could search through the list until we find what we want (not so good
+if we have to do that thousands of times) or we can create a lookup that
+maps the name to the index. We can use dictionary to store these
+key/value (name/index) pairs, which python defines with braces {}. Using
+the same setup as before we can define a dictionary comprehension to
+build our key:value lookup. letters = \['a', 'b', 'c', 'd', 'e'\]
+{letters\[i\]:i for i in range(len(letters))} \> {'a': 0, 'b': 1, 'c':
+2, 'd': 3, 'e': 4}

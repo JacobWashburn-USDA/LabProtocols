@@ -1,0 +1,32 @@
+---
+title: "Tip: Make your life easier with Symbolic Links in WSL"
+author: "Daniel Kick"
+date: "2024-06-24"
+image: "https://commons.wikimedia.org/wiki/File:Pinguins,_Bestanddeelnr_909-4582.jpg"
+categories: 
+  - bash
+  - beginner
+  - tips
+draft: false
+---
+
+Modern Windows machines can give you access to Linux command line tools via the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/about). On launch the present working directory is set to the subsystem's home rather than a location in the main Window's file structure.
+
+``` bash
+$ pwd
+/home/<user>
+```
+
+The main file structure is in `/mnt/` so if you're for example, trying to pattern match and zip a few files *getting there* is a bit of a pain. The quick solution is to create symbolic links (shortcuts) between the two.
+
+The syntax for symbolic links is `ls -s source target`.
+
+``` bash
+$ ln -s /mnt/c/Users/<UserName>/Desktop Desktop
+$ ln -s /mnt/c/Users/<UserName>/Documents Documents
+$ ln -s /mnt/c/Users/<UserName>/Downloads Downloads
+$ ls
+Desktop Documents  Downloads 
+```
+
+After creating these links we `cd` into them and end up in the main system and keep just a little more momentum than we otherwise would 
