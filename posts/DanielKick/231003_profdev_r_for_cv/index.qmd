@@ -96,4 +96,4 @@ years     <- round(years)                            # Round
 years
 ```
 
-RMarkdown let's you embed this calculation *in the text*. In my documents I have something like this "R Programming (`r round(as.numeric(difftime(as.Date(format(Sys.time(),"%Y-%m-%d")), as.Date("2017-01-29")))/365)`years )" which will show up in the pdf as "R Programming (# years)".
+RMarkdown let's you embed this calculation *in the text*. In my documents I have something like this "R Programming (`r round(as.numeric(difftime(as.Date(format(Sys.time(),"%Y-%m-%d")), as.Date("2017-01-29")))/365)` years )" which will show up in the pdf as "R Programming (# years)".
