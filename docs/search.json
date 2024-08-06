@@ -914,7 +914,7 @@
     "href": "posts/DeepLearningCommunityofPractice/index.html",
     "title": "Deep Learning Community of Practice",
     "section": "",
-    "text": "Meeting 4\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 3\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 2\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 1\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPre-Meeting Preparation\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Meeting 5\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 4\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 3\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 2\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 1\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nKick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPre-Meeting Preparation\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "protocols/Drones/Pix4Dmapper_Stitch/index.html",
@@ -1041,5 +1041,26 @@
     "title": "Restarting the Rootbot Imaging Script over SSH",
     "section": "",
     "text": "There’s an unresolved memory leak in the imaging script on the Rootbot. Overtime it consumes ever more ram until the script is killed. Ideally we should rewrite the script or monitor it using systemd so that the script is automatically restarted when it crashes. This has not risen to the top of the todo list so the current work around is as follows:\n\nAbout half way through an experiment, ssh into the rootbot’s pi.\nCheck that pictures aren’t currently being taken by looking at the timestamps in the pictures directory (ls -lh ~/Pictures)\nFind the process id number (PID) for the script (\nrootBotPhotoScript_23Feb2021.py\n) (e.g. with top or htop)\nEnd the process with kill $pid where $pid is the value from step 3.\ngo to the folder with the script (cd \\~/rootbot/jupyter_notebooks).\nRestart the rootbot script (rootBotPhotoScript_23Feb2021.py). Don’t be fooled by the shebang line, python3 must be explicitly used. The command to do this is nohup python3 rootBotPhotoScript_23Feb2021.py &&. nohup and && ensure the process continues in the background after the terminal is closed. python3 ensures the system’s default python (2) isn’t used. The full path need not be provided for the script because the present working directory is the /jupyter_notebooks folder."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html",
+    "title": "Meeting 5",
+    "section": "",
+    "text": "This supplementary presentation from this week can be found here.\n\nLogistics\n\nWe’re running a new scheduling poll for the fall since we have members whose schedule may change with the new semester.\nBecause of this, our next meeting will be on the 20th and the one after that will be TBD.\n\nMLP in PyTorch\n\nWe discussed some of the logistics around building models in PyTorch including\nDataloaders\nMoving tensors to the GPU\nnn.Module classes"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#recap",
+    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#recap",
+    "title": "Meeting 5",
+    "section": "",
+    "text": "This supplementary presentation from this week can be found here.\n\nLogistics\n\nWe’re running a new scheduling poll for the fall since we have members whose schedule may change with the new semester.\nBecause of this, our next meeting will be on the 20th and the one after that will be TBD.\n\nMLP in PyTorch\n\nWe discussed some of the logistics around building models in PyTorch including\nDataloaders\nMoving tensors to the GPU\nnn.Module classes"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#preparation-for-next-session",
+    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#preparation-for-next-session",
+    "title": "Meeting 5",
+    "section": "Preparation for Next Session",
+    "text": "Preparation for Next Session\nThe content for the next two sessions will dovetail:\nWe’re going to look at transformers next so\n\nFor next session:\n\nWatch Grant Sanderson’s Attention in transformers (26m)\nBegin Let’s build GPT (1h56)\nWe’re planning to review Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) for the folks that couldn’t be at Meeting 4. If you haven’t read it give it a read!\nDecide if you’re game to present a project or paper “show and tell” and what project you’re planning or working on that you.\n\nFor the session after that:\n\nFinish Let’s build GPT (1h56)\n\n\nCheers,\nDaniel"
   }
 ]

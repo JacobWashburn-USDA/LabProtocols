@@ -1,0 +1,49 @@
+---
+title: "Meeting 5"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/37/Torch_2_%28PSF%29.png"
+date: "2024-08-06"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+freeze: true
+---
+
+## Recap:
+
+This supplementary presentation from this week can be found [here](./240805_Meeting5.pptx).
+
+-   Logistics
+    -   We're running a new [scheduling poll](https://www.when2meet.com/?25825400-b3JmD) for the fall since we have members whose schedule may change with the new semester.
+    -   Because of this, our next meeting will be on the 20th and the one after that will be TBD.
+-   MLP in PyTorch
+    -   We discussed some of the logistics around building models in PyTorch including
+    -   Dataloaders
+    -   Moving tensors to the GPU
+    -   [nn.Module](https://pytorch.org/docs/stable/generated/torch.nn.Module.html) classes
+
+## Preparation for Next Session
+
+The content for the next two sessions will dovetail:
+
+We're going to look at transformers next so
+
+-   For next session:
+
+    -   Watch Grant Sanderson's [Attention in transformers](https://youtu.be/eMlx5fFNoYc?si=ZegmRC8nDrLPWNlr) (26m)
+
+    -   Begin [Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY) (1h56)
+
+    -   We're planning to review [Santurkar, et al. 2018](https://arxiv.org/abs/1805.11604) ("How Does Batch Normalization Help Optimization?") for the folks that couldn't be at Meeting 4. If you haven't read it give it a read!
+
+    -   Decide if you're game to present a project or paper "show and tell" and what project you're planning or working on that you.
+
+-   For the session after that:
+
+    -   Finish [Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY) (1h56)
+
+Cheers,
+
+Daniel

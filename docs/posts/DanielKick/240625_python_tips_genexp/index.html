@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Daniel Kick">
+<meta name="dcterms.date" content="2024-06-25">
 
-<title>Deep Learning Community of Practice</title>
+<title></title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +22,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-listing/list.min.js"></script>
-<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,73 +102,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
@@ -144,19 +120,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About the Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../../../posts.html"> 
 <span class="menu-text">Writings from the Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../posts/DeepLearningCommunityofPractice/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../posts/DeepLearningCommunityofPractice/index.html"> 
 <span class="menu-text">Deep Learning Community</span></a>
   </li>  
 </ul>
@@ -167,298 +143,91 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Deep Learning Community of Practice</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(7)</span></div><div class="category" data-category="beginner">beginner <span class="quarto-category-count">(7)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(7)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+  <div class="quarto-categories">
+    <div class="quarto-category">code</div>
+    <div class="quarto-category">python</div>
+    <div class="quarto-category">beginner</div>
+    <div class="quarto-category">tips</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Daniel Kick </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 25, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>I adore <em>R</em> with it’s first rate statistical tooling and evaluation tricks<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> but Python has a number of features I miss when I’m working elsewhere.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Hi Grace and Madi,</p>
+<p>I remember recently one of you needed to make a phenotype file for BLINK. I think the solution was to write a table from python and then insert the header with a text editor. (Apologies in advance if I’m misremembering and what I’m about to write is review.)</p>
+<p>I needed to do the same thing noticed it would be a good example of one of the useful features in python that I don’t think we’ve talked about. I’ll start with the trick (using a generator expression) and then add some related tricks/ context later.</p>
+<p>Daniel</p>
+<p>Review &amp; Setup: In python you can combine strings with “+” ‘a’+‘b’ &gt;‘ab’</p>
+<p>In python you can create formatted strings (“f-strings”) that will substitute variables in curly braces {} with their values a = ‘b’ f’a has value {a}’ &gt;‘a has value b’</p>
+<p>You can also concatenate a list of strings into a string with a specific separator (similar to paste(…, collapse = ‘ sep ’) in R ) with the .join method. For example, here we get the column names from data frame x using list, then insert a tab character between them. ‘.join(list(x)) &gt;’Taxa_Mg_ha’</p>
+<p>I have a data frame called “x”. Each row can be accessed by its index with x.loc[i] Taxa Yield_Mg_ha 0 2369/DK3IIH6 9.053325 1 2369/PHN82 10.198227 2 2369/PHZ51 8.229352</p>
+<p>Generator Expression: To make the target file we need to create a text file, write the header, and then write the table.</p>
+<p>out_path = ‘./hmp_phno.txt’ with open(out_path, ‘w’) as f: # Create or open the file in write mode f.write(“<phenotype>”) # write the header f.write(‘.join(list(x))+’’) # write the column names for taxa, yvar in (x.loc[i] for i in x.index): # create all taxa/phenotype pairs f.write(f”{taxa}“) # write each to the file on a new line</phenotype></p>
+<p>So, what’s interesting here or is it just a for loop with some text written outside of it? To see what’s happening we’re going to re-write it to be less terse. This should do the same thing.</p>
+<p>for i in x.index: taxa, yvar = x.loc[i] f.write(f”{taxa}“)</p>
+<p>So we loop over the index of x, then get the taxa and phenotype, save them as taxa and yvar variables then use a f-string to format them. What’s strange here is we are accessing one thing (the ith row of x) and getting two variables1. As long as we know how many things to expect we can “unpack” them into individual variables.</p>
+<p>Okay so what’s happening in taxa, yvar in (x.loc[i] for i in x.index)? We’re unpacking x.loc[i] but now have wrapped () around what a for loop? This is called a generator expression (genexp). It let’s you get the output of the thing you want to iterate over one at a time. Instead of making a big list of values and stepping over them we create them on the fly so there’s less we have to store2.</p>
+<p>Foot notes: 1 The jargony term for this is “tuple unpacking” . 2 This usually isn’t an issue in our line of work but with large data sets (or computers with limited resources) iterating in other ways might cause problems.</p>
+<p>Related Tricks and Context Generator expressions use a sort of “backwards” for loop structure that trips some people up (it tripped me up when I was learning).</p>
+<p>For a standard loop we write for i in range(5): i</p>
+<p>but for a generator expression we write (i for i in range(5))</p>
+<p>note, using two lines here isn’t necessary, just to highlight that we’ve only flipped the order.</p>
+<p>We can even use nested loops in a generator. e.g.&nbsp;( (i, j) for i in range(5) for j in range(5))</p>
+<p>You can use a genexp just about anywhere you would use a for loop. Sometimes this will make your code easier to read and sometimes it will make it harder to read (use your best judgment).</p>
+<p>What if we don’t want to just run some code a bunch of inputs (e.g. indices) but we want to retain the result from each? We could set up a variable to hold output for a genexp or for loop like so: x = list() for i in range(5): x.append(i) x &gt; [0, 1, 2, 3, 4]</p>
+<p>This gets the job done but we can instead write this: [i for i in range(5)] &gt; [0, 1, 2, 3, 4]</p>
+<p>This looks like a genexp but we use brackets []. This is called a list comprehension and is exceptionally useful . It lets you succinctly express how to turn one list into another list. The format is a little confusing so I’ll spend a moment on it. If you want to make a list from an iterator you put what you want returned up front like we saw above: [i for i in range(5)] &gt; [0, 1, 2, 3, 4]</p>
+<p>If you want to apply a transformation or function you can do that like so: [2*i for i in range(5)] &gt; [0, 2, 4, 6, 8]</p>
+<p>What if you want to apply an if condition, that goes at the end [i for i in range(5) if i &lt; 3] &gt; [0, 1, 2]</p>
+<p>So, if you want to apply an if / else then it goes at then end right? Nope. Because else specifies what is returned if / else goes up at the front. [i if i &lt; 3 else -9 for i in range(5)] [0, 1, 2, -9, -9]</p>
+<p>So, we can take this “backwards for loop” syntax and build generators or lists but there’s one more trick we can do. Suppose we have giant list of genes and want to be able to go from gene name to position in list. We could search through the list until we find what we want (not so good if we have to do that thousands of times) or we can create a lookup that maps the name to the index. We can use dictionary to store these key/value (name/index) pairs, which python defines with braces {}. Using the same setup as before we can define a dictionary comprehension to build our key:value lookup. letters = [‘a’, ‘b’, ‘c’, ‘d’, ‘e’] {letters[i]:i for i in range(len(letters))} &gt; {‘a’: 0, ‘b’: 1, ‘c’: 2, ‘d’: 3, ‘e’: 4}</p>
 
 
 
 
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1722920400000" data-listing-file-modified-sort="1722965246572" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="247">
-<a href="../../posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Torch_2_%28PSF%29.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Meeting 5
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-This supplementary presentation from this week can be found here.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-Aug 6, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1719896400000" data-listing-file-modified-sort="1720029375220" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="374">
-<a href="../../posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/30/256x256_Dissolve_Noise_Texture.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Meeting 4
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-This supplementary presentation from this week can be found here.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-Jul 2, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1718686800000" data-listing-file-modified-sort="1722965160383" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="170">
-<a href="../../posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Perceptron_4layers.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Meeting 3
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-This week we supplemented the lecture material with supplemental sides which can be found here. Specifically we discussed common considerations for defining training and…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-Jun 18, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1717477200000" data-listing-file-modified-sort="1717615789156" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="796">
-<a href="../../posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240604_Meeting2/580px-Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Meeting 2
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-A bigram model predicts the next letter given a letter
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-Jun 4, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1716267600000" data-listing-file-modified-sort="1716319838213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1146">
-<a href="../../posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240520_Meeting1/Two_women_operating_ENIAC.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Meeting 1
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-What are the key ideas you took from the video?
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-May 21, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1715058000000" data-listing-file-modified-sort="1716319838209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208">
-<a href="../../posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240507_Meeting0/Picture1.gif" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Kick Off Meeting
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-May 7, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-categories="beginner,code,Deep Learning" data-listing-date-sort="1714971600000" data-listing-file-modified-sort="1716500722196" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="581">
-<a href="../../posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="../../posts/DeepLearningCommunityofPractice/240501_PreMeeting/Picture1.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Pre-Meeting Preparation
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('beginner'); return false;">
-beginner
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<div class="card-text listing-description">
-Hello Everyone!
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Daniel Kick
-</div>
-<div class="listing-date">
-May 6, 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>Ever wonder how ggplot get’s the name and value of the arguments in `aes()`?<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
