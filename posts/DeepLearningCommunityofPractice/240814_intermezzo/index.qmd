@@ -1,0 +1,82 @@
+---
+title: "Meeting 6 Preparation Notes"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/1940_Census_Population_Schedules_-_Florida_-_Sumter_County_-_ED_60-4_-_DPLA_-_d2b873312e5700b4c48cc6e11ec98941_%28page_4%29.jpg"
+date: "2024-08-14"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+freeze: true
+---
+
+Below are a few notes regarding the lecture for the next two sessions (Building a GPT).
+
+**First**, if you’re looking for a good break point for next week, 38m and 1h1m are good stopping points. By the first point you’ll have seen the Bigram model we worked on weeks ago remade in Pytorch and by the second you’ll have gotten a good preview of some the ideas that will be key in the second half of the video.
+
+**Second**, there are a few potential points for confusing where Python is acting in a way that’s not necessarily intuitive. Karpathy uses a Lambda expressions to define a few functions. Lambdas are handy because they are very terse but this can make them unclear. Here I’ve written out one of these function definitions three ways from most terse to least to show what’s happening here.
+
+``` python
+# chars is a list of the unique characters 
+# ['\n', ' ', '!', ...  'y', 'z']
+
+# We've seen a dictionary comprehension previously
+# {'\n': 0, ' ': 1, '!': 2, ... 'y': 63, 'z': 64}
+stoi  = {s:i for i,s in enumerate(chars)}
+
+# Defining a function by naming a lambda
+encode = lambda s: [stoi[c] for c in s]
+
+# Alternate version
+def encode1(s):
+    return [stoi[c] for c in s]
+
+# Alternate verson without the list comprehension
+def encode2(s):
+    out = []
+    for c in s:
+        out.append(stoi[c])
+        
+# Confirm these functions are equivalent
+for x in ['chars']:
+    print(f'{encode(x)}\n{encode1(x)}\n{encode2(x)}')
+
+# [41, 46, 39, 56, 57]
+# [41, 46, 39, 56, 57]
+# [41, 46, 39, 56, 57]
+```
+
+Later, in the Bigram model class definition there’s a point in the method that generates new tokens (characters) that uses `self(idx)`. What’s happening is that the default method of the class is being called. This default method is what you want to happen when you pass data to the class, so here we want to pass in some sequence and get the next entry in the sequence. We talked about pytorch nn.Module a little last week, but the key idea to know here is that the `forward()` method makes predictions (it does the forward pass). Thus `self(idx)` would be the same as writing `self.forward(idx)` but the former assumes more knowledge of pytorch-isms.
+
+``` python
+class BigramLanguageModel(nn.Module):
+    def __init__(self, vocab_size):
+        super().__init__()
+        # ...
+
+    def forward(self, idx, targets=None):
+        # ... 
+    
+    def generate(self, idx, max_new_tokens):
+        for _ in range(max_new_tokens):
+            logits, loss = self(idx) # <--- !
+            # ...
+```
+
+**Finally**, there are a few points where you may want to stop and compare tensors. For me it’s easier to get a sense of what’s going on by plotting part of the tensors instead of printing them. To do this you can take a 2d slice of the tensor (below we have a 3d tensors so we’re looking at the 0th batch), convert them to numpy arrays and then plot them with `plt.imshow()`. When comparing two I like to either subtract them (so they’re all 0s if they’re the same) or concatenate them with a spacer and plot them together. Here is example code to do this:
+
+``` python
+import numpy as np
+import matplotlib.pyplot as plt
+plt.imshow(np.concatenate([
+  x[0].numpy(),       # Slice of a tensor
+  np.zeros((T, 1))-1, # Spacer matrix of -1s
+  xbow[0].numpy()     # Slice fo a tensor
+], axis = 1))
+```
+
+Now we can quickly see that the left two slices are different and the right two are equivalent.
+
+
+![](ex1.png) ![](ex2.png)
