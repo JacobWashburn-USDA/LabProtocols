@@ -2,7 +2,7 @@
 title: "Running GWAS _en masse_."
 author: "Daniel Kick"
 date: "2024-07-02"
-image: "https://commons.wikimedia.org/wiki/File:Ariopelta_capensis.png"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Ariopelta_capensis.png"
 categories: 
   - code
   - bash

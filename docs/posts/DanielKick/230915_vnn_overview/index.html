@@ -246,7 +246,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="the-data-itself">1. The data itself</h2>
 <p>My example trait, <span class="math inline">\(y\)</span> is either 0 or 1 (plus a little noise). It’s controlled by two genes which are represented as tensor<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> containing values for each possible nucleotide (ACGT) for each SNP measured in the gene. Conveniently, both genes either contain all 0’s or all 1’s and when there are only 0’s <span class="math inline">\(y\)</span> will be around 0 (and the same for 1).</p>
 <p>This of course means that in this population <em>no nucleotides</em> (all 0s) were observed or <em>all nucleotides</em> (all 1s) were simultaneously observed. Don’t ask me how this is possible 🤔. For real data these values would be probability of seeing a given nucelotide so “A” might be <code>[1, 0, 0, 0]</code><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
-<div id="6cd6d951" class="cell" data-execution_count="2">
+<div id="c6c59b35" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>n_obs <span class="op">=</span> <span class="dv">100</span> <span class="co"># 100 obs for each group</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y_true <span class="op">=</span> torch.from_numpy(np.concatenate([</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        np.zeros((n_obs, )),</span>
@@ -289,7 +289,7 @@ window.Quarto = {
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>          [<span class="fl">1.</span>, <span class="fl">1.</span>]]])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then this data can be packaged nicely in a <code>DataLoader</code><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. This will retrieve the trait (<code>y</code>) and SNPs for each gene (in <code>x_list</code>) for 20 observations at a time.</p>
-<div id="3c970a55" class="cell" data-execution_count="4">
+<div id="c1f741ac" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>training_dataloader <span class="op">=</span> DataLoader(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  ListDataset(</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> y_true[:, <span class="va">None</span>].to(torch.float32), <span class="co"># Set as 32 bit float to match network</span></span>
@@ -301,7 +301,7 @@ window.Quarto = {
 <section id="defining-the-graph" class="level2">
 <h2 class="anchored" data-anchor-id="defining-the-graph">2. Defining the graph</h2>
 <p>The structure of a graph can be nicely represented as a python dictionary so I’ll begin with that:</p>
-<div id="eb4c406f" class="cell" data-execution_count="5">
+<div id="b99ec683" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>node_connections <span class="op">=</span> {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'y_hat'</span>:[<span class="st">'c1'</span>, <span class="st">'c2'</span>],</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'c1'</span>:[<span class="st">'b1'</span>],</span>
@@ -313,7 +313,7 @@ window.Quarto = {
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Each node will have an input and output size stored in a dictionary. The output sizes are easy, all nodes will have the same size except for the last node, which has predicts y, which will have a size of 1.</p>
-<div id="0e4e63cf" class="cell" data-execution_count="7">
+<div id="ba323fa6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>node_list <span class="op">=</span> <span class="bu">list</span>(node_connections.keys())</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>default_output_size <span class="op">=</span> <span class="dv">20</span></span>
@@ -331,7 +331,7 @@ window.Quarto = {
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a> <span class="st">'y_hat'</span>: <span class="dv">1</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The input sizes are a little trickier. A node’s input should be the number of SNPs in a gene (if it’s an input node) or the sum of the outputs of the nodes on which it depends (e.g.&nbsp;<code>y_hat</code>’s input size is the sum of <code>c1</code> and <code>c2</code>’s outputs). To do this, I’m going to copy the dictionary with all the connections between nodes, then swap the node names for their output sizes. Summing the list of these output values will be the required input size. Data nodes don’t depend on input from other nodes, so those will have an input shape of 0.</p>
-<div id="4e454423" class="cell" data-execution_count="8">
+<div id="0794d0ce" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>input_size_dict <span class="op">=</span> node_connections.copy()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>no_dependants <span class="op">=</span> [e <span class="cf">for</span> e <span class="kw">in</span> node_connections.keys() <span class="cf">if</span> node_connections[e] <span class="op">==</span> []]</span>
@@ -367,7 +367,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="how-to-move-through-the-graph">3. How to move through the graph</h2>
 <p>To calculate the prediction for an observation each node in the graph needs to be run after all it’s input nodes have been run. Specifically, I need a list of nodes, ordered such that each node comes after all the nodes on which it depends.</p>
 <p>This takes little doing. Here I use some custom helper function to find the unique entries in a dictionary, the “top” nodes (those on which no other nodes depend).</p>
-<div id="cd2265a7" class="cell" data-execution_count="10">
+<div id="5f2d529d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># start by finding the top level -- all those keys which are themselves not values</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># helper function to get all keys and all value from a dict. Useful for when keys don't have unique values.</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_uniq_keys_values(input_dict):</span>
@@ -386,7 +386,7 @@ window.Quarto = {
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>([e <span class="cf">for</span> e <span class="kw">in</span> all_key_value_dict[<span class="st">'all_keys'</span>] <span class="cf">if</span> e <span class="kw">not</span> <span class="kw">in</span> all_key_value_dict[<span class="st">'all_values'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Similar to how I calculated each node’s output size, here I copy the connection dictionary and then manipulate it. I repeatedly identify the top-most nodes in the graph, add them to a list, and then <em>remove them</em> from the dictionary. Repeating this “peels” of the top layer over and over until there are nodes left. The resulting list is ordered from top most to most basal, so reversing it is all that need be done to get the order nodes should be run in.</p>
-<div id="3556edde" class="cell" data-execution_count="11">
+<div id="ecb350ec" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># find the dependencies for run order from many dependencies to none</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> node_connections.copy()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -413,7 +413,7 @@ window.Quarto = {
 <section id="turn-the-graph-into-a-neural-network" class="level2">
 <h2 class="anchored" data-anchor-id="turn-the-graph-into-a-neural-network">4. Turn the graph into a neural network</h2>
 <p>So far, we have the data in a useful format (<code>training_dataloader</code>), a description of what the network should look like (<code>node_connections</code>, <code>input_size_dict</code>, <code>output_size_dict</code>), and the order that nodes in the network should be run in (<code>dependancy_order</code>). With this, we can build the network. I’ll start by defining a node as a linear layer (<code>nn.Linear</code>) that is passed into a <code>ReLU</code>. By creating a function<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> for making nodes, changing <em>every</em> node in the network is as easy as editing this function.</p>
-<div id="375c016e" class="cell" data-execution_count="12">
+<div id="5ca574f4" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> Linear_block(in_size, out_size, drop_pr):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    block <span class="op">=</span> nn.Sequential(</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        nn.Linear(in_size, out_size),</span>
@@ -421,7 +421,7 @@ window.Quarto = {
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span>(block)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, I can go through each node in order of it’s dependencies and have it return the data (if it’s an input node), process inputs with a <code>Linear_block</code> (if it’s not an input node or the output node), or use a linear function to predict the trait<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
-<div id="95d004c7" class="cell" data-execution_count="13">
+<div id="9c3c2962" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fill in the list in dependency order. </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>layer_list <span class="op">=</span> []</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key <span class="kw">in</span> dependancy_order:</span>
@@ -451,7 +451,7 @@ window.Quarto = {
 <section id="the-moment-of-truth" class="level2">
 <h2 class="anchored" data-anchor-id="the-moment-of-truth">The moment of truth…</h2>
 <p>Now all that is left is to see if the model trains. Using the objects describing the graph, the names of the input tensors, and the order nodes should be run it I’ll initialze the network, train it for 200 epochs aaaaaannnnddd….</p>
-<div id="a39a7c72" class="cell" data-execution_count="16">
+<div id="ee23c4ca" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> NeuralNetwork(example_dict <span class="op">=</span> node_connections, </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                      example_dict_input_size <span class="op">=</span> input_size_dict,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                      example_dict_output_size <span class="op">=</span> output_size_dict,</span>

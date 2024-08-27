@@ -2,7 +2,7 @@
 title: "Tip: Make your life easier with Symbolic Links in WSL"
 author: "Daniel Kick"
 date: "2024-06-24"
-image: "https://commons.wikimedia.org/wiki/File:Pinguins,_Bestanddeelnr_909-4582.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Pinguins%2C_Bestanddeelnr_909-4582.jpg"
 categories: 
   - bash
   - beginner

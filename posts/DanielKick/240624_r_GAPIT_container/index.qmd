@@ -2,7 +2,7 @@
 title: "Building a GWAS Container"
 author: "Daniel Kick"
 date: "2024-06-24"
-image: "https://commons.wikimedia.org/wiki/File:Caract%C3%A8re_latin_d%27%C3%A9criture,_R_r.png"
+image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Caract%C3%A8re_latin_d%27%C3%A9criture%2C_R_r.png"
 categories: 
   - code
   - r
