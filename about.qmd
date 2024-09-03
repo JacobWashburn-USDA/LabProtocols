@@ -11,14 +11,16 @@ title: "About the Lab"
 
 ### Harper LaFond (MS) ![](people/HarperLaFond/HarperLaFond.jpg){width="100"}
 
-Badges: \[💻🧙, \]
-
 Harper LaFond joined the Washburn Lab in 2022 as the lab technician. She received her B.S. in Fisheries and Wildlife and her M.S. in Plant, Insect & Microbial Sciences specializing in entomology, both at the University of Missouri – Columbia. Harper has enjoyed working an array of field technician jobs with all sorts of living things from bugs and birds of prey to sturgeon and river carp. She then worked at the University of Missouri, Grape and Wine Institute as the viticulture extension specialist before joining the maize group at the USDA (she only works with crops that can be fermented into tasty drinks). Harper enjoys listening to podcasts on her walks to and from work, cooking dinner with her husband and sharing the leftovers with their dog, Chase. 
 
 ### Raymond Wright ![](people/GenericPerson/GenericPerson.png){width="100"}
 
 
 ## Post Docs
+
+### Tyler McCubbin (PhD) ![](people/GenericPerson/GenericPerson.png){width="100"}
+
+### Worasit Sangjan (PhD) ![](people/GenericPerson/GenericPerson.png){width="100"}
 
 ### Daniel Kick (PhD) ![](people/DanielKick/DanielKick.png){width="100"}
 
@@ -33,17 +35,7 @@ Daniel joined in 2021 and works with predicting phenotypes over a range of genot
 
 ## Undergraduate Researchers
 
-### Grace Sidberry ![](people/GraceSidberry/GraceSidberry.jpg){width="100"}
-
-### Madi Mitchell ![](people/MadiMitchell/MadiMitchell.jpg){width="100"}
-
-Badges: \[💻🧙, \]
-
-Madi can be found [here.](https://mnmzbd24.github.io/)
-
 ### Morgan Mathison ![](people/GenericPerson/GenericPerson.png){width="100"}
-
-### Paige Hughes ![](people/GenericPerson/GenericPerson.png){width="100"}
 
 ### Henry Bloch ![](people/GenericPerson/GenericPerson.png){width="100"}
 
@@ -54,6 +46,12 @@ Madi can be found [here.](https://mnmzbd24.github.io/)
 ### Piyush Pandey (PhD) ![](people/PiyushPandy/PiyushPandy.jpg){width="100"}
 
 ## Undergraduate Researchers
+
+### Grace Sidberry ![](people/GraceSidberry/GraceSidberry.jpg){width="100"}
+
+### Madi Mitchell ![](people/MadiMitchell/MadiMitchell.jpg){width="100"}
+
+Madi can be found [here.](https://mnmzbd24.github.io/)
 
 ### Mia Ruppel
 
