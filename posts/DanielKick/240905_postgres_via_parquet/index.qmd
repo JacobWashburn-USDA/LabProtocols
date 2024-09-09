@@ -12,10 +12,6 @@ categories:
 freeze: true
 ---
 
-# TODO
-
-find and replace kickd -\> loremipsum
-
 For those that want to jump straight to the resources here are the files discussed below:
 
 -   script to migrate data: [parquet_to_psql.py](./parquet_to_psql.py)
@@ -68,13 +64,13 @@ Next we create a non-root account and provide permissions[^2] for the `apsimxsim
 [^2]: See also: <https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4>
 
 ``` sql
-postgres=# CREATE ROLE kickd LOGIN PASSWORD 'TotallyRealPassword';
+postgres=# CREATE ROLE loremipsum LOGIN PASSWORD 'TotallyRealPassword';
 CREATE ROLE
-postgres=# ALTER ROLE kickd CREATEDB;
+postgres=# ALTER ROLE loremipsum CREATEDB;
 ALTER ROLE
-postgres=# GRANT ALL PRIVILEGES ON DATABASE apsimxsim TO kickd;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE apsimxsim TO loremipsum;
 GRANT
-apsimxsim=# GRANT ALL ON SCHEMA public TO kickd;
+apsimxsim=# GRANT ALL ON SCHEMA public TO loremipsum;
 GRANT
 ```
 
@@ -85,11 +81,11 @@ postgres=# \du
                              List of roles
  Role name |                         Attributes
 -----------+------------------------------------------------------------
- kickd     | Create DB
+ loremipsum     | Create DB
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS
 ```
 
-We're not done with setup yet. We also need to change the search path for the kickd user so we can *find* our tables.
+We're not done with setup yet. We also need to change the search path for the loremipsum user so we can *find* our tables.
 
 ``` sql
 $psql apsimxsim
@@ -98,15 +94,15 @@ apsimxsim=> SET search_path TO public;
 
 Now we should be set. We can add / drop tables from `psql` but we're going to use python's `SQLAlchemy` library to do most of the heavy lifting including creating these tables.
 
-Fast forwarding a little, here's what we're aiming at. Ultimately the kickd user will own three tables with the metadata (`ids`, `genotypes`) and simulated results (`results`). A final quirk I'll mention here is that it's possible to use capitalized names but it a bit of a hasle. We'd have to select them as `public."Ids"` instead of `public.ids`. For this reason we'll standardized all table and field names using only lowercase letters and underscores.
+Fast forwarding a little, here's what we're aiming at. Ultimately the loremipsum user will own three tables with the metadata (`ids`, `genotypes`) and simulated results (`results`). A final quirk I'll mention here is that it's possible to use capitalized names but it a bit of a hasle. We'd have to select them as `public."Ids"` instead of `public.ids`. For this reason we'll standardized all table and field names using only lowercase letters and underscores.
 
 ``` sql
-apsimxsim=> SELECT schemaname, tablename, tableowner FROM pg_tables WHERE tableowner='kickd';
+apsimxsim=> SELECT schemaname, tablename, tableowner FROM pg_tables WHERE tableowner='loremipsum';
  schemaname | tablename | tableowner
 ------------+-----------+------------
- public     | ids       | kickd
- public     | genotypes | kickd
- public     | results   | kickd
+ public     | ids       | loremipsum
+ public     | genotypes | loremipsum
+ public     | results   | loremipsum
 (3 rows)
 ```
 

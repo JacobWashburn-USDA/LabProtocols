@@ -151,15 +151,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#todo" id="toc-todo" class="nav-link active" data-scroll-target="#todo">TODO</a>
-  <ul class="collapse">
-  <li><a href="#the-plan" id="toc-the-plan" class="nav-link" data-scroll-target="#the-plan">The Plan:</a></li>
+  <li><a href="#the-plan" id="toc-the-plan" class="nav-link active" data-scroll-target="#the-plan">The Plan:</a></li>
   <li><a href="#learning-postgresql-on-the-way-down" id="toc-learning-postgresql-on-the-way-down" class="nav-link" data-scroll-target="#learning-postgresql-on-the-way-down">Learning PostgreSQL On The Way Down:</a></li>
   <li><a href="#starting-with-the-end-in-mind" id="toc-starting-with-the-end-in-mind" class="nav-link" data-scroll-target="#starting-with-the-end-in-mind">Starting With The End In Mind</a></li>
   <li><a href="#dont-leak-passwords" id="toc-dont-leak-passwords" class="nav-link" data-scroll-target="#dont-leak-passwords">Don’t Leak Passwords</a></li>
   <li><a href="#preparation-for-data-migration" id="toc-preparation-for-data-migration" class="nav-link" data-scroll-target="#preparation-for-data-migration">Preparation for Data Migration</a></li>
   <li><a href="#data-migration-ad-hoc-parallelism" id="toc-data-migration-ad-hoc-parallelism" class="nav-link" data-scroll-target="#data-migration-ad-hoc-parallelism">Data Migration &amp; Ad Hoc Parallelism</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -204,9 +201,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="todo" class="level1">
-<h1>TODO</h1>
-<p>find and replace kickd -&gt; loremipsum</p>
 <p>For those that want to jump straight to the resources here are the files discussed below:</p>
 <ul>
 <li><p>script to migrate data: <a href="./parquet_to_psql.py">parquet_to_psql.py</a></p></li>
@@ -240,32 +234,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createdb apsimxsim</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Next we create a non-root account and provide permissions<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> for the <code>apsimxsim</code> database and public schema.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">CREATE</span> <span class="kw">ROLE</span> kickd LOGIN <span class="kw">PASSWORD</span> <span class="st">'TotallyRealPassword'</span>;</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">CREATE</span> <span class="kw">ROLE</span> loremipsum LOGIN <span class="kw">PASSWORD</span> <span class="st">'TotallyRealPassword'</span>;</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">ROLE</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">ALTER</span> <span class="kw">ROLE</span> kickd CREATEDB;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">ALTER</span> <span class="kw">ROLE</span> loremipsum CREATEDB;</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ALTER</span> <span class="kw">ROLE</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">GRANT</span> <span class="kw">ALL</span> <span class="kw">PRIVILEGES</span> <span class="kw">ON</span> <span class="kw">DATABASE</span> apsimxsim <span class="kw">TO</span> kickd;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">GRANT</span> <span class="kw">ALL</span> <span class="kw">PRIVILEGES</span> <span class="kw">ON</span> <span class="kw">DATABASE</span> apsimxsim <span class="kw">TO</span> loremipsum;</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">GRANT</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>apsimxsim<span class="op">=</span># <span class="kw">GRANT</span> <span class="kw">ALL</span> <span class="kw">ON</span> <span class="kw">SCHEMA</span> <span class="kw">public</span> <span class="kw">TO</span> kickd;</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>apsimxsim<span class="op">=</span># <span class="kw">GRANT</span> <span class="kw">ALL</span> <span class="kw">ON</span> <span class="kw">SCHEMA</span> <span class="kw">public</span> <span class="kw">TO</span> loremipsum;</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">GRANT</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We can check permissions using <code>\du</code> (note that <code>psql</code> specific commands begin with <code>\</code> e.g., <code>\q</code>).</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># \du</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                             <span class="kw">List</span> <span class="kw">of</span> <span class="kw">roles</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="kw">Role</span> name |                         <span class="kw">Attributes</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">-----------+------------------------------------------------------------</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> kickd     | <span class="kw">Create</span> DB</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> loremipsum     | <span class="kw">Create</span> DB</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> postgres  | Superuser, <span class="kw">Create</span> <span class="kw">role</span>, <span class="kw">Create</span> DB, Replication, Bypass RLS</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We’re not done with setup yet. We also need to change the search path for the kickd user so we can <em>find</em> our tables.</p>
+<p>We’re not done with setup yet. We also need to change the search path for the loremipsum user so we can <em>find</em> our tables.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>$psql apsimxsim</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>apsimxsim<span class="op">=&gt;</span> <span class="kw">SET</span> search_path <span class="kw">TO</span> <span class="kw">public</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now we should be set. We can add / drop tables from <code>psql</code> but we’re going to use python’s <code>SQLAlchemy</code> library to do most of the heavy lifting including creating these tables.</p>
-<p>Fast forwarding a little, here’s what we’re aiming at. Ultimately the kickd user will own three tables with the metadata (<code>ids</code>, <code>genotypes</code>) and simulated results (<code>results</code>). A final quirk I’ll mention here is that it’s possible to use capitalized names but it a bit of a hasle. We’d have to select them as <code>public."Ids"</code> instead of <code>public.ids</code>. For this reason we’ll standardized all table and field names using only lowercase letters and underscores.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>apsimxsim<span class="op">=&gt;</span> <span class="kw">SELECT</span> schemaname, tablename, tableowner <span class="kw">FROM</span> pg_tables <span class="kw">WHERE</span> tableowner<span class="op">=</span><span class="st">'kickd'</span>;</span>
+<p>Fast forwarding a little, here’s what we’re aiming at. Ultimately the loremipsum user will own three tables with the metadata (<code>ids</code>, <code>genotypes</code>) and simulated results (<code>results</code>). A final quirk I’ll mention here is that it’s possible to use capitalized names but it a bit of a hasle. We’d have to select them as <code>public."Ids"</code> instead of <code>public.ids</code>. For this reason we’ll standardized all table and field names using only lowercase letters and underscores.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>apsimxsim<span class="op">=&gt;</span> <span class="kw">SELECT</span> schemaname, tablename, tableowner <span class="kw">FROM</span> pg_tables <span class="kw">WHERE</span> tableowner<span class="op">=</span><span class="st">'loremipsum'</span>;</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> schemaname | tablename | tableowner</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">------------+-----------+------------</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span>     | ids       | kickd</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span>     | genotypes | kickd</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span>     | results   | kickd</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span>     | ids       | loremipsum</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span>     | genotypes | loremipsum</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a> <span class="kw">public</span>     | results   | loremipsum</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span> <span class="kw">rows</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="starting-with-the-end-in-mind" class="level2">
@@ -370,7 +364,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>With all that done we can run <code>python ./parquet_to_psql.py</code> and it’ll take care of the migration for us!</p>
 
 
-</section>
 </section>
 
 
