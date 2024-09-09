@@ -1,0 +1,73 @@
+---
+title: "ggplot frienndly corrlation plots with `ggcorrplot`"
+author: "Daniel Kick"
+date: 2021-2-2
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - ggplot
+  - correlations
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+A co-worker ran into issues with `corrplot::corrplot()` cutting off the title. A useful alternative is `ggcorrplot`. It makes okay plots with ggplot2's logic. Not as clean as the above but it'll work with `patchwork` and `cowplot`. Unfortunately, `scale_colour_stepsn` doesn't override the scaling.
+
+``` r
+library(ggcorrplot)
+
+p.mat <- cor_pmat(cor_df)
+ggcorrplot(cor(cor_df, use = "pairwise.complete.obs"), 
+           p.mat = p.mat,
+           insig = "blank",
+           type = "upper",
+           outline.col = "white",
+           colors = RColorBrewer::brewer.pal(n = 9, name = "PuOr")[c(1,5,9)]
+           )+
+  labs(title = "Brian_AP_Delayed")
+```
+
+![image (19).png](image%20(19).png)
+
+`ggcorrplot` appears to call internal functions which makes modifying it quickly impractical (one would probably be best forking the package and modifying that). I think I have a workaround that gets the same binning behavior:
+
+After the significance matrix (`p.mat`) is generated overwrite the correlation matrix with the middle value of each desired bin.
+
+``` r
+          bkkca      cav1      cav2
+bkkca 1.0000000 0.3452702 0.5603564
+cav1  0.3452702 1.0000000 0.7880727
+cav2  0.5603564 0.7880727 1.0000000
+> # bin the correlations so there are fewer colors used in the figure
+> cor_bins <- seq(-1, 1, length.out = 9)
+> for (i in 1:(length(cor_bins)-1)){
++   test[test > cor_bins[i] &amp; test < cor_bins[i+1]] <- ((cor_bins[i] + cor_bins[i+1])/2)
++ }
+> test
+      bkkca  cav1  cav2
+bkkca 1.000 0.375 0.625
+cav1  0.375 1.000 0.875
+cav2  0.625 0.875 1.000
+```
+
+Here this makes very slight changes to the plot. (legend dropped to not imply a continuous fill) ![image (20).png](image%20(20).png)
+
+(2021-2-2) Last update, this is harder to read up will use the more extreme value to get closer to `corrplot`
+
+``` r
+test <- seq(-1, 1, length.out = 5)+.0000001
+test
+#-0.9999999 -0.4999999  0.0000001  0.5000001  1.0000001
+for (i in 1:(length(cor_bins)-1)){
+  # test[test > cor_bins[i] &amp; test < cor_bins[i+1]] <- (cor_bins[i] + cor_bins[i+1])
+  test[test > cor_bins[i] &amp; test < cor_bins[i+1]] <-   cor_bins[c(i, (i+1))[which.max(abs(cor_bins[i:(i+1)]))]]
+}
+test
+#-1.00 -0.50  0.25  0.75  1.00
+```
+
+![image (21).png](image%20(21).png)

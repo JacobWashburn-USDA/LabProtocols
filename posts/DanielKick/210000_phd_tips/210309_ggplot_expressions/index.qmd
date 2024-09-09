@@ -1,0 +1,27 @@
+---
+title: "ggplot: Parsing Expressions"
+author: "Daniel Kick"
+date: 2021-3-9
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - ggplot
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+
+A useful trick is to pass expressions into ggplot. Here I've used the following as arguments in `labs()`.
+
+```r
+c("r11", "r1", "Ihtk.0", "Ihtk.Slope", "Ia.0", "Ia.Slope", "vrest")
+c(expression(M\~Omega), expression(M\~Omega), "nA", expression(frac(nA,
+mV)), "nA", expression(frac(nA, mV)), "mV" )
+``` 
+![image (30).png](image%20(30).png)
+
+You can also do something like this `theme(plot.title = element_text(face="italic"))` to add italics to the figure title.

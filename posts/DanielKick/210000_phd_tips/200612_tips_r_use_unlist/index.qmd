@@ -1,0 +1,70 @@
+---
+title: "`unlist` is handy and you should use it"
+author: "Daniel Kick"
+date: 2020-6-12
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+Y'all should be using `unlist()`. `unlist` is a crazy handy function when you pair it with the `purrr` library. It'll take a list and try to give you a vector. Strictly speaking it's probably best to be using `map_dbl()` or `map_chr()` instead but let's not worry about that at the moment.
+
+Why do I love `unlist` so much? Because `unlist(map( ))` gives you a flexible, effective way to iterate (that is parallel friendly with minor changes).
+
+Here's an example: I have a bunch of traces in a folder and I need to know if there are any experiments that didn't copy. Additionally, I'd like to know what kind of data is in the file. I *could* look through them one by one, but that's no fun. Thankfully, R has functions that perform similarly to shell functions. (More on these some other time.)
+
+So we start by defining a data.frame with all file names and their sizes. Note that calling `unlist(map())` *inside* `data.frame()` lets us do a lot work very quickly. We find all the files, get information about each one, and then selectively return the size.
+
+``` r
+traces_dir <- "C:/Users/Daniel/Documents/Trace_Holding"
+
+files_df <- data.frame(files = list.files(traces_dir),
+                       bytes = unlist(map(list.files(traces_dir), 
+                                          function(abf){ <http://file.info|file.info>(paste0(traces_dir, "/",abf))$size })))
+
+#              files    bytes
+# 1 190808a_0000.abf 15006208 <- long gap free recording
+# 2 190808a_0001.abf 15006208
+# 3 190808a_0002.abf 15006208
+```
+
+The experiment is embedded in the file name for each. Once again , with a little help from `unlist` we can split the file names into a list of list (i.e. `"190808a_0000.abf"` becomes `[[1]] [[1]] "190808a" [[2]] "0000.abf"` select only the first part and populate a new column.
+
+``` r
+files_df$Experiment <- unlist(transpose(str_split(files_df$files, pattern = "_"))[[1]])
+```
+
+Okay, now we can make use of this. I've defined a data.frame for metadata about the experiments.
+
+``` r
+file_groups
+#    Experiment       Group
+# 1      190924    Baseline
+# ... 
+# 19     190918     Delayed
+```
+
+We can join these data frames and apply a little `tidyverse` magic to see what experiments are missing (we could also compare the sets of experiments directly).
+
+``` r
+full_join(file_groups, files_df) %>% 
+  filter(<http://is.na|is.na>(files)) %>% 
+  group_by(Group, Experiment) %>% 
+  tally()
+
+#  Experiments that didn't transfer:
+
+#   Group       Experiment     n
+# 1 Baseline    190924         1
+# 2 Baseline    190924a        1
+# ...
+```
+
+We can repeat the same strategy to programattically look at the protocol types (e.g. based on file size or channel number via `<http://file.info|file.info>` \| `readABF()`). Moral of the story, you should so stop `apply`ing yourself and give `unlist` and `purrr` functions a try.

@@ -1,0 +1,44 @@
+---
+title: "Using Simulations to Check Your Statistical Intuition"
+author: "Daniel Kick"
+date: 2021-3-23
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - simulation
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+R's distribution simulation functions (e.g. `dbinom`, `runif`) make it
+quick and easy to double check one's intuitions. For example, I'd been
+thinking that under H0 the distribution of correlations from normal
+samples should drop off sharply as you go away from 0 such that a shift
+in correlation from 0 -\> 0.1 is much more likely than 0.8 -\> 0.9.
+
+So I used `purrr::map()` to run a quick simulation. Here we simulate the
+null distribution based on 100,000 observations and compute the chance
+of a value being above 0.7. If it was uniform we would expect \~15%
+(.03/2) of the distribution to be here but end up with \~1.2% with the
+drop off.
+
+```{r}
+library(tidyverse)
+set.seed(89745) 
+cor_check <- map(1:100000, function(i){ 
+  cor(rnorm(10), rnorm(10), method = "pearson") 
+}) 
+cor_check <- data.frame(cor = do.call(rbind, cor_check))
+
+mean(cor_check$cor >= 0.7)*100 
+#1.227 Percent 
+```
+
+```{r}
+ggplot(cor_check, aes(x = cor))+
+  geom_histogram(binwidth = 0.05) 
+```

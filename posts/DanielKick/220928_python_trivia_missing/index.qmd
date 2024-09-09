@@ -2,7 +2,7 @@
 title: "Trivia: In Python Missing Isn't Equal to Itself"
 author: "Daniel Kick"
 date: "2022-09-28"
-image: "800px-Burmese_python_in_Berlin.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Burmese_python_in_Berlin.jpg"
 categories: 
   - code
   - python

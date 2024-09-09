@@ -1,0 +1,22 @@
+---
+title: "ggplot `element_text()` colors "
+author: "Daniel Kick"
+date: 2020-6-5
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - ggplot
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+ggplot's, `element_text()` comes with a color argument. Why does that matter? It doesn't just accept atomics, you can hand it a *vector*! This effectively gives one access to conditional formatting. This works on `ggplot2_3.3.0` but "vectorized input to `element_text()` is not officially supported" so YMMV with newer versions.
+
+Here's an example I think it makes an otherwise unbearable figure a little more so without requiring duplicated labels.
+
+One thing to be aware of is the ordering of a character/ factor may differ between a data.frame and the plot. In the visualized example, I had `mRNA` as type character instead of factor so it got alphabetized when it was plotted rather than by the order appearing in the data.frame. ![image (8).png](image%20(8).png)

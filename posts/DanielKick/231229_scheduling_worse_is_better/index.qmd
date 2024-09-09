@@ -3,7 +3,7 @@ title: "Worse is better case study 1"
 subtitle: "Safety First with Scheduling"
 author: "Daniel Kick"
 date: "2023-12-19"
-image: "Ariopelta_capensis.png"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Ariopelta_capensis.png"
 categories: 
   - beginner
   - code

@@ -1,0 +1,116 @@
+---
+title: "Visualize the Influence of Outliers"
+author: "Daniel Kick"
+date: 2020-6-4
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - intermediate
+  - r
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you're looking at linear relationships, give this code a spin. It'll automatically flag outliers based on 1.5\*IQR and show you the fit with and without the outliers. Since the output is a ggplot, you and add to
+it or tweak the aesthetics of the output (see example below). 
+
+Here's the function.
+
+``` r
+scatter_w_wo_outliers <- function(temp = filter(M, Time == "Baseline"),
+                                  X = "bkkca", 
+                                  Y = "Ihtk.0"){
+  
+  # flag outliers based on 1.5xIQR from median
+  X_low  <- median(temp[[X]], na.rm = T) - (1.5 * IQR(temp[[X]], na.rm = T))
+  X_high <- median(temp[[X]], na.rm = T) + (1.5 * IQR(temp[[X]], na.rm = T))
+  Y_low  <- median(temp[[Y]], na.rm = T) - (1.5 * IQR(temp[[Y]], na.rm = T))
+  Y_high <- median(temp[[Y]], na.rm = T) + (1.5 * IQR(temp[[Y]], na.rm = T))
+  
+  X_pass <- (temp[[X]] > X_low) * (temp[[X]] < X_high)
+  Y_pass <- (temp[[Y]] > Y_low) * (temp[[Y]] < Y_high)
+
+  temp$flag <- ifelse((X_pass * Y_pass) == 1, T, F)
+  
+  
+  # Duplicate so we have dataset 1, 2 (introduces duplicates)
+  temp <- rbind(temp[temp$flag == T, ], mutate(temp, flag = F))
+  
+  formula1 <- y ~ x
+  
+  plt <- ggplot(temp, aes_string(X, Y, color = "flag"))+
+    geom_smooth(data = temp, method = lm, se = F, fullrange = T)+
+    geom_point(data = temp)+
+    geom_point(data = temp, color = "black", shape = 1)+
+    geom_point(data = temp[temp$flag, ])+
+    ggpmisc::stat_poly_eq(aes(label =  paste(stat(eq.label), "*" with "*", 
+                                             stat(rr.label), "*", "*", 
+                                             stat(f.value.label), "*", and "*",
+                                             stat(p.value.label), "*"."",
+                                             sep = "")),
+                          formula = formula1, parse = TRUE, size = 4)+
+    
+    scale_color_manual(values = c("darkgray", "black"))+
+    theme_bw()+
+    theme(legend.position = "")
+  
+  return(plt)
+}
+```
+
+Here's a reproducible example. We're creating a Simpson's paradox by
+giving the "outliers" a negative slope and the real data a positive
+slope. I've added a red line showing the true relationship.
+
+``` r
+set.seed(45645684)
+df <- data.frame(x = rnorm(30, mean = 10, sd = 4),
+                 noise = runif(30, min = -2, max = 2),
+                 y = NA,
+                 is_outlier = rbinom(30, 1, prob = 0.2))
+
+
+df$y <- ifelse(df$is_outlier, 
+               -5*df$x+df$noise,
+               2*df$x+df$noise)
+
+scatter_w_wo_outliers(temp = df,
+                      X = "x",
+                      Y = "y")+
+  geom_abline(slope = 2, intercept = 0, color = "firebrick")
+```
+
+![image (7).png](image%20(7).png)
+
+2020-6-4 Daniel Here's a related utility function. For a given column
+it'll return a logical vector where outliers are `FALSE`.
+
+``` r
+w_in_x_iqr <- function(col_in, multiplier = 1.5){
+  col_in <- as.vector(col_in)
+  
+  X_low  <- median(col_in, na.rm = T) - (multiplier * IQR(col_in, na.rm = T))
+  X_high <- median(col_in, na.rm = T) + (multiplier * IQR(col_in, na.rm = T))
+  X_pass <- (col_in > X_low) * (col_in < X_high)
+  
+  return(as.logical(X_pass))
+}
+```
+
+e.g.
+
+``` r
+> mutate(M, ex = w_in_x_iqr(bkkca)) %>% select(bkkca, ex) %>% arrange(bkkca) %>% tail()
+
+#  A tibble: 6 x 2
+#   bkkca ex   
+#   <dbl> <lgl>
+# 1 3056. TRUE 
+# 2 3222. TRUE 
+# 3 3255. TRUE   # Within bounds
+# 4 3552. FALSE  # Outside bounds 
+# 5 3817. FALSE
+# 6 6740. FALSE
+```

@@ -2,7 +2,7 @@
 title: "Simulation as a Super Power"
 author: "Daniel Kick"
 date: "2023-09-21"
-image: "Two_women_operating_ENIAC.gif"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Two_women_operating_ENIAC.gif"
 categories: 
   - code
   - intermediate

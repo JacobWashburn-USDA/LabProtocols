@@ -1,0 +1,39 @@
+---
+title: "Shading with `geom_rect`"
+author: "Daniel Kick"
+date: 2020-5-19
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - ggplot
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+Use `geom_rect()` with the min/max set to `-Inf` and `Inf` to add a pleasant shading to your facets.
+
+For example by passing it a data frame with the faceting variables and a column to use for the color (green if positive, red if negative) we can make facets behave like cells in a heatmap!
+
+``` r
+# > tp2
+# # A tibble: 23 x 5
+#    Condition   Trace             Time  Change StimId
+#    <fct>       <chr>             <chr>  <dbl> <chr> 
+#  1 PS.0.orig   170623b_0007.abf  60         1 a     
+#  2 PS.45.orig  170825a_0008.abf  60        -1 c     
+
+ggplot(df)+
+  geom_rect(data = tp2, aes(fill = Change),xmin = -Inf,xmax = Inf, ymin = -Inf,ymax = Inf,alpha = 0.3) +
+  geom_hline(yintercept = 0, color = "cornflowerblue")+
+  geom_pointline(aes(x = Time, y = rc, group = Experiment), shape = 1, color = "black")+
+  ylim(-2, 3.5)+
+  scale_fill_gradientn(colors = c("Red", "Grey", "Green"))+
+  theme_base()+
+  theme(legend.position = "")
+```
+
+![image (5).png](image%20(5).png)

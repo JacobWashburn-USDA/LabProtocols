@@ -1,0 +1,7 @@
+{
+  "user": "loremipsum", 
+  "pass": "TotallyRealPassword", 
+  "host": "localhost", 
+  "port": "5432", 
+  "name": "apsimxsim"
+}

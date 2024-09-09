@@ -1,0 +1,22 @@
+---
+title: "Loading R functions from source"
+author: "Daniel Kick"
+date: 2020-4-1
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+You can keep your working `Rmd` easier to navigate and less buggy by 1) packaging code into functions and 2) adding them to a companion `R`file. Load your functions with `source()` in the same block you load your libraries with a relative path, full path, or ideally with `here()`.
+
+``` r
+library(here)
+source(here("R", "02MoniterGapJunction.R")) #here's output is effectively ../R/02MoniterGapJunction.R
+```

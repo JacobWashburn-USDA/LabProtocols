@@ -1,0 +1,115 @@
+---
+title: "Thought Experiment: Comparing Replicate Experiments' Conclusions "
+author: "Daniel Kick"
+date: 2021-2-3
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - intermediate
+  - r
+  - resampling
+  
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+A collaborator and I just talked through how one might compare two sets of p values. We're thinking about the following approach.
+
+Setup: You have two replicates of an experiment (`r1, r2`). In each experiment you measured three mRNAs (*`a, b, c`*) in control and treatment (`c, t`). You want to know if the same trends in `r1` show up in `r2` but there is a batch effect that will prevent comparing them directly (e.g. you can't run a t test on `r1 _a_ c` and `r2 _a_ c` )
+
+Proposed Solution: 
+
+1. Compare each mRNA within a replicate and note the sign of change and if the p value reached a pre-determined cutoff (we lose some information doing this since we're pooling 0.06 and 0.99 together)
+
+``` r
+rep  |mrna |sign |pval |sig  |
+r1   | a   | -   |0.04 |1    |
+r1   | b   | +   |0.10 |0    |
+...  |     |     |     |     |
+r2   | c   | -   |0.02 |1    |
+```
+
+2.  Multiply the sign by the significance code so that -1 = "significant decrease", 0 = "no significant change", +1 = "significant increase"
+
+``` r
+rep  |mrna |sign |pval |sig  |sxp  |
+r1   | a   | -   |0.04 |1    |+1   |
+r1   | b   | +   |0.10 |0    |0    |
+...  |     |     |     |     |     |
+r2   | c   | -   |0.02 |0    |-1   |
+```
+
+3.  Reshape these as two vectors and treat them as categorical data. Then compare the "assignment" between these two lists using a jaccard index as if we were comparing an assignment from clustering against reality.
+
+``` r
+r1 <- as.character(c(1, 0, 0))
+r2 <- as.character(c(0, 0, -1))
+jaccard(r1, r2)
+```
+
+4.  Use resampling to find an empirical p value for this observed jaccard index.
+
+Does that seem reasonable? Is there another way you would go about it? (Email me what you think!)
+
+Here's an implementation for two sets of correlations. Here we bin the correlations into 5 bins use a jaccard index to assess whether the bin assignments are the same for both datasets (Brian's and mine). To confirm that the measured jaccard index (0.23) isn't anything to write home about we can generate an empirical p value (ep = 0.13).
+
+``` r
+# cor_comp_df
+#
+#    Source Time     x     y        Corr
+#    <fct>  <fct>    <chr> <chr>   <dbl>
+#  1 Person1  Baseline bkkca cav1    0.441
+#  2 Person1  Baseline bkkca cav2    0.476
+#  3 Person1  Baseline bkkca inx1    0.435
+#  4 Person1  Baseline bkkca inx2    0.159
+#  5 Person1  Baseline bkkca inx3   -0.174
+#  6 Person1  Baseline bkkca inx4   -0.167
+
+n_bins <- 5
+
+temp <- cor_comp_df %>% 
+  mutate(Bins = cut(Corr, breaks = seq(-1, 1, length.out = n_bins))) %>% 
+  select(-Corr) %>% 
+  pivot_wider(names_from = "Source", values_from = "Bins")
+
+# temp
+#
+#   Time     x     y     Person1    Person2  
+#   <fct>    <chr> <chr> <fct>    <fct>   
+# 1 Baseline bkkca cav1  (0,0.5]  (0,0.5] 
+# 2 Baseline bkkca cav2  (0,0.5]  (0,0.5] 
+# 3 Baseline bkkca inx1  (0,0.5]  (0.5,1] 
+# 4 Baseline bkkca inx2  (0,0.5]  (0.5,1] 
+# 5 Baseline bkkca inx3  (-0.5,0] (0.5,1] 
+# 6 Baseline bkkca inx4  (-0.5,0] (-0.5,0]
+
+
+library('clusteval')
+obs_jaccard <- cluster_similarity(temp$Person1, temp$Person2, similarity="jaccard")  
+
+# 0.2304234
+
+null_jaccard <- map(1:10000, function(i){
+  cluster_similarity(sample(temp$Person1, replace = F), 
+                     temp$Person2, similarity="jaccard")
+  }) %>% 
+  unlist()
+
+
+temp <- with(density(null_jaccard), data.frame(x, y))
+temp <- temp %>% mutate(xmax = max(x),
+                obs = obs_jaccard)
+
+ggplot(data = temp, aes(x = x, y = y))+
+  geom_line()+
+  geom_vline(xintercept = obs_jaccard)+
+  geom_ribbon(data = temp[temp$x > temp$obs, ], 
+              aes(xmin = obs, xmax = xmax, ymin = 0, ymax = y))+
+  labs(subtitle = paste("empirical p=", as.character(mean(null_jaccard >= obs_jaccard))))
+```
+
+![image (22).png](image%20(22).png)
+
+It's worth generating an empirical p value for each comparison you're making. For example here I'm comparing the results of an experiment replicate. Each dependent variable is assigned a group based on if one would conclude it there was a difference (0 or 1) between groups and the sign of that difference (+ or -). Seeing a Jaccard index of 0.61 (out of 1) we might conclude we replicated most of the findings. *However,* the empirical p value is 1 because most of the comparisons were non-significant in both groups resulting in a high floor for the index. ![image (23).png](image%20(23).png)

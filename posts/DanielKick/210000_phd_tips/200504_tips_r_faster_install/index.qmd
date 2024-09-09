@@ -1,0 +1,18 @@
+---
+title: "Upgrading R versions on Windows"
+author: "Daniel Kick"
+date: 2020-5-4
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you're on windows, `installr` should allow you to copy over the
+libraries from previous versions. ![image (1).png](image%20(1).png)

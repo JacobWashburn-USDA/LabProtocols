@@ -1,0 +1,86 @@
+---
+title: "Tidyverse '_at' variants"
+author: "Daniel Kick"
+date: 2020-5-11
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+tldr: `tidyverse` function variants take slightly different input.
+Testing out a variant or two can save you a lot of debugging time.
+
+In `tidyverse` watch out for inconsistencies in function versions. There are variants of common functions (e.g. `mutate()`, `mutate_all()`, `mutate_at()`) don't necessarily behave the same way (or how you would expect).
+
+Here, I was applying an operation to a grouped df where each
+`Experiment` contains several `FileName`s with multiple observations in
+each. To keep everything reusable I'm using `exp` instead of
+`Experiment` to select the right col.
+
+``` r
+> exp = "Experiment"
+> rec = "FileName"
+
+> df %>%
++     dplyr::select(
++       exp, rec, r11, r12
++     )
+# A tibble: 564 x 4
+   Experiment FileName           r11   r12
+   <chr>      <chr>            <dbl> <dbl>
+ 1 190808a    190808a_0020.abf  5.06 0.150
+ 2 190808a    190808a_0020.abf  5.13 0.160
+ 3 190808a    190808a_0020.abf  5.11 0.122
+ 4 190808a    190808a_0020.abf  2.49 0.152
+ 5 190808a    190808a_0020.abf  2.49 0.195
+# ... with 559 more rows
+```
+
+As soon as we do the same thing with `group_by()` we don't get the right column even though `select()` didn't have an issue with `exp`.
+
+``` r
+> df %>%
++     dplyr::select(
++       exp, rec, r11, r12
++     ) %>%
++     group_by(exp, rec)
+Error: Column `exp` is unknown
+```
+
+So we can try explicitly selecting the columns we want as groupings.
+
+``` r
+>     df %>%
++     dplyr::select(
++       exp, rec, r11, r12
++     ) %>%
++     group_by(vars(exp, rec))
+Error: Column `vars(exp, rec)` must be length 564 (the number of rows) or one, not 2
+```
+
+No dice there. `vars()` is designed to work with the `_at` variants so we can try that. *et voilà!*
+
+``` r
+> df %>%
++     dplyr::select(
++       exp, rec, r11, r12
++     ) %>%
++     group_by_at(vars(exp, rec))
+
+# A tibble: 564 x 4
+# Groups:   Experiment, FileName [69]
+   Experiment FileName           r11   r12
+   <chr>      <chr>            <dbl> <dbl>
+ 1 190808a    190808a_0020.abf  5.06 0.150
+ 2 190808a    190808a_0020.abf  5.13 0.160
+ 3 190808a    190808a_0020.abf  5.11 0.122
+ 4 190808a    190808a_0020.abf  2.49 0.152
+ 5 190808a    190808a_0020.abf  2.49 0.195
+# ... with 559 more rows
+```

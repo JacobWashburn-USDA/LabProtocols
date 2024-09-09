@@ -1,0 +1,32 @@
+---
+title: "Reference current dataframe with `.`"
+author: "Daniel Kick"
+date: 2020-7-28
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+In tidyverse you can use `.` to reference the current dataframe. This is
+really useful for plotting. For example, I'd like to plot channels In7
+and In12 in that order but by default In12 will come first. We could
+save an intermediate dataframe and re-level the factors, but by
+referencing the dataframe piped into mutate we can skip this step.
+
+``` r
+temp %>% # temp is a down-sampled ephys recording
+  ungroup() %>% 
+  gather(key, value, c("In7", "In12")) %>% 
+  mutate(key = factor(.$key, levels = c("In7", "In12"))) %>%      # Note that if you have groupings, you'll need to get rid of them or supply a column of the same length as the group. 
+  ggplot(aes(Time, value, color = key, group = interaction(key, Sweep)))+
+  geom_path()
+```
+
+![image (11).png](image%20(11).png)

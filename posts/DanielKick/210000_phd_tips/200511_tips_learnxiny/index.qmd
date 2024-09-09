@@ -1,0 +1,16 @@
+---
+title: "Syntax Tours: learnxinyminutes"
+author: "Daniel Kick"
+date: 2020-5-11
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+Need a quick base `R` syntax lookup? Check out <https://learnxinyminutes.com/docs/r/> . There are even examples with `lm()` and `glm()`.

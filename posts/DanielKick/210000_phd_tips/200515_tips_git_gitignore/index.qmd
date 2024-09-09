@@ -1,0 +1,31 @@
+---
+title: "Don't Ignore Your .gitignore"
+author: "Daniel Kick"
+date: 2020-5-15
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - git
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you're using git for version control, don't forget about the `.gitignore` file. Anything large and static (like .abfs) or procedurally generated (e.g. plots) you can toss in the `.gitignore` and you'll not see it when you commit.
+
+I have tabular data that lives in `./inst/extdata/` is processed by a script and then saved as a .rds in `./data/`. Here's my `.gitignore`.
+
+``` r
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+# Don't track ABFs -- large and static
+*.abf
+# Don't track files that are generated from the scripts
+/data/*
+```
+
+For more check out [git-scm](https://git-scm.com/docs/gitignore)

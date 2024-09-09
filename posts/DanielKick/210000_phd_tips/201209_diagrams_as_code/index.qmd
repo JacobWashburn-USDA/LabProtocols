@@ -1,0 +1,62 @@
+---
+title: "Diagrams as code"
+author: "Daniel Kick"
+date: 2020-12-9
+image: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Ceramic_Water_Filter_Manufacturing_Flowchart.svg"
+categories: 
+  - code
+  - beginner
+  - r
+  - mermaid
+  - graphviz
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+Check out `DiagrammeR` (or mermaid) if you need clean easy flow
+diagrams. I find they're not to hard to make and *even easier* to forget
+that you've made them.
+
+``` r
+DiagrammeR::grViz("digraph {
+graph [layout = dot]
+
+# define the global styles of the nodes. We can override these in box if we wish
+node [shape = circle, style = filled, fillcolor = LightSteelBlue]
+
+data1 [label = 'Input', shape = folder, fillcolor = Beige]
+
+glmnet [label = 'Lasso 
+Regression', shape = box, fillcolor = Linen]
+mnnet [label = 'Mulitnomial 
+Neural 
+Network', shape = box, fillcolor = Linen]
+nnet [label = 'Neural 
+Network', shape = box, fillcolor = Linen]
+knn [label = 'k-Nearest 
+Neighbor', shape = box, fillcolor = Linen]
+ranger [label = 'Random 
+Forest', shape = box, fillcolor = Linen]
+svml [label = 'SVM 
+Linear', shape = box, fillcolor = Linen]
+svmr [label = 'SVM 
+Radial', shape = box, fillcolor = Linen]
+
+data2 [label = '5-fold CV 
+Accuracy', shape = folder, fillcolor = Beige]
+
+# edge definitions with the node IDs
+data1 -> {glmnet mnnet nnet knn ranger svml svmr} -> data2
+{alpha lambda} -> glmnet
+decay -> mnnet
+{size decay} -> nnet
+k -> knn
+{mtry splitrule minNodeSize} -> ranger
+cost -> svml
+sigma -> svmr
+}")
+```
+
+![image (15).png](image%20(15).png)

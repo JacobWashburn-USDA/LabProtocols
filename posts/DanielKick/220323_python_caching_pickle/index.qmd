@@ -2,7 +2,7 @@
 title: "Tips: Cache Intermediate Results with `pickle`"
 author: "Daniel Kick"
 date: "2022-03-23"
-image: "Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
 categories: 
   - code
   - python
@@ -13,7 +13,7 @@ draft: false
 
 <!-- https://commons.wikimedia.org/wiki/File:Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg -->
 
-Here's a useful pattern I've been getting a lot of mileage out of lately. If you're running an analysis that has a time consuming step you can save the result as a python readable "pickle" file. _Addendum:_ In some cases pickling a python objects can sometimes succeed in storing and retrieving data where a library's built in functions for saving/loading data fails. 
+Here's a useful pattern I've been getting a lot of mileage out of lately. If you're running an analysis that has a time consuming step you can save the result as a python readable "pickle" file. *Addendum:* In some cases pickling a python objects can sometimes succeed in storing and retrieving data where a library's built in functions for saving/loading data fails.
 
 ``` python
 import pickle as pkl
@@ -56,4 +56,3 @@ for ii in range(3):
         ]
         pkl.dump(sal_long_list, open(file_path, 'wb'))
 ```
-

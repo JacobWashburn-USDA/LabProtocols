@@ -83,7 +83,6 @@ singularity build --fakeroot gapit.sif gapit.def
 
 After you’ve moved your files and the container to the HPC you can open a shell in the container. This shell should still have access to the host’s files ([but here's a link to how to bind baths in case it doesn't](https://docs.sylabs.io/guides/3.0/user-guide/bind_paths_and_mounts.html)). From there you can start `R` in interactive mode or launch the `R` script.
 
-
 ``` bash
 module load singularity  # or "module load apptainer"
 singularity shell gapit.sif

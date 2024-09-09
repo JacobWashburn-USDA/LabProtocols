@@ -2,7 +2,7 @@
 title: "Tips: Reusing Custom Functions"
 author: "Daniel Kick"
 date: "2021-07-13"
-image: "Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
 categories: 
   - code
   - python
@@ -11,7 +11,7 @@ categories:
 draft: false
 ---
 
-_Amendment: For packaging functions also see [nbdev](https://nbdev.fast.ai/)._
+*Amendment: For packaging functions also see [nbdev](https://nbdev.fast.ai/).*
 
 I wanted to reuse a custom function across a few scripts without having copies of the same code in each script. The solution I found is to set up a [module](https://docs.python.org/3/tutorial/modules.html#packages "https://docs.python.org/3/tutorial/modules.html#packages") to hold these functions. This seems straightforward once you know how it's done.
 
@@ -30,4 +30,3 @@ Caveats:
 -   It seems that the system path isn't permanently altered by `sys.path.append`, so one would need that at the start of the script or modify it some other way.
 -   If your custom functions are in the in the same directory as your script, I think you can skip all of this and just import them.
 -   If your functions are in a sub-directory of the same directory as your script, I think you can get away without adding the directory to the path.
-

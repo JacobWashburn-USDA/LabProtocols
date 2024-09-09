@@ -1,0 +1,28 @@
+---
+title: "ggplot Reordering a Discrete Axis"
+author: "Daniel Kick"
+date: 2021-3-11
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - ggplot
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+
+Reordering a discrete axis in ggplot after generation a lot simpler than one might expect.  Rather than converting a character column to a factor (what if the data gets pivoted?), or using one column for the position and one for the labels, you can use `xlim` or `ylim`.
+
+``` r
+> mrna_cols \# desired order \# \[1\] "nav" "cav1" "cav2" "bkkca"
+> "shaker" "shal" "shab" "shaw1" \# \[9\] "shaw2" "inx1" "inx2" "inx3"
+
+o_mrna$heatmap_z / # ggplot object within a list
+o_mrna$heatmap_z+ylim(mrna_cols)
+```
+
+![image (31).png](image%20(31).png)

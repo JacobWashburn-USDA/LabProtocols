@@ -2,7 +2,7 @@
 title: "Tips: For those coming from R: Silent In Place Replacement"
 author: "Daniel Kick"
 date: "2022-02-16"
-image: "Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Python_molurus_bivittatus_Ile_aux_Serpents_201108_2.jpg"
 categories: 
   - code
   - python
@@ -16,7 +16,7 @@ draft: false
 
 Silent, in place assignment updating an object This tripped me up even though it's consistent with how I've seen other objects behave. I needed an attribute to hold data extracted from a collection of files in a directory and created a class for this.
 
-``` python      
+``` python
 class hps_search_experiment:
     def __init__(self, path="", trial_type=''):
         self.path = path
@@ -31,7 +31,7 @@ class hps_search_experiment:
 
 However, running like so fails.
 
-``` python         
+``` python
 test = hps_search_experiment(
     path = './hps_search_intermediates_G/', 
     trial_type = 'rnr')
@@ -46,7 +46,7 @@ This had me baffeld because I was thinking with R's norms of `data <- data %>% f
 
 These would also work to update the attribute:
 
-``` python      
+``` python
 self.hps_best_trial = hps_best_trial
 
 hps_search_experiment.__setattr__(self, "hps_best_trial", hps_best_trial)
@@ -57,6 +57,3 @@ self.hps_best_trial.append([hps_best_trial])
 self.data = {'a':1}
 self.data.update({'hps_best_trial':hps_best_trial})        
 ```
-
-
-

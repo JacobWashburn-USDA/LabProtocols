@@ -1,0 +1,20 @@
+---
+title: "A Comment is a Comment."
+author: "Daniel Kick"
+date: 2023-5-23
+image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Caract%C3%A8re_latin_d%27%C3%A9criture%2C_R_r.png"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+R treats "#" as a comment in text files.
+
+If you have a file with this in a a header field (e.g. for biologists "# chromosomes") R will fail to load the file. The solution is to pass in an explicit
+comment character like so `read.table(“table_file.txt”, comment.char=‘’)`.

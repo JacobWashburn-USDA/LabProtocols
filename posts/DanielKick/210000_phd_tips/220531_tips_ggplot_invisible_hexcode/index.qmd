@@ -1,0 +1,28 @@
+---
+title: "ggplot and the invisible hex code."
+author: "Daniel Kick"
+date: 2022-5-31
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+  - ggplot
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you use an eight digit hex code for specifying a color value, the first two control transparency. Thus, you can set `fill = “#00000000”` in ggplot to get a boxplot with no fill. Here's a (somewhat contrived) use case: points on top occlude the cross bar but box on top hides the observations. 
+
+
+```{r}
+library(ggplot2)
+data.frame(y = 0, x = 1:9) |>
+  ggplot(aes(x = x, y = y))+
+  geom_point(color = 'firebrick')+
+  geom_boxplot(fill = '#00000000')
+```
+

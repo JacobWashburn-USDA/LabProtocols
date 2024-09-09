@@ -1,0 +1,26 @@
+---
+title: "Roman numeral convenince function"
+author: "Daniel Kick"
+date: 2020-11-20
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+For all you classics folks out there, R has a convenience function just for you! (As long as your numbers aren't too big). Credit goes to [Georgios Karamanis \@geokaramanis](https://twitter.com/geokaramanis/status/1327286201443905538) for teaching me this. 
+
+``` r
+> as.numeric(as.roman("MCXXIII"))
+[1] 1123
+> as.roman(1123)
+[1] MCXXIII
+> as.roman(11234)
+[1] <NA>
+```

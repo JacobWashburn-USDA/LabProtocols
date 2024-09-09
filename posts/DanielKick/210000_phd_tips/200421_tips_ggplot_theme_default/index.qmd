@@ -1,0 +1,17 @@
+---
+title: "Apply a theme to _all_ your ggplots"
+author: "Daniel Kick"
+date: 2020-4-21
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you're applying the same theme to all your graphs, set it globally instead e.g. `theme_set(ggplot2::theme_minimal())`. If you have a lot of custom changes to your theme, throw those into a function and set that to the global theme.

@@ -1,0 +1,259 @@
+---
+title: "Workaround for Plotting Dendrograms"
+author: "Daniel Kick"
+date: 2021-2-21
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - dendrograms
+draft: false
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+I think I have a solution to get decent enough dendrograms without fussing with base graphics.
+
+The overview of my workaround is to cluster with `pvclust`, extract `$hclust` , plot it as a dendrogram, coerce into a ggplot. This makes it easy enough to replicate the functionality of the `colored_bars()` function by making additional plots. The function below makes a few plots in addition to the dendrogram. If you end up working with base graphics anyway, `dendextend` is still worth a look.
+
+Here's an example:
+
+``` r
+# needed 
+library(pvclust)
+library(tidyverse)
+library(dendextend) # for color_labels
+library(ggnewscale) # to accommodate two fill scales  https://github.com/eliocamp/ggnewscale
+
+# recommended
+# install.packages("palmerpenguins")
+library(palmerpenguins)
+library(patchwork)
+library(scales) # for overiding scientific notation on dendrogram y axis 
+
+# Make a demo dataset
+tux <- select(palmerpenguins::penguins, 
+              species,
+              bill_length_mm, bill_depth_mm, 
+              flipper_length_mm, body_mass_g) 
+
+tux <- tux[complete.cases(tux), ]
+
+set.seed(54646)
+tux <- tux[sample(1:nrow(tux), 30), ] # for faster demo clustering
+
+# Example use
+o <- 
+  mk_hclust_plts(
+    df = mutate(tux, uid = paste(seq(1, nrow(tux)), species, sep = "-")),
+    cluster_by = c("bill_length_mm", "bill_depth_mm", 
+                   "flipper_length_mm", "body_mass_g"),
+    uid_col = "uid",
+    n_clusters = 3,
+    true_groups = "species",
+    true_colors = RColorBrewer::brewer.pal(3, "Set2"),
+    cluster_colors = RColorBrewer::brewer.pal(3, "Set1") 
+  )
+
+
+# Patchwork to arrange the output plots
+(o$dendrogram_both+
+    scale_y_continuous(limits = c(-.0001, 0.00022), labels = scales::comma)
+)/ 
+  (o$group_compare_tile+
+     # lims(y =  c(2, -2))+ # y axis can be flipped like so
+     theme(legend.position = "")
+  ) / 
+  (o$heatmap_raw + theme(legend.position = "right")) / 
+  (o$heatmap_z + theme(legend.position = "right")) + 
+  patchwork::plot_layout(heights = c(5, .3, 1.25, 1.25))
+
+
+# example 2
+
+# o <- 
+# mk_hclust_plts(
+#   df = mutate(iris, uid = paste(seq(1, nrow(iris)), Species, sep = "-")),
+#   cluster_by = c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"),
+#   uid_col = "uid",
+#   n_clusters = 3,
+#   true_groups = "Species",
+#   true_colors = RColorBrewer::brewer.pal(3, "Set2"),
+#   cluster_colors = RColorBrewer::brewer.pal(3, "Set1") 
+# )
+```
+
+ps, it's worth checking your code on sample datasets (`penguins`,`iris`, `mpg`, etc. ). That'll help iron out weird behavior sooner rather than later. ![image (25).png](image%20(25).png)
+
+
+(2021-2-21) Edit: The original function here depended on the factor levels of the clusters and true groups to make the color's consistent between plots (e.g. factors ordered abcdABCD not aAbBcCdD). This breaks down with some cases (e.g. if you start group names with a number (e.g. 0hours)). The below edit uses `ggnewscale` to fix this.
+
+``` r
+mk_hclust_plts <- function(
+  df = unite(M_winxiqr, uid, Experiment, Cell, sep = "-"),
+  cluster_by = c("vrest", "r11", "r1", "Ihtk.0", "Ihtk.Slope", "Ia.0", "Ia.Slope"),
+  uid_col = "uid",
+  n_clusters = 3,
+  true_groups = "Condition",
+  true_colors = RColorBrewer::brewer.pal(3, "Set2"),
+  cluster_colors = RColorBrewer::brewer.pal(3, "Set1")
+){
+  df <- as.data.frame(df) 
+  
+  if (!exists("cluster_colors")){
+    cluster_colors = rainbow(n_clusters)
+  }
+  ## prep
+  # move uid to rowname
+  row.names(df) <- df[[uid_col]]
+  df_groups <- select(df, all_of(true_groups))
+  df <- df[, cluster_by]
+  
+  ## Cluster
+  cluster <- pvclust(t(df),
+                     method.hclust = "ward.D2",
+                     method.dist = "correlation",
+                     use.cor = "pairwise.complete.obs")
+  
+  
+  ## make dendrogram  ####
+  dend <- cluster$hclust %>% 
+    as.dendrogram() 
+  
+  # iteratively coloring the labels is a workaround to get the "true" groups shown
+  dend_labs <- rownames_to_column(df_groups, var = "rownames")[, ]
+  dend_labs <- full_join(data.frame(rownames = labels(dend)), dend_labs)
+  for(i in seq_along(unique(df_groups[[true_groups]]))){
+    true_group <- unique(df_groups[[true_groups]])[i]
+    true_color <- true_colors[i]
+    
+    dend <- dend %>% 
+      dendextend::color_labels(
+        col = true_color, 
+        labels = dend_labs[dend_labs[[true_groups]] == true_group, "rownames"]) 
+    
+    
+  }
+  
+  dend <- dend %>% 
+    set("branches_k_color", 
+        k = n_clusters, 
+        value = cluster_colors
+    ) %>% 
+    set("branches_lwd", 0.7) %>%
+    set("labels_cex", 0.6) 
+
+  dend_cluster_only <- dend %>% 
+    set("labels_colors",
+        k = n_clusters,
+        value = cluster_colors) %>%
+    as.ggdend()
+  
+  
+  dend <- dend %>% 
+    as.ggdend()
+  
+  
+  
+  plt_dend_cluster_only <- ggplot(dend_cluster_only)+
+    theme(axis.ticks.y = element_line(),
+          axis.text.y = element_text(),
+          axis.line.y = element_line())
+  
+  
+  plt_dend <- ggplot(dend)+
+    theme(axis.ticks.y = element_line(),
+          axis.text.y = element_text(),
+          axis.line.y = element_line())  
+  
+
+  ## Add reality ribbon with or without clustering result ####
+  groups_to_plt <- full_join(
+    as.data.frame(dend$labels),
+    rownames_to_column(var = "label", df_groups))
+  
+  plt_grouping <- groups_to_plt %>% 
+    ggplot(aes_string(x="x", y="0", fill = true_groups))+
+    geom_tile()+
+    scale_fill_manual(values = true_colors)+
+    theme_void()+
+    labs(x = "", y = "")+
+    theme(legend.position = "left")
+  
+  plt_grouping_contrast <- ggplot()+
+    geom_tile(data = groups_to_plt, aes_string(x="x", y="0.5", fill = true_groups))+
+    scale_fill_manual(values = true_colors)+
+    
+    ggnewscale::new_scale("fill") +
+    geom_tile(data = data.frame(x = seq_along(dend_cluster_only$labels$col),
+                                cluster_groups = as.character(as.numeric(as.factor(dend_cluster_only$labels$col)))
+    ),
+    aes_string(x="x", y= "-0.5", fill = "cluster_groups"),
+    )+
+    scale_fill_manual(values = cluster_colors)+
+    
+    theme_void()+
+    labs(x = "", y = "")+
+    theme(legend.position = "left")
+  
+  
+  ## Add heatmap  ####
+  data_to_plt <- full_join(
+    as.data.frame(dend$labels),
+    rownames_to_column(var = "label", df)) 
+  
+  data_to_plt <- 
+    data_to_plt %>% 
+    gather("key", "value", 
+           names(data_to_plt)[
+             !(names(data_to_plt) %in% c("x", "y", 
+                                         "label", "col", "cex", 
+                                         true_groups))
+           ])
+  
+  plt_heatmap_raw <- data_to_plt %>% 
+    ggplot(aes(x, 
+               y = key, 
+               fill = value))+
+    geom_tile()+
+    scale_fill_viridis_c()+
+    labs(x = "", y = "")+
+    theme(panel.background = element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.text.x = element_blank(),
+          legend.position = "left")
+  
+  
+  plt_heatmap_z <- data_to_plt %>% 
+    group_by(key) %>% 
+    mutate(mean = mean(value, na.rm = T),
+           sd = sd(value, na.rm = T)) %>% 
+    mutate(value = ((value - mean)/sd)) %>% # Now Z scores
+    ggplot(aes(x, 
+               y = key, 
+               fill = value))+
+    geom_tile()+
+    scale_fill_viridis_c()+
+    labs(x = "", y = "")+
+    theme(panel.background = element_blank(),
+          axis.ticks.x = element_blank(),
+          axis.text.x = element_blank(),
+          legend.position = "left")
+  
+  
+  ## Return plots, manually tweak layout  ####
+  return(
+    list(
+      pvclust_out = cluster,
+      dendrogram_clusters = plt_dend_cluster_only,
+      dendrogram_both = plt_dend,
+      group_tile = plt_grouping,
+      group_compare_tile = plt_grouping_contrast,
+      heatmap_raw = plt_heatmap_raw,
+      heatmap_z = plt_heatmap_z
+    )
+  )
+}
+```

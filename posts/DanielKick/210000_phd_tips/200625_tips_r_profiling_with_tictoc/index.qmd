@@ -1,0 +1,51 @@
+---
+title: "Informal profiling with `tictoc`"
+author: "Daniel Kick"
+date: 2020-6-25
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+The `tictoc` library has convenience functions for timing code. Here’s
+the basic usage relative to timing with base R.
+
+``` r
+library(tictoc)
+tic()
+# code here
+toc()
+
+tic <- Sys.time()
+# code here
+toc <- Sys.time()
+print(toc - tic)
+```
+
+Where this library excels is when you want to time multiple parts of
+your code. Each `tic` pushes the time onto a stack and each `toc` pops
+the most recent time from said stack. That means you don’t have to worry
+about assigning several timing variables even if you want to time nested
+code.
+
+``` r
+tic()
+# stack is 1 deep
+for (i in 1:10) {
+     tic()
+     # stack is now 2 deep
+     for (j in 1:10){
+          tic()
+          # stack is now 3 deep
+          toc()
+     }
+     toc()
+}
+toc()
+```

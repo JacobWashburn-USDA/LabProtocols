@@ -1,0 +1,66 @@
+---
+title: "ggplot tips: markdown for italics in plots and adding breaks to color scaling"
+author: "Daniel Kick"
+date: 2021-3-5
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+  - ggplot
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+  Two tricks today:
+1. Scale fill functions can accept breaks and limit arguments so you don't have to use hacky workarounds like binning the data before plotting (which is what I usually do).
+2. `library(ggtext)` lets you render markdown within plots (e.g. for those pesky mRNAs)
+```{r}
+library(tidyverse)
+set.seed(42)
+df <- do.call(cbind, map(
+  1:5, 
+  function(e){
+    data.frame(gene = rnorm(10))
+    })
+  )
+
+df <- df |>
+  corrr::correlate() |>
+  corrr::shave() |> 
+  pivot_longer(cols = starts_with('gene')) |> 
+  rename(term2 = name, Cor = value) |> 
+  drop_na()
+
+head(df)
+```
+
+
+Before:
+```{r}
+df |> 
+  ggplot(aes(term, term2, fill = Cor))+ 
+  geom_tile()+ labs(x = "mRNA", y = "")+ 
+  scale_fill_distiller(palette = "PuOr")+ 
+  coord_fixed()
+```
+
+
+After:
+```{r}
+library(ggtext) # https://github.com/wilkelab/ggtext
+library(glue)
+
+df |> 
+  mutate(term = glue(("<i>{term}</i>"))) |>
+  ggplot(aes(term, term2, fill = Cor))+ 
+  geom_tile()+ labs(x = "mRNA", y = "")+ 
+  theme(axis.text.x = element_markdown(angle = 45))+ # <-- Note that we have element_markdown not element_text
+scale_fill_stepsn(
+  colors=RColorBrewer::brewer.pal(n = 8, name = "PuOr"), 
+  na.value = "transparent", breaks=round(seq(-1, 1, length.out =8), digits = 2), 
+  limits=c(-1,1) )
+
+```

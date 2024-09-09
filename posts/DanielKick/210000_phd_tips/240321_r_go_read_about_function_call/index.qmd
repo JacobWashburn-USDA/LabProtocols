@@ -1,0 +1,17 @@
+---
+title: "Go Read About R's Function Call Semantics"
+author: "Daniel Kick"
+date: 2024-3-21
+image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Caract%C3%A8re_latin_d%27%C3%A9criture%2C_R_r.png"
+categories: 
+  - code
+  - intermediate
+  - r
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+
+[This](https://blog.moertel.com/posts/2006-01-20-wondrous-oddities-rs-function-call-semantics.html) is the sort of thing you don’t realize until it would be *really* useful to access the name of a variable or run text as if it were code. I think the most accessible example of R’s wizardry is in plotting- you pass variables (time, mv) to plot or ggplot instead of strings (“time”, “mv”) and magically you get axis labels. R gets access to the *value* of a variable *and* its name and no one notices because it just works.

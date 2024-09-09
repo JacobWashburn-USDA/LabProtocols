@@ -1,0 +1,32 @@
+---
+title: "Installing Local Libraries Post Update"
+author: "Daniel Kick"
+date: 2020-12-18
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+I just ran into the same issue after updating R on OSX — none of the libraries are associated with the new version. I tested and abandoned directly copying the libraries over in favor programmatic reinstallation. The downside to this is that it’s slower. The upside is that if you just copy them, R will ask you to update the packages anyway.
+
+This won’t work for libraries that aren’t on CRAN but drastically reduces the number of libraries you’re installing by hand. In my case this took care of all but about 3% of the libraries I had installed for 3.6.
+
+``` r
+all_packages <- list.files("/Library/Frameworks/R.framework/Versions/3.6/Resources/library/")
+installed_packages <- list.files("/Library/Frameworks/R.framework/Versions/4.0/Resources/library/")
+all_packages <- all_packages[!(all_packages %in% installed_packages)]
+
+options(install.packages.compile.from.source = "always")
+
+for (package in all_packages){
+  try(install.packages(package))
+}
+
+options(install.packages.compile.from.source = "interactive")
+```

@@ -1,0 +1,47 @@
+---
+title: "Clearing all but certain objects"
+author: "Daniel Kick"
+date: 2020-4-20
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you run into a situation where you're using a ton of memory (e.g.
+manipulating transcriptomic data, resampling, or working with
+electrophysiology traces) use `rm()` to selectively get rid off objects
+in the environment. A useful pattern is to write out large objects
+you'll need in the future, remove them, and then read them back in when
+you need them. This is usually not important, but when it is, it is.
+
+If you're working interactively and tempted to use `rm(list = ls())` consider restarting your r session (`ctrl+shift+F10` on windows). Overreliance on `rm(list = ls())` is poor form.
+
+A side note -- unlike listing items where the function matching the unix
+command acts on the environment and a new command acts on the files
+system (`ls()` and `list.files()`) the functions for removing items
+don't follow this logic. `rm()` acts on objects in your environment
+whereas `unlink()` acts on system files.
+
+Similarly if you want to retain only specific objects you can take this approach:
+
+``` r
+ # get rid of everything
+rm(list=ls())
+
+# get rid of everything except specific objects and all loaded functions
+rm(list = 
+   ls()[!(ls() %in% c(
+   # objects
+   c("data1", "data2", "bool1", "list1"), 
+   # functions
+   lsf.str())
+   ) ])
+```
+

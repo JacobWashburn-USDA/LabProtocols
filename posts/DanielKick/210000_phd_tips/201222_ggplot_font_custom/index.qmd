@@ -1,0 +1,59 @@
+---
+title: "ggplot font customization"
+author: "Daniel Kick"
+date: 2020-12-22
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - ggplot
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+You can set ggplot's font using the `theme` function. Particularly if combined with functions from `ggthemes` or `ggsci` you can get very pleasing visualizations quickly. Beyond accessing fonts already on your system you can import and fonts with minimal hassle.
+
+e.g. to get the font [Metal Mania](https://fonts.google.com/specimen/Metal+Mania?query=metal+mania) ready to use one might run:
+
+``` r
+library(showtext)
+font_add_google(name = "Metal Mania", family = "Metal+Mania")
+```
+
+``` r
+library(palmerpenguins)
+library(tidyverse)
+library(ggthemes)
+library(patchwork) # for adding together plots at the end
+library(extrafont)
+# font_import()) # <--- run this once
+loadfonts(device = "win", quiet = TRUE) # <--- run this once per session
+# extrafont::fonts() # see fonts that are available
+
+plt1 <- palmerpenguins::penguins %>%
+  filter(!<http://is.na|is.na>(sex)) %>%
+  mutate(sex = case_when(sex == "male" ~ "m",
+                         sex == "female" ~ "f")) %>% 
+  ggplot(aes(sex, body_mass_g, fill = species, group = interaction(species, sex)))+
+  geom_boxplot()+
+  ggthemes::scale_fill_colorblind()+
+  ggthemes::theme_clean()+
+  theme(legend.position = "")+
+  facet_grid(.~species)+
+  labs(title = "Default")
+
+plt2 <- plt1+
+  theme(text = element_text(family = "Consolas"))+
+  labs(title = "Consolas")
+
+plt3 <- plt1+
+  theme(text = element_text(family = "Garamond"))+
+  labs(title = "Garamond")
+
+plt1 + plt2 + plt3
+```
+
+![image (17).png](image%20(17).png)

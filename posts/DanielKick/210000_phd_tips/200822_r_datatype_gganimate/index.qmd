@@ -1,0 +1,16 @@
+---
+title: "Data Type Matters In `gganimate`"
+author: "Daniel Kick"
+date: 2020-8-22
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+Be mindful of your data types. Sometimes `T == 1 == 1.0` (logical, int, double) but assuming these are equivalent can get you into trouble. For example, in these animations, the only difference is the data is coerced to logicals or integers. ![](conway_bool.gif) ![](conway_int.gif)

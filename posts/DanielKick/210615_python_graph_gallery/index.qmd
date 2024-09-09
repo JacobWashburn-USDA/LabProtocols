@@ -2,7 +2,7 @@
 title: "Tips: Find the Graph you want in using a Graph Gallery"
 author: "Daniel Kick"
 date: "2021-06-15"
-image: "800px-Burmese_python_in_Berlin.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Burmese_python_in_Berlin.jpg"
 categories: 
   - code
   - python

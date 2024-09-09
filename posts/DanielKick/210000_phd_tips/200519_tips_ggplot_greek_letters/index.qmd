@@ -1,0 +1,25 @@
+---
+title: "Greek Letters in ggplot"
+author: "Daniel Kick"
+date: 2020-5-19
+image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Nightingale-mortality.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - ggplot
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you need to include greek letters or special characters in a plot use `annotate()` instead of `geom_text()`. On my machine it preforms a *lot* faster.
+
+``` r
+# 57.62977 secs
+geom_text(aes(x = 15, y = 25, label = "phi~22.5"), parse=TRUE)
+# 1.988642 secs
+annotate("text", x = 15, y = 25, parse = TRUE, label = as.character(expression(paste(phi, " 22.5"))))
+```

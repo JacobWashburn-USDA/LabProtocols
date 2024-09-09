@@ -1,0 +1,21 @@
+---
+title: "Updating Results in Word from Table"
+author: "Daniel Kick"
+date: 2020-5-26
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - intermediate
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+Handy trick: Write your test results into a summary csv. Then while writing you can insert a link to the cell value for a result into your .doc. After that, changing post hoc corrections, re-sampling iterations, or data QC just requires you to re-run your code and let word refresh all the links.
+
+You can also do this from excel, but you'll have to update the formula for the cell used instead.
+
+/![](AutoUpdateStats.gif)

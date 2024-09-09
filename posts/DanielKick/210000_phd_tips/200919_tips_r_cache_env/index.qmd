@@ -1,0 +1,28 @@
+---
+title: "Caching your enviroment and why you might not want to."
+author: "Daniel Kick"
+date: 2020-9-19
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you're working on data that takes a long time to process, consider
+adding a the following to your analysis.
+
+``` r
+save.image(file='myEnvironment.RData')
+load('myEnvironment.RData')
+```
+
+This will let you reload your environment. One can also by default save
+your environment when closing Rstudio but that may make it easy to
+reference objects that no longer are generated in the document itself
+thereby speeding software rot.

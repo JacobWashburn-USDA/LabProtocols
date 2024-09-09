@@ -2,7 +2,7 @@
 title: "Tips: Do-nothing Scripting in Bash"
 author: "Daniel Kick"
 date: "2023-05-24"
-image: "604px-Pinguins,_Bestanddeelnr_909-4582.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Pinguins%2C_Bestanddeelnr_909-4582.jpg"
 categories: 
   - code
   - bash
@@ -14,7 +14,6 @@ draft: false
 <!-- https://commons.wikimedia.org/wiki/File:Pinguins,_Bestanddeelnr_909-4582.jpg -->
 
 [Do-nothing scripting](https://blog.danslimmon.com/2019/07/15/do-nothing-scripting-the-key-to-gradual-automation/) is a nice way to blend documenting a protocol with running it. You can use this template as a place to start:
-
 
 ``` bash
 #!/usr/bin/bash
@@ -29,4 +28,4 @@ printf "\nDoing $STEP\n"
 # Code for step here:
 ```
 
-Note, having the condition be on n instead of yes allows for the code (which will vary in length) to be at the end. This makes the control flow easy to see. 
+Note, having the condition be on n instead of yes allows for the code (which will vary in length) to be at the end. This makes the control flow easy to see.

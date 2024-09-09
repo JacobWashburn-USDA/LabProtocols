@@ -1,0 +1,42 @@
+---
+title: "Document your functions with `roxygen2``"
+author: "Daniel Kick"
+date: 2020-7-30
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you want to make future you more positively disposed to present you,
+then organize your work with `R` packages, save your custom functions in
+the `/R/` directory. The function `roxygen2::roxygenise()` will
+documentation comments for your functions into help pages. For example
+running `roxygenise()` with the below function saved produces the
+attached help page accessible via `?shrug`.
+
+``` r
+#' @title Print Shrug
+#' @description This function prints a shrug emoji a specified number of times, provided the input value is a numeric greater than zero.
+#' @param n how many shrugs should be printed
+#' @author Daniel Kick (\email{daniel.r.kick@@gmail.com})
+#' @export
+#' @examples
+#' shrug(5)
+
+shrug <- function(n = 1, ...){
+  if (is.numeric(n) & n>0){
+    for (i in seq(1, n)){
+        cat("¯\_(ツ)_/¯
+")
+    }
+  }
+}
+```
+
+![image (12).png](image%20(12).png)

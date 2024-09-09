@@ -1,0 +1,26 @@
+---
+title: "Cache Intermediate Results"
+author: "Daniel Kick"
+date: 2020-5-12
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - beginner
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+Save `R` objects as rds. These could be works in progress or items that take a while to generate (e.g. re-sampled results). This gives the utility of saving a work space without the dangers.
+
+``` r
+library(here)
+save(df, file = here("data", "df.rds"))
+# df is now saved at ./data/df.rds
+
+load(here("data", "df.rds"))
+# df is now loaded from ./data/df.rds as df
+```

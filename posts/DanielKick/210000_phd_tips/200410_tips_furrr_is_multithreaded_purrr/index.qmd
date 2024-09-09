@@ -1,0 +1,19 @@
+---
+title: "Parallel Processing for `purrr` with `furrr`"
+author: "Daniel Kick"
+date: 2020-4-10
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - code
+  - intermediate
+  - r
+  - tips
+draft: false
+editor:
+  markdown: 
+    wrap: 72
+---
+
+If you're iteratively making plots, resampling, or doing another task that would have your reach for a for loop or `lapply()` use `furrr::future_map()` instead. `furrr` gives parallel processing ready versions of tidyverse's `purrr` functions (e.g. `map()`, `walk()`). It's easy to install the dependencies and takes a lot of the headache out of parallel processing.
+
+![](cpu_use_1.PNG) ![](cpu_use_0.PNG)

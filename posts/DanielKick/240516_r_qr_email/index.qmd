@@ -2,7 +2,7 @@
 title: "Tip: Use `R` to create an email nudge"
 author: "Daniel Kick"
 date: "2024-04-16"
-image: "Caractère_latin_d'écriture,_R_r.png"
+image: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Caract%C3%A8re_latin_d%27%C3%A9criture%2C_R_r.png"
 categories: 
   - code
   - r
@@ -13,18 +13,15 @@ draft: false
 
 <!-- https://commons.wikimedia.org/wiki/File:Caract%C3%A8re_latin_d%27%C3%A9criture,_R_r.png -->
 
-Suppose you're giving a presentation and you want to make it easy for people to contact you afterwards. Maybe you have your email in the acknowledgements or maybe you make business cards with a qr code to [your website](www.danielkick.com). 
+Suppose you're giving a presentation and you want to make it easy for people to contact you afterwards. Maybe you have your email in the acknowledgements or maybe you make business cards with a qr code to [your website](www.danielkick.com).
 
 These are good steps but we can go further. Let's make qr code that nudges people to send an email. I've used this to good effect for getting emails of people who would like to be notified when a software project goes live.
 
-Here's the plan:
-1. Give people your email.
-2. Make it _easy_ for them to send you an email.
-3. Encourage them to do it _now_. 
+Here's the plan: 1. Give people your email. 2. Make it *easy* for them to send you an email. 3. Encourage them to do it *now*.
 
 To accomplish this we're going to create a `mailto` link and encode it as a qr code. `mailto`s are opened in your default mail application so this gets the address where it'll be used with zero typing. We'll add some suggested text to the email. This gives the user a starting point and gives us a default subject line to search for later.
 
-Here's what this looks like in `R`. After setting the email and default subject and body text the spaces are replaced with `%20` (20 is the [ASCII hexdecimal](https://en.wikipedia.org/wiki/ASCII) code for space). We concatenate these strings together and then use the marvelous `qrcode` library to make a graphic that's ready for a poster, presentation, or card.  
+Here's what this looks like in `R`. After setting the email and default subject and body text the spaces are replaced with `%20` (20 is the [ASCII hexdecimal](https://en.wikipedia.org/wiki/ASCII) code for space). We concatenate these strings together and then use the marvelous `qrcode` library to make a graphic that's ready for a poster, presentation, or card.
 
 ```{r}
 library(qrcode)
@@ -45,5 +42,3 @@ inp_text = paste0(c(
 plot(qrcode::qr_code(inp_text))
 
 ```
-
-
