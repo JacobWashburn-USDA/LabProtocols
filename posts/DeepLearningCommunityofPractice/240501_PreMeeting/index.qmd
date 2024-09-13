@@ -1,5 +1,5 @@
 ---
-title: "Pre-Meeting Preparation"
+title: "Summer Session: Pre-Meeting Preparation"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
 date: "2024-05-06"

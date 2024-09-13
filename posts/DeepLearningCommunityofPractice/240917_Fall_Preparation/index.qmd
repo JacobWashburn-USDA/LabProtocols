@@ -1,0 +1,70 @@
+---
+title: "Fall Session: Preparation and Schedule"
+subtitle: ""
+author: "Daniel Kick"
+image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Wright_Military_Flyer_arrives_at_Fort_Myer_VA_DA-SD-05-00659_trimmed.jpg"
+date: "2024-09-17"
+categories: 
+  - Schedule
+  - Deep Learning
+freeze: true
+---
+
+## Welcome!
+
+Hello and welcome to our deep learning fall session! We are (re)iterating on the material we discussed over the summer so if this is the first time you're joining us don't worry about reading back through the older posts. If someone has directed you to this page and you'd like to be added to the mailing list, please get in touch with us.
+
+## What to Expect
+
+We'll be using python to go work from derivatives to generatively pretrained transformer models. Along the way we'll talk about...
+
+-   What deep learning models do
+
+-   How deep learning models are trained
+
+-   Architectural decisions to improve performance
+
+-   Tools used for model development and refinement
+
+Along the way we'll also talk a fair bit about python, the logistical challenges that surround model training, and some of the ways models can learn the wrong things.
+
+We're interested in building understanding and intuition so as to avoid cases where you only *think* your model is working well. We're going to encourage twin prescriptions of skepticism and caution in working with models. Instead of "move fast and break things" think "move *slow* and *build* things".
+
+## What We Expect
+
+Initially we'll have a mixture of presentations and exercises in our meetings. These will be weekly to keep everything fresh in mind. After these foundational topics are covered, we'll switch meetings about every other week and use this time for discussion and questions.
+
+The switch to every other week is because the lectures will be long enough that you may want to complete them in two or more parts. We recommend allowing *more* time than duration of the videos so instead of watching them start to finish you have time to to write and run code and to pause and ponder concepts.
+
+Since it's *really* hard to train models on paper, we expect folks to be writing (and debugging) code. If you only have time to focus on the theory that's okay, but we believe implementing these ideas helps them click. Additionally, we recommend identifying at least one peer that you can partner with to talk through tricky ideas or to look at errors (sometimes you just need a new set of eyes).
+
+In summary:
+
+-   Don't learn alone
+
+    -   Ask for help and teach others
+
+-   Write code
+
+    -   Make mistakes
+
+    -   Debug errors
+
+## What We Have Planned
+
+Below is our "working draft" for the fall. Based on feedback from the summer session we're beginning with python so doesn't add friction when we use it to build models. We may also make a few additions to these topics (such as working with images, sequences, or modeling distrbutions) or add presentations on folks planned or ongoing projects to talk about how these model go from the classroom to the lab.
+
+```{r echo=FALSE}
+library(kableExtra)
+kable(read.csv('./2024Fall.csv'))
+```
+
+## Preparing for the First Session:
+
+To get started you'll want to have installed python and a way to edit jupyter notebooks[^1].
+
+[^1]: These behave similarly to R markdown / Quarto files for those coming from the R ecosystem.
+
+For Python I recommend installing [Anaconda](https://www.anaconda.com/products/navigator) if you're on Windows and [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) if you're on Linux. For help installing Anaconda, see this [link](/posts/DeepLearningCommunityofPractice/240501_PreMeeting/).
+
+Although not strictly necessary I also recommend installing [Visual Studio Code](https://code.visualstudio.com/) and Microsoft's [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) plugin. The former provides a nice editor for notebooks and the latter a way to collaboratively edit a code (think "google docs for code" or Teletype).

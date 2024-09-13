@@ -1,5 +1,5 @@
 ---
-title: "Kick Off Meeting"
+title: "Summer Session: Kick Off Meeting"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
 date: "2024-05-07"

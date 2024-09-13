@@ -1,5 +1,5 @@
 ---
-title: "Meeting 3"
+title: "Summer Session: Meeting 3"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
 image: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Perceptron_4layers.png"

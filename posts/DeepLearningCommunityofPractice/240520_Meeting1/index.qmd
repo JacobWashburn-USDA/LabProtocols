@@ -1,8 +1,8 @@
 ---
-title: "Meeting 1"
+title: "Summer Session: Meeting 1"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
-image: "Two_women_operating_ENIAC.gif"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Two_women_operating_ENIAC.gif"
 date: "2024-05-21"
 categories: 
   - beginner

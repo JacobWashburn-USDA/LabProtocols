@@ -1,8 +1,8 @@
 ---
-title: "Meeting 2"
+title: "Summer Session: Meeting 2"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
-image: "580px-Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg"
 date: "2024-06-04"
 categories: 
   - beginner

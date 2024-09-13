@@ -1,5 +1,5 @@
 ---
-title: "Meeting 4"
+title: "Summer Session: Meeting 4"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
 image: "https://upload.wikimedia.org/wikipedia/commons/3/30/256x256_Dissolve_Noise_Texture.png"

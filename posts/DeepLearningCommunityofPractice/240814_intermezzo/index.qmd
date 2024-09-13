@@ -1,5 +1,5 @@
 ---
-title: "Meeting 6 Preparation Notes"
+title: "Summer Session: Meeting 6 Preparation Notes"
 subtitle: "Deep Learning Community of Practice"
 author: "Daniel Kick"
 image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/1940_Census_Population_Schedules_-_Florida_-_Sumter_County_-_ED_60-4_-_DPLA_-_d2b873312e5700b4c48cc6e11ec98941_%28page_4%29.jpg"
