@@ -8,13 +8,15 @@ title: "About the Lab"
 
 ### Jacob Washburn (PhD) ![](people/JacobWashburn/JacobDWashburn.jpg){width="100"}
 
-
 ### Harper LaFond (MS) ![](people/HarperLaFond/HarperLaFond.jpg){width="100"}
 
+<<<<<<< Updated upstream
 Harper LaFond joined the Washburn Lab in 2022 as the lab technician. She received her B.S. in Fisheries and Wildlife and her M.S. in Plant, Insect & Microbial Sciences specializing in entomology, both at the University of Missouri – Columbia. Harper has enjoyed working an array of field technician jobs with all sorts of living things from bugs and birds of prey to sturgeon and river carp. She then worked at the University of Missouri, Grape and Wine Institute as the viticulture extension specialist before joining the maize group at the USDA. Harper enjoys listening to podcasts on her walks to and from work, cooking dinner with her husband and sharing the leftovers with their dog, Chase. 
+=======
+Harper LaFond joined the Washburn Lab in 2022 as the lab technician. She received her B.S. in Fisheries and Wildlife and her M.S. in Plant, Insect & Microbial Sciences specializing in entomology, both at the University of Missouri – Columbia. Harper has enjoyed working an array of field technician jobs with all sorts of living things from bugs and birds of prey to sturgeon and river carp. She then worked at the University of Missouri, Grape and Wine Institute as the viticulture extension specialist before joining the maize group at the USDA (she only works with crops that can be fermented into tasty drinks). Harper enjoys listening to podcasts on her walks to and from work, cooking dinner with her husband and sharing the leftovers with their dog, Chase.
+>>>>>>> Stashed changes
 
 ### Raymond Wright ![](people/GenericPerson/GenericPerson.png){width="100"}
-
 
 ## Post Docs
 
@@ -24,12 +26,13 @@ Harper LaFond joined the Washburn Lab in 2022 as the lab technician. She receive
 
 ### Daniel Kick (PhD) ![](people/DanielKick/DanielKick.png){width="100"}
 
-Daniel’s research centers on using deep learning and computational approaches to make the most out of biological data, e.g. by using deep learning to capture how yield in influenced by the complex relationships between genetic, environmental, and management factors. He also runs technical trainings, a [deep learning group](/posts/ DeepLearningCommunityofPractice /index.html), and publishes notes and retrospectives [here](/posts/DanielKick/index.html). More information can be found on his website, [danielkick.com](https://danielkick.com).
-
+Daniel’s research centers on using deep learning and computational approaches to make the most out of biological data, e.g. by using deep learning to capture how yield in influenced by the complex relationships between genetic, environmental, and management factors. He also runs technical trainings, a [deep learning group](/posts/%20DeepLearningCommunityofPractice%20/index.html), and publishes notes and retrospectives [here](/posts/DanielKick/index.html). More information can be found on his website, [danielkick.com](https://danielkick.com).
 
 ## Graduate Students
 
 ### Shawn Thomas ![](people/ShawnThomas/ShawnThomas.jpg){width="100"}
+
+Shawn's dissertation research focuses on using comparative genomics and phylogenomics to understand the evolution of mustard crops and their wild relatives (tribe Brassiceae) with respect to a shared ancient polyploidy. He is also affiliated with the [Bioinformatics and Analytics Core at MU](https://bioinformatics.missouri.edu/) and works on various genomics projects for faculty investigators across MU.
 
 ### Emma Leary ![](people/GenericPerson/GenericPerson.png){width="100"}
 
