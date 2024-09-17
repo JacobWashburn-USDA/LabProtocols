@@ -52,7 +52,9 @@ Morgan Mathison joined the lab in May of 2023 as an undergraduate research assis
 
 
 
-### Henry Bloch ![](people/GenericPerson/GenericPerson.png){width="100"}
+### Henry Bloch ![](people/HenryBloch/henrybloch.png){width="100"}
+
+Henry is a junior in computer science who has been gaining experience in plant science. He has a special focus on distributed systems with high-throughput phenotyping operations.
 
 # Past Members:
 
