@@ -35,7 +35,9 @@ Daniel’s research centers on using deep learning and computational approaches 
 
 Shawn's dissertation research focuses on using comparative genomics and phylogenomics to understand the evolution of mustard crops and their wild relatives (tribe Brassiceae) with respect to a shared ancient polyploidy. He is also affiliated with the [Bioinformatics and Analytics Core at MU](https://bioinformatics.missouri.edu/) and works on various genomics projects for faculty investigators across MU.
 
-### Emma Leary ![](people/GenericPerson/GenericPerson.png){width="100"}
+### Emma Leary ![](people/EmmaLeary/EmmaLeary.jpg){width="100"}
+
+Emma is in the Plant, Insect, and Microbial Sciences PhD program at the University of Missouri. She works as a USDA-ARS Graduate Student Research Fellow and seeks to determine how different maize genotypes, landraces, and wild relatives perform photosynthesis under cold conditions. This work will ultimately help in developing elite maize cultivars that thrive in early season cooler settings. 
 
 ## Undergraduate Researchers
 
