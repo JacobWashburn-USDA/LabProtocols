@@ -32,7 +32,7 @@ Daniel’s research centers on using deep learning and computational approaches 
 
 ### Shawn Thomas ![](people/ShawnThomas/ShawnThomas.jpg){width="100"}
 
-Shawn's dissertation research focuses on using comparative genomics and phylogenomics to understand the evolution of mustard crops and their wild relatives (tribe Brassiceae) with respect to a shared ancient polyploidy. He is also affiliated with the [Bioinformatics and Analytics Core at MU](https://bioinformatics.missouri.edu/) and works on various genomics projects for faculty investigators across MU.
+Shawn's dissertation research focuses on using comparative genomics and phylogenomics to understand the evolution of mustard crops and their wild relatives (tribe Brassiceae) with respect to a shared ancient polyploidy. He is also affiliated with the [Bioinformatics and Analytics Core](https://bioinformatics.missouri.edu/) and works on various genomics projects for faculty investigators at the Univesity of Missouri.
 
 ### Emma Leary ![](people/GenericPerson/GenericPerson.png){width="100"}
 
