@@ -9,6 +9,8 @@ execute:
 
 # Initial Setup:
 
+Update: 9/18/2024 If you haven't setup git please review this [presentation](/protocols/Operations/Website_Overview/LabMeeting_0917_release_version.pptx) and setup git and GitHub.
+
 ## Desktop Version
 
 The easiest way to get the desktop version working is to create a new website or blog and render it. Any missing packages will cause an error. After it builds successfully, you can discard the newly made project directory and switch to this one.
