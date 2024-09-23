@@ -1,0 +1,30 @@
+---
+title: "Python 1: Data Visualization in Python"
+subtitle: ""
+author: "Daniel Kick"
+image: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Killer_bee_ball_python_snake.png"
+date: "2024-09-23"
+categories: 
+  - Python
+freeze: true
+---
+
+## Files For Today
+
+Today's slides use data from Allison Horst's [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) data package (see also [Gorman KB, Williams TD, Fraser WR (2014)](https://doi.org/10.1371/journal.pone.0090081) ).
+
+The files for today are provided zipped together [here](penguin_plotly_worksheet.tar). 
+
+When unzipped you should have
+
+- A dataset (penguins.csv)
+- A worksheet (penguin_plotly_worksheet.ipynb)
+- A set of solutions (penguin_plotly.ipynb)
+
+If you can't open the zipped files, download these files, changing the extension of the worksheet and solutions from `.txt` to `.ipynb`.
+
+- [penguins.csv](./penguins.csv)
+- [penguin_plotly_worksheet.txt](./penguin_plotly_worksheet.txt)
+- [penguin_plotly.txt](./penguin_plotly.txt)
+
+

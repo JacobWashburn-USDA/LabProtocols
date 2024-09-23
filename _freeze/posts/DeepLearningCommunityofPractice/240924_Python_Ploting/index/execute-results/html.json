@@ -1,0 +1,15 @@
+{
+  "hash": "3e0c6298c296e062cd96a29cbf6fc2a5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Python 1: Data Visualization in Python\"\nsubtitle: \"\"\nauthor: \"Daniel Kick\"\nimage: \"https://upload.wikimedia.org/wikipedia/commons/b/b2/Killer_bee_ball_python_snake.png\"\ndate: \"2024-09-23\"\ncategories: \n  - Python\nfreeze: true\n---\n\n\n## Files For Today\n\nToday's slides use data from Allison Horst's [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) data package (see also [Gorman KB, Williams TD, Fraser WR (2014)](https://doi.org/10.1371/journal.pone.0090081) ).\n\nHere are the first few rows to provide a sense of the data. \n\n::: {.cell}\n::: {.cell-output-display}\n\n\n|  X|species |island    | bill_length_mm| bill_depth_mm| flipper_length_mm| body_mass_g|sex    | year|\n|--:|:-------|:---------|--------------:|-------------:|-----------------:|-----------:|:------|----:|\n|  1|Adelie  |Torgersen |           39.1|          18.7|               181|        3750|male   | 2007|\n|  2|Adelie  |Torgersen |           39.5|          17.4|               186|        3800|female | 2007|\n|  3|Adelie  |Torgersen |           40.3|          18.0|               195|        3250|female | 2007|\n|  4|Adelie  |Torgersen |             NA|            NA|                NA|          NA|NA     | 2007|\n|  5|Adelie  |Torgersen |           36.7|          19.3|               193|        3450|female | 2007|\n|  6|Adelie  |Torgersen |           39.3|          20.6|               190|        3650|male   | 2007|\n\n\n:::\n:::\n\n\n\n- [Solutions](./penguin_plotly.ipynb)\n- [Worksheet](./penguin_plotly_worksheet.ipynb)\n- [Dataset](./penguins.csv)\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
