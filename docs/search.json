@@ -207,14 +207,28 @@
     "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html",
     "title": "Python 1: Data Visualization in Python",
     "section": "",
-    "text": "Today’s slides use data from Allison Horst’s palmerpenguins data package (see also Gorman KB, Williams TD, Fraser WR (2014) ).\nThe files for today are provided zipped together here.\nWhen unzipped you should have\n\nA dataset (penguins.csv)\nA worksheet (penguin_plotly_worksheet.ipynb)\nA set of solutions (penguin_plotly.ipynb)\n\nIf you can’t open the zipped files, download these files, changing the extension of the worksheet and solutions from .txt to .ipynb.\n\npenguins.csv\npenguin_plotly_worksheet.txt\npenguin_plotly.txt"
+    "text": "Questions to Ponder:\n\nHow do you envision yourself using python and deep learing?\n\nIn the lab?\nFor personal use?\nBoth?\n\nWhat application excites you most?\n\nHow small could you make this project?\nWhen could you work on this?\n\nWhat goals will you be better prepared to achieve by learning these topics?\n\nBefore introducing deep learning we’ll ensure a basic comfort with python.\n\nTo do this we’ll start at a high level (data visualization) then introduce low level concepts.\n\n\nThe presentation slides can be found here."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#files-for-today",
-    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#files-for-today",
+    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#recap-of-todays-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#recap-of-todays-meeting",
     "title": "Python 1: Data Visualization in Python",
     "section": "",
-    "text": "Today’s slides use data from Allison Horst’s palmerpenguins data package (see also Gorman KB, Williams TD, Fraser WR (2014) ).\nThe files for today are provided zipped together here.\nWhen unzipped you should have\n\nA dataset (penguins.csv)\nA worksheet (penguin_plotly_worksheet.ipynb)\nA set of solutions (penguin_plotly.ipynb)\n\nIf you can’t open the zipped files, download these files, changing the extension of the worksheet and solutions from .txt to .ipynb.\n\npenguins.csv\npenguin_plotly_worksheet.txt\npenguin_plotly.txt"
+    "text": "Questions to Ponder:\n\nHow do you envision yourself using python and deep learing?\n\nIn the lab?\nFor personal use?\nBoth?\n\nWhat application excites you most?\n\nHow small could you make this project?\nWhen could you work on this?\n\nWhat goals will you be better prepared to achieve by learning these topics?\n\nBefore introducing deep learning we’ll ensure a basic comfort with python.\n\nTo do this we’ll start at a high level (data visualization) then introduce low level concepts.\n\n\nThe presentation slides can be found here."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#materials",
+    "title": "Python 1: Data Visualization in Python",
+    "section": "Materials",
+    "text": "Materials\nToday’s slides use data from Allison Horst’s palmerpenguins data package (see also Gorman KB, Williams TD, Fraser WR (2014) ).\nThe files for today are provided zipped together here.\nWhen unzipped you should have\n\nA dataset (penguins.csv)\nA worksheet (penguin_plotly_worksheet.ipynb)\nA set of solutions (penguin_plotly.ipynb)\n\nIf you can’t open the zipped files, download these files, changing the extension of the worksheet and solutions from .txt to .ipynb.\n\npenguins.csv\npenguin_plotly_worksheet.txt\npenguin_plotly.txt"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#for-next-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#for-next-meeting",
+    "title": "Python 1: Data Visualization in Python",
+    "section": "For Next Meeting",
+    "text": "For Next Meeting\nIf you have not completed the visualization exercises, do. To solidify your understanding, use data you have from a project and plot it with python!\nWhile not required, it’s recommended that you have a learning partner. Talk with folks in your lab or email someone in a different lab if you want someone to learn with!"
   },
   {
     "objectID": "posts/DeepLearningCommunityofPractice/240814_intermezzo/index.html",

@@ -9,22 +9,58 @@ categories:
 freeze: true
 ---
 
-## Files For Today
+## Recap of Today's Meeting
+
+-   Questions to Ponder:
+
+    -   How do you envision yourself using python and deep learing?
+
+        -   In the lab?
+
+        -   For personal use?
+
+        -   Both?
+
+    -   What *application* excites you most?
+
+        -   *How small* could you make this project?
+
+        -   *When* could you work on this?
+
+    -   *What goals* will you be better prepared to achieve by learning these topics?
+
+-   Before introducing deep learning we'll ensure a basic comfort with python.
+
+    -   To do this we'll start at a high level (data visualization) then introduce low level concepts.
+
+The presentation slides can be found [here](./KickOff.pptx).
+
+## Materials
 
 Today's slides use data from Allison Horst's [`palmerpenguins`](https://allisonhorst.github.io/palmerpenguins/) data package (see also [Gorman KB, Williams TD, Fraser WR (2014)](https://doi.org/10.1371/journal.pone.0090081) ).
 
-The files for today are provided zipped together [here](penguin_plotly_worksheet.tar). 
+The files for today are provided zipped together [here](penguin_plotly_worksheet.tar).
 
 When unzipped you should have
 
-- A dataset (penguins.csv)
-- A worksheet (penguin_plotly_worksheet.ipynb)
-- A set of solutions (penguin_plotly.ipynb)
+-   A dataset (penguins.csv)
+-   A worksheet (penguin_plotly_worksheet.ipynb)
+-   A set of solutions (penguin_plotly.ipynb)
 
 If you can't open the zipped files, download these files, changing the extension of the worksheet and solutions from `.txt` to `.ipynb`.
 
-- [penguins.csv](./penguins.csv)
-- [penguin_plotly_worksheet.txt](./penguin_plotly_worksheet.txt)
-- [penguin_plotly.txt](./penguin_plotly.txt)
+-   [penguins.csv](./penguins.csv)
+-   [penguin_plotly_worksheet.txt](./penguin_plotly_worksheet.txt)
+-   [penguin_plotly.txt](./penguin_plotly.txt)
+
+## For Next Meeting
+
+If you have not completed the visualization exercises, do. To solidify your understanding, use data you have from a project and plot it with python!
+
+While not required, it's recommended that you have a learning partner. Talk with folks in your lab or email someone in a different lab if you want someone to learn with! 
+
+
+
+
 
 
