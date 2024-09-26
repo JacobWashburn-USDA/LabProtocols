@@ -10,6 +10,16 @@ categories:
 freeze: true
 ---
 
+
+<span style="color:darkred">_Edit: 9/26_</span>
+Added to Schedule resources for  
+
+-   Derivatives ([To Deliver You From the Preliminary Terrors](https://calculusmadeeasy.org/1.html)
+(Thank you Kate Eastman!)) 
+
+-   The Chain Rule ([The Intuitive Notion of the Chain Rule](https://webspace.ship.edu/msrenault/geogebracalculus/derivative_intuitive_chain_rule.html))
+
+
 ## Welcome!
 
 Hello and welcome to our deep learning fall session! We are (re)iterating on the material we discussed over the summer so if this is the first time you're joining us don't worry about reading back through the older posts. If someone has directed you to this page and you'd like to be added to the mailing list, please get in touch with us.
@@ -34,7 +44,9 @@ We're interested in building understanding and intuition so as to avoid cases wh
 
 We recommend viewing this group not as a class but a convening of autodidactic learners. Initially we'll have a presentations coving foundational topics which will give way to open discussions. Having a list of thoughts and questions will be valuable to make the most of these sessions.
 
-Since it's *really* hard to train models on paper, we expect folks to be writing (and debugging) code. We recommend budgeting time for the videos *and* writing exploratory code on your own. It can be useful to write the code featured in the videos in parallel with them, which may substantially increase the amount of time the material requires (and one's comfort and fluency with these topics). Futher, applying or extending what you have seen to small data sets is a great way to solidify understanding.
+Since it's *really* hard to train models on paper, we expect folks to be writing (and debugging) code. We recommend budgeting time for the videos *and* writing exploratory code on your own. It can be useful to write the code featured in the videos in parallel with them, which may substantially increase the amount of time the materi
+
+al requires (and one's comfort and fluency with these topics). Futher, applying or extending what you have seen to small data sets is a great way to solidify understanding.
 
 Finally, we recommend identifying at least one peer that you can partner with. Explaining a new concept is a great way to solidify your understanding and having someone you can ask for a fresh perspective from is hugely useful. Although we're interested in technical knowledge, we also want to increase connections between labs and the folks in them.
 
