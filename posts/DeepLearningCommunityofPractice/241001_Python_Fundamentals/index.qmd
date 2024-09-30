@@ -1,0 +1,38 @@
+---
+title: "Python 2: Python Fundamentals"
+subtitle: "Building Dataframes from Scratch"
+author: "Daniel Kick"
+image: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Killer_bee_ball_python_snake.png"
+date: "2024-10-01"
+categories: 
+  - Python
+freeze: true
+---
+
+<!-- ## Recap of Today's Meeting -->
+
+
+The presentation slides can be found [here](./241001_Python_Fundamentals.pptx).
+
+## Materials
+
+The files for today are provided here:
+
+-   [python_fundamentals_worksheet.tar](./python_fundamentals_worksheet.tar)
+-   python_fundamentals.tar (not available yet)
+<!-- -   [python_fundamentals.tar](./python_fundamentals.tar) -->
+
+If you can't open the zipped files, download these files, changing the extension of the worksheet and solutions from `.txt` to `.ipynb`.
+
+-   [python_fundamentals_worksheet.txt](./python_fundamentals_worksheet.txt)
+-   python_fundamentals.txt (not available yet)
+<!-- -   [python_fundamentals.txt](./python_fundamentals.txt) -->
+
+<!-- ## For Next Meeting -->
+
+
+
+
+
+
+

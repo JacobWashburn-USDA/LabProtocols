@@ -1,0 +1,1174 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Python Building Blocks"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Basic Types, Equivalence, and Assignment"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# one value\n",
+    "#== int\n",
+    "#== float\n",
+    "#== str "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# equivalence\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# assignment \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Combining text and formatted strings "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# concatenation\n",
+    "print()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "x = 'world'\n",
+    "y = 2\n",
+    "print('hello x y') # why does this not print \"hello world 2\"\n",
+    "# print('hello' + ' ' + x + ' ' + y) # why does this fail?\n",
+    "print('hello' + ' ' + x + ' ' + str(y)) # why does this work?\n",
+    "# fancy formatted strings\n",
+    "print(f'hello {x} {y}')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Slicing strings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "msg = 'hello world'\n",
+    "\n",
+    "# 0 indexed\n",
+    "print(msg)\n",
+    "\n",
+    "# slicing\n",
+    "print(msg)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# indexing from the other direction\n",
+    "print(msg)\n",
+    "\n",
+    "# slicing the other way\n",
+    "print(msg)\n",
+    "print(msg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Storing multiple values"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Dictionaries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# dict\n",
+    "# acts like variables, key:value pairs\n",
+    "x = 1\n",
+    "y = 2\n",
+    "my_vals = {\n",
+    "#############################\n",
+    "# Your Code Here.\n",
+    "\n",
+    "#############################\n",
+    "}\n",
+    "\n",
+    "# referenced with this bracket notation (similar to indexes but the \"slice\" is named)\n",
+    "# print(my_vals['x']) \n",
+    "# print(my_vals['y']) \n",
+    "# print(my_vals['z'])\n",
+    "\n",
+    "# pause and ponder: when we call `z` why do we get an error (not defined) we can call `y`?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Lists"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# list\n",
+    "\n",
+    "#############################\n",
+    "# Your Code Here.\n",
+    "# vals = \n",
+    "#############################\n",
+    "vals[0] # 0 indexing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# concatenation\n",
+    "# "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Only one type?\n",
+    "# vals +  + "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Extra Credit: mutability"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print(vals)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "vals[0] = 'n'\n",
+    "print(vals)\n",
+    "# what's in the list can change! Entries can be re-assigned!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Extra Credit: Sets, Tuples\n",
+    "(know these exist but we're not talking about them in depth)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# sets\n",
+    "set(vals) # curly braces but no `:`. Only the unique values."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "set(vals) == {'t', 'e', 'x'}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# tuples\n",
+    "# think immutable lists or records without names.\n",
+    "x = 'a'\n",
+    "y = (x, 'b')\n",
+    "y"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# immutable\n",
+    "# y[0] = 'c' # fails"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Building a Data Frame"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Extracting Rows and Cols from a list-of-lists"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# getting fancier....\n",
+    "\n",
+    "# species\tbill_length_mm\tflipper_length_mm\n",
+    "# Adelie\t39.1\t            181\n",
+    "# Gentoo\t46.1\t            211\n",
+    "# Chinstrap\t46.5\t            192\n",
+    "\n",
+    "\n",
+    "# list of lists\n",
+    "df = [['species',\t'bill_length_mm', 'flipper_length_mm'],\n",
+    "      ['Adelie',\t            39.1,                 181],\n",
+    "      ['Gentoo',\t            46.1,                 211],\n",
+    "      ['Chinstrap',           46.5,                 192]]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Extracting a Row"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# data frame like thing\n",
+    "\n",
+    "# slices? \n",
+    "# get the 0th row\n",
+    "\n",
+    "# get the 0th col"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Extracting a Col (looping)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# enter the for loop\n",
+    "# indentation is used, not curly braces like in some languages\n",
+    "# remember this. It'll come back quite a bit later\n",
+    "\n",
+    "#############################\n",
+    "# Your Code Here.\n",
+    "    print(i)\n",
+    "#############################"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "len(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "range(len(df)) # If you use R think of this as `seq(1, length(df))`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# The for loop with range\n",
+    "\n",
+    "col = []\n",
+    "#############################\n",
+    "# Your Code Here.\n",
+    "for i in range(len(df)):\n",
+    "#############################\n",
+    "    col = col + [df[i][0]] # show that you can't concatenate string and list\n",
+    "\n",
+    "col"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Extra credit: List Comprehensions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# list comprehension\n",
+    "[e[0] for e in df]\n",
+    "#____     _______ each list in the list-of-lists df \n",
+    "#   |     \n",
+    "#   what to do (return the 0th entry)\n",
+    "\n",
+    "# let's leave lists here for now..."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Filtering Rows (Conditionals)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# what if we wanted only the data for 'Gentoo' and 'Chinstrap'?\n",
+    "\n",
+    "sp = df[i][0] # 'Chinstrap'\n",
+    "print(f'sp == {sp}')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# equivalence\n",
+    "# (sp == 'Gentoo')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# OR\n",
+    "# (sp == 'Gentoo') | (sp == 'Chinstrap')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# AND\n",
+    "# (sp == 'Gentoo')  (sp == 'Chinstrap')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# NOT\n",
+    "#  (sp == 'Adelie')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# what if in the future we want different species?\n",
+    "# sp  ['Gentoo', 'Chinstrap']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# copy from above and modify\n",
+    "# col = []\n",
+    "# for i in range(len(df)):\n",
+    "#     col = col + [df[i][0]]\n",
+    "\n",
+    "# col\n",
+    "\n",
+    "\n",
+    "species = ['Gentoo', 'Chinstrap']\n",
+    "\n",
+    "col = []\n",
+    "#############################\n",
+    "# Your Code Here.\n",
+    "\n",
+    "#############################\n",
+    "\n",
+    "col"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# now it's only a hop, skip, and a jump to summary statistics!\n",
+    "#############################\n",
+    "# Your Code Here.\n",
+    "# calculate the mean\n",
+    "#############################"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Planning The Data Frame"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### The form of a Function"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# that was a lot of work... \n",
+    "# \n",
+    "# Let's write a function to help us out.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### The Plan"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# df, species = [], col = 'bill_length_mm' -> filtered df\n",
+    "\n",
+    "\n",
+    "# plan:\n",
+    "# filter rows -> select cols -> mean \n",
+    "# |                        |\n",
+    "# |------------------------|\n",
+    "# This used to be one for loop\n",
+    "\n",
+    "\n",
+    "# def FILTER(df, species):\n",
+    "#   ...\n",
+    "#   return df\n",
+    "\n",
+    "# def SELECT(df, col):\n",
+    "#   ...\n",
+    "#   return df \n",
+    "\n",
+    "# def MEAN(df):\n",
+    "#   ...\n",
+    "#   return xbar"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Building `FILTER`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# copy from above and modify\n",
+    "# col = []\n",
+    "# for i in range(len(df)):\n",
+    "#     if df[i][0] in species:\n",
+    "#         col = col + [df[i][1]] \n",
+    "\n",
+    "# col\n",
+    "\n",
+    "\n",
+    "def FILTER(df, species = []):\n",
+    "    data = [df[0]]\n",
+    "\n",
+    "    #############################\n",
+    "    # Our Code Here.\n",
+    "\n",
+    "    #############################\n",
+    "\n",
+    "    return data\n",
+    "\n",
+    "\n",
+    "FILTER(df = df, species = ['Adelie'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# What happens if we don't include one or more species?\n",
+    "FILTER(df = df, species = [])\n",
+    "\n",
+    "# Pause and ponder: Is this what we _want_ to happen? \n",
+    "# If not, how could we use `elif` to have species = [] return all the data? "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Consider this: \n",
+    "\n",
+    "df2= [['bill_length_mm', 'flipper_length_mm', 'species'  ],\n",
+    "      [            39.1,                 181, 'Adelie'   ],\n",
+    "      [            46.1,                 211, 'Gentoo'   ],\n",
+    "      [            46.5,                 192, 'Chinstrap']]\n",
+    "\n",
+    "# Is this what you expect? Is this what you _want_?\n",
+    "FILTER(df = df2, species = ['Adelie'])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Overwrite `FILTER` with a solution\n",
+    "\n",
+    "def FILTER(df, species = []):\n",
+    "    #############################\n",
+    "    # Your Code Here.\n",
+    "    # Should produce a variable `col_idx` that is the index of the species column\n",
+    "    # hint: recall how we tried to \"slice\" the list-of-lists\n",
+    "\n",
+    "    #############################\n",
+    "    data = [df[0]]\n",
+    "    for i in range(len(df)):\n",
+    "        if df[i][col_idx] in species:\n",
+    "            data = data + [df[i][:]] \n",
+    "\n",
+    "    return data\n",
+    "\n",
+    "\n",
+    "FILTER(df = df2, species = ['Adelie']) # should produce [[39.1, 181, 'Adelie']]\n",
+    "\n",
+    "# Pause and Ponder: What if 'species' isn't in the columns? What if there are _two_ columns called 'species'? What would you _want_ to happen? (We're not going to fix this here)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# back to df \n",
+    "FILTER(df = df, species = ['Gentoo', 'Chinstrap'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Recap:\n",
+    "\n",
+    "# [x] FILTER\n",
+    "# [ ] SELECT\n",
+    "# [ ] MEAN\n",
+    "\n",
+    "\n",
+    "# def SELECT(df, idx, col):\n",
+    "#   ...\n",
+    "#   return vals \n",
+    "\n",
+    "# def MEAN(vals):\n",
+    "#   ...\n",
+    "#   return xbar"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Building `SELECT`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def SELECT(df, col):\n",
+    "    # find out what number the given column is\n",
+    "    for i in range(len(df[0])):\n",
+    "        if df[0][i] == col:\n",
+    "            col_idx = i\n",
+    "\n",
+    "    #############################\n",
+    "    # Your Code Here.\n",
+    "    # create a list `vals` to hold values\n",
+    "    # get each value of df at all the rows in `idx` at column `col_idx`\n",
+    "    \n",
+    "    # data = []\n",
+    "    # for i in range(len(df)):\n",
+    "    #     data = data + [[ _____________ ]]  # Note that this has to be a double bracket\n",
+    "\n",
+    "    # return data\n",
+    "    #############################\n",
+    "\n",
+    "    data = []\n",
+    "    for i in range(len(df)):\n",
+    "        data = data + [[ df[i][col_idx] ]]  # Note that this has to be a double bracket\n",
+    "\n",
+    "    return data\n",
+    "\n",
+    "\n",
+    "SELECT(df = df, col = 'bill_length_mm')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "vals = SELECT(df = df, col = 'bill_length_mm')\n",
+    "vals \n",
+    "\n",
+    "# Get rid of the header (We're going to address this in a more elegant way later)\n",
+    "#############################\n",
+    "# Your Code Here.\n",
+    "# vals = ________\n",
+    "#############################\n",
+    "vals"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Building `MEAN`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# copy from above and modify\n",
+    "# sum(col) / len(col)\n",
+    "\n",
+    "def MEAN(vals):\n",
+    "  xbar = sum(vals) / len(vals)\n",
+    "  return xbar\n",
+    "\n",
+    "# Pause and ponder: Why didn't this work? \n",
+    "# MEAN(vals)\n",
+    "\n",
+    "\n",
+    "# python quirk (memorize this, don't worry about it right now)\n",
+    "vals = sum(vals, [])\n",
+    "\n",
+    "MEAN(vals = vals)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "vals = SELECT(df = df, col = 'bill_length_mm')\n",
+    "\n",
+    "\n",
+    "# Adapt this to convert vals into a list instead of list of lists\n",
+    "def MEAN(vals):\n",
+    "#     ############################\n",
+    "#     Your Code Here.\n",
+    "#     \n",
+    "#     ############################\n",
+    "    xbar = sum(vals) / len(vals)\n",
+    "    return xbar\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Put it all together!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# here's a bigger dataset:\n",
+    "\n",
+    "penguin = [['species',\t'bill_length_mm',\t'flipper_length_mm'],\n",
+    "           ['Adelie',\t            39.1,\t                181],\n",
+    "           ['Adelie',\t            39.5,\t                186],\n",
+    "           ['Adelie',\t            40.3,\t                195],\n",
+    "           ['Gentoo',\t            46.1,\t                211],\n",
+    "           ['Gentoo',\t            50.0,                   230],\n",
+    "           ['Gentoo',\t            48.7,\t                210],\n",
+    "           ['Chinstrap',            46.5,\t                192],\n",
+    "           ['Chinstrap',\t        50.0,\t                196],\n",
+    "           ['Chinstrap',            51.3,\t                193]]\n",
+    "\n",
+    "\n",
+    "# What is the average bill_length_mm of all Adelie penquins?\n",
+    "x0 = FILTER(df = penguin, species = ['Adelie'])\n",
+    "x1 = SELECT(df = x0, col = 'bill_length_mm')\n",
+    "x2 = MEAN(x1[1:])\n",
+    "x2\n",
+    "\n",
+    "\n",
+    "# or \n",
+    "\n",
+    "MEAN(\n",
+    "    SELECT(\n",
+    "        FILTER(df = penguin, species = ['Adelie']), \n",
+    "        col = 'bill_length_mm'\n",
+    "        )[1:]\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# What is the flipper_length_mm of Gentoo and Chinstrap penguins?\n",
+    "\n",
+    "MEAN(\n",
+    "    SELECT(\n",
+    "        FILTER(df = penguin, species = ['Gentoo', 'Chinstrap']), \n",
+    "        col = 'bill_length_mm'\n",
+    "        )[1:]\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Bundle data and functions into a data frame (classes)\n",
+    "Our dataframes are custom. Wait, no. They're _bespoke_. \n",
+    "Being bespoke, other people's functions won't work with out dataframes and our functions won't work with theirs. \n",
+    "\n",
+    "...\n",
+    "\n",
+    "Wouldn't it be nice if we could _bundle_ our data and functions together? \n",
+    "Then anywhere there's one of our data frames you can call `SELECT` `FILTER` and `MEAN`. \n",
+    "\n",
+    "\n",
+    "- Classes == data + functions\n",
+    "- attributes == data\n",
+    "- methods == functions \"belonging\" to a class\n",
+    "\n",
+    "\n",
+    "Complications\n",
+    "- When we assign a variable we are initialising (setting up) an object. We to describe how to initialise an instance of our class. (init)\n",
+    "- instead of taking in df a method can act on the class itself (self)\n",
+    "- special python methods are surrounded by double underscores (\"dunder\" methods)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Defining a class"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class bespoke():\n",
+    "    def __init__(self, data): # needs to initialize itself and store some data\n",
+    "        self.cols = data[0]   # Note this weird self. notation. Class attributes are accessed with a `.`\n",
+    "        self.data = data[1:]\n",
+    "\n",
+    "df = bespoke(data = penguin) # note we have to assign it\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Extra credit: string representation"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Wouldn't it be nice if it printed the data when we called `df`?\n",
+    "\n",
+    "class bespoke():\n",
+    "    def __init__(self, data):\n",
+    "        self.cols = data[0]\n",
+    "        self.data = data[1:]\n",
+    "\n",
+    "    def __repr__(self): # string representation of class. Included to show there are other dunder methods\n",
+    "        max_lens = [min(len(e), 20) for e in self.cols]\n",
+    "        # lambda to standarize length of text\n",
+    "        clip_text = lambda x, limit : x+''.join([' ' for i in range(limit-len(x))]) if len(x) < limit else x[0:limit]\n",
+    "        # coerce table entries to strings of uniform length\n",
+    "        table = [[clip_text(x = str(e[i]), limit = max_lens[i]) for i in range(len(e))] for e in self.data]\n",
+    "        # Render as text table\n",
+    "        header = ' | '.join(self.cols)+'\\n'\n",
+    "        header += '-+-'.join([''.join(['-' for ee in range(len(e))]) for e in self.cols])+'\\n'\n",
+    "        table = '\\n'.join([' | '.join(e) for e in table])\n",
+    "        table = header+table\n",
+    "        return table\n",
+    "\n",
+    "df = bespoke(data = penguin)\n",
+    "df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Adapting `FILTER`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Copy and Adapt\n",
+    "\n",
+    "# def FILTER(df, species = []):\n",
+    "#     data = [df[0]]\n",
+    "#\n",
+    "#     for i in range(len(df)):\n",
+    "#         if df[i][0] in species:\n",
+    "#             data = data + [df[i][:]] \n",
+    "#\n",
+    "#     return data\n",
+    "\n",
+    "\n",
+    "class bespoke():\n",
+    "    def __init__(self, data):\n",
+    "        self.cols = data[0]\n",
+    "        self.data = data[1:]\n",
+    "\n",
+    "    def __repr__(self): # string representation of class. Included to show there are other dunder methods\n",
+    "        max_lens = [min(len(e), 20) for e in self.cols]\n",
+    "        # lambda to standarize length of text\n",
+    "        clip_text = lambda x, limit : x+''.join([' ' for i in range(limit-len(x))]) if len(x) < limit else x[0:limit]\n",
+    "        # coerce table entries to strings of uniform length\n",
+    "        table = [[clip_text(x = str(e[i]), limit = max_lens[i]) for i in range(len(e))] for e in self.data]\n",
+    "        # Render as text table\n",
+    "        header = ' | '.join(self.cols)+'\\n'\n",
+    "        header += '-+-'.join([''.join(['-' for ee in range(len(e))]) for e in self.cols])+'\\n'\n",
+    "        table = '\\n'.join([' | '.join(e) for e in table])\n",
+    "        table = header+table\n",
+    "        return table\n",
+    "\n",
+    "    def FILTER(self, species = []): # Dont forget to replace df with self.data\n",
+    "        ############################\n",
+    "        # Our Code Here.\n",
+    "        \n",
+    "        ############################\n",
+    "        return self\n",
+    "\n",
+    "\n",
+    "bespoke(data = penguin).FILTER(species = ['Adelie'])\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Adapting `SELECT` & `MEAN`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Your turn! Finish the class:\n",
+    "\n",
+    "# Copy and Adapt\n",
+    "\n",
+    "# def SELECT(df, col):\n",
+    "#     # find out what number the given column is\n",
+    "#     for i in range(len(df[0])):\n",
+    "#         if df[0][i] == col:\n",
+    "#             col_idx = i\n",
+    "#\n",
+    "#     data = []\n",
+    "#     for i in range(len(df)):\n",
+    "#         data = data + [[ df[i][col_idx] ]]  # Note that this has to be a double bracket\n",
+    "#\n",
+    "#     return data\n",
+    "\n",
+    "\n",
+    "# def MEAN(vals):\n",
+    "#     vals = sum(vals, [])\n",
+    "#     xbar = sum(vals) / len(vals)\n",
+    "#     return xbar\n",
+    "\n",
+    "\n",
+    "class bespoke():\n",
+    "    def __init__(self, data):\n",
+    "        self.cols = data[0]\n",
+    "        self.data = data[1:]\n",
+    "\n",
+    "    def __repr__(self): # string representation of class. Included to show there are other dunder methods\n",
+    "        max_lens = [min(len(e), 20) for e in self.cols]\n",
+    "        # lambda to standarize length of text\n",
+    "        clip_text = lambda x, limit : x+''.join([' ' for i in range(limit-len(x))]) if len(x) < limit else x[0:limit]\n",
+    "        # coerce table entries to strings of uniform length\n",
+    "        table = [[clip_text(x = str(e[i]), limit = max_lens[i]) for i in range(len(e))] for e in self.data]\n",
+    "        # Render as text table\n",
+    "        header = ' | '.join(self.cols)+'\\n'\n",
+    "        header += '-+-'.join([''.join(['-' for ee in range(len(e))]) for e in self.cols])+'\\n'\n",
+    "        table = '\\n'.join([' | '.join(e) for e in table])\n",
+    "        table = header+table\n",
+    "        return table\n",
+    "\n",
+    "    def FILTER(self, species = []): # Dont forget to replace df with self.data\n",
+    "        for i in range(len(self.cols)):\n",
+    "            if self.cols[i] == 'species':\n",
+    "                col_idx = i\n",
+    "\n",
+    "        data = []\n",
+    "        for i in range(len(self.data)):\n",
+    "            if self.data[i][col_idx] in species:\n",
+    "                data = data + [self.data[i]] \n",
+    "\n",
+    "        self.data = data\n",
+    "        return self\n",
+    "    \n",
+    "    #############################\n",
+    "    # Your Code Here.\n",
+    "    def SELECT(self, col):\n",
+    "        # find out what number the given column is\n",
+    "\n",
+    "        return self\n",
+    "    #############################\n",
+    "    \n",
+    "    #############################\n",
+    "    # Your Code Here.\n",
+    "    def MEAN(self):\n",
+    "\n",
+    "        return xbar\n",
+    "    #############################\n",
+    "\n",
+    "bespoke(data = penguin).FILTER(species = ['Adelie']).SELECT(col='bill_length_mm').MEAN()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bespoke(data = penguin)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bespoke(data = penguin).FILTER(species = ['Adelie'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bespoke(data = penguin).FILTER(species = ['Adelie']\n",
+    "                      ).SELECT(col='bill_length_mm')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bespoke(data = penguin).FILTER(species = ['Adelie']\n",
+    "                      ).SELECT(col='bill_length_mm'\n",
+    "                      ).MEAN()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "dl",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.11.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
