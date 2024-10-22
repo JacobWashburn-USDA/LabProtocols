@@ -1,0 +1,21 @@
+---
+title: "Deep Learning Discussion: Backpropagaton"
+subtitle: ""
+author: "Daniel Kick"
+date: "2024-10-22"
+image: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Two_women_operating_ENIAC_%28full_resolution%29.jpg"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+freeze: true
+---
+
+## For Next Week:
+-   Next week will be a "catch-up" session since the backpropagation material is critical for understanding how networks are optimized and takes a fair bit of time to work through. 
+-   Time permitting we *may* introduce the bigram model or dig deeper into dataloaders depending on the length of the discussion next week. 
+
+
+## Materials
+
+-   Here is the notebook I wrote during our meeting today [(Demo Notebook)](./InClassExample.ipynb.tar.gz) showing how how gradients are tracked in PyTorch and how to create a small multilayer perceptron (MLP). 

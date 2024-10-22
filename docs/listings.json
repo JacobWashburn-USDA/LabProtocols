@@ -2,6 +2,7 @@
   {
     "listing": "/posts/DanielKick/index.html",
     "items": [
+      "/posts/DanielKick/241007_simulating_unbalanced_test_sets/index.html",
       "/posts/DanielKick/240905_postgres_via_parquet/index.html",
       "/posts/DanielKick/240702_r_GAPIT_container_en_masse/240624_r_GAPIT_container/index.html",
       "/posts/DanielKick/240624_linux_wsl_ln/index.html",
@@ -68,6 +69,7 @@
   {
     "listing": "/posts/DeepLearningCommunityofPractice/index.html",
     "items": [
+      "/posts/DeepLearningCommunityofPractice/241022_Backprop/index.html",
       "/posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html",
       "/posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html",
       "/posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html",
@@ -78,6 +80,7 @@
       "/posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html",
       "/posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html",
       "/posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html",
+      "/posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html",
       "/posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html"
     ]
   }

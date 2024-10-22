@@ -14,19 +14,21 @@ freeze: true
 
 The presentation slides can be found [here](./241001_Python_Fundamentals.pptx).
 
+If you do not have access to the video please contact Daniel.
+
 ## Materials
 
 The files for today are provided here:
 
 -   [python_fundamentals_worksheet.tar](./python_fundamentals_worksheet.tar)
--   python_fundamentals.tar (not available yet)
-<!-- -   [python_fundamentals.tar](./python_fundamentals.tar) -->
+<!-- -   python_fundamentals.tar (not available yet) -->
+-   [python_fundamentals.tar](./python_fundamentals.tar)
 
 If you can't open the zipped files, download these files, changing the extension of the worksheet and solutions from `.txt` to `.ipynb`.
 
 -   [python_fundamentals_worksheet.txt](./python_fundamentals_worksheet.txt)
--   python_fundamentals.txt (not available yet)
-<!-- -   [python_fundamentals.txt](./python_fundamentals.txt) -->
+<!-- -   python_fundamentals.txt (not available yet) -->
+-   [python_fundamentals.txt](./python_fundamentals.txt)
 
 <!-- ## For Next Meeting -->
 

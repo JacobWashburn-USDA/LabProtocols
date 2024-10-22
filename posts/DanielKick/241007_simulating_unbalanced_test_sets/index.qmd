@@ -1,0 +1,125 @@
+---
+title: "Defining Training Sets with _Radically_ Unbalanced Data"
+subtitle: ""
+author: "Daniel Kick"
+date: "2024-10-07"
+image: ""
+categories: 
+  - simulation
+  - python
+  - beginner
+freeze: true
+---
+
+<!-- ```{python} -->
+<!-- # lets do some hypothetical clustering -->
+<!-- import numpy as np -->
+<!-- import matplotlib.pyplot as plt -->
+
+
+<!-- rng = np.random.default_rng(seed=42) -->
+
+<!-- cvf = 5 -->
+<!-- k = 100 -->
+
+
+<!-- # best case  -->
+<!-- # cluster_count = rng.integers(10, 11, k) -->
+
+<!-- cluster_count = rng.integers(1, 100, k) -->
+
+<!-- cluster_count = np.ceil(rng.exponential(10, k)).astype(int) -->
+
+<!-- # # cluster_count = np.ceil(rng.pareto(10, k)*10.).astype(int) # less extreme pareto -->
+
+<!-- # cluster_count = np.ceil(rng.pareto(2, k)*10.).astype(int) # more extreme pareto -->
+
+
+<!-- cluster_ids   = np.linspace(0, (k-1), k).astype(int) -->
+<!-- # print(cluster_count) -->
+
+<!-- # noisily order with respect to size -->
+<!-- def noisily_order(cct = cluster_count): -->
+<!--     k = cct.shape[0] -->
+<!--     cid = np.linspace(0, (k-1), k).astype(int) -->
+
+<!--     out = np.zeros_like(cct) -->
+<!--     for i in range(k): -->
+<!--         # draw cluster proportionate to cluster size -->
+<!--         # _ = rng.choice(cid, 1, p=cct/cct.sum())[0] -->
+
+<!--         # Trying to decrease test set cluster iou with a normalization factor -->
+<!--         probs = cct + cluster_count.mean() -->
+
+
+<!--         _ = rng.choice(cid, 1, p=(probs)/probs.sum() )[0] -->
+<!--         out[i] = _ -->
+<!--         cct = cct[cid != _] -->
+<!--         cid = cid[cid != _] -->
+<!--     return out -->
+
+<!-- _ = plt.hist(cluster_count) -->
+
+
+
+
+
+
+<!-- ``` -->
+
+<!-- ```{python} -->
+<!-- cluster_count.mean() -->
+<!-- ``` -->
+
+<!-- ```{python} -->
+
+<!-- reorder = [noisily_order(cct = cluster_count) for fold in range(cvf)] -->
+
+<!-- _ = np.concatenate([cluster_count[e][:, None] for e in reorder], axis = 1) -->
+
+<!-- # calculate cumulative percent of dataset -->
+<!-- _pr = (_/cluster_count.sum()).cumsum(axis=0) -->
+<!-- ``` -->
+
+<!-- ```{python} -->
+<!-- plt.imshow(_.T) -->
+<!-- ``` -->
+
+
+<!-- ```{python} -->
+<!-- plt.plot(_pr) -->
+<!-- ``` -->
+
+<!-- ```{python} -->
+<!-- plt.imshow(_pr.T) -->
+<!-- ``` -->
+
+<!-- ```{python} -->
+<!-- # for fold in range(cvf)], -->
+<!-- fold = 0 -->
+
+
+<!-- # cluster ints for the validation/test sets -->
+<!-- val = {fold: reorder[fold][(_pr[:, fold] > .80)] for fold in range(cvf)} -->
+<!-- val = {k: set(val[k]) for k in val} -->
+<!-- # _[(_pr[:, fold] > .80), fold] -->
+
+
+<!-- ``` -->
+
+
+<!-- ```{python} -->
+<!-- iou = np.zeros((cvf, cvf)) -->
+
+<!-- for i in val: -->
+<!--     for j in val: -->
+<!--         iou[i,j] = len(set.intersection(val[i], val[j]))/len(set.union(val[i], val[j])) -->
+
+
+<!-- # This is kinda fancy indexing to select the upper triangle without diagonal -->
+<!-- plt.hist( iou[np.tril(np.ones_like(iou)) == 0] ) -->
+
+<!-- print(iou) -->
+
+<!-- ``` -->
+

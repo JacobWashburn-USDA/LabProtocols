@@ -1,0 +1,28 @@
+---
+title: "Summer Session: Kick Off Meeting"
+subtitle: "Deep Learning Community of Practice"
+author: "Daniel Kick"
+date: "2024-05-07"
+image: "../240507_Meeting0/Picture1.gif"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+freeze: true
+---
+
+## For Next Meeting
+
+-   We're starting off from zero and implementing the core engine that powers deep learning: back propagation.
+
+-   For our next meeting on the 22nd we have an open discussion of backpropagation scheduled. The core video for this session is this one [Backpropagation 2h25](https://www.youtube.com/watch?v=VMj-3S1tku0) in which you’ll build a computational graph and see how values flow forward through this graph to calculate a prediction and backward to calculate gradients. I recommend at minimum watching the video and ideally implementing the code in it as well. 
+
+-   Note that the in the video description there are links to the notebooks that Andrej Karpathy builds during the video. I find this especially helpful for identifying errors in my code.
+
+-   Please note what you find confusing -- someone else probably finds it confusing too!
+
+## Materials
+
+-   Here is a tiny neural network in Excel ( [File](./0502_nn_demo.xlsx)). Download it and try changing the weights and biases of the layers! In practice we'll change all the weights and biases at once, but this is nice for building intuition.
+
+-   Here are the [Meeting Slides](./241001_Python_Fundamentals.pptx).

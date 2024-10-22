@@ -1,0 +1,17 @@
+{
+  "hash": "f2f7f281af53d502bab70abe54aefc4d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tip: Use `R` to create an email nudge\"\nauthor: \"Daniel Kick\"\ndate: \"2024-04-16\"\nimage: \"https://upload.wikimedia.org/wikipedia/commons/c/c6/Caract%C3%A8re_latin_d%27%C3%A9criture%2C_R_r.png\"\ncategories: \n  - code\n  - r\n  - beginner\n  - tips\ndraft: false\nfreeze: true\n---\n\n\n\n<!-- https://commons.wikimedia.org/wiki/File:Caract%C3%A8re_latin_d%27%C3%A9criture,_R_r.png -->\n\nSuppose you're giving a presentation and you want to make it easy for people to contact you afterwards. Maybe you have your email in the acknowledgements or maybe you make business cards with a qr code to [your website](www.danielkick.com).\n\nThese are good steps but we can go further. Let's make qr code that nudges people to send an email. I've used this to good effect for getting emails of people who would like to be notified when a software project goes live.\n\nHere's the plan: 1. Give people your email. 2. Make it *easy* for them to send you an email. 3. Encourage them to do it *now*.\n\nTo accomplish this we're going to create a `mailto` link and encode it as a qr code. `mailto`s are opened in your default mail application so this gets the address where it'll be used with zero typing. We'll add some suggested text to the email. This gives the user a starting point and gives us a default subject line to search for later.\n\nHere's what this looks like in `R`. After setting the email and default subject and body text the spaces are replaced with `%20` (20 is the [ASCII hexdecimal](https://en.wikipedia.org/wiki/ASCII) code for space). We concatenate these strings together and then use the marvelous `qrcode` library to make a graphic that's ready for a poster, presentation, or card.\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(qrcode)\nlibrary(tidyverse)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors\n```\n\n\n:::\n\n```{.r .cell-code}\nemail    = 'your.name@usda.gov'\ninp_subj = 'Re: Envriomental Deep Learning Presentation'\ninp_body = 'Hello from the conference...'\n\n\ninp_subj = str_replace_all(inp_subj, ' ', '%20')\ninp_body = str_replace_all(inp_body, ' ', '%20')\n\ninp_text = paste0(c(\n  '<a href=\"mailto:',email,'?&subject=', inp_subj, '&body=', inp_body, '> </a>'\n), collapse = '')\n\nplot(qrcode::qr_code(inp_text))\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

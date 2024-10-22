@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -114,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -137,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -210,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="initial-setup" class="level1">
 <h1>Initial Setup:</h1>
-<p>Update: 9/18/2024 If you haven’t setup git please review this <a href="../../..\protocols/Operations/Website_Overview/LabMeeting_0917_release_version.pptx">presentation</a> and setup git and GitHub.</p>
+<p>Update: 9/18/2024 If you haven’t setup git please review this <a href="../../../protocols/Operations/Website_Overview/LabMeeting_0917_release_version.pptx">presentation</a> and setup git and GitHub.</p>
 <section id="desktop-version" class="level2">
 <h2 class="anchored" data-anchor-id="desktop-version">Desktop Version</h2>
 <p>The easiest way to get the desktop version working is to create a new website or blog and render it. Any missing packages will cause an error. After it builds successfully, you can discard the newly made project directory and switch to this one.</p>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="containerized-version" class="level2">
 <h2 class="anchored" data-anchor-id="containerized-version">Containerized Version:</h2>
-<p>This is a terse variant of <a href="../../..\protocols/Logistics/Container_Singularity_Rstudio/index.html">these</a> instructions.</p>
+<p>This is a terse variant of <a href="../../../protocols/Logistics/Container_Singularity_Rstudio/index.html">these</a> instructions.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> rstudio_container <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> rstudio_container</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add necessary subfolders -----------------------------------------------------</span></span>
@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="protocols" class="level2">
 <h2 class="anchored" data-anchor-id="protocols">Protocols</h2>
-<p>The protocols folder is where most of the work happens. Inside it there are subfolders to roughly group protocols. Right now it contains <code>Drones</code>, <code>Logistics</code>, and <code>Operations</code>. Other useful groups might include Rootbot, Wet Lab, and Field Work. Each protocol page is a folder <em>within</em> one of these groups. For consistency it should be named in Capitalized_Snakecase and contain a Quarto document called <code>index.qmd</code>. There may be images in this folder as well. See the documentation on <a href="../../..\protocols/Operations/Authoring_Protocols/index.html">preparing protocols</a>.</p>
+<p>The protocols folder is where most of the work happens. Inside it there are subfolders to roughly group protocols. Right now it contains <code>Drones</code>, <code>Logistics</code>, and <code>Operations</code>. Other useful groups might include Rootbot, Wet Lab, and Field Work. Each protocol page is a folder <em>within</em> one of these groups. For consistency it should be named in Capitalized_Snakecase and contain a Quarto document called <code>index.qmd</code>. There may be images in this folder as well. See the documentation on <a href="../../../protocols/Operations/Authoring_Protocols/index.html">preparing protocols</a>.</p>
 <pre><code>protocols
 ├── Drones
 │&nbsp;&nbsp; └── Pix4Dmapper_Stitch
@@ -370,18 +370,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -413,7 +402,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -421,7 +432,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

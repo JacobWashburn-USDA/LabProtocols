@@ -9,6 +9,7 @@ categories:
   - beginner
   - tips
 draft: false
+freeze: true
 ---
 
 <!-- https://commons.wikimedia.org/wiki/File:Caract%C3%A8re_latin_d%27%C3%A9criture,_R_r.png -->
