@@ -3,7 +3,7 @@ title: "Sharing n-dimensional data between Python and R"
 subtitle: ""
 author: "Daniel Kick"
 date: "2024-10-24"
-image: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Monochrome_bubbles_and_shark_%28Unsplash%29.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Laminated_cube_in_a_magnetic_field.png"
 categories: 
   - python
   - r
