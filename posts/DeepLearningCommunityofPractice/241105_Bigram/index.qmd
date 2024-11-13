@@ -1,0 +1,20 @@
+---
+title: "Deep Learning Discussion: The Bigram Language Model"
+subtitle: "Part 1"
+author: "Daniel Kick"
+date: "2024-11-05"
+image: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Cuneiform_tablet-_private_letter_MET_ME66_245_2.jpg"
+categories: 
+  - beginner
+  - code
+  - Deep Learning
+freeze: true
+---
+
+## For Next Session:
+-   Next session we will continue working with the Bigram model. Please finish the video if you are still working on it. 
+
+
+## Materials
+
+-   Here is the notebook I wrote during our meeting today [(Demo Notebook Part 1)](./InClassExample_Bigram_pt1.ipynb.tar.gz) 

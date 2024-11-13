@@ -20,6 +20,10 @@ Added to Schedule resources for
 -   The Chain Rule ([The Intuitive Notion of the Chain Rule](https://webspace.ship.edu/msrenault/geogebracalculus/derivative_intuitive_chain_rule.html))
 
 
+<span style="color:darkred">_Edit: 11/12_</span>
+Updated schedule due to members conference/symposium and holiday travel.
+
+
 ## Welcome!
 
 Hello and welcome to our deep learning fall session! We are (re)iterating on the material we discussed over the summer so if this is the first time you're joining us don't worry about reading back through the older posts. If someone has directed you to this page and you'd like to be added to the mailing list, please get in touch with us.
