@@ -2,7 +2,7 @@
 title: "A few notes on SQL"
 author: "Daniel Kick"
 date: "2024-05-17"
-image: "Haizahn-foss.jpg"
+image: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Haizahn-foss.jpg"
 categories: 
   - code
   - SQL

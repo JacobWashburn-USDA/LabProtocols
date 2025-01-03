@@ -1,0 +1,75 @@
+---
+title: "Allow named arguments in R's CLI"
+subtitle: ""
+author: "Daniel Kick"
+date: "2024-10-24"
+image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Alphabet_%281880%29_p.41.jpg"
+categories: 
+  - r
+  - cli
+  - tips
+freeze: true
+---
+
+When run on the command line, a R script can be set to accept arguments by adding to the script
+
+``` r
+args = commandArgs(trailingOnly=TRUE)
+```
+
+If we call `$ Rscript demo.R a b c` this line will create a text vector of all the arguments following script (`c('a', 'b', 'c')`).
+
+Unlike long options in Linux tools these are unnamed and must be in a fixed order. That's suboptimal for projects using a mix of tools that do expect named arguments (Some linux and python (`argparse`)) instead of purely by order. Happily, adding this functionality is simple and requires no libraries.
+
+We'll start by assuming that *only* named arguments will be passed and that all key/value pairs will be passed together[^1].
+
+[^1]: Note that the following could be extended to apply only to long options so that an odd number of long and short options would not be an issue.
+
+We'll quickly confirm that there are an even number of arguments and then can separate the odd entries into the names (e.g. `--inp_file`) and the evens into the values (e.g. `./input.txt`). The former are set as names for the latter so we now can refer to argments by name rather than index. 
+
+``` r
+args = commandArgs(trailingOnly=TRUE)
+
+# confirm we have even arguments
+stopifnot((length(args) %% 2) == 0)
+
+args_names  <- args[seq(1, length(args), 2)]
+args_values <- args[seq(2, length(args), 2)]
+names(args_values) <- args_names
+args <- args_values
+```
+
+If we want to get even fancier, we can write a quick function to allow for default values. Since the arguments are named we'll pass them through `as.character()` to match the default values (alternately we could name the defaults). All arguments are provided as strings so we can coerce them to the desired data type where needed. 
+
+
+``` r
+# apply defaults if applicable
+get_arg <- function(args, key, default){
+    if(key %in% names(args)){
+        # return value without name
+        out <- as.character(args[key])
+    } else {
+        out <- default
+    }
+    return(out)
+}
+
+inp_file <- get_arg(args, key='--inp_file', './input.txt')
+
+max_iter <- get_arg(args, key='--max_iter', '10') |> as.integer()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

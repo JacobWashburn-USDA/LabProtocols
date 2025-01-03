@@ -9,6 +9,7 @@ categories:
   - python
   - beginner
 freeze: true
+draft: true
 ---
 
 <!-- ```{python} -->
