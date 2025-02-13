@@ -203,235 +203,221 @@
     "text": "Daniel Kick"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html",
-    "title": "Deep Learning Discussion: The Bigram Language Model",
+    "objectID": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html",
+    "title": "Spring Session: Preparation and Schedule",
     "section": "",
-    "text": "Explore the Bigram Model – Try to improve on the Bigram model we wrote this week. How much is performance influenced by…\n\nOptimizer choice?\nLearning rate?\nNumber and size of hidden layers?\nBatch size?\nRandomness of training set\n…\n\nNext session we will be discussing attention and transformers. For next session:\n\nGet an introduction to transormers and attention with Grant Sanderson’s But what is a GTP 0h27 and Visualizing Attention 0h26.\nThen work through Generatively Pretrained Transformer 1h56 following along in a notebook.\nFinally (optionally) watch How might LLMs store facts 0h22."
+    "text": "Hello and welcome to our deep learning spring session! We are iterating on the material we discussed over the during the fall with an eye towards application, logistical details, and when you might select a neural network rather than another model. If someone has directed you to this page and you’d like to be added to the mailing list, please get in touch with us."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#for-next-session",
-    "href": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#for-next-session",
-    "title": "Deep Learning Discussion: The Bigram Language Model",
+    "objectID": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#welcome",
+    "href": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#welcome",
+    "title": "Spring Session: Preparation and Schedule",
     "section": "",
-    "text": "Explore the Bigram Model – Try to improve on the Bigram model we wrote this week. How much is performance influenced by…\n\nOptimizer choice?\nLearning rate?\nNumber and size of hidden layers?\nBatch size?\nRandomness of training set\n…\n\nNext session we will be discussing attention and transformers. For next session:\n\nGet an introduction to transormers and attention with Grant Sanderson’s But what is a GTP 0h27 and Visualizing Attention 0h26.\nThen work through Generatively Pretrained Transformer 1h56 following along in a notebook.\nFinally (optionally) watch How might LLMs store facts 0h22."
+    "text": "Hello and welcome to our deep learning spring session! We are iterating on the material we discussed over the during the fall with an eye towards application, logistical details, and when you might select a neural network rather than another model. If someone has directed you to this page and you’d like to be added to the mailing list, please get in touch with us."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#materials",
-    "href": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#materials",
-    "title": "Deep Learning Discussion: The Bigram Language Model",
-    "section": "Materials",
-    "text": "Materials\n\nHere is the notebook we finished writing today (Demo Notebook Part 2)."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html",
-    "title": "Deep Learning Discussion: Backpropagaton",
-    "section": "",
-    "text": "Next week will be a “catch-up” session since the backpropagation material is critical for understanding how networks are optimized and takes a fair bit of time to work through.\nTime permitting we may introduce the bigram model or dig deeper into dataloaders depending on the length of the discussion next week."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#for-next-week",
-    "href": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#for-next-week",
-    "title": "Deep Learning Discussion: Backpropagaton",
-    "section": "",
-    "text": "Next week will be a “catch-up” session since the backpropagation material is critical for understanding how networks are optimized and takes a fair bit of time to work through.\nTime permitting we may introduce the bigram model or dig deeper into dataloaders depending on the length of the discussion next week."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#materials",
-    "href": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#materials",
-    "title": "Deep Learning Discussion: Backpropagaton",
-    "section": "Materials",
-    "text": "Materials\n\nHere is the notebook I wrote during our meeting today (Demo Notebook) showing how how gradients are tracked in PyTorch and how to create a small multilayer perceptron (MLP)."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html",
-    "title": "Python 2: Python Fundamentals",
-    "section": "",
-    "text": "The presentation slides can be found here.\nIf you do not have access to the video please contact Daniel."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html#materials",
-    "href": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html#materials",
-    "title": "Python 2: Python Fundamentals",
-    "section": "Materials",
-    "text": "Materials\nThe files for today are provided here:\n\npython_fundamentals_worksheet.tar \npython_fundamentals.tar\n\nIf you can’t open the zipped files, download these files, changing the extension of the worksheet and solutions from .txt to .ipynb.\n\npython_fundamentals_worksheet.txt \npython_fundamentals.txt"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html",
-    "title": "Fall Session: Preparation and Schedule",
-    "section": "",
-    "text": "Edit: 9/26 Added to Schedule resources for\nEdit: 11/12 Updated schedule due to members conference/symposium and holiday travel."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#welcome",
-    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#welcome",
-    "title": "Fall Session: Preparation and Schedule",
-    "section": "Welcome!",
-    "text": "Welcome!\nHello and welcome to our deep learning fall session! We are (re)iterating on the material we discussed over the summer so if this is the first time you’re joining us don’t worry about reading back through the older posts. If someone has directed you to this page and you’d like to be added to the mailing list, please get in touch with us."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-to-expect",
-    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-to-expect",
-    "title": "Fall Session: Preparation and Schedule",
-    "section": "What to Expect",
-    "text": "What to Expect\nWe’ll be using python to go work from derivatives to generatively pretrained transformer models. Along the way we’ll talk about…\n\nWhat deep learning models do\nHow deep learning models are trained\nArchitectural decisions to improve performance\nTools used for model development and refinement\n\nAlong the way we’ll also talk a fair bit about python, the logistical challenges that surround model training, and some of the ways models can learn the wrong things.\nWe’re interested in building understanding and intuition so as to avoid cases where you only think your model is working well. We’re going to encourage twin prescriptions of skepticism and caution in working with models. Instead of “move fast and break things” think “move slow and build things”."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-expect",
-    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-expect",
-    "title": "Fall Session: Preparation and Schedule",
-    "section": "What We Expect",
-    "text": "What We Expect\nWe recommend viewing this group not as a class but a convening of autodidactic learners. Initially we’ll have a presentations coving foundational topics which will give way to open discussions. Having a list of thoughts and questions will be valuable to make the most of these sessions.\nSince it’s really hard to train models on paper, we expect folks to be writing (and debugging) code. We recommend budgeting time for the videos and writing exploratory code on your own. It can be useful to write the code featured in the videos in parallel with them, which may substantially increase the amount of time the materi\nal requires (and one’s comfort and fluency with these topics). Futher, applying or extending what you have seen to small data sets is a great way to solidify understanding.\nFinally, we recommend identifying at least one peer that you can partner with. Explaining a new concept is a great way to solidify your understanding and having someone you can ask for a fresh perspective from is hugely useful. Although we’re interested in technical knowledge, we also want to increase connections between labs and the folks in them.\nIn summary:\n\nKeep an eye on the upcoming materials\nWrite code, make mistakes, debug code\nMake friends, ask for help, and teach others"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-have-planned",
-    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-have-planned",
-    "title": "Fall Session: Preparation and Schedule",
+    "objectID": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#what-we-have-planned",
+    "href": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#what-we-have-planned",
+    "title": "Spring Session: Preparation and Schedule",
     "section": "What We Have Planned",
-    "text": "What We Have Planned\nBelow is our “working draft” for the fall. Based on feedback from the summer session we’re beginning with python so doesn’t add friction when we use it to build models. We may also make a few additions to these topics (such as working with images, sequences, or modeling distrbutions) or add presentations on folks planned or ongoing projects to talk about how these model go from the classroom to the lab.\n\n\n\n\n\nMonth\nDay\nBefore\nSession\nAfter\nDeep.Dive\n\n\n\n\nSept.\n17\n\n\n\n\n\n\nSept.\n24\nPre-Meeting Setup\nPython: Application\n\n\n\n\nOct.\n1\n\nPython: Fundamentals\n\n\n\n\nOct.\n8\n\nPython: Functions and Classes\n\n\n\n\nOct.\n15\n\nDeep Learning Overview\nTo Deliver You From the Preliminary Terrors, The Intuitive Notion of the Chain Rule, What is a Neural Network? 0h18 , Gradient descent 0h20 , Analyzing our neural network\n\n\n\nOct.\n22\nWhat is backpropagation really doing? 0h12 , Backpropagation calculus 0h10, Backpropagation 2h25\nDiscussion\n\n\n\n\nOct.\n29\nBackpropagation Cont.\nDiscussion\n\n\n\n\nNov.\n5\nBigram Language Model 1h57\nDiscussion\n\n\n\n\nNov.\n12\nBigram Model Cont.\nDiscussion\n\nMultilayer Perceptron Language Model 1h15\n\n\nNov.\n19\n\nNo Session\n\nJournal Club: BatchNorm Activations + BatchNorm 1h55\n\n\nNov.\n26\n\nNo Session (Thanksgiving week)\n\nBackpropagation Deep Dive 1h55\n\n\nDec.\n3\nBut what is a GTP 0h27, Visualizing Attention 0h26 , Generatively Pretrained Transformer 1h56\nDiscussion\nHow might LLMs store facts 0h22\nWaveNet 0h56\n\n\nDec.\n10\nTransformers Cont.\nDiscussion\n\n\n\n\nDec.\n17"
+    "text": "What We Have Planned\nBelow is our “working draft” for the spring. Based on the feedback survey we’re focusing more on application and less on theory. This means that it will be important to have a good grasp on python’s fundamentals, so you may wish to review the recording of Daniel’s introduction lecture from the fall. Here is a tentative schedule\n\n\n\n\n\nMonth\nDay\nSession\nDeep.Dive\n\n\n\n\nFeb.\n11\nDiscussing the schedule & environmental setup\n\n\n\nFeb.\n18\nData preparation, Model API, Discuss tuning and experiment tracking\n\n\n\nFeb.\n25\nIntro. models for language and regression tasks\n\n\n\nMar.\n4\nNo Session (Maize Meeting)\n\n\n\nMar.\n11\nDiscussion: Learning Projects Planning\n\n\n\nMar.\n18\n\n\n\n\nMar.\n25\nImplementing a transformer (1/2)\nBut what is a GTP 0h27, Visualizing Attention 0h26 , Generatively Pretrained Transformer 1h56 , How might LLMs store facts 0h22\n\n\nMar.\n30\n\n\n\n\nApr.\n8\nImplementing a transformer (2/2)\n\n\n\nApr.\n15\n\n\n\n\nApr.\n22\nPresentation: Learning Project Results\n\n\n\nApr.\n29"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#preparing-for-the-first-session",
-    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#preparing-for-the-first-session",
-    "title": "Fall Session: Preparation and Schedule",
-    "section": "Preparing for the First Session:",
-    "text": "Preparing for the First Session:\nTo get started you’ll want to have installed python and a way to edit jupyter notebooks1.\nFor Python I recommend installing Anaconda if you’re on Windows and micromamba if you’re on Linux. For help installing Anaconda, see this link.\nAlthough not strictly necessary I also recommend installing Visual Studio Code and Microsoft’s Live Share plugin. The former provides a nice editor for notebooks and the latter a way to collaboratively edit a code (think “google docs for code” or Teletype)."
+    "objectID": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#logistical-notes",
+    "href": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#logistical-notes",
+    "title": "Spring Session: Preparation and Schedule",
+    "section": "Logistical Notes",
+    "text": "Logistical Notes\nTo focus on application and allow for easier re-use of materials there is now a repository on github for our group: dlcp2025. This repository will hold classes, small datasets, environment files and the like and will be updated as we go.\nTo ensure that the code we write together runs on everyone’s computer we’re recommending the following set of tools. You’re welcome to use a different set, but we may not be able to help if you run into issues.\n\nVisual Studio Code - A common IDE that works well with the Windows subsytem for linux and remote machines)\nMicrosoft’s Live Share plugin - Provides a way to collaboratively edit a code (think “google docs for code” or Teletype).\nA linux / *nix shell - If on windows, use the WSL. If on OSX use the built in terminal.\nuv - A fast python package manager. This will take care of enviroment creation and management.\n\nIf you have a conda/mamba enviroment that you already are using for deep learning, you’re welcome to use that as well. However you will likely need to make additions to it as we add tools beyond torch for experiment tracking and hyperparameter tuning."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#footnotes",
-    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#footnotes",
-    "title": "Fall Session: Preparation and Schedule",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThese behave similarly to R markdown / Quarto files for those coming from the R ecosystem.↩︎"
+    "objectID": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#setup",
+    "href": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#setup",
+    "title": "Spring Session: Preparation and Schedule",
+    "section": "Setup:",
+    "text": "Setup:\nAssuming you have the recommended tools, start by cloning the shared repository to your local machine. You can do this from the *nix shell or through GitHub desktop.\nOnce downloaded you should see at minimum .toml file and a .lock file. These are the files that uv will use to build the virtual enviroment for us.\n$cd ./path/to/GitHub/directory\n$git clone https://github.com/DanielKick-USDA/dlcp2025.git\n$cd dlcp2025/\n$ ls\npyproject.toml  uv.lock\nIf you saved the repository outside the WSL filesystem (e.g. in Documents) you’ll need to make a note of where it is. Windows directories are accessible like so: /mnt/c/Users/YOUR.USER.NAME/GitHub/dlcp2025/. You might consider creating a symbolic link in your linux home that points to this folder (see Tip: Make your life easier with Symbolic Links in WSL)\nNow run uv sync. This will set up the environment. It may take a few minutes (4m 37s on my machine). You’ll see something like this:\n$ uv sync\nUsing CPython 3.11.11\nCreating virtual environment at: .venv\nResolved 151 packages in 15ms\n░░░░░░░░░░░░░░░░░░░░ [0/146] Installing wheels...                                                                       warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.\n         If the cache and target directories are on different filesystems, hardlinking may not be supported.\n         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.\n██████████████████░░ [136/146] scikit-learn==1.6.1\nWe can list hidden files to confirm we now have a .venv (with our virtual environment)\n$ ls -a\n.  ..  .git  .venv  pyproject.toml  uv.lock\nBecause we’re installing a good number of deep learning and machine learning tooling, this .venv directory will be sizable.\n$ du -h -d 1\n116K    ./.git\n5.3G    ./.venv\n5.3G    ."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html",
-    "title": "Meeting 5",
+    "objectID": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#using-a-.venv-with-vscode",
+    "href": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#using-a-.venv-with-vscode",
+    "title": "Spring Session: Preparation and Schedule",
+    "section": "Using a .venv with vscode",
+    "text": "Using a .venv with vscode\nTo use our uv virtual env we need to first connect to the WSL. Windows treats this like we’re connecting to a remote machine. Click on the connection tile…\n\nThen select “Connect to WSL”.\n\nSelect File -&gt; Open Folder and navigate to your repository (this should be easy if you created a symbolic link as mentioned above. After selecting the the dlcp2025 folder you should see at least the .venv folder and uv’s lock and toml files.\n\nHere we’re looking at a new notebook. On the left you’ll note a “Select Kernel” button. When you click it the drop down in the middle will open. VSCode will likely recognize and suggest the virtual environment and suggest it. Select “.venv”. You should now be set.\nOne quirk to be aware of is that on WSL the first cell you run in a notebook may take many seconds to complete. This is normal and should not be the case for subsequent cells."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#meeting-notes",
+    "href": "posts/DeepLearningCommunityofPractice/250211_Spring_Preparation/index.html#meeting-notes",
+    "title": "Spring Session: Preparation and Schedule",
+    "section": "Meeting Notes",
+    "text": "Meeting Notes\n\nThe slides from today can be found here."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html",
+    "title": "Deep Learning Discussion: The Bigram Language Model",
     "section": "",
-    "text": "This supplementary presentation from this week can be found here.\n\nLogistics\n\nWe’re running a new scheduling poll for the fall since we have members whose schedule may change with the new semester.\nBecause of this, our next meeting will be on the 20th and the one after that will be TBD.\n\nMLP in PyTorch\n\nWe discussed some of the logistics around building models in PyTorch including\nDataloaders\nMoving tensors to the GPU\nnn.Module classes"
+    "text": "Next session we will continue working with the Bigram model. Please finish the video if you are still working on it."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#recap",
-    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#recap",
-    "title": "Meeting 5",
+    "objectID": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#for-next-session",
+    "href": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#for-next-session",
+    "title": "Deep Learning Discussion: The Bigram Language Model",
     "section": "",
-    "text": "This supplementary presentation from this week can be found here.\n\nLogistics\n\nWe’re running a new scheduling poll for the fall since we have members whose schedule may change with the new semester.\nBecause of this, our next meeting will be on the 20th and the one after that will be TBD.\n\nMLP in PyTorch\n\nWe discussed some of the logistics around building models in PyTorch including\nDataloaders\nMoving tensors to the GPU\nnn.Module classes"
+    "text": "Next session we will continue working with the Bigram model. Please finish the video if you are still working on it."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#preparation-for-next-session",
-    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#preparation-for-next-session",
-    "title": "Meeting 5",
-    "section": "Preparation for Next Session",
-    "text": "Preparation for Next Session\nThe content for the next two sessions will dovetail:\nWe’re going to look at transformers next so\n\nFor next session:\n\nWatch Grant Sanderson’s Attention in transformers (26m)\nBegin Let’s build GPT (1h56)\nWe’re planning to review Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) for the folks that couldn’t be at Meeting 4. If you haven’t read it give it a read!\nDecide if you’re game to present a project or paper “show and tell” and what project you’re planning or working on that you.\n\nFor the session after that:\n\nFinish Let’s build GPT (1h56)\n\n\nCheers,\nDaniel"
+    "objectID": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#materials",
+    "title": "Deep Learning Discussion: The Bigram Language Model",
+    "section": "Materials",
+    "text": "Materials\n\nHere is the notebook I wrote during our meeting today (Demo Notebook Part 1)"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html",
-    "title": "Summer Session: Meeting 3",
+    "objectID": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html",
+    "title": "Summer Session: Kick Off Meeting",
     "section": "",
-    "text": "This week we supplemented the lecture material with supplemental sides which can be found here. Specifically we discussed common considerations for defining training and testing splits (e.g. information leakage) and several common hyperparameter tuning libraries (with an example using Ax)"
+    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nFor our next meeting on the 22nd we have an open discussion of backpropagation scheduled. The core video for this session is this one Backpropagation 2h25 in which you’ll build a computational graph and see how values flow forward through this graph to calculate a prediction and backward to calculate gradients. I recommend at minimum watching the video and ideally implementing the code in it as well.\nNote that the in the video description there are links to the notebooks that Andrej Karpathy builds during the video. I find this especially helpful for identifying errors in my code.\nPlease note what you find confusing – someone else probably finds it confusing too!"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#recap",
-    "href": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#recap",
-    "title": "Summer Session: Meeting 3",
+    "objectID": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#for-next-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#for-next-meeting",
+    "title": "Summer Session: Kick Off Meeting",
     "section": "",
-    "text": "This week we supplemented the lecture material with supplemental sides which can be found here. Specifically we discussed common considerations for defining training and testing splits (e.g. information leakage) and several common hyperparameter tuning libraries (with an example using Ax)"
+    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nFor our next meeting on the 22nd we have an open discussion of backpropagation scheduled. The core video for this session is this one Backpropagation 2h25 in which you’ll build a computational graph and see how values flow forward through this graph to calculate a prediction and backward to calculate gradients. I recommend at minimum watching the video and ideally implementing the code in it as well.\nNote that the in the video description there are links to the notebooks that Andrej Karpathy builds during the video. I find this especially helpful for identifying errors in my code.\nPlease note what you find confusing – someone else probably finds it confusing too!"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#preparation-for-next-session",
-    "href": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#preparation-for-next-session",
-    "title": "Summer Session: Meeting 3",
-    "section": "Preparation for Next Session",
-    "text": "Preparation for Next Session\nBased on our conversation we will proceed with our current materials and I’ll aim to have an implementation in a high level library so we can see how the network might look if we weren’t working from scratch.\nThe lecture for next session is on the longer side (1h55m). If there are sections that one skip for the sake of time I’ll send an email noting the timestamps for these sections early next week.\nWe also discussed presentations of everyone’s learning projects. These will likely start towards the end of July or in August (or sooner if anyone is champing at the bit!). Don’t worry about presenting on a work in progress – this may be more helpful to your peers than seeing a fully polished model.\nCheers,\nDaniel"
+    "objectID": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#materials",
+    "title": "Summer Session: Kick Off Meeting",
+    "section": "Materials",
+    "text": "Materials\n\nHere is a tiny neural network in Excel ( File). Download it and try changing the weights and biases of the layers! In practice we’ll change all the weights and biases at once, but this is nice for building intuition.\nHere are the Meeting Slides."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html",
-    "title": "Summer Session: Meeting 1",
+    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html",
+    "title": "Python 1: Data Visualization in Python",
     "section": "",
-    "text": "What are the key ideas you took from the video?\nDid you implement code from the video? How did it go?\nFor those who are beginning with python where there sticking points you encounter?\n\n“High level” class organization?\n“Low level” syntax?\nBoth?\nWould a python office hours next week be useful?\n\nHow long did you spend on the material?\n\nWas this too much for a two week period?\nWould video + take home challenge be a better pairing?"
+    "text": "Questions to Ponder:\n\nHow do you envision yourself using python and deep learing?\n\nIn the lab?\nFor personal use?\nBoth?\n\nWhat application excites you most?\n\nHow small could you make this project?\nWhen could you work on this?\n\nWhat goals will you be better prepared to achieve by learning these topics?\n\nBefore introducing deep learning we’ll ensure a basic comfort with python.\n\nTo do this we’ll start at a high level (data visualization) then introduce low level concepts.\n\n\nThe presentation slides can be found here."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#discussion",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#discussion",
-    "title": "Summer Session: Meeting 1",
+    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#recap-of-todays-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#recap-of-todays-meeting",
+    "title": "Python 1: Data Visualization in Python",
     "section": "",
-    "text": "What are the key ideas you took from the video?\nDid you implement code from the video? How did it go?\nFor those who are beginning with python where there sticking points you encounter?\n\n“High level” class organization?\n“Low level” syntax?\nBoth?\nWould a python office hours next week be useful?\n\nHow long did you spend on the material?\n\nWas this too much for a two week period?\nWould video + take home challenge be a better pairing?"
+    "text": "Questions to Ponder:\n\nHow do you envision yourself using python and deep learing?\n\nIn the lab?\nFor personal use?\nBoth?\n\nWhat application excites you most?\n\nHow small could you make this project?\nWhen could you work on this?\n\nWhat goals will you be better prepared to achieve by learning these topics?\n\nBefore introducing deep learning we’ll ensure a basic comfort with python.\n\nTo do this we’ll start at a high level (data visualization) then introduce low level concepts.\n\n\nThe presentation slides can be found here."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-main-session",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-main-session",
-    "title": "Summer Session: Meeting 1",
-    "section": "Key Ideas From Main Session:",
-    "text": "Key Ideas From Main Session:\n\nFunctions approximated by combining many non-linear functions.\nParameters of the functions nudged to decrease error.\n\n\n\n\nCredit Randall Munroe (“Machine Learning” XKCD)"
+    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#materials",
+    "title": "Python 1: Data Visualization in Python",
+    "section": "Materials",
+    "text": "Materials\nToday’s slides use data from Allison Horst’s palmerpenguins data package (see also Gorman KB, Williams TD, Fraser WR (2014) ).\nThe files for today are provided zipped together here.\nWhen unzipped you should have\n\nA dataset (penguins.csv)\nA worksheet (penguin_plotly_worksheet.ipynb)\nA set of solutions (penguin_plotly.ipynb)\n\nIf you can’t open the zipped files, download these files, changing the extension of the worksheet and solutions from .txt to .ipynb.\n\npenguins.csv\npenguin_plotly_worksheet.txt\npenguin_plotly.txt"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-homework",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-homework",
-    "title": "Summer Session: Meeting 1",
-    "section": "Key Ideas From Homework",
-    "text": "Key Ideas From Homework\n\nA computational graph allows us to track gradients through many operations\nGiven the derivative of each function in a graph we use backpropagation to determine derivative of each parameter with respect to the loss\nHaving the set of derivatives (the gradient) parameters can be nudged to reduce the loss"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#looking-forward",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#looking-forward",
-    "title": "Summer Session: Meeting 1",
-    "section": "Looking Forward:",
-    "text": "Looking Forward:\n\n\n\n\n\nflowchart TD\n    A[backpropagation]\n    B[Text encoding\\nand generation]\n    C[MLPs and logistics]\n    D[Advanced MLPs]\n    E[Advanced\\nbackpropagation]\n    F[Convolutional\\nnetworks]\n    G[Transformers]\n    \n    a(Learning Partners)\n    b(Learning Problem)\n    c(High Level Model)\n    or{or}\n    d(Low Level\\nModel)\n    e(Advanced\\nModel)\n    f(Advanced\\nInterpretation)\n    \n    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F --&gt; G\n    a --&gt; b --&gt; c --&gt; or\n    or--&gt; d\n    or--&gt; e\n    or--&gt; f\n    \n    A --- a\n    D ~~~ d\n\n\n\n\n\n\n\nThe core mechanisms of deep learning apply across types of data and tasks.\n\nTasks (outputs)\nData types and shapes (inputs)"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#core-tasks",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#core-tasks",
-    "title": "Summer Session: Meeting 1",
-    "section": "Core Tasks",
-    "text": "Core Tasks\n\nClassification - Predict a discrete value (label)\nRegression - Predict a continuous value\nDensity - How similar are different populations of observations?"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-types",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-types",
-    "title": "Summer Session: Meeting 1",
-    "section": "Data Types",
-    "text": "Data Types\nReminder: Categories of data\n\n\n\n\nCategories\nRanked\nEvenly Spaced\nNatural 0\n\n\n\n\nNominal\nX\n\n\n\n\n\nOrdinal\nX\nX\n\n\n\n\nInterval\nX\nX\nX\n\n\n\nRatio\nX\nX\nX\nX\n\n\n\n\nThink about generalized linear models to get a non-linear response we pass a linear model into a link function. (How is this similar to a neuron?)\nTo flexibly use or predict different data types we change\n\nHow data is encoded (e.g. \\(Adenine \\rightarrow [1, 0, 0, 0]\\) )\nThe number of values output\nHow loss is calculated"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-shapes",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-shapes",
-    "title": "Summer Session: Meeting 1",
-    "section": "Data Shapes",
-    "text": "Data Shapes\nDimensions of data\n\n\n\nTensor Rank\nName\nExample\nExample Dims.*\n\n\n\n\n0\nScalar\nHeight\n\n\n\n1\nVector\nHeight for several obs.\nn\n\n\n2\nMatrix\nSequence on off\nn, c\n\n\n3\nCube\nPicture (bw)\nn, h, w\n\n\n\n\nSequence of nucleotides\nn, l, c\n\n\n4\n?\nPicture (rgb)\nn, c, h, w, l\n\n\n5\n?\nVideo (rgb)\nn, c, h, w, l\n\n\n\n*order changes based on conventions"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#for-next-meeting",
-    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#for-next-meeting",
-    "title": "Summer Session: Meeting 1",
+    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#for-next-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#for-next-meeting",
+    "title": "Python 1: Data Visualization in Python",
     "section": "For Next Meeting",
-    "text": "For Next Meeting\n\nIf you are have not found a learning partner please reach out to at least one person who\n\nDoesn’t have a partner yet and\nhas a different programming comfort (the median is 3)\n\nThink about if there is a small dataset that you would enjoy working with\n\nRT-qPCR experiment?\nImages with a plant diseased/non?\nSequences of nucleotides for genes in two families?\n\nPlease watch at least the first 1h4m (strongly recommend the full 1h57) of Andrej Karpathy’s lecture here and follow along in your Jupyter Notebook."
+    "text": "For Next Meeting\nIf you have not completed the visualization exercises, do. To solidify your understanding, use data you have from a project and plot it with python!\nWhile not required, it’s recommended that you have a learning partner. Talk with folks in your lab or email someone in a different lab if you want someone to learn with!"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html",
-    "title": "Summer Session: Pre-Meeting Preparation",
+    "objectID": "posts/DeepLearningCommunityofPractice/240814_intermezzo/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240814_intermezzo/index.html",
+    "title": "Summer Session: Meeting 6 Preparation Notes",
     "section": "",
-    "text": "Hello Everyone!\nI think everyone who will fill out the survey has and it looks like Tuesdays from 11-12 fits the most people’s schedules. Our first meeting will be Tuesday May 7th at 11-12am.\nI’ve included information on preparing for the first session below and please let me know if you have any questions.\nBest, Daniel\nLogistics: I have reserved room 219a in Curtis Hall for those attending in person and there will be a videochat link in the invitation for those attending virtually. I’m looking into recording the meetings and making them internally available for anyone who can’t make it, but I can’t guarantee I’ll have this sorted.\nPreparing for our first meeting: Before we meet I would like everyone to write down your answers to the following questions.\n\nAre you interested in the low-level details of deep learning or mostly high-level application?\nWhere do you see yourself using deep learning? In the lab or for personal use?\nAfter learning these topics what goals will you be better situated to achieve?\n\nCloser to the date of I will send out some instructions on the software we’ll be using. Please follow these setup instructions.\nOur first meeting will be composed of three parts. First, I’ll give a brief introduction. Next, we’ll talk about everyone’s answers to the questions above. The goal of this is to help people with similar uses in mind and interests find each other – so over time we can grow from a learning group to a community of practice. Finally, we’ll talk about software and setup to fix any issues for the next meeting.\nFuture meetings: Beyond this first meeting we’ll have some lecture and exercises that we’ll complete in between sessions. In the sessions we’ll talk though the exercises and what people found challenging or interesting.\nThe material will initially focus on building networks from the ground up so when we start using research grade libraries how they work isn’t a black box. After a few sessions we’ll take stock and adjust course as needed."
+    "text": "Below are a few notes regarding the lecture for the next two sessions (Building a GPT).\nFirst, if you’re looking for a good break point for next week, 38m and 1h1m are good stopping points. By the first point you’ll have seen the Bigram model we worked on weeks ago remade in Pytorch and by the second you’ll have gotten a good preview of some the ideas that will be key in the second half of the video.\nSecond, there are a few potential points for confusing where Python is acting in a way that’s not necessarily intuitive. Karpathy uses a Lambda expressions to define a few functions. Lambdas are handy because they are very terse but this can make them unclear. Here I’ve written out one of these function definitions three ways from most terse to least to show what’s happening here.\n# chars is a list of the unique characters \n# ['\\n', ' ', '!', ...  'y', 'z']\n\n# We've seen a dictionary comprehension previously\n# {'\\n': 0, ' ': 1, '!': 2, ... 'y': 63, 'z': 64}\nstoi  = {s:i for i,s in enumerate(chars)}\n\n# Defining a function by naming a lambda\nencode = lambda s: [stoi[c] for c in s]\n\n# Alternate version\ndef encode1(s):\n    return [stoi[c] for c in s]\n\n# Alternate verson without the list comprehension\ndef encode2(s):\n    out = []\n    for c in s:\n        out.append(stoi[c])\n        \n# Confirm these functions are equivalent\nfor x in ['chars']:\n    print(f'{encode(x)}\\n{encode1(x)}\\n{encode2(x)}')\n\n# [41, 46, 39, 56, 57]\n# [41, 46, 39, 56, 57]\n# [41, 46, 39, 56, 57]\nLater, in the Bigram model class definition there’s a point in the method that generates new tokens (characters) that uses self(idx). What’s happening is that the default method of the class is being called. This default method is what you want to happen when you pass data to the class, so here we want to pass in some sequence and get the next entry in the sequence. We talked about pytorch nn.Module a little last week, but the key idea to know here is that the forward() method makes predictions (it does the forward pass). Thus self(idx) would be the same as writing self.forward(idx) but the former assumes more knowledge of pytorch-isms.\nclass BigramLanguageModel(nn.Module):\n    def __init__(self, vocab_size):\n        super().__init__()\n        # ...\n\n    def forward(self, idx, targets=None):\n        # ... \n    \n    def generate(self, idx, max_new_tokens):\n        for _ in range(max_new_tokens):\n            logits, loss = self(idx) # &lt;--- !\n            # ...\nFinally, there are a few points where you may want to stop and compare tensors. For me it’s easier to get a sense of what’s going on by plotting part of the tensors instead of printing them. To do this you can take a 2d slice of the tensor (below we have a 3d tensors so we’re looking at the 0th batch), convert them to numpy arrays and then plot them with plt.imshow(). When comparing two I like to either subtract them (so they’re all 0s if they’re the same) or concatenate them with a spacer and plot them together. Here is example code to do this:\nimport numpy as np\nimport matplotlib.pyplot as plt\nplt.imshow(np.concatenate([\n  x[0].numpy(),       # Slice of a tensor\n  np.zeros((T, 1))-1, # Spacer matrix of -1s\n  xbow[0].numpy()     # Slice fo a tensor\n], axis = 1))\nNow we can quickly see that the left two slices are different and the right two are equivalent."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#introduction",
-    "href": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#introduction",
-    "title": "Summer Session: Pre-Meeting Preparation",
+    "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html",
+    "title": "Summer Session: Meeting 4",
     "section": "",
-    "text": "Hello Everyone!\nI think everyone who will fill out the survey has and it looks like Tuesdays from 11-12 fits the most people’s schedules. Our first meeting will be Tuesday May 7th at 11-12am.\nI’ve included information on preparing for the first session below and please let me know if you have any questions.\nBest, Daniel\nLogistics: I have reserved room 219a in Curtis Hall for those attending in person and there will be a videochat link in the invitation for those attending virtually. I’m looking into recording the meetings and making them internally available for anyone who can’t make it, but I can’t guarantee I’ll have this sorted.\nPreparing for our first meeting: Before we meet I would like everyone to write down your answers to the following questions.\n\nAre you interested in the low-level details of deep learning or mostly high-level application?\nWhere do you see yourself using deep learning? In the lab or for personal use?\nAfter learning these topics what goals will you be better situated to achieve?\n\nCloser to the date of I will send out some instructions on the software we’ll be using. Please follow these setup instructions.\nOur first meeting will be composed of three parts. First, I’ll give a brief introduction. Next, we’ll talk about everyone’s answers to the questions above. The goal of this is to help people with similar uses in mind and interests find each other – so over time we can grow from a learning group to a community of practice. Finally, we’ll talk about software and setup to fix any issues for the next meeting.\nFuture meetings: Beyond this first meeting we’ll have some lecture and exercises that we’ll complete in between sessions. In the sessions we’ll talk though the exercises and what people found challenging or interesting.\nThe material will initially focus on building networks from the ground up so when we start using research grade libraries how they work isn’t a black box. After a few sessions we’ll take stock and adjust course as needed."
+    "text": "This supplementary presentation from this week can be found here.\n\nConnections between transforming non-normal data before fitting a linear model to batch normalization\nA motivating puzzle for learning more about the low level operations. I showed a simple MLP to output 0 given 1 or output 1 given 0. This model inconsistently learns. After learning more about backpropagation you’ll be able to easily spot why.\nFinally we discussed why Batch Norm works and the evidence in that it’s not by reducing the change in parameters from cycle to cycle (internal covariance shift “ICS”).\nIn brief in Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) the authors demonstrate:\n\nA standard model vs batch norm model has no apparent qualitative difference in ICS\nA batch norm model with ICS induced (positive control) neither trains more slowly nor is less performant than a standard model.\nDirect quantification of ICS shows it is often equal to or greater in models with batch norm\nThe range of errors is smaller in models with batch norm in conjunction with other measures this suggests that the “smoothness” of the loss landscape is altered which results in an easier optimization."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#setup-instructions",
-    "href": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#setup-instructions",
-    "title": "Summer Session: Pre-Meeting Preparation",
-    "section": "Setup Instructions",
-    "text": "Setup Instructions\nHello Everyone,\nHere are the setup instructions. It should take only a few minutes to get set up, but please go ahead and do this before our kickoff meeting next week. That way we can address any issues that arise.\nTo start out with we’ll use python through jupyter notebooks. If you’ve worked in the R ecosystem, these are similar to Rmarkdown or quarto documents that let you mix notes and equations in with your code. There are two options you can use. The easiest is to use “Google Collab” which will take care of the setup for you. The hardware your notebook will not be especially powerful but that is perfectly fine for starting out.\nOption 1: • Create a google account if you don’t have one. • Keep this url handy for next week https://colab.research.google.com/ Option 2: • Install Anaconda https://docs.anaconda.com/free/anaconda/install/ or miniconda https://docs.anaconda.com/free/miniconda/index.html • Using either the graphical interface or the command line https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html# create an environment and ensure that at least Jupiter is installed https://anaconda.org/anaconda/jupyter\nAssuming you opt for option 2 with the graphical user interface, select environments\n\nNext select create\n\nSelect python and choose a name for your environment. (Don’t worry about the version of python just now, we’ll change it when or if it becomes an issue)\n\nNow we need to install jupyter notebook. By default anaconda displays the installed packages so we’ll need to switch to all or uninstalled before searching for it. Find it, check the box and press apply below.\n\nYou may see a pop up requesting that you install notebook’s dependencies.\n\nAfter the installation if finished now you can right click on the play symbol and launch a jupyter notebook.\n\nThis should automatically launch in your default browser."
+    "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#recap",
+    "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#recap",
+    "title": "Summer Session: Meeting 4",
+    "section": "",
+    "text": "This supplementary presentation from this week can be found here.\n\nConnections between transforming non-normal data before fitting a linear model to batch normalization\nA motivating puzzle for learning more about the low level operations. I showed a simple MLP to output 0 given 1 or output 1 given 0. This model inconsistently learns. After learning more about backpropagation you’ll be able to easily spot why.\nFinally we discussed why Batch Norm works and the evidence in that it’s not by reducing the change in parameters from cycle to cycle (internal covariance shift “ICS”).\nIn brief in Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) the authors demonstrate:\n\nA standard model vs batch norm model has no apparent qualitative difference in ICS\nA batch norm model with ICS induced (positive control) neither trains more slowly nor is less performant than a standard model.\nDirect quantification of ICS shows it is often equal to or greater in models with batch norm\nThe range of errors is smaller in models with batch norm in conjunction with other measures this suggests that the “smoothness” of the loss landscape is altered which results in an easier optimization."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#preparation-for-next-session",
+    "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#preparation-for-next-session",
+    "title": "Summer Session: Meeting 4",
+    "section": "Preparation for Next Session",
+    "text": "Preparation for Next Session\nBy request we’re going to pause so that everyone can catch up to the current lecture. We’ll not meet in two weeks but will have Python office hours on Tuesdays so long as at least one person requests them.\nFor next session (tentatively slated for July 30) there are two options:\n\nIf you’re interested predominantly in high level application work through this video on Wavenet.\nIf you’re also interested in the low level work through this video on revisiting backpropagation and then Wavenet.\n\nPlease note that the material on backpropagation is dense. To help visualize the network I have made a diagram of all the tensors in the network here. I recommend printing a copy of it and annotating it with the backward pass. Personally I find the graphical representation to complement to the code nicely.\n\n\nCheers,\nDaniel"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html",
+    "title": "Summer Session: Meeting 2",
+    "section": "",
+    "text": "A bigram model predicts the next letter given a letter\n\nThis can be though of as modeling the transition probabilities\n\nDifferent approaches to learn parameters\n\nNormalized counts\nOptimization"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#key-ideas-from-the-last-session",
+    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#key-ideas-from-the-last-session",
+    "title": "Summer Session: Meeting 2",
+    "section": "",
+    "text": "A bigram model predicts the next letter given a letter\n\nThis can be though of as modeling the transition probabilities\n\nDifferent approaches to learn parameters\n\nNormalized counts\nOptimization"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#connections-to-biology",
+    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#connections-to-biology",
+    "title": "Summer Session: Meeting 2",
+    "section": "Connections to Biology:",
+    "text": "Connections to Biology:\nWe can think of the bigram probability matrix as a graph where the edges between nodes are the likelihood of moving from one state (here letter) to another.\n\n\n\n\n\n\n\nG\n\n\n\nstart\n\nstart\n\n\n\na\n\na\n\n\n\nstart-&gt;a\n\n\n.5\n\n\n\nb\n\nb\n\n\n\nstart-&gt;b\n\n\n.5\n\n\n\na-&gt;a\n\n\n.1\n\n\n\na-&gt;b\n\n\n.7\n\n\n\nend\n\nend\n\n\n\na-&gt;end\n\n\n.2\n\n\n\nb-&gt;a\n\n\n.3\n\n\n\nb-&gt;b\n\n\n.2\n\n\n\nb-&gt;end\n\n\n.5\n\n\n\n\n\n\n\n\nThrough optimization we can estimate these probabilities of moving between states.\nWe have plenty of these sort of state graphs in biology. We might think about the SIR model in epidemiology.\n\n\n\n\n\n\n\nG\n\n\n\nSusceptible\n\nSusceptible\n\n\n\nInfected\n\nInfected\n\n\n\nSusceptible-&gt;Infected\n\n\n\n\n\nRecovered\n\nRecovered\n\n\n\nInfected-&gt;Recovered\n\n\n\n\n\nRecovered-&gt;Susceptible\n\n\n\n\n\nRecovered-&gt;Recovered\n\n\n\n\n\n\n\n\n\n\nOr we might think about a region of DNA switching between introns and exons.\n\n\n\n\n\n\n\nG\n\n\n\nExon\n\nExon\n\n\n\nExon-&gt;Exon\n\n\n\n\n\nIntron\n\nIntron\n\n\n\nExon-&gt;Intron\n\n\n\n\n\nIntron-&gt;Exon\n\n\n\n\n\nIntron-&gt;Intron\n\n\n\n\n\n\n\n\n\n\nWhile ideas may “rhyme” with bigram models it’s not a perfect match. This sort of model would be more commonly represented as a hidden markov models (e.g. hmmer). That being said, we could build a bigram model using nucleotides or amino acids in the same way that we’re using characters."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#next-session-multilevel-perceptrons-logistics",
+    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#next-session-multilevel-perceptrons-logistics",
+    "title": "Summer Session: Meeting 2",
+    "section": "Next Session: Multilevel Perceptrons + Logistics",
+    "text": "Next Session: Multilevel Perceptrons + Logistics\nThe lecture for next session is great. It implements the generative model using Multilevel perceptrons (aka “fully connected” or “dense” networks). It also introduces topics that are useful from theory to practice such as how to select optimizer learning rates.\nFor next session please:\n\nWork through all of this Lecture (1h15m).\nIdentify a dataset and problem for your learning project (more below).\nFind a learning partner if you have not and want one (you can but don’t need to work on a learning project together)."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#reminder-learning-projects",
+    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#reminder-learning-projects",
+    "title": "Summer Session: Meeting 2",
+    "section": "Reminder: Learning Projects",
+    "text": "Reminder: Learning Projects\nPutting the ideas we’ve seen into practice will aid your understanding and recall. Previously we discussed this workflow as a way to think about your learning project.\n\n\n\n\n\nflowchart LR\n    a(Learning\\nPartners)\n    b(Learning\\nProblem)\n    c(High Level\\nModel)\n    or{or}\n    d(Low Level\\nModel)\n    e(Advanced\\nModel)\n    f(Advanced\\nInterpretation)\n    \n    a --&gt; b --&gt; c --&gt; or\n    or--&gt; d\n    or--&gt; e\n    or--&gt; f\n\n\n\n\n\n\nI recommend beginning by identifying the dataset or datasets that you’d like to use.\n\nLook for a dataset that is\n\nInteresting or evocative\nSmall (for fast iteration and so we can start building models without a gpu)\nFamiliar (to make it easy to start)\nSimilar ‘shape’ to data you’d like to use in the future\n\n\nIf you have research data that you would like to use consider using a subset to begin with. If you have genomic data, perhaps you use 3 genotypes and 1000 SNPs to start off with. Of if you want to work with hyperspectral images maybe you begin with a single channel and low resolution. After you are comfortable with this reduced data you can take what you’ve learned and apply it to the larger dataset.\nAfter you’ve chosen a dataset you’ll need to select a task to complete. These tend to fall into the categories of classification, regression, and distribution modeling. You should also consider if you want your model to be generative. For many scientific applications we don’t but that shouldn’t limit your imagination!\nFor example let’s say I have a small dataset of mRNA abundances for a few (&lt;200) cells of several cell types. I could try to predict cell type from mRNA counts (classification). Instead I might try to predict some mRNA abundance from other mRNAs’ abundances (regression). Or I could try to detect outliers or measure how dissimilar different cell types are (distribution modeling). With this last approach I could try to produce new observations of mRNA abundances given a cell type1 (generative).\n\nAlternative: Implement a different model using torch\nSince neural networks implement linear operations followed by a non-linear transformation you could try…\n\nImplementing a generalized linear model\nBuilding about a really big linear model\nFitting a linear model with a loss function other than mean squared error\n…"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#footnotes",
+    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#footnotes",
+    "title": "Summer Session: Meeting 2",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSampling in a cell type’s region of latent space↩︎"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html",
+    "title": "Summer Session: Kick Off Meeting",
+    "section": "",
+    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nPlease watch at least the first 1h22m of Andrej Karpathy’s lecture here and try to follow along in your Jupyter Notebook.\nPlease note what you find confusing – someone else probably finds it confusing too!\nReminder: For this you’ll need to install numpy, matplotlib, graphviz, and pytorch.\n\nIf you’re using conda you may need to install graphviz using pip. You can do this from your notebook by typing the command !pip install graphviz. The leading ! will cause this to be treated as a shell command rather than a python command.\nnumpy conda pip\nmatplotlib conda pip\ngraphviz conda pip\npytorch Install Instructions"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#for-next-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#for-next-meeting",
+    "title": "Summer Session: Kick Off Meeting",
+    "section": "",
+    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nPlease watch at least the first 1h22m of Andrej Karpathy’s lecture here and try to follow along in your Jupyter Notebook.\nPlease note what you find confusing – someone else probably finds it confusing too!\nReminder: For this you’ll need to install numpy, matplotlib, graphviz, and pytorch.\n\nIf you’re using conda you may need to install graphviz using pip. You can do this from your notebook by typing the command !pip install graphviz. The leading ! will cause this to be treated as a shell command rather than a python command.\nnumpy conda pip\nmatplotlib conda pip\ngraphviz conda pip\npytorch Install Instructions"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#materials",
+    "title": "Summer Session: Kick Off Meeting",
+    "section": "Materials",
+    "text": "Materials\n\nHere is a tiny neural network in Excel ( File). Download it and try changing the weights and biases of the layers! In practice we’ll change all the weights and biases at once, but this is nice for building intuition.\nHere are the Meeting Slides."
+  },
+  {
+    "objectID": "posts/DanielKick/index.html",
+    "href": "posts/DanielKick/index.html",
+    "title": "Writings",
+    "section": "",
+    "text": "Sharing n-dimensional data between Python and R\n\n\n\npython\n\n\nr\n\n\nnumpy\n\n\narrays\n\n\ntips\n\n\nparquet\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAllow named arguments in R’s CLI\n\n\n\nr\n\n\ncli\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL Strikes Back\n\n\n\nsql\n\n\npostgres\n\n\nparquet\n\n\nintermediate\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRunning GWAS en masse.\n\n\n\ncode\n\n\nbash\n\n\nHPC\n\n\nSLURM\n\n\nintermediate\n\n\nGWAS\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip: Make your life easier with Symbolic Links in WSL\n\n\n\nbash\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuilding a GWAS Container\n\n\n\ncode\n\n\nr\n\n\nbash\n\n\nintermediate\n\n\ncontainers\n\n\nGWAS\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuick Tip: Write notebooks, run scripts\n\n\n\nbeginner\n\n\ncode\n\n\nbash\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip: Use R to create an email nudge\n\n\n\ncode\n\n\nr\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGo Read About R’s Function Call Semantics\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorse is better case study 1\n\n\n\nbeginner\n\n\ncode\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorse is better and not doing things “right”\n\n\n\ntacit knowledge\n\n\nbeginner\n\n\nintermediate\n\n\ncode\n\n\ndeep learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse a spreadsheet to manage your CV & Resume\n\n\n\nprofessional development\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation as a Super Power\n\n\n\ncode\n\n\nintermediate\n\n\nensembling\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 21, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolving the Wrong Problem\n\n\n\ncode\n\n\ndebugging\n\n\ntacit knowledge\n\n\nintermediate\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nMaking a “Visible” Neural Network\n\n\n\ncode\n\n\nadvanced\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSave only what you need\n\n\n\ncode\n\n\ndebugging\n\n\ntacit knowledge\n\n\nbeginner\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCapturing Tacit Knowledge Through Blogging\n\n\n\ntacit knowledge\n\n\nbeginner\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Do-nothing Scripting in Bash\n\n\n\ncode\n\n\nbash\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 24, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Comment is a Comment.\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrivia: R can have Comments in Tables\n\n\n\ncode\n\n\nr\n\n\nintermediate\n\n\ntips\n\n\ntrivia\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Open a new Interactive Session in Running Session\n\n\n\ncode\n\n\nhpc\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrivia: In Python Missing Isn’t Equal to Itself\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\ntrivia\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 28, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot and the invisible hex code.\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 31, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Cache Intermediate Results with pickle\n\n\n\ncode\n\n\npython\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 23, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: For those coming from R: Silent In Place Replacement\n\n\n\ncode\n\n\npython\n\n\nr\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 16, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApproximate String Matching\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 7, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Reusing Custom Functions\n\n\n\ncode\n\n\npython\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 13, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: More Readable Data with pretty-print\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 21, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Find the Graph you want in using a Graph Gallery\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 15, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Jupyter Plugins\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 9, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Simulations to Check Your Statistical Intuition\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nsimulation\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 23, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot Reordering a Discrete Axis\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 11, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot: Parsing Expressions\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 9, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot tips: markdown for italics in plots and adding breaks to color scaling\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 5, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorkaround for Plotting Dendrograms\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ndendrograms\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 21, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThought Experiment: Comparing Replicate Experiments’ Conclusions\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\nresampling\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 3, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot frienndly corrlation plots with ggcorrplot\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\ncorrelations\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 2, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot font customization\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 22, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling Local Libraries Post Update\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 18, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagrams as code\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nmermaid\n\n\ngraphviz\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 9, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRoman numeral convenince function\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 20, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResampling doesn’t need to be hard\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\nresampling\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 4, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaching your enviroment and why you might not want to.\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 19, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Type Matters In gganimate\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nAug 22, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDocument your functions with `roxygen2``\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 30, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReference current dataframe with .\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 28, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInformal profiling with tictoc\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 25, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nunlist is handy and you should use it\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 12, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot element_text() colors\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 5, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualize the Influence of Outliers\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpdating Results in Word from Table\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 26, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreek Letters in ggplot\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 19, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShading with geom_rect\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 19, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDon’t Ignore Your .gitignore\n\n\n\ncode\n\n\nbeginner\n\n\ngit\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 15, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCache Intermediate Results\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 12, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidyverse ’_at’ variants\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 11, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyntax Tours: learnxinyminutes\n\n\n\ncode\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 11, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot: Beware of Factors!\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpgrading R versions on Windows\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 4, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApply a theme to all your ggplots\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 21, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClearing all but certain objects\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 20, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParallel Processing for purrr with furrr\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 10, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLoading R functions from source\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 1, 2020\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/DanielKick/241115_r_cli_named_args/index.html",
@@ -1229,7 +1215,7 @@
     "href": "posts/DanielKick/240905_postgres_via_parquet/index.html",
     "title": "SQL Strikes Back",
     "section": "",
-    "text": "For those that want to jump straight to the resources here are the files discussed below:\nPreviouslyI generated an absolute boat load of simulated data for modeling. Even after taking steps to remove unneeded values1 and storing as a file type with compression (parquet) the full set is still a whopping 285G.\nWe have several competing goods here that we’d like to balance. Ideally the data would be\nAs detailed in “Worse is better case study 2” our current solution sacrifices availability of all the data and (initially) query speed to get a set that fits in memory and can be moved to an HPC. Ultimately, we want to add new simulated results to this set while training which isn’t possible.\nThe solution of course is to bite the bullet and set up a database then write a new dataloader to get minibatches from the database. This means we’ll be moving batches on/off the gpu but we can access any records and need not read in files over and over."
+    "text": "For additional context please see Part 1 Part 2\nFor those that want to jump straight to the resources here are the files discussed below:\nPreviously I generated an absolute boat load of simulated data for modeling. Even after taking steps to remove unneeded values and storing as a file type with compression (parquet) the full set is still a whopping 285G.\nWe have several competing goods here that we’d like to balance. Ideally the data would be\nAs detailed in “Worse is better case study 2” our current solution sacrifices availability of all the data and (initially) query speed to get a set that fits in memory and can be moved to an HPC. Ultimately, we want to add new simulated results to this set while training which isn’t possible.\nThe solution of course is to bite the bullet and set up a database then write a new dataloader to get minibatches from the database. This means we’ll be moving batches on/off the gpu but we can access any records and need not read in files over and over."
   },
   {
     "objectID": "posts/DanielKick/240905_postgres_via_parquet/index.html#the-plan",
@@ -1243,7 +1229,7 @@
     "href": "posts/DanielKick/240905_postgres_via_parquet/index.html#learning-postgresql-on-the-way-down",
     "title": "SQL Strikes Back",
     "section": "Learning PostgreSQL On The Way Down:",
-    "text": "Learning PostgreSQL On The Way Down:\nI considered using duckdb for it’s speed and simplicity but ultimately elected to use PostgreSQL since it’s been around longer (1996) and boasts limits way beyond what I need. Please don’t take the below as best practice or even recommendations per se as this is the first non-SQLite database I’ve administered. This is just notes on the stumbling blocks I encountered. The best thing one can do is read the official PostgreSQL tutorial. Several times I searched for the solution to a problem just to find it covered a few pages later.\nInstallation (in this case on ubuntu via apt) was easy but database creation takes some doing. PostgreSQL defines accounts that are separate from the host system. This includes a special account postgres with root permisions that is initially available. Using sudo -u postgres &lt;cmd&gt; one can run commands as if this account existed on the host machine.\nWe use this account to create the database and then login as root.\nsudo -u postgres createdb apsimxsim\nsudo -u postgres psql\nNext we create a non-root account and provide permissions2 for the apsimxsim database and public schema.\npostgres=# CREATE ROLE loremipsum LOGIN PASSWORD 'TotallyRealPassword';\nCREATE ROLE\npostgres=# ALTER ROLE loremipsum CREATEDB;\nALTER ROLE\npostgres=# GRANT ALL PRIVILEGES ON DATABASE apsimxsim TO loremipsum;\nGRANT\napsimxsim=# GRANT ALL ON SCHEMA public TO loremipsum;\nGRANT\nWe can check permissions using \\du (note that psql specific commands begin with \\ e.g., \\q).\npostgres=# \\du\n                             List of roles\n Role name |                         Attributes\n-----------+------------------------------------------------------------\n loremipsum     | Create DB\n postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS\nWe’re not done with setup yet. We also need to change the search path for the loremipsum user so we can find our tables.\n$psql apsimxsim\napsimxsim=&gt; SET search_path TO public;\nNow we should be set. We can add / drop tables from psql but we’re going to use python’s SQLAlchemy library to do most of the heavy lifting including creating these tables.\nFast forwarding a little, here’s what we’re aiming at. Ultimately the loremipsum user will own three tables with the metadata (ids, genotypes) and simulated results (results). A final quirk I’ll mention here is that it’s possible to use capitalized names but it a bit of a hasle. We’d have to select them as public.\"Ids\" instead of public.ids. For this reason we’ll standardized all table and field names using only lowercase letters and underscores.\napsimxsim=&gt; SELECT schemaname, tablename, tableowner FROM pg_tables WHERE tableowner='loremipsum';\n schemaname | tablename | tableowner\n------------+-----------+------------\n public     | ids       | loremipsum\n public     | genotypes | loremipsum\n public     | results   | loremipsum\n(3 rows)"
+    "text": "Learning PostgreSQL On The Way Down:\nI considered using duckdb for it’s speed and simplicity but ultimately elected to use PostgreSQL since it’s been around longer (1996) and boasts limits way beyond what I need. Please don’t take the below as best practice or even recommendations per se as this is the first non-SQLite database I’ve administered. This is just notes on the stumbling blocks I encountered. The best thing one can do is read the official PostgreSQL tutorial. Several times I searched for the solution to a problem just to find it covered a few pages later.\nInstallation (in this case on ubuntu via apt) was easy but database creation takes some doing. PostgreSQL defines accounts that are separate from the host system. This includes a special account postgres with root permisions that is initially available. Using sudo -u postgres &lt;cmd&gt; one can run commands as if this account existed on the host machine.\nWe use this account to create the database and then login as root.\nsudo -u postgres createdb apsimxsim\nsudo -u postgres psql\nNext we create a non-root account and provide permissions1 for the apsimxsim database and public schema.\npostgres=# CREATE ROLE loremipsum LOGIN PASSWORD 'TotallyRealPassword';\nCREATE ROLE\npostgres=# ALTER ROLE loremipsum CREATEDB;\nALTER ROLE\npostgres=# GRANT ALL PRIVILEGES ON DATABASE apsimxsim TO loremipsum;\nGRANT\napsimxsim=# GRANT ALL ON SCHEMA public TO loremipsum;\nGRANT\nWe can check permissions using \\du (note that psql specific commands begin with \\ e.g., \\q).\npostgres=# \\du\n                             List of roles\n Role name |                         Attributes\n-----------+------------------------------------------------------------\n loremipsum     | Create DB\n postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS\nWe’re not done with setup yet. We also need to change the search path for the loremipsum user so we can find our tables.\n$psql apsimxsim\napsimxsim=&gt; SET search_path TO public;\nNow we should be set. We can add / drop tables from psql but we’re going to use python’s SQLAlchemy library to do most of the heavy lifting including creating these tables.\nFast forwarding a little, here’s what we’re aiming at. Ultimately the loremipsum user will own three tables with the metadata (ids, genotypes) and simulated results (results). A final quirk I’ll mention here is that it’s possible to use capitalized names but it a bit of a hasle. We’d have to select them as public.\"Ids\" instead of public.ids. For this reason we’ll standardized all table and field names using only lowercase letters and underscores.\napsimxsim=&gt; SELECT schemaname, tablename, tableowner FROM pg_tables WHERE tableowner='loremipsum';\n schemaname | tablename | tableowner\n------------+-----------+------------\n public     | ids       | loremipsum\n public     | genotypes | loremipsum\n public     | results   | loremipsum\n(3 rows)"
   },
   {
     "objectID": "posts/DanielKick/240905_postgres_via_parquet/index.html#starting-with-the-end-in-mind",
@@ -1278,7 +1264,7 @@
     "href": "posts/DanielKick/240905_postgres_via_parquet/index.html#footnotes",
     "title": "SQL Strikes Back",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nSee “Save only what you need”↩︎\nSee also: https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4↩︎"
+    "text": "Footnotes\n\n\nSee also: https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4↩︎"
   },
   {
     "objectID": "posts/DanielKick/241024_n_dim_arrays_R_v_np/index.html",
@@ -1330,179 +1316,242 @@
     "text": "Footnotes\n\n\nOnce I split a file with genomes into several thousand files just to minimize what had to be read in.↩︎"
   },
   {
-    "objectID": "posts/DanielKick/index.html",
-    "href": "posts/DanielKick/index.html",
-    "title": "Writings",
+    "objectID": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html",
+    "title": "Summer Session: Pre-Meeting Preparation",
     "section": "",
-    "text": "Sharing n-dimensional data between Python and R\n\n\n\npython\n\n\nr\n\n\nnumpy\n\n\narrays\n\n\ntips\n\n\nparquet\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAllow named arguments in R’s CLI\n\n\n\nr\n\n\ncli\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSQL Strikes Back\n\n\n\nsql\n\n\npostgres\n\n\nparquet\n\n\nintermediate\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRunning GWAS en masse.\n\n\n\ncode\n\n\nbash\n\n\nHPC\n\n\nSLURM\n\n\nintermediate\n\n\nGWAS\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip: Make your life easier with Symbolic Links in WSL\n\n\n\nbash\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuilding a GWAS Container\n\n\n\ncode\n\n\nr\n\n\nbash\n\n\nintermediate\n\n\ncontainers\n\n\nGWAS\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuick Tip: Write notebooks, run scripts\n\n\n\nbeginner\n\n\ncode\n\n\nbash\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip: Use R to create an email nudge\n\n\n\ncode\n\n\nr\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGo Read About R’s Function Call Semantics\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorse is better case study 1\n\n\n\nbeginner\n\n\ncode\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorse is better and not doing things “right”\n\n\n\ntacit knowledge\n\n\nbeginner\n\n\nintermediate\n\n\ncode\n\n\ndeep learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUse a spreadsheet to manage your CV & Resume\n\n\n\nprofessional development\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 3, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation as a Super Power\n\n\n\ncode\n\n\nintermediate\n\n\nensembling\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 21, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolving the Wrong Problem\n\n\n\ncode\n\n\ndebugging\n\n\ntacit knowledge\n\n\nintermediate\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nMaking a “Visible” Neural Network\n\n\n\ncode\n\n\nadvanced\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 15, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSave only what you need\n\n\n\ncode\n\n\ndebugging\n\n\ntacit knowledge\n\n\nbeginner\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 13, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCapturing Tacit Knowledge Through Blogging\n\n\n\ntacit knowledge\n\n\nbeginner\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 12, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Do-nothing Scripting in Bash\n\n\n\ncode\n\n\nbash\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 24, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Comment is a Comment.\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrivia: R can have Comments in Tables\n\n\n\ncode\n\n\nr\n\n\nintermediate\n\n\ntips\n\n\ntrivia\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 23, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Open a new Interactive Session in Running Session\n\n\n\ncode\n\n\nhpc\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 27, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTrivia: In Python Missing Isn’t Equal to Itself\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\ntrivia\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 28, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot and the invisible hex code.\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 31, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Cache Intermediate Results with pickle\n\n\n\ncode\n\n\npython\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 23, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: For those coming from R: Silent In Place Replacement\n\n\n\ncode\n\n\npython\n\n\nr\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 16, 2022\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApproximate String Matching\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 7, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Reusing Custom Functions\n\n\n\ncode\n\n\npython\n\n\nintermediate\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 13, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: More Readable Data with pretty-print\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 21, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Find the Graph you want in using a Graph Gallery\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 15, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTips: Jupyter Plugins\n\n\n\ncode\n\n\npython\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 9, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsing Simulations to Check Your Statistical Intuition\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nsimulation\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 23, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot Reordering a Discrete Axis\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 11, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot: Parsing Expressions\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 9, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot tips: markdown for italics in plots and adding breaks to color scaling\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMar 5, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorkaround for Plotting Dendrograms\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ndendrograms\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 21, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThought Experiment: Comparing Replicate Experiments’ Conclusions\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\nresampling\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 3, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot frienndly corrlation plots with ggcorrplot\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\ncorrelations\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 2, 2021\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot font customization\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 22, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling Local Libraries Post Update\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 18, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiagrams as code\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nmermaid\n\n\ngraphviz\n\n\n\n\n\n\n\nDaniel Kick\n\n\nDec 9, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRoman numeral convenince function\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 20, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nResampling doesn’t need to be hard\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\nresampling\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 4, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaching your enviroment and why you might not want to.\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 19, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nData Type Matters In gganimate\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nAug 22, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDocument your functions with `roxygen2``\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 30, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReference current dataframe with .\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 28, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInformal profiling with tictoc\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 25, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nunlist is handy and you should use it\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 12, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot element_text() colors\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 5, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualize the Influence of Outliers\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpdating Results in Word from Table\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 26, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGreek Letters in ggplot\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 19, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShading with geom_rect\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\nggplot\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 19, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDon’t Ignore Your .gitignore\n\n\n\ncode\n\n\nbeginner\n\n\ngit\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 15, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCache Intermediate Results\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 12, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTidyverse ’_at’ variants\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 11, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSyntax Tours: learnxinyminutes\n\n\n\ncode\n\n\nbeginner\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 11, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot: Beware of Factors!\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUpgrading R versions on Windows\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 4, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApply a theme to all your ggplots\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 21, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClearing all but certain objects\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 20, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParallel Processing for purrr with furrr\n\n\n\ncode\n\n\nintermediate\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 10, 2020\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLoading R functions from source\n\n\n\ncode\n\n\nbeginner\n\n\nr\n\n\ntips\n\n\n\n\n\n\n\nDaniel Kick\n\n\nApr 1, 2020\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Hello Everyone!\nI think everyone who will fill out the survey has and it looks like Tuesdays from 11-12 fits the most people’s schedules. Our first meeting will be Tuesday May 7th at 11-12am.\nI’ve included information on preparing for the first session below and please let me know if you have any questions.\nBest, Daniel\nLogistics: I have reserved room 219a in Curtis Hall for those attending in person and there will be a videochat link in the invitation for those attending virtually. I’m looking into recording the meetings and making them internally available for anyone who can’t make it, but I can’t guarantee I’ll have this sorted.\nPreparing for our first meeting: Before we meet I would like everyone to write down your answers to the following questions.\n\nAre you interested in the low-level details of deep learning or mostly high-level application?\nWhere do you see yourself using deep learning? In the lab or for personal use?\nAfter learning these topics what goals will you be better situated to achieve?\n\nCloser to the date of I will send out some instructions on the software we’ll be using. Please follow these setup instructions.\nOur first meeting will be composed of three parts. First, I’ll give a brief introduction. Next, we’ll talk about everyone’s answers to the questions above. The goal of this is to help people with similar uses in mind and interests find each other – so over time we can grow from a learning group to a community of practice. Finally, we’ll talk about software and setup to fix any issues for the next meeting.\nFuture meetings: Beyond this first meeting we’ll have some lecture and exercises that we’ll complete in between sessions. In the sessions we’ll talk though the exercises and what people found challenging or interesting.\nThe material will initially focus on building networks from the ground up so when we start using research grade libraries how they work isn’t a black box. After a few sessions we’ll take stock and adjust course as needed."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html",
-    "title": "Summer Session: Kick Off Meeting",
+    "objectID": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#introduction",
+    "href": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#introduction",
+    "title": "Summer Session: Pre-Meeting Preparation",
     "section": "",
-    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nPlease watch at least the first 1h22m of Andrej Karpathy’s lecture here and try to follow along in your Jupyter Notebook.\nPlease note what you find confusing – someone else probably finds it confusing too!\nReminder: For this you’ll need to install numpy, matplotlib, graphviz, and pytorch.\n\nIf you’re using conda you may need to install graphviz using pip. You can do this from your notebook by typing the command !pip install graphviz. The leading ! will cause this to be treated as a shell command rather than a python command.\nnumpy conda pip\nmatplotlib conda pip\ngraphviz conda pip\npytorch Install Instructions"
+    "text": "Hello Everyone!\nI think everyone who will fill out the survey has and it looks like Tuesdays from 11-12 fits the most people’s schedules. Our first meeting will be Tuesday May 7th at 11-12am.\nI’ve included information on preparing for the first session below and please let me know if you have any questions.\nBest, Daniel\nLogistics: I have reserved room 219a in Curtis Hall for those attending in person and there will be a videochat link in the invitation for those attending virtually. I’m looking into recording the meetings and making them internally available for anyone who can’t make it, but I can’t guarantee I’ll have this sorted.\nPreparing for our first meeting: Before we meet I would like everyone to write down your answers to the following questions.\n\nAre you interested in the low-level details of deep learning or mostly high-level application?\nWhere do you see yourself using deep learning? In the lab or for personal use?\nAfter learning these topics what goals will you be better situated to achieve?\n\nCloser to the date of I will send out some instructions on the software we’ll be using. Please follow these setup instructions.\nOur first meeting will be composed of three parts. First, I’ll give a brief introduction. Next, we’ll talk about everyone’s answers to the questions above. The goal of this is to help people with similar uses in mind and interests find each other – so over time we can grow from a learning group to a community of practice. Finally, we’ll talk about software and setup to fix any issues for the next meeting.\nFuture meetings: Beyond this first meeting we’ll have some lecture and exercises that we’ll complete in between sessions. In the sessions we’ll talk though the exercises and what people found challenging or interesting.\nThe material will initially focus on building networks from the ground up so when we start using research grade libraries how they work isn’t a black box. After a few sessions we’ll take stock and adjust course as needed."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#for-next-meeting",
-    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#for-next-meeting",
-    "title": "Summer Session: Kick Off Meeting",
+    "objectID": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#setup-instructions",
+    "href": "posts/DeepLearningCommunityofPractice/240501_PreMeeting/index.html#setup-instructions",
+    "title": "Summer Session: Pre-Meeting Preparation",
+    "section": "Setup Instructions",
+    "text": "Setup Instructions\nHello Everyone,\nHere are the setup instructions. It should take only a few minutes to get set up, but please go ahead and do this before our kickoff meeting next week. That way we can address any issues that arise.\nTo start out with we’ll use python through jupyter notebooks. If you’ve worked in the R ecosystem, these are similar to Rmarkdown or quarto documents that let you mix notes and equations in with your code. There are two options you can use. The easiest is to use “Google Collab” which will take care of the setup for you. The hardware your notebook will not be especially powerful but that is perfectly fine for starting out.\nOption 1: • Create a google account if you don’t have one. • Keep this url handy for next week https://colab.research.google.com/ Option 2: • Install Anaconda https://docs.anaconda.com/free/anaconda/install/ or miniconda https://docs.anaconda.com/free/miniconda/index.html • Using either the graphical interface or the command line https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html# create an environment and ensure that at least Jupiter is installed https://anaconda.org/anaconda/jupyter\nAssuming you opt for option 2 with the graphical user interface, select environments\n\nNext select create\n\nSelect python and choose a name for your environment. (Don’t worry about the version of python just now, we’ll change it when or if it becomes an issue)\n\nNow we need to install jupyter notebook. By default anaconda displays the installed packages so we’ll need to switch to all or uninstalled before searching for it. Find it, check the box and press apply below.\n\nYou may see a pop up requesting that you install notebook’s dependencies.\n\nAfter the installation if finished now you can right click on the play symbol and launch a jupyter notebook.\n\nThis should automatically launch in your default browser."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html",
+    "title": "Summer Session: Meeting 1",
     "section": "",
-    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nPlease watch at least the first 1h22m of Andrej Karpathy’s lecture here and try to follow along in your Jupyter Notebook.\nPlease note what you find confusing – someone else probably finds it confusing too!\nReminder: For this you’ll need to install numpy, matplotlib, graphviz, and pytorch.\n\nIf you’re using conda you may need to install graphviz using pip. You can do this from your notebook by typing the command !pip install graphviz. The leading ! will cause this to be treated as a shell command rather than a python command.\nnumpy conda pip\nmatplotlib conda pip\ngraphviz conda pip\npytorch Install Instructions"
+    "text": "What are the key ideas you took from the video?\nDid you implement code from the video? How did it go?\nFor those who are beginning with python where there sticking points you encounter?\n\n“High level” class organization?\n“Low level” syntax?\nBoth?\nWould a python office hours next week be useful?\n\nHow long did you spend on the material?\n\nWas this too much for a two week period?\nWould video + take home challenge be a better pairing?"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#materials",
-    "href": "posts/DeepLearningCommunityofPractice/240507_Meeting0/index.html#materials",
-    "title": "Summer Session: Kick Off Meeting",
-    "section": "Materials",
-    "text": "Materials\n\nHere is a tiny neural network in Excel ( File). Download it and try changing the weights and biases of the layers! In practice we’ll change all the weights and biases at once, but this is nice for building intuition.\nHere are the Meeting Slides."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html",
-    "title": "Summer Session: Meeting 2",
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#discussion",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#discussion",
+    "title": "Summer Session: Meeting 1",
     "section": "",
-    "text": "A bigram model predicts the next letter given a letter\n\nThis can be though of as modeling the transition probabilities\n\nDifferent approaches to learn parameters\n\nNormalized counts\nOptimization"
+    "text": "What are the key ideas you took from the video?\nDid you implement code from the video? How did it go?\nFor those who are beginning with python where there sticking points you encounter?\n\n“High level” class organization?\n“Low level” syntax?\nBoth?\nWould a python office hours next week be useful?\n\nHow long did you spend on the material?\n\nWas this too much for a two week period?\nWould video + take home challenge be a better pairing?"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#key-ideas-from-the-last-session",
-    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#key-ideas-from-the-last-session",
-    "title": "Summer Session: Meeting 2",
-    "section": "",
-    "text": "A bigram model predicts the next letter given a letter\n\nThis can be though of as modeling the transition probabilities\n\nDifferent approaches to learn parameters\n\nNormalized counts\nOptimization"
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-main-session",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-main-session",
+    "title": "Summer Session: Meeting 1",
+    "section": "Key Ideas From Main Session:",
+    "text": "Key Ideas From Main Session:\n\nFunctions approximated by combining many non-linear functions.\nParameters of the functions nudged to decrease error.\n\n\n\n\nCredit Randall Munroe (“Machine Learning” XKCD)"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#connections-to-biology",
-    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#connections-to-biology",
-    "title": "Summer Session: Meeting 2",
-    "section": "Connections to Biology:",
-    "text": "Connections to Biology:\nWe can think of the bigram probability matrix as a graph where the edges between nodes are the likelihood of moving from one state (here letter) to another.\n\n\n\n\n\n\n\nG\n\n\n\nstart\n\nstart\n\n\n\na\n\na\n\n\n\nstart-&gt;a\n\n\n.5\n\n\n\nb\n\nb\n\n\n\nstart-&gt;b\n\n\n.5\n\n\n\na-&gt;a\n\n\n.1\n\n\n\na-&gt;b\n\n\n.7\n\n\n\nend\n\nend\n\n\n\na-&gt;end\n\n\n.2\n\n\n\nb-&gt;a\n\n\n.3\n\n\n\nb-&gt;b\n\n\n.2\n\n\n\nb-&gt;end\n\n\n.5\n\n\n\n\n\n\n\n\nThrough optimization we can estimate these probabilities of moving between states.\nWe have plenty of these sort of state graphs in biology. We might think about the SIR model in epidemiology.\n\n\n\n\n\n\n\nG\n\n\n\nSusceptible\n\nSusceptible\n\n\n\nInfected\n\nInfected\n\n\n\nSusceptible-&gt;Infected\n\n\n\n\n\nRecovered\n\nRecovered\n\n\n\nInfected-&gt;Recovered\n\n\n\n\n\nRecovered-&gt;Susceptible\n\n\n\n\n\nRecovered-&gt;Recovered\n\n\n\n\n\n\n\n\n\n\nOr we might think about a region of DNA switching between introns and exons.\n\n\n\n\n\n\n\nG\n\n\n\nExon\n\nExon\n\n\n\nExon-&gt;Exon\n\n\n\n\n\nIntron\n\nIntron\n\n\n\nExon-&gt;Intron\n\n\n\n\n\nIntron-&gt;Exon\n\n\n\n\n\nIntron-&gt;Intron\n\n\n\n\n\n\n\n\n\n\nWhile ideas may “rhyme” with bigram models it’s not a perfect match. This sort of model would be more commonly represented as a hidden markov models (e.g. hmmer). That being said, we could build a bigram model using nucleotides or amino acids in the same way that we’re using characters."
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-homework",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#key-ideas-from-homework",
+    "title": "Summer Session: Meeting 1",
+    "section": "Key Ideas From Homework",
+    "text": "Key Ideas From Homework\n\nA computational graph allows us to track gradients through many operations\nGiven the derivative of each function in a graph we use backpropagation to determine derivative of each parameter with respect to the loss\nHaving the set of derivatives (the gradient) parameters can be nudged to reduce the loss"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#next-session-multilevel-perceptrons-logistics",
-    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#next-session-multilevel-perceptrons-logistics",
-    "title": "Summer Session: Meeting 2",
-    "section": "Next Session: Multilevel Perceptrons + Logistics",
-    "text": "Next Session: Multilevel Perceptrons + Logistics\nThe lecture for next session is great. It implements the generative model using Multilevel perceptrons (aka “fully connected” or “dense” networks). It also introduces topics that are useful from theory to practice such as how to select optimizer learning rates.\nFor next session please:\n\nWork through all of this Lecture (1h15m).\nIdentify a dataset and problem for your learning project (more below).\nFind a learning partner if you have not and want one (you can but don’t need to work on a learning project together)."
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#looking-forward",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#looking-forward",
+    "title": "Summer Session: Meeting 1",
+    "section": "Looking Forward:",
+    "text": "Looking Forward:\n\n\n\n\n\nflowchart TD\n    A[backpropagation]\n    B[Text encoding\\nand generation]\n    C[MLPs and logistics]\n    D[Advanced MLPs]\n    E[Advanced\\nbackpropagation]\n    F[Convolutional\\nnetworks]\n    G[Transformers]\n    \n    a(Learning Partners)\n    b(Learning Problem)\n    c(High Level Model)\n    or{or}\n    d(Low Level\\nModel)\n    e(Advanced\\nModel)\n    f(Advanced\\nInterpretation)\n    \n    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F --&gt; G\n    a --&gt; b --&gt; c --&gt; or\n    or--&gt; d\n    or--&gt; e\n    or--&gt; f\n    \n    A --- a\n    D ~~~ d\n\n\n\n\n\n\n\nThe core mechanisms of deep learning apply across types of data and tasks.\n\nTasks (outputs)\nData types and shapes (inputs)"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#reminder-learning-projects",
-    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#reminder-learning-projects",
-    "title": "Summer Session: Meeting 2",
-    "section": "Reminder: Learning Projects",
-    "text": "Reminder: Learning Projects\nPutting the ideas we’ve seen into practice will aid your understanding and recall. Previously we discussed this workflow as a way to think about your learning project.\n\n\n\n\n\nflowchart LR\n    a(Learning\\nPartners)\n    b(Learning\\nProblem)\n    c(High Level\\nModel)\n    or{or}\n    d(Low Level\\nModel)\n    e(Advanced\\nModel)\n    f(Advanced\\nInterpretation)\n    \n    a --&gt; b --&gt; c --&gt; or\n    or--&gt; d\n    or--&gt; e\n    or--&gt; f\n\n\n\n\n\n\nI recommend beginning by identifying the dataset or datasets that you’d like to use.\n\nLook for a dataset that is\n\nInteresting or evocative\nSmall (for fast iteration and so we can start building models without a gpu)\nFamiliar (to make it easy to start)\nSimilar ‘shape’ to data you’d like to use in the future\n\n\nIf you have research data that you would like to use consider using a subset to begin with. If you have genomic data, perhaps you use 3 genotypes and 1000 SNPs to start off with. Of if you want to work with hyperspectral images maybe you begin with a single channel and low resolution. After you are comfortable with this reduced data you can take what you’ve learned and apply it to the larger dataset.\nAfter you’ve chosen a dataset you’ll need to select a task to complete. These tend to fall into the categories of classification, regression, and distribution modeling. You should also consider if you want your model to be generative. For many scientific applications we don’t but that shouldn’t limit your imagination!\nFor example let’s say I have a small dataset of mRNA abundances for a few (&lt;200) cells of several cell types. I could try to predict cell type from mRNA counts (classification). Instead I might try to predict some mRNA abundance from other mRNAs’ abundances (regression). Or I could try to detect outliers or measure how dissimilar different cell types are (distribution modeling). With this last approach I could try to produce new observations of mRNA abundances given a cell type1 (generative).\n\nAlternative: Implement a different model using torch\nSince neural networks implement linear operations followed by a non-linear transformation you could try…\n\nImplementing a generalized linear model\nBuilding about a really big linear model\nFitting a linear model with a loss function other than mean squared error\n…"
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#core-tasks",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#core-tasks",
+    "title": "Summer Session: Meeting 1",
+    "section": "Core Tasks",
+    "text": "Core Tasks\n\nClassification - Predict a discrete value (label)\nRegression - Predict a continuous value\nDensity - How similar are different populations of observations?"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#footnotes",
-    "href": "posts/DeepLearningCommunityofPractice/240604_Meeting2/index.html#footnotes",
-    "title": "Summer Session: Meeting 2",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nSampling in a cell type’s region of latent space↩︎"
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-types",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-types",
+    "title": "Summer Session: Meeting 1",
+    "section": "Data Types",
+    "text": "Data Types\nReminder: Categories of data\n\n\n\n\nCategories\nRanked\nEvenly Spaced\nNatural 0\n\n\n\n\nNominal\nX\n\n\n\n\n\nOrdinal\nX\nX\n\n\n\n\nInterval\nX\nX\nX\n\n\n\nRatio\nX\nX\nX\nX\n\n\n\n\nThink about generalized linear models to get a non-linear response we pass a linear model into a link function. (How is this similar to a neuron?)\nTo flexibly use or predict different data types we change\n\nHow data is encoded (e.g. \\(Adenine \\rightarrow [1, 0, 0, 0]\\) )\nThe number of values output\nHow loss is calculated"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html",
-    "title": "Summer Session: Meeting 4",
-    "section": "",
-    "text": "This supplementary presentation from this week can be found here.\n\nConnections between transforming non-normal data before fitting a linear model to batch normalization\nA motivating puzzle for learning more about the low level operations. I showed a simple MLP to output 0 given 1 or output 1 given 0. This model inconsistently learns. After learning more about backpropagation you’ll be able to easily spot why.\nFinally we discussed why Batch Norm works and the evidence in that it’s not by reducing the change in parameters from cycle to cycle (internal covariance shift “ICS”).\nIn brief in Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) the authors demonstrate:\n\nA standard model vs batch norm model has no apparent qualitative difference in ICS\nA batch norm model with ICS induced (positive control) neither trains more slowly nor is less performant than a standard model.\nDirect quantification of ICS shows it is often equal to or greater in models with batch norm\nThe range of errors is smaller in models with batch norm in conjunction with other measures this suggests that the “smoothness” of the loss landscape is altered which results in an easier optimization."
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-shapes",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#data-shapes",
+    "title": "Summer Session: Meeting 1",
+    "section": "Data Shapes",
+    "text": "Data Shapes\nDimensions of data\n\n\n\nTensor Rank\nName\nExample\nExample Dims.*\n\n\n\n\n0\nScalar\nHeight\n\n\n\n1\nVector\nHeight for several obs.\nn\n\n\n2\nMatrix\nSequence on off\nn, c\n\n\n3\nCube\nPicture (bw)\nn, h, w\n\n\n\n\nSequence of nucleotides\nn, l, c\n\n\n4\n?\nPicture (rgb)\nn, c, h, w, l\n\n\n5\n?\nVideo (rgb)\nn, c, h, w, l\n\n\n\n*order changes based on conventions"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#recap",
-    "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#recap",
-    "title": "Summer Session: Meeting 4",
-    "section": "",
-    "text": "This supplementary presentation from this week can be found here.\n\nConnections between transforming non-normal data before fitting a linear model to batch normalization\nA motivating puzzle for learning more about the low level operations. I showed a simple MLP to output 0 given 1 or output 1 given 0. This model inconsistently learns. After learning more about backpropagation you’ll be able to easily spot why.\nFinally we discussed why Batch Norm works and the evidence in that it’s not by reducing the change in parameters from cycle to cycle (internal covariance shift “ICS”).\nIn brief in Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) the authors demonstrate:\n\nA standard model vs batch norm model has no apparent qualitative difference in ICS\nA batch norm model with ICS induced (positive control) neither trains more slowly nor is less performant than a standard model.\nDirect quantification of ICS shows it is often equal to or greater in models with batch norm\nThe range of errors is smaller in models with batch norm in conjunction with other measures this suggests that the “smoothness” of the loss landscape is altered which results in an easier optimization."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#preparation-for-next-session",
-    "href": "posts/DeepLearningCommunityofPractice/240702_Meeting4/index.html#preparation-for-next-session",
-    "title": "Summer Session: Meeting 4",
-    "section": "Preparation for Next Session",
-    "text": "Preparation for Next Session\nBy request we’re going to pause so that everyone can catch up to the current lecture. We’ll not meet in two weeks but will have Python office hours on Tuesdays so long as at least one person requests them.\nFor next session (tentatively slated for July 30) there are two options:\n\nIf you’re interested predominantly in high level application work through this video on Wavenet.\nIf you’re also interested in the low level work through this video on revisiting backpropagation and then Wavenet.\n\nPlease note that the material on backpropagation is dense. To help visualize the network I have made a diagram of all the tensors in the network here. I recommend printing a copy of it and annotating it with the backward pass. Personally I find the graphical representation to complement to the code nicely.\n\n\nCheers,\nDaniel"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240814_intermezzo/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240814_intermezzo/index.html",
-    "title": "Summer Session: Meeting 6 Preparation Notes",
-    "section": "",
-    "text": "Below are a few notes regarding the lecture for the next two sessions (Building a GPT).\nFirst, if you’re looking for a good break point for next week, 38m and 1h1m are good stopping points. By the first point you’ll have seen the Bigram model we worked on weeks ago remade in Pytorch and by the second you’ll have gotten a good preview of some the ideas that will be key in the second half of the video.\nSecond, there are a few potential points for confusing where Python is acting in a way that’s not necessarily intuitive. Karpathy uses a Lambda expressions to define a few functions. Lambdas are handy because they are very terse but this can make them unclear. Here I’ve written out one of these function definitions three ways from most terse to least to show what’s happening here.\n# chars is a list of the unique characters \n# ['\\n', ' ', '!', ...  'y', 'z']\n\n# We've seen a dictionary comprehension previously\n# {'\\n': 0, ' ': 1, '!': 2, ... 'y': 63, 'z': 64}\nstoi  = {s:i for i,s in enumerate(chars)}\n\n# Defining a function by naming a lambda\nencode = lambda s: [stoi[c] for c in s]\n\n# Alternate version\ndef encode1(s):\n    return [stoi[c] for c in s]\n\n# Alternate verson without the list comprehension\ndef encode2(s):\n    out = []\n    for c in s:\n        out.append(stoi[c])\n        \n# Confirm these functions are equivalent\nfor x in ['chars']:\n    print(f'{encode(x)}\\n{encode1(x)}\\n{encode2(x)}')\n\n# [41, 46, 39, 56, 57]\n# [41, 46, 39, 56, 57]\n# [41, 46, 39, 56, 57]\nLater, in the Bigram model class definition there’s a point in the method that generates new tokens (characters) that uses self(idx). What’s happening is that the default method of the class is being called. This default method is what you want to happen when you pass data to the class, so here we want to pass in some sequence and get the next entry in the sequence. We talked about pytorch nn.Module a little last week, but the key idea to know here is that the forward() method makes predictions (it does the forward pass). Thus self(idx) would be the same as writing self.forward(idx) but the former assumes more knowledge of pytorch-isms.\nclass BigramLanguageModel(nn.Module):\n    def __init__(self, vocab_size):\n        super().__init__()\n        # ...\n\n    def forward(self, idx, targets=None):\n        # ... \n    \n    def generate(self, idx, max_new_tokens):\n        for _ in range(max_new_tokens):\n            logits, loss = self(idx) # &lt;--- !\n            # ...\nFinally, there are a few points where you may want to stop and compare tensors. For me it’s easier to get a sense of what’s going on by plotting part of the tensors instead of printing them. To do this you can take a 2d slice of the tensor (below we have a 3d tensors so we’re looking at the 0th batch), convert them to numpy arrays and then plot them with plt.imshow(). When comparing two I like to either subtract them (so they’re all 0s if they’re the same) or concatenate them with a spacer and plot them together. Here is example code to do this:\nimport numpy as np\nimport matplotlib.pyplot as plt\nplt.imshow(np.concatenate([\n  x[0].numpy(),       # Slice of a tensor\n  np.zeros((T, 1))-1, # Spacer matrix of -1s\n  xbow[0].numpy()     # Slice fo a tensor\n], axis = 1))\nNow we can quickly see that the left two slices are different and the right two are equivalent."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html",
-    "title": "Python 1: Data Visualization in Python",
-    "section": "",
-    "text": "Questions to Ponder:\n\nHow do you envision yourself using python and deep learing?\n\nIn the lab?\nFor personal use?\nBoth?\n\nWhat application excites you most?\n\nHow small could you make this project?\nWhen could you work on this?\n\nWhat goals will you be better prepared to achieve by learning these topics?\n\nBefore introducing deep learning we’ll ensure a basic comfort with python.\n\nTo do this we’ll start at a high level (data visualization) then introduce low level concepts.\n\n\nThe presentation slides can be found here."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#recap-of-todays-meeting",
-    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#recap-of-todays-meeting",
-    "title": "Python 1: Data Visualization in Python",
-    "section": "",
-    "text": "Questions to Ponder:\n\nHow do you envision yourself using python and deep learing?\n\nIn the lab?\nFor personal use?\nBoth?\n\nWhat application excites you most?\n\nHow small could you make this project?\nWhen could you work on this?\n\nWhat goals will you be better prepared to achieve by learning these topics?\n\nBefore introducing deep learning we’ll ensure a basic comfort with python.\n\nTo do this we’ll start at a high level (data visualization) then introduce low level concepts.\n\n\nThe presentation slides can be found here."
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#materials",
-    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#materials",
-    "title": "Python 1: Data Visualization in Python",
-    "section": "Materials",
-    "text": "Materials\nToday’s slides use data from Allison Horst’s palmerpenguins data package (see also Gorman KB, Williams TD, Fraser WR (2014) ).\nThe files for today are provided zipped together here.\nWhen unzipped you should have\n\nA dataset (penguins.csv)\nA worksheet (penguin_plotly_worksheet.ipynb)\nA set of solutions (penguin_plotly.ipynb)\n\nIf you can’t open the zipped files, download these files, changing the extension of the worksheet and solutions from .txt to .ipynb.\n\npenguins.csv\npenguin_plotly_worksheet.txt\npenguin_plotly.txt"
-  },
-  {
-    "objectID": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#for-next-meeting",
-    "href": "posts/DeepLearningCommunityofPractice/240924_Python_Plotting/index.html#for-next-meeting",
-    "title": "Python 1: Data Visualization in Python",
+    "objectID": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#for-next-meeting",
+    "href": "posts/DeepLearningCommunityofPractice/240520_Meeting1/index.html#for-next-meeting",
+    "title": "Summer Session: Meeting 1",
     "section": "For Next Meeting",
-    "text": "For Next Meeting\nIf you have not completed the visualization exercises, do. To solidify your understanding, use data you have from a project and plot it with python!\nWhile not required, it’s recommended that you have a learning partner. Talk with folks in your lab or email someone in a different lab if you want someone to learn with!"
+    "text": "For Next Meeting\n\nIf you are have not found a learning partner please reach out to at least one person who\n\nDoesn’t have a partner yet and\nhas a different programming comfort (the median is 3)\n\nThink about if there is a small dataset that you would enjoy working with\n\nRT-qPCR experiment?\nImages with a plant diseased/non?\nSequences of nucleotides for genes in two families?\n\nPlease watch at least the first 1h4m (strongly recommend the full 1h57) of Andrej Karpathy’s lecture here and follow along in your Jupyter Notebook."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html",
-    "title": "Summer Session: Kick Off Meeting",
+    "objectID": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html",
+    "title": "Summer Session: Meeting 3",
     "section": "",
-    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nFor our next meeting on the 22nd we have an open discussion of backpropagation scheduled. The core video for this session is this one Backpropagation 2h25 in which you’ll build a computational graph and see how values flow forward through this graph to calculate a prediction and backward to calculate gradients. I recommend at minimum watching the video and ideally implementing the code in it as well.\nNote that the in the video description there are links to the notebooks that Andrej Karpathy builds during the video. I find this especially helpful for identifying errors in my code.\nPlease note what you find confusing – someone else probably finds it confusing too!"
+    "text": "This week we supplemented the lecture material with supplemental sides which can be found here. Specifically we discussed common considerations for defining training and testing splits (e.g. information leakage) and several common hyperparameter tuning libraries (with an example using Ax)"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#for-next-meeting",
-    "href": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#for-next-meeting",
-    "title": "Summer Session: Kick Off Meeting",
+    "objectID": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#recap",
+    "href": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#recap",
+    "title": "Summer Session: Meeting 3",
     "section": "",
-    "text": "We’re starting off from zero and implementing the core engine that powers deep learning: back propagation.\nFor our next meeting on the 22nd we have an open discussion of backpropagation scheduled. The core video for this session is this one Backpropagation 2h25 in which you’ll build a computational graph and see how values flow forward through this graph to calculate a prediction and backward to calculate gradients. I recommend at minimum watching the video and ideally implementing the code in it as well.\nNote that the in the video description there are links to the notebooks that Andrej Karpathy builds during the video. I find this especially helpful for identifying errors in my code.\nPlease note what you find confusing – someone else probably finds it confusing too!"
+    "text": "This week we supplemented the lecture material with supplemental sides which can be found here. Specifically we discussed common considerations for defining training and testing splits (e.g. information leakage) and several common hyperparameter tuning libraries (with an example using Ax)"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#materials",
-    "href": "posts/DeepLearningCommunityofPractice/241015_DL_Intro/index.html#materials",
-    "title": "Summer Session: Kick Off Meeting",
+    "objectID": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#preparation-for-next-session",
+    "href": "posts/DeepLearningCommunityofPractice/240618_Meeting3/index.html#preparation-for-next-session",
+    "title": "Summer Session: Meeting 3",
+    "section": "Preparation for Next Session",
+    "text": "Preparation for Next Session\nBased on our conversation we will proceed with our current materials and I’ll aim to have an implementation in a high level library so we can see how the network might look if we weren’t working from scratch.\nThe lecture for next session is on the longer side (1h55m). If there are sections that one skip for the sake of time I’ll send an email noting the timestamps for these sections early next week.\nWe also discussed presentations of everyone’s learning projects. These will likely start towards the end of July or in August (or sooner if anyone is champing at the bit!). Don’t worry about presenting on a work in progress – this may be more helpful to your peers than seeing a fully polished model.\nCheers,\nDaniel"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html",
+    "title": "Meeting 5",
+    "section": "",
+    "text": "This supplementary presentation from this week can be found here.\n\nLogistics\n\nWe’re running a new scheduling poll for the fall since we have members whose schedule may change with the new semester.\nBecause of this, our next meeting will be on the 20th and the one after that will be TBD.\n\nMLP in PyTorch\n\nWe discussed some of the logistics around building models in PyTorch including\nDataloaders\nMoving tensors to the GPU\nnn.Module classes"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#recap",
+    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#recap",
+    "title": "Meeting 5",
+    "section": "",
+    "text": "This supplementary presentation from this week can be found here.\n\nLogistics\n\nWe’re running a new scheduling poll for the fall since we have members whose schedule may change with the new semester.\nBecause of this, our next meeting will be on the 20th and the one after that will be TBD.\n\nMLP in PyTorch\n\nWe discussed some of the logistics around building models in PyTorch including\nDataloaders\nMoving tensors to the GPU\nnn.Module classes"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#preparation-for-next-session",
+    "href": "posts/DeepLearningCommunityofPractice/240805_Meeting5/index.html#preparation-for-next-session",
+    "title": "Meeting 5",
+    "section": "Preparation for Next Session",
+    "text": "Preparation for Next Session\nThe content for the next two sessions will dovetail:\nWe’re going to look at transformers next so\n\nFor next session:\n\nWatch Grant Sanderson’s Attention in transformers (26m)\nBegin Let’s build GPT (1h56)\nWe’re planning to review Santurkar, et al. 2018 (“How Does Batch Normalization Help Optimization?”) for the folks that couldn’t be at Meeting 4. If you haven’t read it give it a read!\nDecide if you’re game to present a project or paper “show and tell” and what project you’re planning or working on that you.\n\nFor the session after that:\n\nFinish Let’s build GPT (1h56)\n\n\nCheers,\nDaniel"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html",
+    "title": "Fall Session: Preparation and Schedule",
+    "section": "",
+    "text": "Edit: 9/26 Added to Schedule resources for\nEdit: 11/12 Updated schedule due to members conference/symposium and holiday travel."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#welcome",
+    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#welcome",
+    "title": "Fall Session: Preparation and Schedule",
+    "section": "Welcome!",
+    "text": "Welcome!\nHello and welcome to our deep learning fall session! We are (re)iterating on the material we discussed over the summer so if this is the first time you’re joining us don’t worry about reading back through the older posts. If someone has directed you to this page and you’d like to be added to the mailing list, please get in touch with us."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-to-expect",
+    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-to-expect",
+    "title": "Fall Session: Preparation and Schedule",
+    "section": "What to Expect",
+    "text": "What to Expect\nWe’ll be using python to go work from derivatives to generatively pretrained transformer models. Along the way we’ll talk about…\n\nWhat deep learning models do\nHow deep learning models are trained\nArchitectural decisions to improve performance\nTools used for model development and refinement\n\nAlong the way we’ll also talk a fair bit about python, the logistical challenges that surround model training, and some of the ways models can learn the wrong things.\nWe’re interested in building understanding and intuition so as to avoid cases where you only think your model is working well. We’re going to encourage twin prescriptions of skepticism and caution in working with models. Instead of “move fast and break things” think “move slow and build things”."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-expect",
+    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-expect",
+    "title": "Fall Session: Preparation and Schedule",
+    "section": "What We Expect",
+    "text": "What We Expect\nWe recommend viewing this group not as a class but a convening of autodidactic learners. Initially we’ll have a presentations coving foundational topics which will give way to open discussions. Having a list of thoughts and questions will be valuable to make the most of these sessions.\nSince it’s really hard to train models on paper, we expect folks to be writing (and debugging) code. We recommend budgeting time for the videos and writing exploratory code on your own. It can be useful to write the code featured in the videos in parallel with them, which may substantially increase the amount of time the materi\nal requires (and one’s comfort and fluency with these topics). Futher, applying or extending what you have seen to small data sets is a great way to solidify understanding.\nFinally, we recommend identifying at least one peer that you can partner with. Explaining a new concept is a great way to solidify your understanding and having someone you can ask for a fresh perspective from is hugely useful. Although we’re interested in technical knowledge, we also want to increase connections between labs and the folks in them.\nIn summary:\n\nKeep an eye on the upcoming materials\nWrite code, make mistakes, debug code\nMake friends, ask for help, and teach others"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-have-planned",
+    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#what-we-have-planned",
+    "title": "Fall Session: Preparation and Schedule",
+    "section": "What We Have Planned",
+    "text": "What We Have Planned\nBelow is our “working draft” for the fall. Based on feedback from the summer session we’re beginning with python so doesn’t add friction when we use it to build models. We may also make a few additions to these topics (such as working with images, sequences, or modeling distrbutions) or add presentations on folks planned or ongoing projects to talk about how these model go from the classroom to the lab.\n\n\n\n\n\nMonth\nDay\nBefore\nSession\nAfter\nDeep.Dive\n\n\n\n\nSept.\n17\n\n\n\n\n\n\nSept.\n24\nPre-Meeting Setup\nPython: Application\n\n\n\n\nOct.\n1\n\nPython: Fundamentals\n\n\n\n\nOct.\n8\n\nPython: Functions and Classes\n\n\n\n\nOct.\n15\n\nDeep Learning Overview\nTo Deliver You From the Preliminary Terrors, The Intuitive Notion of the Chain Rule, What is a Neural Network? 0h18 , Gradient descent 0h20 , Analyzing our neural network\n\n\n\nOct.\n22\nWhat is backpropagation really doing? 0h12 , Backpropagation calculus 0h10, Backpropagation 2h25\nDiscussion\n\n\n\n\nOct.\n29\nBackpropagation Cont.\nDiscussion\n\n\n\n\nNov.\n5\nBigram Language Model 1h57\nDiscussion\n\n\n\n\nNov.\n12\nBigram Model Cont.\nDiscussion\n\nMultilayer Perceptron Language Model 1h15\n\n\nNov.\n19\n\nNo Session\n\nJournal Club: BatchNorm Activations + BatchNorm 1h55\n\n\nNov.\n26\n\nNo Session (Thanksgiving week)\n\nBackpropagation Deep Dive 1h55\n\n\nDec.\n3\nBut what is a GTP 0h27, Visualizing Attention 0h26 , Generatively Pretrained Transformer 1h56\nDiscussion\nHow might LLMs store facts 0h22\nWaveNet 0h56\n\n\nDec.\n10\nTransformers Cont.\nDiscussion\n\n\n\n\nDec.\n17"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#preparing-for-the-first-session",
+    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#preparing-for-the-first-session",
+    "title": "Fall Session: Preparation and Schedule",
+    "section": "Preparing for the First Session:",
+    "text": "Preparing for the First Session:\nTo get started you’ll want to have installed python and a way to edit jupyter notebooks1.\nFor Python I recommend installing Anaconda if you’re on Windows and micromamba if you’re on Linux. For help installing Anaconda, see this link.\nAlthough not strictly necessary I also recommend installing Visual Studio Code and Microsoft’s Live Share plugin. The former provides a nice editor for notebooks and the latter a way to collaboratively edit a code (think “google docs for code” or Teletype)."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#footnotes",
+    "href": "posts/DeepLearningCommunityofPractice/240917_Fall_Preparation/index.html#footnotes",
+    "title": "Fall Session: Preparation and Schedule",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThese behave similarly to R markdown / Quarto files for those coming from the R ecosystem.↩︎"
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html",
+    "title": "Python 2: Python Fundamentals",
+    "section": "",
+    "text": "The presentation slides can be found here.\nIf you do not have access to the video please contact Daniel."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/241001_Python_Fundamentals/index.html#materials",
+    "title": "Python 2: Python Fundamentals",
     "section": "Materials",
-    "text": "Materials\n\nHere is a tiny neural network in Excel ( File). Download it and try changing the weights and biases of the layers! In practice we’ll change all the weights and biases at once, but this is nice for building intuition.\nHere are the Meeting Slides."
+    "text": "Materials\nThe files for today are provided here:\n\npython_fundamentals_worksheet.tar \npython_fundamentals.tar\n\nIf you can’t open the zipped files, download these files, changing the extension of the worksheet and solutions from .txt to .ipynb.\n\npython_fundamentals_worksheet.txt \npython_fundamentals.txt"
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html",
-    "href": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html",
+    "objectID": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html",
+    "title": "Deep Learning Discussion: Backpropagaton",
+    "section": "",
+    "text": "Next week will be a “catch-up” session since the backpropagation material is critical for understanding how networks are optimized and takes a fair bit of time to work through.\nTime permitting we may introduce the bigram model or dig deeper into dataloaders depending on the length of the discussion next week."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#for-next-week",
+    "href": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#for-next-week",
+    "title": "Deep Learning Discussion: Backpropagaton",
+    "section": "",
+    "text": "Next week will be a “catch-up” session since the backpropagation material is critical for understanding how networks are optimized and takes a fair bit of time to work through.\nTime permitting we may introduce the bigram model or dig deeper into dataloaders depending on the length of the discussion next week."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/241022_Backprop/index.html#materials",
+    "title": "Deep Learning Discussion: Backpropagaton",
+    "section": "Materials",
+    "text": "Materials\n\nHere is the notebook I wrote during our meeting today (Demo Notebook) showing how how gradients are tracked in PyTorch and how to create a small multilayer perceptron (MLP)."
+  },
+  {
+    "objectID": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html",
+    "href": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html",
     "title": "Deep Learning Discussion: The Bigram Language Model",
     "section": "",
-    "text": "Next session we will continue working with the Bigram model. Please finish the video if you are still working on it."
+    "text": "Explore the Bigram Model – Try to improve on the Bigram model we wrote this week. How much is performance influenced by…\n\nOptimizer choice?\nLearning rate?\nNumber and size of hidden layers?\nBatch size?\nRandomness of training set\n…\n\nNext session we will be discussing attention and transformers. For next session:\n\nGet an introduction to transormers and attention with Grant Sanderson’s But what is a GTP 0h27 and Visualizing Attention 0h26.\nThen work through Generatively Pretrained Transformer 1h56 following along in a notebook.\nFinally (optionally) watch How might LLMs store facts 0h22."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#for-next-session",
-    "href": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#for-next-session",
+    "objectID": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#for-next-session",
+    "href": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#for-next-session",
     "title": "Deep Learning Discussion: The Bigram Language Model",
     "section": "",
-    "text": "Next session we will continue working with the Bigram model. Please finish the video if you are still working on it."
+    "text": "Explore the Bigram Model – Try to improve on the Bigram model we wrote this week. How much is performance influenced by…\n\nOptimizer choice?\nLearning rate?\nNumber and size of hidden layers?\nBatch size?\nRandomness of training set\n…\n\nNext session we will be discussing attention and transformers. For next session:\n\nGet an introduction to transormers and attention with Grant Sanderson’s But what is a GTP 0h27 and Visualizing Attention 0h26.\nThen work through Generatively Pretrained Transformer 1h56 following along in a notebook.\nFinally (optionally) watch How might LLMs store facts 0h22."
   },
   {
-    "objectID": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#materials",
-    "href": "posts/DeepLearningCommunityofPractice/241105_Bigram/index.html#materials",
+    "objectID": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#materials",
+    "href": "posts/DeepLearningCommunityofPractice/241112_Bigram/index.html#materials",
     "title": "Deep Learning Discussion: The Bigram Language Model",
     "section": "Materials",
-    "text": "Materials\n\nHere is the notebook I wrote during our meeting today (Demo Notebook Part 1)"
+    "text": "Materials\n\nHere is the notebook we finished writing today (Demo Notebook Part 2)."
   },
   {
     "objectID": "posts/DeepLearningCommunityofPractice/index.html",
     "href": "posts/DeepLearningCommunityofPractice/index.html",
     "title": "Deep Learning Community of Practice",
     "section": "",
-    "text": "Deep Learning Discussion: The Bigram Language Model\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning Discussion: The Bigram Language Model\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning Discussion: Backpropagaton\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython 2: Python Fundamentals\n\n\n\nPython\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython 1: Data Visualization in Python\n\n\n\nPython\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFall Session: Preparation and Schedule\n\n\n\nSchedule\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 17, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 6 Preparation Notes\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nAug 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 5\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 4\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 3\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 2\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 1\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Kick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Kick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Pre-Meeting Preparation\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Spring Session: Preparation and Schedule\n\n\n\nSchedule\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nFeb 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning Discussion: The Bigram Language Model\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 12, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning Discussion: The Bigram Language Model\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nNov 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Learning Discussion: Backpropagaton\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython 2: Python Fundamentals\n\n\n\nPython\n\n\n\n\n\n\n\nDaniel Kick\n\n\nOct 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPython 1: Data Visualization in Python\n\n\n\nPython\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 23, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFall Session: Preparation and Schedule\n\n\n\nSchedule\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nSep 17, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 6 Preparation Notes\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nAug 14, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMeeting 5\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nAug 6, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 4\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJul 2, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 3\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 2\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nJun 4, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Meeting 1\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Kick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Kick Off Meeting\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 7, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummer Session: Pre-Meeting Preparation\n\n\n\nbeginner\n\n\ncode\n\n\nDeep Learning\n\n\n\n\n\n\n\nDaniel Kick\n\n\nMay 6, 2024\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "protocols/Drones/Pix4Dmapper_Stitch/index.html",

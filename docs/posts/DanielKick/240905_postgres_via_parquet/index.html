@@ -201,12 +201,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>For additional context please see <a href="../../../posts/DanielKick/230913_filtering_to_save_88pr_space/index.html">Part 1</a> Part 2</p>
+</div>
+</div>
+</div>
 <p>For those that want to jump straight to the resources here are the files discussed below:</p>
 <ul>
 <li><p>script to migrate data: <a href="./parquet_to_psql.py">parquet_to_psql.py</a></p></li>
 <li><p>json template: <a href="./psql_details.json">psql_details.json</a></p></li>
 </ul>
-<p><a href="../../../posts/DanielKick/230913_filtering_to_save_88pr_space/index.html">Previously</a>I generated an absolute <em>boat load</em> of simulated data for modeling. Even after taking steps to remove unneeded values<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and storing as a file type with compression (parquet) the full set is still a whopping <strong><em>285G</em></strong>.</p>
+<p><a href="../../../posts/DanielKick/230913_filtering_to_save_88pr_space/index.html">Previously</a> I generated an absolute <em>boat load</em> of simulated data for modeling. Even after taking steps to remove unneeded values and storing as a file type with compression (parquet) the full set is still a whopping <strong><em>285G</em></strong>.</p>
 <p>We have several competing goods here that we’d like to balance. Ideally the data would be</p>
 <ul>
 <li><p>small (easy to store/backup)</p></li>
@@ -233,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We use this account to create the database and then login as root.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres createdb apsimxsim</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> <span class="at">-u</span> postgres psql</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Next we create a non-root account and provide permissions<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> for the <code>apsimxsim</code> database and public schema.</p>
+<p>Next we create a non-root account and provide permissions<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> for the <code>apsimxsim</code> database and public schema.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">CREATE</span> <span class="kw">ROLE</span> loremipsum LOGIN <span class="kw">PASSWORD</span> <span class="st">'TotallyRealPassword'</span>;</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">ROLE</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>postgres<span class="op">=</span># <span class="kw">ALTER</span> <span class="kw">ROLE</span> loremipsum CREATEDB;</span>
@@ -370,8 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>See “Save only what you need”<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>See also: <a href="https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4" class="uri">https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>See also: <a href="https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4" class="uri">https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -6,6 +6,7 @@ categories:
   - code
   - advanced
 draft: False
+freeze: true
 ---
 
 ## What's a visual neural network?

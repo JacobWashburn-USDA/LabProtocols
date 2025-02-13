@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Kick">
-<meta name="dcterms.date" content="2023-09-13">
+<meta name="dcterms.date" content="2025-02-11">
 
-<title>Save only what you need</title>
+<title>Spring Session: Preparation and Schedule</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,8 +102,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -119,8 +151,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-we-got-to-this-point" id="toc-how-we-got-to-this-point" class="nav-link active" data-scroll-target="#how-we-got-to-this-point">How we got to this point:</a></li>
-  <li><a href="#reclaiming-88-storage-space" id="toc-reclaiming-88-storage-space" class="nav-link" data-scroll-target="#reclaiming-88-storage-space">Reclaiming 88% Storage Space</a></li>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
+  <li><a href="#what-we-have-planned" id="toc-what-we-have-planned" class="nav-link" data-scroll-target="#what-we-have-planned">What We Have Planned</a></li>
+  <li><a href="#logistical-notes" id="toc-logistical-notes" class="nav-link" data-scroll-target="#logistical-notes">Logistical Notes</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup:</a></li>
+  <li><a href="#using-a-.venv-with-vscode" id="toc-using-a-.venv-with-vscode" class="nav-link" data-scroll-target="#using-a-.venv-with-vscode">Using a <code>.venv</code> with vscode</a></li>
+  <li><a href="#meeting-notes" id="toc-meeting-notes" class="nav-link" data-scroll-target="#meeting-notes">Meeting Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -129,11 +165,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Save only what you need</h1>
-<p class="subtitle lead">Saving 88% disk space with a few lines of <code>R</code></p>
+<h1 class="title">Spring Session: Preparation and Schedule</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">code</div>
-    <div class="quarto-category">debugging</div>
+    <div class="quarto-category">Schedule</div>
+    <div class="quarto-category">Deep Learning</div>
   </div>
   </div>
 
@@ -151,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 13, 2023</p>
+      <p class="date">February 11, 2025</p>
     </div>
   </div>
   
@@ -163,83 +198,159 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 7424.908</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 735.05</code></pre>
-</div>
-</div>
-<section id="how-we-got-to-this-point" class="level2">
-<h2 class="anchored" data-anchor-id="how-we-got-to-this-point">How we got to this point:</h2>
-<p>Collecting data from many sites is expensive but using a biophysical model, many sites and years can be ‘harvested’ in minutes. I’m building a dataset with many cultivars planted across the united states. The problem is that I’m being greedy – I want to have the a day by day account of plant’s growth at ~1,300 locations from 1984-2022, varying cultivar, and planting date.</p>
-<p>In my initial implementation the results from the model are written to a csv for each location…</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="Picture1.PNG" class="img-fluid figure-img"></p>
-<figcaption>Oh <em>no</em>.</figcaption>
-</figure>
-</div>
-<p>This file has a boat load of data. It’s a table of 25,243,175 rows by 19 columns – <em>479,620,325 billion</em> cells. By the end of the experiment much of my hard drive will be taken up by these.</p>
+<section id="welcome" class="level2">
+<h2 class="anchored" data-anchor-id="welcome">Welcome!</h2>
+<p>Hello and welcome to our deep learning spring session! We are iterating on the material we discussed over the during the fall with an eye towards application, logistical details, and <em>when</em> you might select a neural network rather than another model. If someone has directed you to this page and you’d like to be added to the mailing list, please get in touch with us.</p>
 </section>
-<section id="reclaiming-88-storage-space" class="level2">
-<h2 class="anchored" data-anchor-id="reclaiming-88-storage-space">Reclaiming 88% Storage Space</h2>
-<p>An easy place to cut cells is from redundant or unneeded columns. These are produced by the simulation but the way I have the experiment structured, they aren’t needed after it’s done running.</p>
-<pre><code># YAGNI isn't just for code
-df &lt;- df[, c(
-      # Indepenent Variables
-      'ith_lon', 'ith_lat', 'soils_i', 'SowDate', 'Genotype', 'Date',
-      
-      # Dependent Variables
-      'Maize.AboveGround.Wt', 'Maize.LAI', 'yield_Kgha'
-
-      # Redundant or not needed
-      #'X', 'ith_year_start', 'ith_year_end', 'factorial_file', 'CheckpointID', 
-      #'SimulationID', 'Experiment', 'FolderName', 'Zone', 'Clock.Today'
-      )]</code></pre>
-<p>This is an easy way to get rid of over half the cells (down to 47.36%) (and really I should not have saved these in the first place) but we can do better still.</p>
-<p>Many of the rows represent times before planting without any data collected. All rows where <code>Maize.AboveGround.Wt</code>, <code>Maize.LAI</code>, and <code>Maize.AboveGround.Wt</code> are 0 can be dropped. Because so much of the year is out of the growing season this is quite helpful and cuts about half of the observations (20.09%).</p>
-<p>Splitting these data into two tables with independent variables or dependent variables (with a key) gets the total down to 10,602 + 53,530,975 = 53,541,577. Still a lot but only 11.16% of the starting size!</p>
+<section id="what-we-have-planned" class="level2">
+<h2 class="anchored" data-anchor-id="what-we-have-planned">What We Have Planned</h2>
+<p>Below is our “working draft” for the spring. Based on the feedback survey we’re focusing more on application and less on theory. This means that it will be important to have a good grasp on python’s fundamentals, so you may wish to review the recording of Daniel’s introduction lecture from the fall. Here is a tentative schedule</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small" data-quarto-postprocess="true">
+<table class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Data</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Size</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Percent Original</th>
+<th style="text-align: left;">Month</th>
+<th style="text-align: right;">Day</th>
+<th style="text-align: left;">Session</th>
+<th style="text-align: left;">Deep.Dive</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Original</td>
-<td style="text-align: right;">479620325</td>
-<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">Feb.</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Discussing the schedule &amp; environmental setup</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Select Cols.</td>
-<td style="text-align: right;">227188575</td>
-<td style="text-align: right;">47.37</td>
+<td style="text-align: left;">Feb.</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;">Data preparation, Model API, Discuss tuning and experiment tracking</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Filter Rows</td>
-<td style="text-align: right;">96355755</td>
-<td style="text-align: right;">20.09</td>
+<td style="text-align: left;">Feb.</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">Intro. models for language and regression tasks</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Split Tables</td>
-<td style="text-align: right;">53541577</td>
-<td style="text-align: right;">11.16</td>
+<td style="text-align: left;">Mar.</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">No Session (Maize Meeting)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mar.</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Discussion: Learning Projects Planning</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mar.</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mar.</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">Implementing a transformer (1/2)</td>
+<td style="text-align: left;"><a href="https://www.3blue1brown.com/lessons/gpt">But what is a GTP 0h27</a>, <a href="https://www.3blue1brown.com/lessons/attention">Visualizing Attention 0h26</a> , <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">Generatively Pretrained Transformer 1h56</a> , <a href="https://www.3blue1brown.com/lessons/mlp">How might LLMs store facts 0h22</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mar.</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Apr.</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Implementing a transformer (2/2)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Apr.</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Apr.</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: left;">Presentation: Learning Project Results</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Apr.</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
-
-
 </div>
 </div>
-<p>I could probably go even further, but now that each experiment takes up only 482 MB instead of 4.64 GB. Furhter optimization can wait for another day.</p>
-<p>While storage space is important (at this scale), another factor for the performance (and quality of life) is reading in the data. Using the basic <code>read.csv</code> function it takes 4 minutes 23 seconds to read in. Using the <code>vroom</code> library instead can read in these data in only <em>4.04 seconds</em>.</p>
+</section>
+<section id="logistical-notes" class="level2">
+<h2 class="anchored" data-anchor-id="logistical-notes">Logistical Notes</h2>
+<p>To focus on application and allow for easier re-use of materials there is now a repository on github for our group: <a href="https://github.com/DanielKick-USDA/dlcp2025"><code>dlcp2025</code></a>. This repository will hold classes, small datasets, environment files and the like and will be updated as we go.</p>
+<p>To ensure that the code we write together runs on everyone’s computer we’re recommending the following set of tools. You’re welcome to use a different set, but we may not be able to help if you run into issues.</p>
+<ul>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a> - A common IDE that works well with the Windows subsytem for linux and remote machines)</li>
+<li>Microsoft’s <a href="https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare">Live Share</a> plugin - Provides a way to collaboratively edit a code (think “google docs for code” or Teletype).</li>
+<li>A linux / *nix shell - If on windows, use the <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a>. If on OSX use the built in terminal.</li>
+<li><a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> - A <em>fast</em> python package manager. This will take care of enviroment creation and management.</li>
+</ul>
+<p>If you have a conda/mamba enviroment that you already are using for deep learning, you’re welcome to use that as well. <em>However</em> you will likely need to make additions to it as we add tools beyond torch for experiment tracking and hyperparameter tuning.</p>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup:</h2>
+<p>Assuming you have the recommended tools, start by cloning the shared repository to your local machine. You can do this from the *nix shell or through GitHub desktop.</p>
+<p>Once downloaded you should see at minimum <code>.toml</code> file and a <code>.lock</code> file. These are the files that <code>uv</code> will use to build the virtual enviroment for us.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">$cd</span> ./path/to/GitHub/directory</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="va">$git</span> clone https://github.com/DanielKick-USDA/dlcp2025.git</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="va">$cd</span> dlcp2025/</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pyproject.toml</span>  uv.lock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you saved the repository outside the WSL filesystem (e.g.&nbsp;in Documents) you’ll need to make a note of where it is. Windows directories are accessible like so: <code>/mnt/c/Users/YOUR.USER.NAME/GitHub/dlcp2025/</code>. You might consider creating a symbolic link in your linux home that points to this folder (see <a href="https://jacobwashburn-usda.github.io/LabProtocols/posts/DanielKick/240624_linux_wsl_ln/index.html">Tip: Make your life easier with Symbolic Links in WSL</a>)</p>
+<p>Now run <code>uv sync</code>. This will set up the environment. It may take a few minutes (4m 37s on my machine). You’ll see something like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> uv sync</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Using</span> CPython 3.11.11</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Creating</span> virtual environment at: .venv</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Resolved</span> 151 packages in 15ms</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">░░░░░░░░░░░░░░░░░░░░</span> <span class="pp">[</span><span class="ss">0/146</span><span class="pp">]</span> Installing wheels...                                                                       warning: Failed to hardlink files<span class="kw">;</span> <span class="ex">falling</span> back to full copy. This may lead to degraded performance.</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>         <span class="ex">If</span> the cache and target directories are on different filesystems, hardlinking may not be supported.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>         <span class="ex">If</span> this is intentional, set <span class="kw">`</span><span class="bu">export</span> <span class="va">UV_LINK_MODE</span><span class="op">=</span>copy<span class="kw">`</span> <span class="ex">or</span> use <span class="kw">`</span>--link-mode=copy<span class="kw">`</span> <span class="ex">to</span> suppress this warning.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">██████████████████░░</span> <span class="pp">[</span><span class="ss">136/146</span><span class="pp">]</span> scikit-learn==1.6.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We can list hidden files to confirm we now have a <code>.venv</code> (with our virtual environment)</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-a</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span>  ..  .git  .venv  pyproject.toml  uv.lock</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Because we’re installing a good number of deep learning and machine learning tooling, this <code>.venv</code> directory will be sizable.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> du <span class="at">-h</span> <span class="at">-d</span> 1</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">116K</span>    ./.git</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">5.3G</span>    ./.venv</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">5.3G</span>    .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-a-.venv-with-vscode" class="level2">
+<h2 class="anchored" data-anchor-id="using-a-.venv-with-vscode">Using a <code>.venv</code> with vscode</h2>
+<p>To use our <code>uv</code> virtual env we need to first connect to the WSL. Windows treats this like we’re connecting to a remote machine. Click on the connection tile…</p>
+<p><img src="Picture1.png" class="img-fluid"></p>
+<p>Then select “Connect to WSL”.</p>
+<p><img src="Picture2.png" class="img-fluid"></p>
+<p>Select File -&gt; Open Folder and navigate to your repository (this should be easy if you created a symbolic link as mentioned above. After selecting the the <code>dlcp2025</code> folder you should see at least the <code>.venv</code> folder and <code>uv</code>’s lock and toml files.</p>
+<p><img src="Picture3.png" class="img-fluid"></p>
+<p>Here we’re looking at a new notebook. On the left you’ll note a “Select Kernel” button. When you click it the drop down in the middle will open. VSCode will likely recognize and suggest the virtual environment and suggest it. Select “.venv”. You should now be set.</p>
+<p>One quirk to be aware of is that on WSL the first cell you run in a notebook may take many seconds to complete. This is normal and should not be the case for subsequent cells.</p>
+<p><img src="Picture4.png" class="img-fluid"></p>
+</section>
+<section id="meeting-notes" class="level2">
+<h2 class="anchored" data-anchor-id="meeting-notes">Meeting Notes</h2>
+<ul>
+<li>The slides from today can be found <a href="./KickOff.pptx">here</a>.</li>
+</ul>
 
 
 </section>
