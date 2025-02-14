@@ -10,17 +10,33 @@ categories:
 draft: true
 ---
 
-There are some tools that are neither new nor 'shiny' but are very much worth learning. Some technologies are like `vim` or `LISP`[^1] can introduce ways of approaching about tasks and problems that may be new to you. Often these tools *appear* dated because they've been around so long. Learning new tools and frameworks is great, but based on the [Lindy effect](https://en.wikipedia.org/wiki/Lindy_effect) it's arguably *more* important to learn what the "old" tools have to offer.[^2]
+There are some tools that are neither new nor 'shiny' but are very much worth learning. Some technologies are like `vim` or `LISP`[^1] can introduce ways of approaching about tasks and problems that may be new to you. Often these tools *appear* dated because they've been around so long. Learning new tools and frameworks is great, but based on the [Lindy effect](https://en.wikipedia.org/wiki/Lindy_effect) it's arguably *more* important to learn what the "old" tools have to offer.
 
-[^1]: Hopefully more on this later. Reading bit of SICP unexpectedly helped me with a deep learning problem last year.
-
-[^2]: Sometimes the good ideas end up being reincarnated too. I've spend far more time running joins in `R` with [`dplyr`](https://dplyr.tidyverse.org/) than with SQL
+[^1]: Hopefully more on this later. One of the early chapters in SICP unexpectedly helped me with a deep learning problem last year.
 
 I especially like this metaphor about SQL, which has been with us since 1970.
 
-> \[R\]relational databases aren’t dinosaurs. They aren’t lumbering prehistoric relics doomed to extinction by a changing world. They are sharks. Apex predators honed by millions of years of evolution into a perfectly adapted creature that is just as effective today as it was eons ago.[^3]
+> \[R\]relational databases aren’t dinosaurs. They aren’t lumbering prehistoric relics doomed to extinction by a changing world. They are sharks. Apex predators honed by millions of years of evolution into a perfectly adapted creature that is just as effective today as it was eons ago.[^2]
 
-[^3]: [Relational Databases Aren’t Dinosaurs, They’re Sharks](https://www.simplethread.com/relational-databases-arent-dinosaurs-theyre-sharks/)
+[^2]: [Relational Databases Aren’t Dinosaurs, They’re Sharks](https://www.simplethread.com/relational-databases-arent-dinosaurs-theyre-sharks/
+
+
+The goal here is not to discuss theory or setup (although see [this post](/posts/DanielKick/240905_postgres_via_parquet/index.qmd) but show that SQL is more accessible than you might suppose and provide a few links to learn more. 
+
+Sometimes the good ideas end up being reincarnated. If you've worked with `R`'s `dplyr` or python's `polars` or `pandas` there's a good chance this will be new syntax for familiar ideas. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 So let's talk about the shark in the room.
 
@@ -50,12 +66,17 @@ So let's talk about the shark in the room.
 
 <https://www.simplethread.com/relational-databases-arent-dinosaurs-theyre-sharks/>
 
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ACID: SQL properties |                                                                                                                                                          |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
++======================+==========================================================================================================================================================+
 | Atomicity            | A set of operations either all succeed or all fail. It can't half work and mess up the state.                                                            |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Consistency          | Operations don't create invalid states.                                                                                                                  |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Isolation            | Transactions can't see data modified by other transactions. Transactions acting at the same time behave the same as if they were happening sequentially. |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Durability           | After a transaction is committed the system can go down and that change will still be there.                                                             |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | BASE: NoSQL Compromises |                                                                                                                                                   |

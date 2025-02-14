@@ -12,6 +12,12 @@ categories:
 freeze: true
 ---
 
+::: {.callout-note appearance="simple" icon="false"}
+For additional context please see
+[Part 1](/posts/DanielKick/230913_filtering_to_save_88pr_space/index.qmd)
+[Part 2](/posts/DanielKick/240620_dataloader_worse_is_better/index.qmd)
+:::
+
 For those that want to jump straight to the resources here are the files discussed below:
 
 -   script to migrate data: [parquet_to_psql.py](./parquet_to_psql.py)

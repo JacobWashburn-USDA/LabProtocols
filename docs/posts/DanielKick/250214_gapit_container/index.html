@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Daniel Kick">
-<meta name="dcterms.date" content="2025-01-28">
+<meta name="dcterms.date" content="2025-02-14">
 
-<title>Write more small tools</title>
+<title>PSA: GAPIT Containerization for HPC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -154,12 +154,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Write more small tools</h1>
-<p class="subtitle lead">Preprocessing LICOR Data with python (&amp; uv)</p>
+<h1 class="title">PSA: GAPIT Containerization for HPC</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">LICOR</div>
-    <div class="quarto-category">cli</div>
-    <div class="quarto-category">uv</div>
+    <div class="quarto-category">GAPIT</div>
+    <div class="quarto-category">containers</div>
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">tips</div>
+    <div class="quarto-category">intermediate</div>
   </div>
   </div>
 
@@ -177,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 28, 2025</p>
+      <p class="date">February 14, 2025</p>
     </div>
   </div>
   
@@ -189,83 +190,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>You should write more small tools. At first this will be slower than doing the tasks manually but it’s wort the time so you can:</p>
+<p>I ran into a thorny problem running GWAS on an HPC in December so I’m sending out this PSA to hopefully prevent someone else running into the same issue.</p>
+<p>In brief, if you follow GAPIT’s standard install instructions it’s possible to produce a container that runs perfectly on a local machine and fails on the HPC. Why this happens is a little messy but the solution is simple: manually build the GAPIT and install that version along with its dependencies.</p>
+<p>In your singularity def file, instead of specifying the package installation as <code>Rscript -e 'install.packages(GAPIT)'</code> you’ll use a tar of the package that’s been copied into the container like so <code>R CMD INSTALL /app/GAPIT_3.4.0.tar.gz</code></p>
+<p>With the below definition file downloaded you can either use the makefile or run the below to build the container.</p>
 <ul>
-<li><p>Sharpen your programming skills</p></li>
-<li><p>Build the habit of breaking down problems into manageable chunks</p></li>
-<li><p>Make <em>subsequent</em> automation efforts faster</p></li>
+<li><p><a href="./gapit.def">gapit.def</a></p></li>
+<li><p><a href="Makefile">Makefile</a></p></li>
 </ul>
-<p>Tasks that take a lot of time (either because they’re frequent or involved) or are critical to get right are great candidates for automation. Certainly it’s possible to go overboard and spend hours trying to automate a 30 minute task, but if you’re starting out in the lab I would encourage you to keep an eye out for automate-able tasks.</p>
-<p>Here’s a recent example: Pre-processing LI-COR data.</p>
-<p>To follow along you’ll need these files: - <a href="./demoextraction_cli.py">demoextraction_cli.py</a></p>
-<ul>
-<li><a href="./2023-10-19-1308_practice.zip">2023-10-19-1308_practice.zip</a></li>
-</ul>
-<p>The LI-COR machine provides us with a wealth of physiological measurements but the way it saves them is less than ideal.</p>
-<p>When saved as a table, we actually get several sub-tables in a single excel sheet. <img src="./Picture1.png" class="img-fluid"></p>
-<p>Here’s the other sheet in this file with metadata for the experiment. <img src="./Picture2.png" class="img-fluid"></p>
-<p>Importantly, we have one of these per use, so multiple sub-tables across files need to be aggregated prior to data analysis. Ideally we want something like this:</p>
-<p><img src="./Picture3.png" class="img-fluid"></p>
-<p>One file with data from multiple sessions and the data sorted from different types of metadata.</p>
-<p>Okay, so how do we get from here to there? Well, we can work from these exported tables <em>or</em> from a text file that LI-COR uses. The text file’s are not as friendly for use but we can change that.</p>
-<p>Here’s a glimpse at the file structure.</p>
-<pre><code>[Header]
-File opened     2023-10-19 13:09:10
-# ...
-Head ver        1.4.22
-Head cal        {"oxygen": "21", "co2azero": "0.985459", # ... 
-                 "ssb_ref": "38488"}
-CO2 rangematch  Wed Oct 11 16:02
-H2O rangematch  Thu Jun 29 14:41
-# ...
-LeakConst:fan_d 3.11
-LeakConst:Fs_meas       3.90048 209.364 364.041 589.972 873.062 1075.54 1262.06 1396.01
-LeakConst:Fs_true       -0.35308 225.423 382.151 585.793 808.815 1006.32 1201.68 1401.37
-LeakConst:leak_wt       0
-[Data]
-SysObs  SysObs  # ...
-obs     time    
-        s       s
-1       1697739012.6    0
-2       1697739226.1    213.5
-3       1697739391.6    379.0
-# ...
-7       1697740774      1761.4000000953674</code></pre>
-<p>We have some tags (<code>[Header]</code>, <code>[Data]</code>), entries that look like key/value pairs (<code>File opened</code>), dictionaries of key/value pairs (<code>Head cal</code>), arrays (<code>LeakConst:Fs_meas</code>), and a table of data.</p>
-<p>The table is interesting because we have multiple headers – seemingly a grouping, variable name, and unit – before the data.</p>
-<p>Conceptually, we could break this file into two chunks by the tags. We’ll sort all the metadata by the keys and store different kinds of data in their own table. The rows following the <code>[Data]</code> tag we’ll treat as a data table and combine all of the header information into a single header (<code>SysObs</code> <code>time</code> <code>s</code> becomes something like <code>SysObs__time__(s)</code>). Then we can save these data into an excel file and add new data to it.</p>
-<p>I don’t want to dig into how the script achieves this. Rather I want to talk about how to get started building tools you want to use. We always start by thinking through assumptions and trade offs. In the above we assume that there is exactly one header and one data tag (this isn’t always the case!). We also trade some flexibility moving from a plain text format to an excel file (I think it’s worth it here but you might disagree!). There are also assumptions I’ve made that you’d have to look at the script to see. For instance, by default the script tries to process all in the working directory that do not have a file extension. To use it we could move the file to where the data is, start a virtual enviorment and run it like so:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">demo</span><span class="kw">)</span><span class="ex">$</span> python demoextraction_cli.py</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Beginning:./2023-10-19-1308_practice</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Beginning:./2023-10-19-1346_curvepractice</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Beginning:./2024-01-17-1426_practice</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> Deduplication</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>What if we want more flexibility? Python has a number of libraries that let a script accept flags as arguments (I’m using the default one <code>argparse</code>). Now we don’t have to copy the script over and over, we can just change the input directory to the folders with the data.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">demo</span><span class="kw">)</span><span class="ex">$</span> python demoextraction_cli.py <span class="at">--inp_dir</span> <span class="st">'./'</span> <span class="at">--out_dir</span> <span class="st">'./'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>What if we want to go even further? This script depends on a few common libraries, but maybe yours needs more. What happens if you want to share it?</p>
-<p>For that case I recommend the python package manager <code>uv</code>. In addition to being lightning fast it allows for ad hoc specification of script dependencies.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> uv run <span class="at">--with</span> pandas <span class="at">--with</span> openpyxl python demoextraction_cli.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will create an ephemeral virtual environment for the script. It’s a little bit messy to type all this out every time which brings us to <code>uv</code>’s next killer feature.</p>
-<p>We can use the following format to specify a scripts dependencies.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env -S uv run --script</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># /// script</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># requires-python = "&gt;=3.10"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># dependencies = [</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># "pandas",</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># "openpyxl",</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ]</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ///</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, re, argparse</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">#...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now <code>uv</code> can get the needed information from the script rather than from the command line. We can run it and it will happily setup the environment and work through the files.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> uv run demoextraction_cli.py</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Reading</span> inline script metadata from <span class="kw">`</span><span class="ex">demoextraction_cli.py</span><span class="kw">`</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Beginning:./2023-10-19-1308_practice</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">Beginning:./2023-10-19-1346_curvepractice</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">Beginning:./2024-01-17-1426_practice</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="ex">Running</span> Deduplication</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://cran.r-project.org/src/contrib/Archive/multtest/multtest_2.8.0.tar.gz</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/jiabowang/GAPIT</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> CMD build GAPIT</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> ./GAPIT/</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> singularity build gapit.sif gapit.def</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 

@@ -1,0 +1,41 @@
+---
+title: "PSA: GAPIT Containerization for HPC "
+subtitle: ""
+author: "Daniel Kick"
+date: "2025-02-14"
+image: ""
+categories: 
+  - GAPIT
+  - containers
+  - R
+  - tips
+  - intermediate
+freeze: true
+---
+
+
+I ran into a thorny problem running GWAS on an HPC in December so I’m sending out this PSA to hopefully prevent someone else running into the same issue. 
+
+In brief, if you follow GAPIT’s standard install instructions it’s possible to produce a container that runs perfectly on a local machine and fails on the HPC. Why this happens is a little messy but the solution is simple: manually build the GAPIT and install that version along with its dependencies. 
+
+
+In your singularity def file, instead of specifying the package installation as `Rscript -e 'install.packages(GAPIT)'` you'll use a tar of the package that's been copied into the container like so `R CMD INSTALL /app/GAPIT_3.4.0.tar.gz`
+
+
+With the below definition file downloaded you can either use the makefile or run the below to build the container.
+
+- [gapit.def](./gapit.def)
+
+- [Makefile](Makefile)
+
+
+```bash
+wget https://cran.r-project.org/src/contrib/Archive/multtest/multtest_2.8.0.tar.gz
+
+git clone https://github.com/jiabowang/GAPIT
+R CMD build GAPIT
+rm -r ./GAPIT/
+
+sudo singularity build gapit.sif gapit.def
+
+```

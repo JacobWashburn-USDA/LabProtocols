@@ -1,0 +1,39 @@
+---
+title: "Run system commands from your scripts"
+subtitle: ""
+author: "Daniel Kick"
+date: "2025-02-14"
+image: ""
+categories: 
+  - bash
+  - python
+  - R
+  - tips
+freeze: true
+---
+
+Just a quick tip: You can probably run shell commands from your favorite programming language. 
+
+Recently I've needed to collect data files *deep* in a file tree. You could imagine using functions like `os.listdir()` with regex to find what you need. This is more solution than you need. Python and R both allow you to call the linux shell and capture the text that would be returned. 
+
+Here I want to find files called `vnn.json` and `dnn.json` and with the `find` command this is a breeze. 
+```python
+import subprocess
+
+json_files = (
+  subprocess.check_output('find ../data_* -name [v,d]nn.json', shell=True)
+  			.decode('utf-8')
+  			.split('\n')[0:-1] # slice because it ends in newline
+  			)
+```
+
+Now we can filter `json_files` (if need be) and iterate over it to get the files. 
+
+We can do the same trick in R, here getting `metrics.csv`. This trick allows for incredibly terse code to pull in all the data in these files. 
+
+```r
+pths <- system("find ../data_* -name metrics.csv", intern = T)
+
+all_metrics <- do.call(rbind, purrr::map(pths, function(pth){read.csv(pth)}))
+```
+
