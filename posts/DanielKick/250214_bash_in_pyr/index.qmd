@@ -3,7 +3,7 @@ title: "Run system commands from your scripts"
 subtitle: ""
 author: "Daniel Kick"
 date: "2025-02-14"
-image: ""
+image: "https://upload.wikimedia.org/wikipedia/commons/3/38/An_Ad%C3%A9lie_Penguin_about_to_Dive.jpg"
 categories: 
   - bash
   - python

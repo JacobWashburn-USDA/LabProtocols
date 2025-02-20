@@ -3,7 +3,7 @@ title: "Write more small tools"
 subtitle: "Preprocessing LICOR Data with python (& uv)"
 author: "Daniel Kick"
 date: "2025-01-28"
-image: ""
+image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Paroirs.jpg"
 categories: 
   - LICOR
   - cli

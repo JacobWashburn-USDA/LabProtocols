@@ -3,7 +3,7 @@ title: "PSA: GAPIT Containerization for HPC "
 subtitle: ""
 author: "Daniel Kick"
 date: "2025-02-14"
-image: ""
+image: "https://upload.wikimedia.org/wikipedia/commons/f/f7/HUA-171538-Afbeelding_van_de_overslag_van_containers_op_de_Europe_Container_Terminals_ECT_in_de_Eemhaven_te_Rotterdam.jpg"
 categories: 
   - GAPIT
   - containers

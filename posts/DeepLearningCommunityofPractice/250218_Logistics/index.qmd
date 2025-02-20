@@ -1,108 +1,33 @@
 ---
-title: "Spring Session: Preparation and Schedule"
+title: "Logistical Concerns for Deep Learning"
 subtitle: ""
 author: "Daniel Kick"
-image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Wright_Military_Flyer_arrives_at_Fort_Myer_VA_DA-SD-05-00659_trimmed.jpg"
-date: "2025-02-11"
+image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Mise_en_place_des_rails_de_tramways%2C_PH1110.jpg"
+date: "2025-02-18"
 categories: 
-  - Schedule
   - Deep Learning
 freeze: false
 ---
 
 
-## Welcome!
+## Overview
 
-Hello and welcome to our deep learning spring session! We are iterating on the material we discussed over the during the fall with an eye towards application, logistical details, and *when* you might select a neural network rather than another model. If someone has directed you to this page and you'd like to be added to the mailing list, please get in touch with us.
+This week we talked about non-deep learning tasks that are necessary for effective modeling. 
 
-## What We Have Planned
-
-Below is our "working draft" for the spring. Based on the feedback survey we're focusing more on application and less on theory. This means that it will be important to have a good grasp on python's fundamentals, so you may wish to review the recording of Daniel's introduction lecture from the fall. Here is a tentative schedule
-
-```{r echo=FALSE}
-library(kableExtra)
-kable(read.csv('./2025Spring.csv'))
-
-```
-
-## Logistical Notes
-
-To focus on application and allow for easier re-use of materials there is now a repository on github for our group: [`dlcp2025`](https://github.com/DanielKick-USDA/dlcp2025). This repository will hold classes, small datasets, environment files and the like and will be updated as we go.
-
-To ensure that the code we write together runs on everyone's computer we're recommending the following set of tools. You're welcome to use a different set, but we may not be able to help if you run into issues.
-
--   [Visual Studio Code](https://code.visualstudio.com/) - A common IDE that works well with the Windows subsytem for linux and remote machines)
--   Microsoft's [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) plugin - Provides a way to collaboratively edit a code (think "google docs for code" or Teletype).
--   A linux / \*nix shell - If on windows, use the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install). If on OSX use the built in terminal.
--   [uv](https://docs.astral.sh/uv/getting-started/installation/) - A *fast* python package manager. This will take care of enviroment creation and management.
-
-If you have a conda/mamba enviroment that you already are using for deep learning, you're welcome to use that as well. *However* you will likely need to make additions to it as we add tools beyond torch for experiment tracking and hyperparameter tuning.
-
-## Setup:
-
-Assuming you have the recommended tools, start by cloning the shared repository to your local machine. You can do this from the \*nix shell or through GitHub desktop.
-
-Once downloaded you should see at minimum `.toml` file and a `.lock` file. These are the files that `uv` will use to build the virtual enviroment for us.
-
-``` bash
-$cd ./path/to/GitHub/directory
-$git clone https://github.com/DanielKick-USDA/dlcp2025.git
-$cd dlcp2025/
-$ ls
-pyproject.toml  uv.lock
-```
-
-If you saved the repository outside the WSL filesystem (e.g. in Documents) you'll need to make a note of where it is. Windows directories are accessible like so: `/mnt/c/Users/YOUR.USER.NAME/GitHub/dlcp2025/`. You might consider creating a symbolic link in your linux home that points to this folder (see [Tip: Make your life easier with Symbolic Links in WSL](https://jacobwashburn-usda.github.io/LabProtocols/posts/DanielKick/240624_linux_wsl_ln/index.html))
-
-Now run `uv sync`. This will set up the environment. It may take a few minutes (4m 37s on my machine). You'll see something like this:
-
-``` bash
-$ uv sync
-Using CPython 3.11.11
-Creating virtual environment at: .venv
-Resolved 151 packages in 15ms
-░░░░░░░░░░░░░░░░░░░░ [0/146] Installing wheels...                                                                       warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
-         If the cache and target directories are on different filesystems, hardlinking may not be supported.
-         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
-██████████████████░░ [136/146] scikit-learn==1.6.1
-```
-
-We can list hidden files to confirm we now have a `.venv` (with our virtual environment)
-
-``` bash
-$ ls -a
-.  ..  .git  .venv  pyproject.toml  uv.lock
-```
-
-Because we're installing a good number of deep learning and machine learning tooling, this `.venv` directory will be sizable.
-
-``` bash
-$ du -h -d 1
-116K    ./.git
-5.3G    ./.venv
-5.3G    .
-```
-
-## Using a `.venv` with vscode
-
-To use our `uv` virtual env we need to first connect to the WSL. Windows treats this like we're connecting to a remote machine. Click on the connection tile...
-
-![](Picture1.png)
-
-Then select "Connect to WSL".
-
-![](Picture2.png)
-
-Select File -\> Open Folder and navigate to your repository (this should be easy if you created a symbolic link as mentioned above. After selecting the the `dlcp2025` folder you should see at least the `.venv` folder and `uv`'s lock and toml files.
-
-![](Picture3.png)
-
-Here we're looking at a new notebook. On the left you'll note a "Select Kernel" button. When you click it the drop down in the middle will open. VSCode will likely recognize and suggest the virtual environment and suggest it. Select ".venv". You should now be set.
-
-One quirk to be aware of is that on WSL the first cell you run in a notebook may take many seconds to complete. This is normal and should not be the case for subsequent cells.
-
-![](Picture4.png)
+- Data cleaning and storage
+  - Pandas, Polars, and Databases
+- Model evaluation and test set construction
+  - Structure in the data and information leakage
+- Case Study: Workflow to predict viral infection potential
+  - Separating data prep from modeling
+  - Using cross validation folds stratified with respect to species
+  - How do we think about predicting cases that were not observed?
+  - Example pipeline
+- Tracking Hyperparameters and Experiments
+  - General workflow
+  - KerasTuner, Ray, and Ax
+  - Example in Ax
 
 ## Meeting Notes
 
--   The slides from today can be found [here](./KickOff.pptx).
+-   The slides from today can be found [here](./Logistics.pptx).
